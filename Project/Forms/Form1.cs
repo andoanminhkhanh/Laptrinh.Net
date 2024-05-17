@@ -29,5 +29,11 @@ namespace Project
             Forms.Khachhang a = new Forms.Khachhang();
             a.Show();
         }
+
+        private void mnuLvhd_Click(object sender, EventArgs e)
+        {
+            Forms.Linhvuchoatdong a = new Forms.Linhvuchoatdong();
+            a.Show();
+        }
     }
 }

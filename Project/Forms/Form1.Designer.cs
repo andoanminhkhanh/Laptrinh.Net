@@ -67,6 +67,7 @@
             this.mnuLvhd.Name = "mnuLvhd";
             this.mnuLvhd.Size = new System.Drawing.Size(224, 26);
             this.mnuLvhd.Text = "Lĩnh vực hoạt động";
+            this.mnuLvhd.Click += new System.EventHandler(this.mnuLvhd_Click);
             // 
             // Form1
             // 

@@ -61,7 +61,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(367, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(459, 39);
+            this.label1.Size = new System.Drawing.Size(444, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "DANH MỤC KHÁCH HÀNG";
             // 
@@ -256,7 +256,7 @@
             this.btnHopdongvietbai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHopdongvietbai.Location = new System.Drawing.Point(31, 553);
             this.btnHopdongvietbai.Name = "btnHopdongvietbai";
-            this.btnHopdongvietbai.Size = new System.Drawing.Size(205, 40);
+            this.btnHopdongvietbai.Size = new System.Drawing.Size(234, 40);
             this.btnHopdongvietbai.TabIndex = 25;
             this.btnHopdongvietbai.Text = "Hợp đồng viết bài";
             this.btnHopdongvietbai.UseVisualStyleBackColor = true;
@@ -265,9 +265,9 @@
             // btnHopdongquangcao
             // 
             this.btnHopdongquangcao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHopdongquangcao.Location = new System.Drawing.Point(904, 553);
+            this.btnHopdongquangcao.Location = new System.Drawing.Point(868, 553);
             this.btnHopdongquangcao.Name = "btnHopdongquangcao";
-            this.btnHopdongquangcao.Size = new System.Drawing.Size(219, 40);
+            this.btnHopdongquangcao.Size = new System.Drawing.Size(253, 40);
             this.btnHopdongquangcao.TabIndex = 26;
             this.btnHopdongquangcao.Text = "Hợp đồng quảng cáo";
             this.btnHopdongquangcao.UseVisualStyleBackColor = true;

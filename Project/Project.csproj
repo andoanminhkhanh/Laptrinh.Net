@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\Function.cs" />
+    <Compile Include="Forms\Báo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Báo.Designer.cs">
+      <DependentUpon>Báo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,13 +77,25 @@
     <Compile Include="Forms\Khachhang.Designer.cs">
       <DependentUpon>Khachhang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Linhvuchoatdong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Linhvuchoatdong.Designer.cs">
+      <DependentUpon>Linhvuchoatdong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Báo.resx">
+      <DependentUpon>Báo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Khachhang.resx">
       <DependentUpon>Khachhang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Linhvuchoatdong.resx">
+      <DependentUpon>Linhvuchoatdong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
