@@ -231,6 +231,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Phongban";
             this.Text = "Phongban";
+            this.Load += new System.EventHandler(this.Phongban_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
