@@ -35,5 +35,29 @@ namespace Project
             Forms.Linhvuchoatdong a = new Forms.Linhvuchoatdong();
             a.Show();
         }
+
+        private void chứcVụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.Chucvu a = new Forms.Chucvu();
+            a.Show();
+        }
+
+        private void chứcNăngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.Chucnang a = new Forms.Chucnang();
+            a.Show();
+        }
+
+        private void chuyênMônToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.Chuyenmon a = new Forms.Chuyenmon();
+            a.Show();
+        }
+
+        private void trinhdoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.Trinhdo a = new Forms.Trinhdo();
+            a.Show();
+        }
     }
 }

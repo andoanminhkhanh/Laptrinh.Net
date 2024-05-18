@@ -53,6 +53,24 @@
     <Compile Include="Forms\Báo.Designer.cs">
       <DependentUpon>Báo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Chucnang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Chucnang.Designer.cs">
+      <DependentUpon>Chucnang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Chucvu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Chucvu.Designer.cs">
+      <DependentUpon>Chucvu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Chuyenmon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Chuyenmon.Designer.cs">
+      <DependentUpon>Chuyenmon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,10 +101,25 @@
     <Compile Include="Forms\Linhvuchoatdong.Designer.cs">
       <DependentUpon>Linhvuchoatdong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Trinhdo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Trinhdo.Designer.cs">
+      <DependentUpon>Trinhdo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Báo.resx">
       <DependentUpon>Báo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Chucnang.resx">
+      <DependentUpon>Chucnang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Chucvu.resx">
+      <DependentUpon>Chucvu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Chuyenmon.resx">
+      <DependentUpon>Chuyenmon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -96,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Linhvuchoatdong.resx">
       <DependentUpon>Linhvuchoatdong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Trinhdo.resx">
+      <DependentUpon>Trinhdo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
