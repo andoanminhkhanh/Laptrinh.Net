@@ -20,23 +20,38 @@ namespace Project.Forms
 
         private void Quanlynhanvien_Load(object sender, EventArgs e)
         {
-            Class.Function.Connect();
-            txtmanv.Enabled = false;
-            btnluu.Enabled = false;
-            btnboqua.Enabled = false;
-            Load_DataGridView();
-            Function.FillCombo("SELECT Maphong, Tenphong FROM tblPhongban", cbophongban, "Maphong", "Maphong");
-            cbomabao.SelectedIndex = -1;
-            Function.FillCombo("SELECT MaTD, TenTD FROM tblTrinhdo", cbotrinhdo, "MaTD", "MaTD");
-            cbomabao.SelectedIndex = -1;
-            Function.FillCombo("SELECT Machucvu, Tenchucvu FROM tblChucvu", cbochucvu, "Machucvu", "Machucvu");
-            cbomabao.SelectedIndex = -1;
-            Function.FillCombo("SELECT MaCM, TenCM FROM tblChuyenmon", cbochuyenmon, "MaCM", "MaCM");
-            cbomabao.SelectedIndex = -1;
-            Function.FillCombo("SELECT Mabao, Tenbao FROM tblBao", cbomabao, "Mabao", "Mabao");
-            cbomabao.SelectedIndex = -1;
             
+                Class.Function.Connect();
+                txtmanv.Enabled = false;
+                cbochucvu.Enabled = false;
+                cbochuyenmon.Enabled = false;
+                cbomabao.Enabled = false;
+                cbophongban.Enabled = false;
+                cbotrinhdo.Enabled = false;
+                btnluu.Enabled = false;
+                btnboqua.Enabled = false;
+                Load_DataGridView();
 
+                Function.FillCombo("SELECT Maphong, Tenphong FROM tblPhongban", cbophongban, "Maphong", "Maphong");
+                cbophongban.SelectedIndex = -1;  
+                Function.FillCombo("SELECT MaTD, TenTD FROM tblTrinhdo", cbotrinhdo, "MaTD", "MaTD");
+                cbotrinhdo.SelectedIndex = -1;  
+                Function.FillCombo("SELECT Machucvu, Tenchucvu FROM tblChucvu", cbochucvu, "Machucvu", "Machucvu");
+                cbochucvu.SelectedIndex = -1;  
+                Function.FillCombo("SELECT MaCM, TenCM FROM tblChuyenmon", cbochuyenmon, "MaCM", "MaCM");
+                cbochuyenmon.SelectedIndex = -1;  
+                Function.FillCombo("SELECT Mabao, Tenbao FROM tblBao", cbomabao, "Mabao", "Mabao");
+                cbomabao.SelectedIndex = -1;  
+
+                // Đặt các giá trị TextBox ban đầu là trống
+                txtmanv.Text = "";
+                txttennv.Text = "";
+                txtdiachi.Text = "";
+                mskdienthoai.Text = "";
+                mskmobile.Text = "";
+                txtemail.Text = "";
+                mskngaysinh.Text = "";
+            
         }
         DataTable tblnv;
         private void Load_DataGridView()
@@ -130,7 +145,13 @@ namespace Project.Forms
 
             txtmanv.Enabled = true;
             txtmanv.Focus();
-           
+            txtmanv.Enabled = true;
+            cbophongban.Enabled = true;
+            cbochucvu.Enabled = true;
+            cbotrinhdo.Enabled = true;
+            cbochuyenmon.Enabled = true;
+            cbomabao.Enabled = true;
+
             string newEmployeeID = Function.CreateKey();
 
             // Hiển thị mã nhân viên mới lên TextBox hoặc sử dụng cho mục đích khác
@@ -173,6 +194,11 @@ namespace Project.Forms
         private void btnluu_Click(object sender, EventArgs e)
         {
             string sql;
+            cbochucvu.Enabled = true;
+            cbochuyenmon.Enabled = true;
+            cbomabao.Enabled = true;
+            cbophongban.Enabled = true;
+            cbotrinhdo.Enabled = true;
             if (txtmanv.Text == "")
             {
                 MessageBox.Show("Ban phai nhap ma nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -241,6 +267,7 @@ namespace Project.Forms
             btnboqua.Enabled = false;
             btnluu.Enabled = false;
             txtmanv.Enabled = false;
+            
         }
 
         private void btnxoa_Click(object sender, EventArgs e)
