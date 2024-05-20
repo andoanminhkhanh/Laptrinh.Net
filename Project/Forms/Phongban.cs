@@ -204,6 +204,7 @@ namespace Project.Forms
             Load_DataGridView();
             ResetValues();
             btnboqua.Enabled = false;
+
         }
     }
 }
