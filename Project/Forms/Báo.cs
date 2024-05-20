@@ -23,7 +23,7 @@ namespace Project.Forms
             btnLuu.Enabled = false;
             btnBoqua.Enabled = false;
             Load_data();
-            Class.Function.FillCombo("select Machucnang, Tenchucnang from tbllinhvuchoatdong", cboMachucnang, "Machucnang", "Tenchucnang");
+            Class.Function.FillCombo("select Machucnang, Tenchucnang from tblchucnang", cboMachucnang, "Machucnang", "Tenchucnang");
             cboMachucnang.SelectedIndex = -1;
             ResetValues();
         }
@@ -72,8 +72,8 @@ namespace Project.Forms
             txtDiachi.Text = dgridBao.CurrentRow.Cells["Diachi"].Value.ToString();
             mskDienthoai.Text = dgridBao.CurrentRow.Cells["Dienthoai"].Value.ToString();
             txtEmail.Text = dgridBao.CurrentRow.Cells["Email"].Value.ToString();
-            ma = dgridBao.CurrentRow.Cells["Malvhd"].Value.ToString();
-            cboMachucnang.Text = Class.Function.GetFieldValues("select Tenchucnang from tblchucnang where machucnang = N'" + ma + "'");
+            ma = dgridBao.CurrentRow.Cells["Machucnang"].Value.ToString();
+            cboMachucnang.Text = Class.Function.GetFieldValues("select Tenchucnang from tblChucnang where machucnang = N'" + ma + "'");
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
             btnBoqua.Enabled = true;
@@ -131,10 +131,10 @@ namespace Project.Forms
                 cboMachucnang.Focus();
                 return;
             }
-            sql = "select Mabao from tblbao where Mabao=N '" + txtMabao.Text.Trim() + "'";
+            sql = "SELECT Mabao FROM tblbao WHERE Mabao=N'" + txtMabao.Text.Trim() + "'";
             if (Class.Function.CheckKey(sql))
             {
-                MessageBox.Show("Mã báo này đã có, bạn phải nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Mã báo này đã có, bạn phải nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtMabao.Focus();
                 txtMabao.Text = "";
                 return;
@@ -216,7 +216,7 @@ namespace Project.Forms
             }
             if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                sql = "delete tblbao where Makh = N'" + txtMabao.Text + "'";
+                sql = "delete tblbao where Mabao = N'" + txtMabao.Text + "'";
                 Class.Function.RunSql(sql);
                 Load_data();
                 ResetValues();
