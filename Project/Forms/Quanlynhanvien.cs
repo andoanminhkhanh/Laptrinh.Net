@@ -320,5 +320,21 @@ namespace Project.Forms
             cbomabao.Enabled = true;
             cbophongban.Enabled = true;
         }
+
+        private void chknam_Click(object sender, EventArgs e)
+        {
+            chknu.Enabled = false;
+            if (chknam.Checked == false)
+            { chknu.Enabled = true; }
+   
+        }
+
+        private void chknu_Click(object sender, EventArgs e)
+        {
+            chknam.Enabled = false;
+            
+            if (chknu.Checked == false)
+            { chknam.Enabled = true; }
+        }
     }
 }
