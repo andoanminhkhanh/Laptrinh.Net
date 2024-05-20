@@ -83,5 +83,11 @@ namespace Project
             Forms.Phongban a = new Forms.Phongban();
             a.Show();
         }
+
+        private void báoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.Báo a = new Forms.Báo();
+            a.Show();
+        }
     }
 }
