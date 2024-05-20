@@ -33,6 +33,8 @@ namespace Project.Forms
             dgridLvhd.DataSource = tbllvhd;
             dgridLvhd.Columns[0].HeaderText = "Mã lĩnh vực hoạt động";
             dgridLvhd.Columns[1].HeaderText = "Tên lĩnh vực hoạt động";
+            dgridLvhd.Columns[0].Width = 205;
+            dgridLvhd.Columns[1].Width = 205;
             dgridLvhd.AllowUserToAddRows = false;
             dgridLvhd.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
@@ -89,10 +91,10 @@ namespace Project.Forms
                 txtTenlvhd.Focus();
                 return;
             }
-            sql = "select Malvhd from tbllinhvuchoatdong where Malvhd=N '" + txtMalvhd.Text.Trim() + "'";
+            sql = "SELECT MaLVHD FROM tblLinhvuchoatdong WHERE MaLVHD=N'" + txtMalvhd.Text.Trim() + "'";
             if (Class.Function.CheckKey(sql))
             {
-                MessageBox.Show("Mã lĩnh vực hoạt động này đã có, bạn phải nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Mã lĩnh vực hoạt động này đã có, bạn phải nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtMalvhd.Focus();
                 txtMalvhd.Text = "";
                 return;
@@ -150,7 +152,7 @@ namespace Project.Forms
             }
             if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                sql = "delete tbllinhvuchoatdong where Makh = N'" + txtMalvhd.Text + "'";
+                sql = "delete tbllinhvuchoatdong where MaLVHD = N'" + txtMalvhd.Text + "'";
                 Class.Function.RunSql(sql);
                 Load_data();
                 ResetValues();

@@ -128,7 +128,29 @@ namespace Project.Class
             numberPart++; // Tăng số lên 1
 
             // Tạo mã nhân viên mới
-            return "NV" + numberPart.ToString("D2"); 
+            return "NV" + numberPart.ToString("D2");
+        }
+        public static string CreateCustomerKey()
+        {
+            string lastCustomerID = GetLastCustomerID();
+            if (string.IsNullOrEmpty(lastCustomerID))
+            {
+                return "KH01"; // Nếu không có nhân viên nào, bắt đầu từ NV01
+            }
+            // Tách phần số từ mã nhân viên
+            int soPart = int.Parse(lastCustomerID.Substring(2));
+            soPart++; // Tăng số lên 1
+
+            // Tạo mã nhân viên mới
+            return "KH" + soPart.ToString("D2");
+        }
+        private static string GetLastCustomerID()
+        {
+            string query = "SELECT TOP 1 MaKH FROM tblKhachhang ORDER BY MaKH DESC";
+
+            SqlCommand cmd = new SqlCommand(query, Conn);
+            object result = cmd.ExecuteScalar();
+            return result != null ? result.ToString() : null;
         }
 
         private static string GetLastEmployeeID()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -50,6 +51,13 @@ namespace Project.Forms
             dgridKhachhang.Columns[4].HeaderText = "Di động";
             dgridKhachhang.Columns[5].HeaderText = "Email";
             dgridKhachhang.Columns[6].HeaderText = "Mã lĩnh vực hoạt động";
+            dgridKhachhang.Columns[0].Width = 80;
+            dgridKhachhang.Columns[1].Width = 150;
+            dgridKhachhang.Columns[0].Width = 100;
+            dgridKhachhang.Columns[1].Width = 100;
+            dgridKhachhang.Columns[0].Width = 100;
+            dgridKhachhang.Columns[1].Width = 100;
+            dgridKhachhang.Columns[0].Width = 100;
             dgridKhachhang.AllowUserToAddRows = false;
             dgridKhachhang.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
@@ -91,6 +99,10 @@ namespace Project.Forms
             ResetValues();
             txtMakhachhang.Enabled = true;
             txtMakhachhang.Focus();
+            string newCustomerID = Function.CreateCustomerKey();
+
+            // Hiển thị mã nhân viên mới lên TextBox hoặc sử dụng cho mục đích khác
+            txtMakhachhang.Text = newCustomerID;
         }
        
 
@@ -139,14 +151,14 @@ namespace Project.Forms
                 cboMalvhd.Focus();
                 return;
             }
-            sql = "select Makh from tblkhachhang where Makh=N '" + txtMakhachhang.Text.Trim() + "'";
+            /*sql = "select Makh from tblkhachhang where Makh=N '" + txtMakhachhang.Text.Trim() + "'";
             if (Class.Function.CheckKey(sql))
             {
                 MessageBox.Show("Mã khách hàng này đã có, bạn phải nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMakhachhang.Focus();
                 txtMakhachhang.Text = "";
                 return;
-            }
+            }*/
             sql = "insert into tblkhachhang(Makh, Tenkh, Diachi, Dienthoai, Didong, Email, Malvhd) values (N'" + txtMakhachhang.Text.Trim() + "', N'" + txtTenkhachhang.Text.Trim() + "', N'" + txtDiachi.Text.Trim() + "', '" + mskDienthoai.Text + "', '" + mskDidong.Text + "', N'" + txtEmail.Text.Trim() + "', N'" + cboMalvhd.SelectedValue.ToString() + "')";
             Class.Function.RunSql(sql);
             Load_data();
