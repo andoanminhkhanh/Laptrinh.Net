@@ -1,6 +1,6 @@
 ﻿namespace Project.Forms
 {
-    partial class hdquangcao
+    partial class frmhopdongqc
     {
         /// <summary>
         /// Required designer variable.
@@ -51,6 +51,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtmahopdong = new System.Windows.Forms.TextBox();
+            this.txtngayketthuc = new System.Windows.Forms.MaskedTextBox();
+            this.txtngaybatdau = new System.Windows.Forms.MaskedTextBox();
             this.btndong = new System.Windows.Forms.Button();
             this.btnin = new System.Windows.Forms.Button();
             this.btnhuy = new System.Windows.Forms.Button();
@@ -76,9 +79,6 @@
             this.btntimkiem = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.cbomahopdong = new System.Windows.Forms.ComboBox();
-            this.txtngaybatdau = new System.Windows.Forms.MaskedTextBox();
-            this.txtngayketthuc = new System.Windows.Forms.MaskedTextBox();
-            this.txtmahopdong = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatagridView)).BeginInit();
@@ -112,6 +112,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chung:";
+//            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtdienthoai
             // 
@@ -150,7 +151,7 @@
             this.txtdiachi.Name = "txtdiachi";
             this.txtdiachi.Size = new System.Drawing.Size(201, 22);
             this.txtdiachi.TabIndex = 15;
-            this.txtdiachi.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+//            this.txtdiachi.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // txttenkhachhang
             // 
@@ -165,7 +166,7 @@
             this.txtmakhachhang.Name = "txtmakhachhang";
             this.txtmakhachhang.Size = new System.Drawing.Size(201, 22);
             this.txtmakhachhang.TabIndex = 13;
-            this.txtmakhachhang.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+//            this.txtmakhachhang.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // txttennhanvien
             // 
@@ -214,7 +215,7 @@
             this.label9.Size = new System.Drawing.Size(50, 16);
             this.label9.TabIndex = 7;
             this.label9.Text = "Địa chỉ:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+//            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
@@ -233,7 +234,7 @@
             this.label7.Size = new System.Drawing.Size(107, 16);
             this.label7.TabIndex = 5;
             this.label7.Text = "Tên Khách hàng:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+//            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -243,7 +244,7 @@
             this.label6.Size = new System.Drawing.Size(102, 16);
             this.label6.TabIndex = 4;
             this.label6.Text = "Mã Khách hàng:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+//            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -253,7 +254,7 @@
             this.label5.Size = new System.Drawing.Size(97, 16);
             this.label5.TabIndex = 3;
             this.label5.Text = "Tên Nhân viên:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+//            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -272,7 +273,7 @@
             this.label3.Size = new System.Drawing.Size(60, 16);
             this.label3.TabIndex = 1;
             this.label3.Text = "Ngày ký:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+//            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -326,6 +327,31 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin chi tiết:";
+            // 
+            // txtmahopdong
+            // 
+            this.txtmahopdong.Location = new System.Drawing.Point(143, 81);
+            this.txtmahopdong.Name = "txtmahopdong";
+            this.txtmahopdong.Size = new System.Drawing.Size(154, 22);
+            this.txtmahopdong.TabIndex = 29;
+            // 
+            // txtngayketthuc
+            // 
+            this.txtngayketthuc.Location = new System.Drawing.Point(799, 75);
+            this.txtngayketthuc.Mask = "00/00/0000";
+            this.txtngayketthuc.Name = "txtngayketthuc";
+            this.txtngayketthuc.Size = new System.Drawing.Size(154, 22);
+            this.txtngayketthuc.TabIndex = 28;
+            this.txtngayketthuc.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtngaybatdau
+            // 
+            this.txtngaybatdau.Location = new System.Drawing.Point(799, 43);
+            this.txtngaybatdau.Mask = "00/00/0000";
+            this.txtngaybatdau.Name = "txtngaybatdau";
+            this.txtngaybatdau.Size = new System.Drawing.Size(154, 22);
+            this.txtngaybatdau.TabIndex = 27;
+            this.txtngaybatdau.ValidatingType = typeof(System.DateTime);
             // 
             // btndong
             // 
@@ -398,7 +424,7 @@
             this.txtnoidung.Name = "txtnoidung";
             this.txtnoidung.Size = new System.Drawing.Size(989, 37);
             this.txtnoidung.TabIndex = 19;
-            this.txtnoidung.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
+//            this.txtnoidung.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
             // 
             // txttongtien
             // 
@@ -542,31 +568,6 @@
             this.cbomahopdong.Name = "cbomahopdong";
             this.cbomahopdong.Size = new System.Drawing.Size(154, 24);
             this.cbomahopdong.TabIndex = 29;
-            // 
-            // txtngaybatdau
-            // 
-            this.txtngaybatdau.Location = new System.Drawing.Point(799, 43);
-            this.txtngaybatdau.Mask = "00/00/0000";
-            this.txtngaybatdau.Name = "txtngaybatdau";
-            this.txtngaybatdau.Size = new System.Drawing.Size(154, 22);
-            this.txtngaybatdau.TabIndex = 27;
-            this.txtngaybatdau.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtngayketthuc
-            // 
-            this.txtngayketthuc.Location = new System.Drawing.Point(799, 75);
-            this.txtngayketthuc.Mask = "00/00/0000";
-            this.txtngayketthuc.Name = "txtngayketthuc";
-            this.txtngayketthuc.Size = new System.Drawing.Size(154, 22);
-            this.txtngayketthuc.TabIndex = 28;
-            this.txtngayketthuc.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtmahopdong
-            // 
-            this.txtmahopdong.Location = new System.Drawing.Point(143, 81);
-            this.txtmahopdong.Name = "txtmahopdong";
-            this.txtmahopdong.Size = new System.Drawing.Size(154, 22);
-            this.txtmahopdong.TabIndex = 29;
             // 
             // hdquangcao
             // 
