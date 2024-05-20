@@ -200,6 +200,7 @@
             this.DataGridView.RowTemplate.Height = 24;
             this.DataGridView.Size = new System.Drawing.Size(705, 193);
             this.DataGridView.TabIndex = 43;
+            this.DataGridView.Click += new System.EventHandler(this.DataGridView_Click);
             // 
             // label14
             // 
@@ -339,6 +340,7 @@
             this.btnthem.TabIndex = 58;
             this.btnthem.Text = "Thêm";
             this.btnthem.UseVisualStyleBackColor = true;
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
             // btnxoa
             // 
@@ -348,6 +350,7 @@
             this.btnxoa.TabIndex = 59;
             this.btnxoa.Text = "Xóa";
             this.btnxoa.UseVisualStyleBackColor = true;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
             // btnsua
             // 
@@ -357,6 +360,7 @@
             this.btnsua.TabIndex = 60;
             this.btnsua.Text = "Sửa";
             this.btnsua.UseVisualStyleBackColor = true;
+            this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
             // 
             // btnluu
             // 
@@ -366,6 +370,7 @@
             this.btnluu.TabIndex = 61;
             this.btnluu.Text = "Lưu";
             this.btnluu.UseVisualStyleBackColor = true;
+            this.btnluu.Click += new System.EventHandler(this.btnluu_Click);
             // 
             // btnboqua
             // 
@@ -375,6 +380,7 @@
             this.btnboqua.TabIndex = 62;
             this.btnboqua.Text = "Bỏ qua";
             this.btnboqua.UseVisualStyleBackColor = true;
+            this.btnboqua.Click += new System.EventHandler(this.btnboqua_Click);
             // 
             // btnthoat
             // 
@@ -384,6 +390,7 @@
             this.btnthoat.TabIndex = 63;
             this.btnthoat.Text = "Thoát";
             this.btnthoat.UseVisualStyleBackColor = true;
+            this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
             // 
             // Quanlynhanvien
             // 
@@ -427,6 +434,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Quanlynhanvien";
             this.Text = "Quanlynhanvien";
+            this.Load += new System.EventHandler(this.Quanlynhanvien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

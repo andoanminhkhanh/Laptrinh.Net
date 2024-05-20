@@ -179,5 +179,10 @@ namespace Project.Forms
         {
             this.Close();
         }
+
+        private void txtMatrinhdo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

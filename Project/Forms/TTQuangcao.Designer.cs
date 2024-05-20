@@ -97,6 +97,7 @@
             this.DataGridView.RowTemplate.Height = 24;
             this.DataGridView.Size = new System.Drawing.Size(662, 165);
             this.DataGridView.TabIndex = 5;
+            this.DataGridView.Click += new System.EventHandler(this.DataGridView_Click);
             // 
             // groupBox1
             // 
@@ -118,8 +119,9 @@
             this.btnthem.Name = "btnthem";
             this.btnthem.Size = new System.Drawing.Size(86, 38);
             this.btnthem.TabIndex = 7;
-            this.btnthem.Text = "button1";
+            this.btnthem.Text = "Thêm";
             this.btnthem.UseVisualStyleBackColor = true;
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
             // btnxoa
             // 
@@ -127,8 +129,9 @@
             this.btnxoa.Name = "btnxoa";
             this.btnxoa.Size = new System.Drawing.Size(86, 38);
             this.btnxoa.TabIndex = 8;
-            this.btnxoa.Text = "button2";
+            this.btnxoa.Text = "Xóa";
             this.btnxoa.UseVisualStyleBackColor = true;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
             // btnsua
             // 
@@ -136,8 +139,9 @@
             this.btnsua.Name = "btnsua";
             this.btnsua.Size = new System.Drawing.Size(86, 38);
             this.btnsua.TabIndex = 9;
-            this.btnsua.Text = "button3";
+            this.btnsua.Text = "Sửa";
             this.btnsua.UseVisualStyleBackColor = true;
+            this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
             // 
             // btnluu
             // 
@@ -145,8 +149,9 @@
             this.btnluu.Name = "btnluu";
             this.btnluu.Size = new System.Drawing.Size(86, 38);
             this.btnluu.TabIndex = 10;
-            this.btnluu.Text = "button4";
+            this.btnluu.Text = "Lưu";
             this.btnluu.UseVisualStyleBackColor = true;
+            this.btnluu.Click += new System.EventHandler(this.btnluu_Click);
             // 
             // btnboqua
             // 
@@ -154,8 +159,9 @@
             this.btnboqua.Name = "btnboqua";
             this.btnboqua.Size = new System.Drawing.Size(86, 38);
             this.btnboqua.TabIndex = 11;
-            this.btnboqua.Text = "button5";
+            this.btnboqua.Text = "Bỏ qua";
             this.btnboqua.UseVisualStyleBackColor = true;
+            this.btnboqua.Click += new System.EventHandler(this.btnboqua_Click);
             // 
             // btnthoat
             // 
@@ -163,8 +169,9 @@
             this.btnthoat.Name = "btnthoat";
             this.btnthoat.Size = new System.Drawing.Size(86, 38);
             this.btnthoat.TabIndex = 12;
-            this.btnthoat.Text = "button6";
+            this.btnthoat.Text = "Thoát";
             this.btnthoat.UseVisualStyleBackColor = true;
+            this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
             // 
             // TTQuangcao
             // 
@@ -182,6 +189,7 @@
             this.Controls.Add(this.label1);
             this.Name = "TTQuangcao";
             this.Text = "TTQuangcao";
+            this.Load += new System.EventHandler(this.TTQuangcao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

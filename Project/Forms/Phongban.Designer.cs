@@ -146,6 +146,7 @@
             this.DataGridView.RowTemplate.Height = 24;
             this.DataGridView.Size = new System.Drawing.Size(724, 175);
             this.DataGridView.TabIndex = 10;
+            this.DataGridView.Click += new System.EventHandler(this.DataGridView_Click);
             // 
             // btnthoat
             // 
@@ -156,6 +157,7 @@
             this.btnthoat.TabIndex = 21;
             this.btnthoat.Text = "Thoát";
             this.btnthoat.UseVisualStyleBackColor = true;
+            this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
             // 
             // btnboqua
             // 
@@ -166,6 +168,7 @@
             this.btnboqua.TabIndex = 20;
             this.btnboqua.Text = "Bỏ qua";
             this.btnboqua.UseVisualStyleBackColor = true;
+            this.btnboqua.Click += new System.EventHandler(this.btnboqua_Click);
             // 
             // btnluu
             // 
@@ -176,6 +179,7 @@
             this.btnluu.TabIndex = 19;
             this.btnluu.Text = "Lưu";
             this.btnluu.UseVisualStyleBackColor = true;
+            this.btnluu.Click += new System.EventHandler(this.btnluu_Click);
             // 
             // btnsua
             // 
@@ -186,6 +190,7 @@
             this.btnsua.TabIndex = 18;
             this.btnsua.Text = "Sửa";
             this.btnsua.UseVisualStyleBackColor = true;
+            this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
             // 
             // btnxoa
             // 
@@ -196,6 +201,7 @@
             this.btnxoa.TabIndex = 17;
             this.btnxoa.Text = "Xóa";
             this.btnxoa.UseVisualStyleBackColor = true;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
             // btnthem
             // 
@@ -206,6 +212,7 @@
             this.btnthem.TabIndex = 16;
             this.btnthem.Text = "Thêm";
             this.btnthem.UseVisualStyleBackColor = true;
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
             // Phongban
             // 

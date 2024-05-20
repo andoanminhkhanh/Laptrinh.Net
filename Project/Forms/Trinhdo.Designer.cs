@@ -45,23 +45,27 @@
             // 
             // txtTentrinhdo
             // 
-            this.txtTentrinhdo.Location = new System.Drawing.Point(198, 128);
+            this.txtTentrinhdo.Location = new System.Drawing.Point(176, 102);
+            this.txtTentrinhdo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTentrinhdo.Name = "txtTentrinhdo";
-            this.txtTentrinhdo.Size = new System.Drawing.Size(100, 26);
+            this.txtTentrinhdo.Size = new System.Drawing.Size(89, 22);
             this.txtTentrinhdo.TabIndex = 43;
             // 
             // txtMatrinhdo
             // 
-            this.txtMatrinhdo.Location = new System.Drawing.Point(198, 83);
+            this.txtMatrinhdo.Location = new System.Drawing.Point(176, 66);
+            this.txtMatrinhdo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMatrinhdo.Name = "txtMatrinhdo";
-            this.txtMatrinhdo.Size = new System.Drawing.Size(100, 26);
+            this.txtMatrinhdo.Size = new System.Drawing.Size(89, 22);
             this.txtMatrinhdo.TabIndex = 42;
+            this.txtMatrinhdo.TextChanged += new System.EventHandler(this.txtMatrinhdo_TextChanged);
             // 
             // btnDong
             // 
-            this.btnDong.Location = new System.Drawing.Point(686, 391);
+            this.btnDong.Location = new System.Drawing.Point(610, 313);
+            this.btnDong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(75, 32);
+            this.btnDong.Size = new System.Drawing.Size(67, 26);
             this.btnDong.TabIndex = 41;
             this.btnDong.Text = "Đóng";
             this.btnDong.UseVisualStyleBackColor = true;
@@ -69,9 +73,10 @@
             // 
             // btnBoqua
             // 
-            this.btnBoqua.Location = new System.Drawing.Point(567, 392);
+            this.btnBoqua.Location = new System.Drawing.Point(504, 314);
+            this.btnBoqua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBoqua.Name = "btnBoqua";
-            this.btnBoqua.Size = new System.Drawing.Size(75, 31);
+            this.btnBoqua.Size = new System.Drawing.Size(67, 25);
             this.btnBoqua.TabIndex = 40;
             this.btnBoqua.Text = "Bỏ qua";
             this.btnBoqua.UseVisualStyleBackColor = true;
@@ -79,9 +84,10 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(440, 392);
+            this.btnLuu.Location = new System.Drawing.Point(391, 314);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 31);
+            this.btnLuu.Size = new System.Drawing.Size(67, 25);
             this.btnLuu.TabIndex = 39;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
@@ -89,9 +95,10 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(293, 392);
+            this.btnSua.Location = new System.Drawing.Point(260, 314);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 31);
+            this.btnSua.Size = new System.Drawing.Size(67, 25);
             this.btnSua.TabIndex = 38;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
@@ -99,9 +106,10 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(158, 392);
+            this.btnXoa.Location = new System.Drawing.Point(140, 314);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 31);
+            this.btnXoa.Size = new System.Drawing.Size(67, 25);
             this.btnXoa.TabIndex = 37;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -109,9 +117,10 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(40, 392);
+            this.btnThem.Location = new System.Drawing.Point(36, 314);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 31);
+            this.btnThem.Size = new System.Drawing.Size(67, 25);
             this.btnThem.TabIndex = 36;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -120,46 +129,47 @@
             // DataGridView
             // 
             this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridView.Location = new System.Drawing.Point(40, 195);
+            this.DataGridView.Location = new System.Drawing.Point(36, 156);
+            this.DataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DataGridView.Name = "DataGridView";
             this.DataGridView.RowHeadersWidth = 62;
             this.DataGridView.RowTemplate.Height = 28;
-            this.DataGridView.Size = new System.Drawing.Size(721, 169);
+            this.DataGridView.Size = new System.Drawing.Size(641, 135);
             this.DataGridView.TabIndex = 35;
             this.DataGridView.Click += new System.EventHandler(this.DataGridView_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(66, 131);
+            this.label3.Location = new System.Drawing.Point(59, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 20);
+            this.label3.Size = new System.Drawing.Size(77, 16);
             this.label3.TabIndex = 34;
             this.label3.Text = "Tên trình độ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(66, 86);
+            this.label2.Location = new System.Drawing.Point(59, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 20);
+            this.label2.Size = new System.Drawing.Size(72, 16);
             this.label2.TabIndex = 33;
             this.label2.Text = "Mã trình độ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(316, 28);
+            this.label1.Location = new System.Drawing.Point(281, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 20);
+            this.label1.Size = new System.Drawing.Size(132, 16);
             this.label1.TabIndex = 32;
             this.label1.Text = "QUẢN LÝ TRÌNH ĐỘ";
             // 
             // Trinhdo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(711, 360);
             this.Controls.Add(this.txtTentrinhdo);
             this.Controls.Add(this.txtMatrinhdo);
             this.Controls.Add(this.btnDong);
@@ -172,6 +182,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Trinhdo";
             this.Text = "Trinhdo";
             this.Load += new System.EventHandler(this.Trinhdo_Load);
