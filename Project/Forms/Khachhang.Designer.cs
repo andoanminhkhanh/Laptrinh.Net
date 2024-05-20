@@ -58,73 +58,80 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(367, 27);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(416, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(444, 38);
+            this.label1.Size = new System.Drawing.Size(351, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "DANH MỤC KHÁCH HÀNG";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(122, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 16);
+            this.label2.Size = new System.Drawing.Size(109, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mã khách hàng";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(122, 147);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 16);
+            this.label3.Size = new System.Drawing.Size(111, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tên khách hàng";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(122, 188);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 16);
+            this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Địa chỉ";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(122, 228);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 16);
+            this.label5.Size = new System.Drawing.Size(78, 20);
             this.label5.TabIndex = 4;
             this.label5.Text = "Điện thoại";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(702, 102);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 16);
+            this.label6.Size = new System.Drawing.Size(63, 20);
             this.label6.TabIndex = 5;
             this.label6.Text = "Di động";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(702, 147);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 16);
+            this.label7.Size = new System.Drawing.Size(46, 20);
             this.label7.TabIndex = 6;
             this.label7.Text = "Email";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(702, 188);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(138, 16);
+            this.label8.Size = new System.Drawing.Size(158, 20);
             this.label8.TabIndex = 7;
             this.label8.Text = "Mã lĩnh vực hoạt động";
             // 
@@ -159,7 +166,7 @@
             // cboMalvhd
             // 
             this.cboMalvhd.FormattingEnabled = true;
-            this.cboMalvhd.Location = new System.Drawing.Point(868, 179);
+            this.cboMalvhd.Location = new System.Drawing.Point(868, 182);
             this.cboMalvhd.Name = "cboMalvhd";
             this.cboMalvhd.Size = new System.Drawing.Size(157, 24);
             this.cboMalvhd.TabIndex = 15;
@@ -253,7 +260,7 @@
             // 
             // btnHopdongvietbai
             // 
-            this.btnHopdongvietbai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHopdongvietbai.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHopdongvietbai.Location = new System.Drawing.Point(31, 553);
             this.btnHopdongvietbai.Name = "btnHopdongvietbai";
             this.btnHopdongvietbai.Size = new System.Drawing.Size(234, 40);
@@ -264,7 +271,7 @@
             // 
             // btnHopdongquangcao
             // 
-            this.btnHopdongquangcao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHopdongquangcao.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHopdongquangcao.Location = new System.Drawing.Point(868, 553);
             this.btnHopdongquangcao.Name = "btnHopdongquangcao";
             this.btnHopdongquangcao.Size = new System.Drawing.Size(253, 40);
