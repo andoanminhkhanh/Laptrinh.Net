@@ -86,5 +86,60 @@ namespace Project.Class
             cmd.Dispose();
             cmd = null;
         }
+        public static void RunSqlDel(string sql)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = Function.Conn;
+            cmd.CommandText = sql;
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (System.Exception)
+            {
+                MessageBox.Show("Khong the xoa du lieu dang dung", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            cmd.Dispose();
+            cmd = null;
+        }
+        public static bool isdate(string d)
+        {
+            string[] parts = d.Split('/');
+            if ((Convert.ToInt32(parts[0]) >= 1) && (Convert.ToInt32(parts[0]) <= 31) && (Convert.ToInt32(parts[1]) >= 1) && (Convert.ToInt32(parts[1]) <= 12) && (Convert.ToInt32(parts[2]) >= 1900))
+                return true;
+            else return false;
+        }
+        public static string convertdatetime(string d)
+        {
+            string[] parts = d.Split('/');
+            string dt = string.Format("{0}/{1}/{2}", parts[1], parts[0], parts[2]);
+            return dt;
+        }
+        public static string CreateKey()
+        {
+            string lastEmployeeID = GetLastEmployeeID();
+            if (string.IsNullOrEmpty(lastEmployeeID))
+            {
+                return "NV01"; // Nếu không có nhân viên nào, bắt đầu từ NV01
+            }
+
+            // Tách phần số từ mã nhân viên
+            int numberPart = int.Parse(lastEmployeeID.Substring(2));
+            numberPart++; // Tăng số lên 1
+
+            // Tạo mã nhân viên mới
+            return "NV" + numberPart.ToString("D2"); 
+        }
+
+        private static string GetLastEmployeeID()
+        {
+            string query = "SELECT TOP 1 MaNV FROM tblNhanvien ORDER BY MaNV DESC";
+
+            SqlCommand cmd = new SqlCommand(query, Conn);
+            object result = cmd.ExecuteScalar();
+            return result != null ? result.ToString() : null;
+        }
     }
+
 }
+

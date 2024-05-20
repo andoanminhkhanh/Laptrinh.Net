@@ -59,5 +59,29 @@ namespace Project
             Forms.Trinhdo a = new Forms.Trinhdo();
             a.Show();
         }
+
+        private void mnu_Nhanvien_Click(object sender, EventArgs e)
+        {
+            Forms.Quanlynhanvien a = new Forms.Quanlynhanvien();
+            a.Show();
+        }
+
+        private void mnu_TTQC_Click(object sender, EventArgs e)
+        {
+            Forms.TTQuangcao a = new Forms.TTQuangcao();
+            a.Show();
+        }
+
+        private void mnu_banggia_Click(object sender, EventArgs e)
+        {
+            Forms.Banggia a = new Forms.Banggia();
+            a.Show();
+        }
+
+        private void phòngBanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.Phongban a = new Forms.Phongban();
+            a.Show();
+        }
     }
 }

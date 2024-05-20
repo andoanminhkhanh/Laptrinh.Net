@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\Function.cs" />
+    <Compile Include="Forms\Banggia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Banggia.Designer.cs">
+      <DependentUpon>Banggia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Báo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,18 @@
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\hdquangcao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\hdquangcao.Designer.cs">
+      <DependentUpon>hdquangcao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Hopdongquangcao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +119,12 @@
     <Compile Include="Forms\Linhvuchoatdong.Designer.cs">
       <DependentUpon>Linhvuchoatdong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Phongban.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Phongban.Designer.cs">
+      <DependentUpon>Phongban.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Quanlynhanvien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,8 +137,19 @@
     <Compile Include="Forms\Trinhdo.Designer.cs">
       <DependentUpon>Trinhdo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TTQuangcao.cs">
+      <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Forms\TTQuangcao.Designer.cs">
+      <DependentUpon>TTQuangcao.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Banggia.resx">
+      <DependentUpon>Banggia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Báo.resx">
       <DependentUpon>Báo.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,17 +165,33 @@
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\hdquangcao.resx">
+      <DependentUpon>hdquangcao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Hopdongquangcao.resx">
+      <DependentUpon>Hopdongquangcao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Khachhang.resx">
       <DependentUpon>Khachhang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Linhvuchoatdong.resx">
       <DependentUpon>Linhvuchoatdong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Phongban.resx">
+      <DependentUpon>Phongban.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Quanlynhanvien.resx">
       <DependentUpon>Quanlynhanvien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Trinhdo.resx">
       <DependentUpon>Trinhdo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TTQuangcao.resx">
+      <DependentUpon>TTQuangcao.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
