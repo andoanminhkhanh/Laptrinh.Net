@@ -1,4 +1,4 @@
-﻿namespace Project.Forms
+﻿/*namespace Project.Forms
 {
     partial class frmhopdongqc
     {
@@ -638,4 +638,4 @@
         private System.Windows.Forms.MaskedTextBox txtngaybatdau;
         private System.Windows.Forms.TextBox txtmahopdong;
     }
-}
+}*/

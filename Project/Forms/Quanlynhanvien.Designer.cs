@@ -86,6 +86,7 @@
             this.chknu.TabIndex = 57;
             this.chknu.Text = "Nữ";
             this.chknu.UseVisualStyleBackColor = true;
+            this.chknu.Click += new System.EventHandler(this.chknu_Click);
             // 
             // chknam
             // 
@@ -97,6 +98,7 @@
             this.chknam.TabIndex = 56;
             this.chknam.Text = "Nam";
             this.chknam.UseVisualStyleBackColor = true;
+            this.chknam.Click += new System.EventHandler(this.chknam_Click);
             // 
             // txtemail
             // 
