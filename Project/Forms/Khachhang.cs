@@ -173,7 +173,7 @@ namespace Project.Forms
 
         private void btnHopdongvietbai_Click(object sender, EventArgs e)
         {
-            Forms.Hopdongvietbai a = new Forms.Hopdongvietbai();
+            Forms.Hopdongbaiviet a = new Forms.Hopdongbaiviet();
             a.Show();
         }
 

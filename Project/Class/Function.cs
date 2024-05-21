@@ -16,12 +16,12 @@ namespace Project.Class
         public static string connString;
         public static void Connect()
         {
-            connString = "Data Source=DESKTOP-6P2TSJE\\SQLEXPRESS;Initial Catalog=LTNET;Integrated Security=True;Encrypt=False";
+            connString = "Data Source=LAPTOP-2RCJLQ9Q;Initial Catalog=LTNET;Integrated Security=True;Encrypt=False";
             Conn = new SqlConnection();
             Conn.ConnectionString = connString;
             Conn.Open();
         }
-        public static void Disconnect() 
+        public static void Disconnect()
         {
             if (Conn.State == System.Data.ConnectionState.Open)
             {
@@ -144,6 +144,20 @@ namespace Project.Class
             // Tạo mã nhân viên mới
             return "KH" + soPart.ToString("D2");
         }
+        public static string CreateHDKey()
+        {
+            string lastHDID = GetLastHDID();
+            if (string.IsNullOrEmpty(lastHDID))
+            {
+                return "LG01"; // Nếu không có hợp đồng nào, bắt đầu từ NV01
+            }
+            // Tách phần số từ mã nhân viên
+            int hdPart = int.Parse(lastHDID.Substring(2));
+            hdPart++; // Tăng số lên 1
+
+            // Tạo mã hợp đồng mới
+            return "LG" + hdPart.ToString("D2");
+        }
         private static string GetLastCustomerID()
         {
             string query = "SELECT TOP 1 MaKH FROM tblKhachhang ORDER BY MaKH DESC";
@@ -161,7 +175,13 @@ namespace Project.Class
             object result = cmd.ExecuteScalar();
             return result != null ? result.ToString() : null;
         }
+        private static string GetLastHDID()
+        {
+            string query = "Select TOP 1 Malangui from tblKhachguibai order by Malangui DESC";
+            SqlCommand cmd = new SqlCommand(query, Conn);
+            object result = cmd.ExecuteScalar();
+            return result != null ? result.ToString() : null;
+        }
     }
-
 }
 

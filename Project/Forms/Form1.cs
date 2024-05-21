@@ -83,5 +83,11 @@ namespace Project
             Forms.Phongban a = new Forms.Phongban();
             a.Show();
         }
+
+        private void mnuTheloai_Click(object sender, EventArgs e)
+        {
+            Forms.mnuTheloai a = new Forms.mnuTheloai();
+            a.Show();
+        }
     }
 }
