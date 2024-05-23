@@ -77,7 +77,7 @@ namespace Project.Forms
         private void load_datagridview()
         {
             string sql;
-            sql = "SELECT Mabao, tblBao.Tenbao, MaQcao, tblTTQuangcao.TenQcao, Noidung, NgayBD, NgayKT, (tblBanggia.Dongia*(NgayBD-NgayKT)) as Tongtien FROM tblKhach_Quangcao INNER JOIN tblBao ON tblKhach_Quangcao.Mabao=tblBao.Mabao INNER JOIN tblTTQuangcao ON tblKhach_Quangcao.MaQcao= tblTTQuangcao.MaQcao INNER JOIN tblBanggia ON tblBanggia.Mabao=tblKhach_Quangcao.Mabao WHERE tblKhach_Quangcao.MalanQC = N'" + txtmahopdongqc.Text + "'";
+            sql = "SELECT tblBao.Mabao, tblBao.Tenbao, tblTTQuangcao.MaQcao, tblTTQuangcao.TenQcao, Noidung, NgayBD, NgayKT, Dongia, Tongtien FROM tblKhach_Quangcao INNER JOIN tblBao ON tblKhach_Quangcao.Mabao=tblBao.Mabao INNER JOIN tblTTQuangcao ON tblKhach_Quangcao.MaQcao= tblTTQuangcao.MaQcao INNER JOIN tblBanggia ON tblBanggia.Mabao=tblKhach_Quangcao.Mabao WHERE tblKhach_Quangcao.MalanQC = N'" + txtmahopdongqc.Text + "'";
             // MessageBox.Show(Sql);
             tblHDQC = Class.Function.GetDataToTable(sql);
             DatagridView.DataSource = tblHDQC;
@@ -89,7 +89,8 @@ namespace Project.Forms
             DatagridView.Columns[4].HeaderText = "Nội dung";
             DatagridView.Columns[5].HeaderText = "Ngày bắt đầu";
             DatagridView.Columns[6].HeaderText = "Ngày kết thúc";
-            DatagridView.Columns[7].HeaderText = "Tổng tiền";
+            DatagridView.Columns[7].HeaderText = "Đơn giá";
+            DatagridView.Columns[8].HeaderText = "Tổng tiền";
             DatagridView.Columns[0].Width = 100;
             DatagridView.Columns[1].Width = 100;
             DatagridView.Columns[2].Width = 100;
@@ -98,6 +99,7 @@ namespace Project.Forms
             DatagridView.Columns[5].Width = 100;
             DatagridView.Columns[6].Width = 100;
             DatagridView.Columns[7].Width = 100;
+            DatagridView.Columns[8].Width = 200;
             DatagridView.AllowUserToAddRows = false;
             DatagridView.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
