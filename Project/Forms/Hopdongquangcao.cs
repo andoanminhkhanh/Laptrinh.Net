@@ -33,7 +33,7 @@ namespace Project.Forms
             btnluu.Enabled = false;
             btnhuy.Enabled = false;
             btnin.Enabled = false;
-            txtdongia.Text = "0";
+            
             txttongtien.Text = "0";
 
             //txtmahopdongqc.ReadOnly = true;
@@ -58,9 +58,9 @@ namespace Project.Forms
             cbomanhanvien.SelectedIndex = -1;
             Class.Function.FillCombo("select Mabao, Tenbao from tblBao ", cbomabao, "Mabao", "Tenbao");
             cbomabao.SelectedIndex = -1;
-            Class.Function.FillCombo("select MaQcao, TenQcao from tblTTQuangcao", cbomaquangcao, "Maquangcao", "Tenquangcao");
+            Class.Function.FillCombo("select MaQcao, TenQcao from tblTTQuangcao", cbomaquangcao, "MaQcao", "TenQcao");
             cbomaquangcao.SelectedIndex = -1;
-            Class.Function.FillCombo("select MalanQC from tblKhach_Quangcao", cbomahopdongqc, "Mahopdong", "MaHopdong");
+            Class.Function.FillCombo("select MalanQC from tblKhach_Quangcao", cbomahopdongqc, "MalanQC", "MalanQC");
             cbomahopdongqc.SelectedIndex = -1;
 
             //Hiển thị thông tin của một hóa đơn được gọi từ form tìm kiếm
@@ -277,7 +277,7 @@ namespace Project.Forms
         }
 
 
-        private void txtmahopdong_TextChanged(object sender, EventArgs e)
+        private void txtmahopdongqc_TextChanged(object sender, EventArgs e)
         {
 
         }
