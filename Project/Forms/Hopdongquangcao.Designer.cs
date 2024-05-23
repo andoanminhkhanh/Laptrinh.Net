@@ -406,6 +406,7 @@
             this.btnin.TabIndex = 25;
             this.btnin.Text = "In Hợp đồng";
             this.btnin.UseVisualStyleBackColor = true;
+            this.btnin.Click += new System.EventHandler(this.btnin_Click_1);
             // 
             // btnhuy
             // 
@@ -425,6 +426,7 @@
             this.btnsua.TabIndex = 23;
             this.btnsua.Text = "Sửa";
             this.btnsua.UseVisualStyleBackColor = true;
+            this.btnsua.Click += new System.EventHandler(this.btnsua_Click_1);
             // 
             // btnluu
             // 
