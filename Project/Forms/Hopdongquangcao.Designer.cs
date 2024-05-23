@@ -415,6 +415,7 @@
             this.btnhuy.TabIndex = 24;
             this.btnhuy.Text = "Hủy Hợp đồng";
             this.btnhuy.UseVisualStyleBackColor = true;
+            this.btnhuy.Click += new System.EventHandler(this.btnhuy_Click_1);
             // 
             // btnsua
             // 
@@ -433,6 +434,7 @@
             this.btnluu.TabIndex = 22;
             this.btnluu.Text = "Lưu";
             this.btnluu.UseVisualStyleBackColor = true;
+            this.btnluu.Click += new System.EventHandler(this.btnluu_Click_1);
             // 
             // btnthem
             // 
