@@ -179,8 +179,8 @@ namespace Project.Forms
 
         private void btnHopdongquangcao_Click(object sender, EventArgs e)
         {
-            Forms.Hopdongquangcao a = new Forms.Hopdongquangcao();
-            a.Show();
+            Forms.Hopdongquangcao b = new Forms.Hopdongquangcao();
+            b.Show();
         }
 
         private void btnSua_Click(object sender, EventArgs e)

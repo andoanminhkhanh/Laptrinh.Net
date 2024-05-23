@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtmahopdong = new System.Windows.Forms.TextBox();
+            this.txtmahopdongqc = new System.Windows.Forms.TextBox();
             this.cbomakhachhang = new System.Windows.Forms.ComboBox();
             this.cbomanhanvien = new System.Windows.Forms.ComboBox();
             this.btntimso = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.cbomahopdong = new System.Windows.Forms.ComboBox();
+            this.cbomahopdongqc = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.btntimkiem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -97,7 +97,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtmahopdong);
+            this.groupBox1.Controls.Add(this.txtmahopdongqc);
             this.groupBox1.Controls.Add(this.cbomakhachhang);
             this.groupBox1.Controls.Add(this.cbomanhanvien);
             this.groupBox1.Controls.Add(this.btntimso);
@@ -125,12 +125,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chung:";
             // 
-            // txtmahopdong
+            // txtmahopdongqc
             // 
-            this.txtmahopdong.Location = new System.Drawing.Point(143, 31);
-            this.txtmahopdong.Name = "txtmahopdong";
-            this.txtmahopdong.Size = new System.Drawing.Size(201, 22);
-            this.txtmahopdong.TabIndex = 29;
+            this.txtmahopdongqc.Location = new System.Drawing.Point(143, 31);
+            this.txtmahopdongqc.Name = "txtmahopdongqc";
+            this.txtmahopdongqc.Size = new System.Drawing.Size(201, 22);
+            this.txtmahopdongqc.TabIndex = 29;
             // 
             // cbomakhachhang
             // 
@@ -301,13 +301,13 @@
             this.label13.TabIndex = 2;
             this.label13.Text = "Mã Hợp đồng:";
             // 
-            // cbomahopdong
+            // cbomahopdongqc
             // 
-            this.cbomahopdong.FormattingEnabled = true;
-            this.cbomahopdong.Location = new System.Drawing.Point(164, 702);
-            this.cbomahopdong.Name = "cbomahopdong";
-            this.cbomahopdong.Size = new System.Drawing.Size(154, 24);
-            this.cbomahopdong.TabIndex = 33;
+            this.cbomahopdongqc.FormattingEnabled = true;
+            this.cbomahopdongqc.Location = new System.Drawing.Point(164, 702);
+            this.cbomahopdongqc.Name = "cbomahopdongqc";
+            this.cbomahopdongqc.Size = new System.Drawing.Size(154, 24);
+            this.cbomahopdongqc.TabIndex = 33;
             // 
             // label21
             // 
@@ -581,7 +581,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1342, 737);
-            this.Controls.Add(this.cbomahopdong);
+            this.Controls.Add(this.cbomahopdongqc);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.btntimkiem);
             this.Controls.Add(this.groupBox2);
@@ -604,7 +604,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtmahopdong;
+        private System.Windows.Forms.TextBox txtmahopdongqc;
         private System.Windows.Forms.ComboBox cbomakhachhang;
         private System.Windows.Forms.ComboBox cbomanhanvien;
         private System.Windows.Forms.Button btntimso;
@@ -625,7 +625,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox cbomahopdong;
+        private System.Windows.Forms.ComboBox cbomahopdongqc;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btntimkiem;
         private System.Windows.Forms.GroupBox groupBox2;

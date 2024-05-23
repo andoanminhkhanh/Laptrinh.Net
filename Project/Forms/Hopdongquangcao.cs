@@ -27,7 +27,7 @@ namespace Project.Forms
         private void Hopdongquangcao_Load (object sender, EventArgs e)
         {
             Function.Connect();
-            cbomahopdong.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbomahopdongqc.DropDownStyle = ComboBoxStyle.DropDownList;
 
             btnthem.Enabled = true;
             btnluu.Enabled = false;
@@ -35,37 +35,36 @@ namespace Project.Forms
             btnin.Enabled = false;
             txtdongia.Text = "0";
             txttongtien.Text = "0";
-            /*txtmahopdong.ReadOnly = true;
-            txttennhanvien.Enabled = true;
-            
-            txttenkhachhang.Enabled = false;
-            txtdiachi.Enabled = false;
-            txtdienthoai.Enabled = true;
-            txtdidong.Enabled = false;
-            txtemail.Enabled = false;
 
-            txttenbao.Enabled = true;
-            
-            txttenquangcao.ReadOnly= true;
-            txtngaybatdau.ReadOnly= true;
-            txtngayketthuc.ReadOnly= true;
-            txtdongia.ReadOnly = true;
-            txttongtien.ReadOnly = true;
-            
-            */
+            //txtmahopdongqc.ReadOnly = true;
+            //txttennhanvien.Enabled = true;
+            //txttenkhachhang.Enabled = false;
+            //txtdiachi.Enabled = false;
+            //txtdienthoai.Enabled = true;
+            //txtdidong.Enabled = false;
+            //txtemail.Enabled = false;
+            //txttenbao.Enabled = true;
+
+            //txttenquangcao.ReadOnly= true;
+            //txtngaybatdau.ReadOnly= true;
+            //txtngayketthuc.ReadOnly= true;
+            //txtdongia.ReadOnly = true;
+            //txttongtien.ReadOnly = true;
+
+
             Class.Function.FillCombo("Select MaKH, TenKH from tblKhachhang", cbomakhachhang, "MaKH", "TenKH");
             cbomakhachhang.SelectedIndex = -1;
             Class.Function.FillCombo("Select MaNV, TenNV from tblNhanvien", cbomanhanvien, "MaNV", "TenNV");
             cbomanhanvien.SelectedIndex = -1;
-            Function.FillCombo("SELECT Mabao, Tenbao FROM tblBao ", cbomabao, "Mabao", "Tenbao");
+            Class.Function.FillCombo("select Mabao, Tenbao from tblBao ", cbomabao, "Mabao", "Tenbao");
             cbomabao.SelectedIndex = -1;
-            Function.FillCombo("SELECT MaQcao, TenQcao FROM tblTTQuangcao", cbomaquangcao, "Maquangcao", "Tenquangcao");
+            Class.Function.FillCombo("select MaQcao, TenQcao from tblTTQuangcao", cbomaquangcao, "Maquangcao", "Tenquangcao");
             cbomaquangcao.SelectedIndex = -1;
-            Function.FillCombo("SELECT MalanQC FROM tblKhach_Quangcao", cbomahopdong, "Mahopdong", "Mahopdong");
-            cbomahopdong.SelectedIndex = -1;
+            Class.Function.FillCombo("select MalanQC from tblKhach_Quangcao", cbomahopdongqc, "Mahopdong", "MaHopdong");
+            cbomahopdongqc.SelectedIndex = -1;
 
             //Hiển thị thông tin của một hóa đơn được gọi từ form tìm kiếm
-            if (txtmahopdong.Text != "")
+            if (txtmahopdongqc.Text != "")
             {
                 Load_ThongtinHD();
                 btnhuy.Enabled = true;
@@ -78,7 +77,7 @@ namespace Project.Forms
         private void load_datagridview()
         {
             string sql;
-            sql = "SELECT Mabao, tblBao.Tenbao, MaQcao, tblTTQuangcao.TenQcao, Noidung, NgayBD, NgayKT, (Dongia*(NgayBD-NgayKT)) as Tongtien FROM tblKhach_Quangcao INNER JOIN tblBao ON tblKhach_Quangcao.Mabao=tblBao.Mabao INNER JOIN tblKhach_Quangcao.MaQcao=tblTTQuangcao.MaQcao INNER JOIN tblBanggia ON tblBanggia.Mabao=tblKhach_Quangcao.Mabao WHERE MalanQC = N'" + txtmahopdong.Text + "'";
+            sql = "SELECT Mabao, tblBao.Tenbao, MaQcao, tblTTQuangcao.TenQcao, Noidung, NgayBD, NgayKT, (tblBanggia.Dongia*(NgayBD-NgayKT)) as Tongtien FROM tblKhach_Quangcao INNER JOIN tblBao ON tblKhach_Quangcao.Mabao=tblBao.Mabao INNER JOIN tblTTQuangcao ON tblKhach_Quangcao.MaQcao= tblTTQuangcao.MaQcao INNER JOIN tblBanggia ON tblBanggia.Mabao=tblKhach_Quangcao.Mabao WHERE tblKhach_Quangcao.MalanQC = N'" + txtmahopdongqc.Text + "'";
             // MessageBox.Show(Sql);
             tblHDQC = Class.Function.GetDataToTable(sql);
             DatagridView.DataSource = tblHDQC;
@@ -105,9 +104,9 @@ namespace Project.Forms
         private void Load_ThongtinHD()
         {
             string str;
-            str = "SELECT MaNV FROM tblKhach_Quangcao WHERE MalanQC = N'" + txtmahopdong.Text + "'";
+            str = "SELECT MaNV FROM tblKhach_Quangcao WHERE MalanQC = N'" + txtmahopdongqc.Text + "'";
             cbomanhanvien.Text = Class.Function.GetFieldValues(str);
-            str = "SELECT MaKH FROM tblKhach_Quangcao WHERE MalanQC = N'" + txtmahopdong.Text + "'";
+            str = "SELECT MaKH FROM tblKhach_Quangcao WHERE MalanQC = N'" + txtmahopdongqc.Text + "'";
             cbomakhachhang.Text = Class.Function.GetFieldValues(str);
             if (cbomakhachhang.Text == "")
             {
@@ -137,7 +136,7 @@ namespace Project.Forms
             if (btnthem.Enabled == false)
             {
                 MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtmahopdong.Focus();
+                txtmahopdongqc.Focus();
                 return;
             }
             if (tblHDQC.Rows.Count == 0)
@@ -146,12 +145,13 @@ namespace Project.Forms
                 return;
             }
             cbomabao.Text = DatagridView.CurrentRow.Cells["Mabao"].Value.ToString();
-            cbomaquangcao.Text = DatagridView.CurrentRow.Cells["MaQcao"].Value.ToString();
+            cbomaquangcao.Text = DatagridView.CurrentRow.Cells["Maquangcao"].Value.ToString();
             txttenbao.Text = DatagridView.CurrentRow.Cells["Tenbao"].Value.ToString();
             txttenquangcao.Text = DatagridView.CurrentRow.Cells["Tenquangcao"].Value.ToString();
             txtngaybatdau.Text = DatagridView.CurrentRow.Cells["Ngaybatdau"].Value.ToString();
             txtngayketthuc.Text = DatagridView.CurrentRow.Cells["Ngayketthuc"].Value.ToString();
             txtdongia.Text = DatagridView.CurrentRow.Cells["Dongia"].Value.ToString();
+
             Load_ThongtinHD();
             btnsua.Enabled = true;
             btnhuy.Enabled = true;
@@ -159,32 +159,28 @@ namespace Project.Forms
         }
         private void btntimkiem_Click(object sender, EventArgs e)
         {
-            if (cbomahopdong.Text == "")
+            if (cbomahopdongqc.Text == "")
             {
-                MessageBox.Show("Bạn phải chọn một mã hóa đơn để tìm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbomahopdong.Focus();
+                MessageBox.Show("Bạn phải chọn một mã hợp đồng để tìm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbomahopdongqc.Focus();
                 return;
             }
-            txtmahopdong.Text = cbomahopdong.Text;
+            txtmahopdongqc.Text = cbomahopdongqc.Text;
             Load_ThongtinHD();
             load_datagridview();
             btnhuy.Enabled = true;
             btnluu.Enabled = true;
             btnin.Enabled = true;
-            cbomahopdong.SelectedIndex = -1;
+            cbomahopdongqc.SelectedIndex = -1;
 
         }
 
-        private void cboMaHDBan_DropDown(object sender, EventArgs e)
-        {
-            Function.FillCombo("SELECT MalanQC FROM tblKhach_Quangcao", cbomahopdong, "Mahopdong", "Mahopdong");
-            cbomahopdong.SelectedIndex = -1;
-        }
+        
 
 
         private void resetvalues()
         {
-            txtmahopdong.Text = "";
+            txtmahopdongqc.Text = "";
             txtngayky.Text = "";
             cbomanhanvien.Text = "";
             txttennhanvien.Text = "";
@@ -212,7 +208,7 @@ namespace Project.Forms
             btnluu.Enabled = true;
             btnin.Enabled = false;
             btnthem.Enabled = false;
-            txtmahopdong.Enabled = false;
+            txtmahopdongqc.Enabled = false;
             txtngayky.Enabled = false;
             txttennhanvien.Enabled = false;
             txttenkhachhang.Enabled = false;
@@ -226,7 +222,7 @@ namespace Project.Forms
             txtngayketthuc.Enabled = true;
 
             resetvalues();
-            txtmahopdong.Text = Class.Function.CreateHDKey();
+            txtmahopdongqc.Text = Class.Function.CreateHDKey();
             load_datagridview();
         }
 
@@ -289,15 +285,14 @@ namespace Project.Forms
         private void btnluu_Click(object sender, EventArgs e)
         {
             string sql;
-            //sql = "Select Malangui from tblKhachguibai where Malangui =N'" + txtMahopdong.Text + "'";
+            
             if (cbomanhanvien.Text.Length == 0)
             {
                 MessageBox.Show("Bạn phải nhập mã nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cbomanhanvien.Focus();
                 return;
             }
-            //if (!Class.Function.CheckKey(sql))
-            //{                
+                           
             if (cbomakhachhang.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn phải nhập mã khách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -375,7 +370,7 @@ namespace Project.Forms
                 txtdongia.Focus();
                 return;
             }
-            sql = "Insert into tblKhachguibai (Malangui, MaKH, Matheloai, Mabao, Tieude, Noidung, MaNV, Ngaydang, Nhuanbut) VALUES (N'" + txtmahopdong.Text.Trim() + "',N'" + cbomakhachhang.Text.Trim() + "',N'" + cbomabao.SelectedValue.ToString() + "','" + cbomaquangcao.SelectedValue.ToString() + "','" + txttenbao.Text.Trim() + "','" + txttenquangcao.Text.Trim() + "','" + txtngaybatdau.Text.Trim() + "','" + txtngayketthuc.Text.Trim() + "','" + cbomanhanvien.SelectedValue.ToString() + "','" + cbomakhachhang.SelectedValue.ToString() + "','" + txtdongia.Text.Trim() + "')";
+            sql = "Insert into tblKhach_Quangcao (MalanQC, MaKH, Mabao, MaNV, MaQcao, Noidung, NgayBD, NgayKT, Tongtien ) VALUES (N'" + txtmahopdongqc.Text.Trim() + "',N'" + cbomakhachhang.Text.Trim() + "',N'" + cbomabao.SelectedValue.ToString() + "','" + cbomaquangcao.SelectedValue.ToString() + "','" + txttenbao.Text.Trim() + "','" + txttenquangcao.Text.Trim() + "','" + txtngaybatdau.Text.Trim() + "','" + txtngayketthuc.Text.Trim() + "','" + cbomanhanvien.SelectedValue.ToString() + "','" + cbomakhachhang.SelectedValue.ToString() + "','" + txttongtien.Text.Trim() + "')";
             Class.Function.RunSql(sql);
             load_datagridview();
             resetvaluesHD();
@@ -411,14 +406,14 @@ namespace Project.Forms
                 MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (txtmahopdong.Text == "")
+            if (txtmahopdongqc.Text == "")
             {
                 MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if (MessageBox.Show("Bạn có chắn chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                sql = "DELETE tblKhachguibai WHERE Malangui=N'" + txtmahopdong.Text + "'";
+                sql = "DELETE tblKhachguibai WHERE Malangui=N'" + txtmahopdongqc.Text + "'";
                 Class.Function.RunSqlDel(sql);
                 load_datagridview();
                 resetvalues();
@@ -428,7 +423,7 @@ namespace Project.Forms
         private void btnsua_Click(object sender, EventArgs e)
         {
             string sql;
-            txtmahopdong.Enabled = false;
+            txtmahopdongqc.Enabled = false;
             cbomanhanvien.Enabled = false;
             cbomakhachhang.Enabled = false;
             if (tblHDQC.Rows.Count == 0)
@@ -436,7 +431,7 @@ namespace Project.Forms
                 MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (txtmahopdong.Text == "")
+            if (txtmahopdongqc.Text == "")
             {
                 MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -514,7 +509,7 @@ namespace Project.Forms
                 txtdongia.Focus();
                 return;
             }
-            sql = "UPDATE tblKhach_Quangcao SET MaKH='" + cbomakhachhang.Text.Trim().ToString() + "',Mabao=N'" + cbomabao.SelectedValue.ToString() + "',MaQcao='" + cbomaquangcao.SelectedValue.ToString() + "',Noidung='" + txtnoidung.Text.Trim().ToString() + "', MaNV='" + cbomanhanvien.SelectedValue.ToString() + "',NgayBD='" + txtngaybatdau.Text + "',NgayKT='" + txtngayketthuc.Text + "' WHERE MalanQC=N'" + txtmahopdong.Text + "'";
+            sql = "UPDATE tblKhach_Quangcao SET MaKH='" + cbomakhachhang.Text.Trim().ToString() + "',Mabao=N'" + cbomabao.SelectedValue.ToString() + "',MaQcao='" + cbomaquangcao.SelectedValue.ToString() + "',Noidung='" + txtnoidung.Text.Trim().ToString() + "', MaNV='" + cbomanhanvien.SelectedValue.ToString() + "',NgayBD='" + txtngaybatdau.Text + "',NgayKT='" + txtngayketthuc.Text + "' WHERE MalanQC=N'" + txtmahopdongqc.Text + "'";
             Class.Function.RunSql(sql);
             Load_ThongtinHD();
             load_datagridview();
