@@ -120,7 +120,7 @@ namespace Project.Forms
 
             }
             str = "Select TenKH from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
-            cbomakhachhang.Text = Function.GetFieldValues(str);
+            txttenkhachhang.Text = Function.GetFieldValues(str);
             str = "Select DiaChi from tblKhachhang where MaKH = N'" + cbomakhachhang.Text + "'";
             txtdiachi.Text = Function.GetFieldValues(str);
             str = "Select Dienthoai from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
@@ -129,7 +129,12 @@ namespace Project.Forms
             txtdidong.Text = Function.GetFieldValues(str);
             str = "Select Email from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
             txtemail.Text = Function.GetFieldValues(str);
-
+            if (cbomanhanvien.Text == "")
+            {
+                txttennhanvien.Text = "";
+            }
+            str = "Select TenNV from tblNhanvien where MaNV= N'" + cbomanhanvien.Text + "'";
+            txttennhanvien.Text =Function.GetFieldValues(str);
 
         }
 
@@ -202,7 +207,7 @@ namespace Project.Forms
             txtdongia.Text = "0";
             txttongtien.Text = "0";
         }
-        private void btnThem_Click(object sender, EventArgs e)
+        private void btnthem_Click_1(object sender, EventArgs e)
         {
             btnsua.Enabled = false;
             btnhuy.Enabled = false;
@@ -227,7 +232,7 @@ namespace Project.Forms
             load_datagridview();
         }
 
-        private void btnDong_Click(object sender, EventArgs e)
+        private void btndong_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc chắn đóng menu này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 this.Close();

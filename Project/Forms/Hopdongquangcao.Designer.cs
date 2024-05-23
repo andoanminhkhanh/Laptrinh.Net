@@ -396,6 +396,7 @@
             this.btndong.TabIndex = 26;
             this.btndong.Text = "Đóng";
             this.btndong.UseVisualStyleBackColor = true;
+            this.btndong.Click += new System.EventHandler(this.btndong_Click_1);
             // 
             // btnin
             // 
@@ -441,6 +442,7 @@
             this.btnthem.TabIndex = 21;
             this.btnthem.Text = "Thêm Hợp đồng";
             this.btnthem.UseVisualStyleBackColor = true;
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click_1);
             // 
             // DatagridView
             // 
