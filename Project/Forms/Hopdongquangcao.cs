@@ -155,6 +155,13 @@ namespace Project.Forms
             str = "Select TenQcao from tblTTQuangcao where MaQcao= N'" + cbomaquangcao.Text + "'";
             txttenquangcao.Text = Function.GetFieldValues(str);
 
+            if (cbomabao.Text == "" )
+            {
+                txtdongia.Text = "";
+            }
+            str = "Select Dongia from tblBanggia where Mabao= N'" + cbomabao.Text +"'";
+            txtdongia.Text = Function.GetFieldValues(str);
+
 
         }
 
