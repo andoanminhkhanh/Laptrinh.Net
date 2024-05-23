@@ -159,7 +159,7 @@ namespace Project.Forms
             btnhuy.Enabled = true;
             btnin.Enabled = true;
         }
-        private void btntimkiem_Click(object sender, EventArgs e)
+        private void btntimkiem_Click_1(object sender, EventArgs e)
         {
             if (cbomahopdongqc.Text == "")
             {
@@ -174,10 +174,9 @@ namespace Project.Forms
             btnluu.Enabled = true;
             btnin.Enabled = true;
             cbomahopdongqc.SelectedIndex = -1;
-
         }
 
-        
+
 
 
         private void resetvalues()
@@ -518,6 +517,8 @@ namespace Project.Forms
             resetvalues();
             btnin.Enabled = false;
         }
+
+        
     }
 }
 
