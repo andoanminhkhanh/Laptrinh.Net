@@ -33,6 +33,7 @@ namespace Project.Forms
             btnluu.Enabled = false;
             btnhuy.Enabled = false;
             btnin.Enabled = false;
+            btntinh.Enabled = false;
             
             txttongtien.Text = "0";
 
@@ -107,6 +108,7 @@ namespace Project.Forms
         private void Load_ThongtinHD()
         {
             string str;
+            
             str = "SELECT MaNV FROM tblKhach_Quangcao WHERE MalanQC = N'" + txtmahopdongqc.Text + "'";
             cbomanhanvien.Text = Class.Function.GetFieldValues(str);
             str = "SELECT MaKH FROM tblKhach_Quangcao WHERE MalanQC = N'" + txtmahopdongqc.Text + "'";
@@ -162,6 +164,12 @@ namespace Project.Forms
             }
             str = "Select Dongia from tblBanggia where Mabao= N'" + cbomabao.Text + "'";
             txtdongia.Text = Function.GetFieldValues(str);
+            if (cbomabao.Text == "")
+            {
+                txtnoidung.Text = "";
+            }
+            str = "Select Noidung from tblKhach_Quangcao where Mabao= N'" + cbomabao.Text + "'";
+            txtnoidung.Text = Function.GetFieldValues(str);
 
             if (cbomabao.Text == "")
             {
@@ -173,6 +181,7 @@ namespace Project.Forms
             txtngaybatdau.Text = Function.GetFieldValues(str);
             str = "Select NgayKT from tblKhach_Quangcao where Mabao =N'" + cbomabao.Text + "'";
             txtngayketthuc.Text = Function.GetFieldValues(str);
+
         }
 
         private void DatagridView_Click(object sender, EventArgs e)
@@ -200,6 +209,7 @@ namespace Project.Forms
             btnsua.Enabled = true;
             btnhuy.Enabled = true;
             btnin.Enabled = true;
+            btntinh.Enabled = true;
         }
         private void btntimkiem_Click_1(object sender, EventArgs e)
         {
@@ -215,6 +225,7 @@ namespace Project.Forms
             btnhuy.Enabled = true;
             btnluu.Enabled = true;
             btnin.Enabled = true;
+            btntinh.Enabled = true;
             cbomahopdongqc.SelectedIndex = -1;
         }
 
@@ -248,6 +259,7 @@ namespace Project.Forms
             btnluu.Enabled = true;
             btnin.Enabled = false;
             btnthem.Enabled = false;
+            btntinh.Enabled = true;
             txtmahopdongqc.Enabled = false;
             txtngayky.Enabled = false;
             txttennhanvien.Enabled = false;
@@ -272,10 +284,6 @@ namespace Project.Forms
                 this.Close();
         }
 
-        private void btntimso_Click(object sender, EventArgs e)
-        {
-
-        }
         private void Load_ThongtinKH()
         {
             string str;
@@ -304,11 +312,6 @@ namespace Project.Forms
 
             txtnoidung.Text = "";
             txtdongia.Text = "";
-        }
-
-        private void btnin_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnhuy_Click_1(object sender, EventArgs e)
@@ -436,6 +439,7 @@ namespace Project.Forms
             btnsua.Enabled = true;
             btnin.Enabled = false;
             btnluu.Enabled = false;
+            btntinh.Enabled = false;
         }
 
         private void btnsua_Click_1(object sender, EventArgs e)
@@ -533,6 +537,7 @@ namespace Project.Forms
             load_datagridview();
             resetvalues();
             btnin.Enabled = false;
+            btntinh.Enabled = true;
         }
 
         private void btnin_Click_1(object sender, EventArgs e)
@@ -690,6 +695,8 @@ namespace Project.Forms
             str = "Select TenQcao from tblTTQuangcao where MaQcao= N'" + cbomaquangcao.Text + "'";
             txttenquangcao.Text = Function.GetFieldValues(str);
         }
+
+        
     }
 }
 

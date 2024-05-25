@@ -132,6 +132,7 @@
             this.txtmahopdongqc.Name = "txtmahopdongqc";
             this.txtmahopdongqc.Size = new System.Drawing.Size(201, 22);
             this.txtmahopdongqc.TabIndex = 29;
+            //this.txtmahopdongqc.TextChanged += new System.EventHandler(this.txtmahopdongqc_TextChanged);
             // 
             // cbomakhachhang
             // 
