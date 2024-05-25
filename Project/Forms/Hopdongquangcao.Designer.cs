@@ -375,7 +375,7 @@
             // 
             this.txtTong.Location = new System.Drawing.Point(1053, 336);
             this.txtTong.Name = "txtTong";
-            this.txtTong.Size = new System.Drawing.Size(166, 22);
+            this.txtTong.Size = new System.Drawing.Size(154, 22);
             this.txtTong.TabIndex = 32;
             // 
             // label22
@@ -407,9 +407,9 @@
             // 
             // btntinhtien
             // 
-            this.btntinhtien.Location = new System.Drawing.Point(863, 339);
+            this.btntinhtien.Location = new System.Drawing.Point(1102, 124);
             this.btntinhtien.Name = "btntinhtien";
-            this.btntinhtien.Size = new System.Drawing.Size(90, 23);
+            this.btntinhtien.Size = new System.Drawing.Size(87, 34);
             this.btntinhtien.TabIndex = 30;
             this.btntinhtien.Text = "Tính tiền";
             this.btntinhtien.UseVisualStyleBackColor = true;
@@ -490,7 +490,7 @@
             this.DatagridView.Name = "DatagridView";
             this.DatagridView.RowHeadersWidth = 51;
             this.DatagridView.RowTemplate.Height = 24;
-            this.DatagridView.Size = new System.Drawing.Size(1110, 133);
+            this.DatagridView.Size = new System.Drawing.Size(1150, 133);
             this.DatagridView.TabIndex = 20;
             // 
             // txtnoidung
@@ -498,7 +498,7 @@
             this.txtnoidung.Location = new System.Drawing.Point(166, 123);
             this.txtnoidung.Multiline = true;
             this.txtnoidung.Name = "txtnoidung";
-            this.txtnoidung.Size = new System.Drawing.Size(989, 37);
+            this.txtnoidung.Size = new System.Drawing.Size(891, 37);
             this.txtnoidung.TabIndex = 19;
             // 
             // txtthanhtien
