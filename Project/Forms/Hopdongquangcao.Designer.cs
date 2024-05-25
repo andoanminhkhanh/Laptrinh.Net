@@ -132,7 +132,6 @@
             this.txtmahopdongqc.Name = "txtmahopdongqc";
             this.txtmahopdongqc.Size = new System.Drawing.Size(201, 22);
             this.txtmahopdongqc.TabIndex = 29;
-            //this.txtmahopdongqc.TextChanged += new System.EventHandler(this.txtmahopdongqc_TextChanged);
             // 
             // cbomakhachhang
             // 
@@ -162,6 +161,7 @@
             this.btntimso.TabIndex = 20;
             this.btntimso.Text = "Tìm số";
             this.btntimso.UseVisualStyleBackColor = true;
+            this.btntimso.Click += new System.EventHandler(this.btntimso_Click);
             // 
             // txtdienthoai
             // 

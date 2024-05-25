@@ -283,7 +283,27 @@ namespace Project.Forms
             if (MessageBox.Show("Bạn có chắc chắn đóng menu này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 this.Close();
         }
+        private void btntimso_Click(object sender, EventArgs e)
+        {
+            string sql;
+            sql = "select * from tblKhachhang where DienThoai = '" + txtdienthoai.Text + "'";
+            tblkh = Class.Function.GetDataToTable(sql);
+            if (tblkh.Rows.Count == 0)
+            {
+                MessageBox.Show("Chưa có khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbomakhachhang.Text = Function.CreateCustomerKey();
+                txttenkhachhang.Enabled = true;
+                txtdiachi.Enabled = true;
+                txtdidong.Enabled = true;
+                txtemail.Enabled = true;
 
+            }
+            else
+            {
+                MessageBox.Show("Đã có khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Load_ThongtinKH();
+            }
+        }
         private void Load_ThongtinKH()
         {
             string str;
