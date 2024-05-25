@@ -35,7 +35,7 @@ namespace Project.Forms
             btnin.Enabled = false;
             btntinhtien.Enabled = false;
             
-            txtthanhtien.Text = "0";
+            
 
             //txtmahopdongqc.ReadOnly = true;
             //txttennhanvien.Enabled = true;
@@ -79,7 +79,7 @@ namespace Project.Forms
         private void load_datagridview()
         {
             string sql;
-            sql = "SELECT tblBao.Mabao, tblBao.Tenbao, tblTTQuangcao.MaQcao, tblTTQuangcao.TenQcao, Noidung, NgayBD, NgayKT, Dongia, Tongtien FROM tblKhach_Quangcao INNER JOIN tblBao ON tblKhach_Quangcao.Mabao=tblBao.Mabao INNER JOIN tblTTQuangcao ON tblKhach_Quangcao.MaQcao= tblTTQuangcao.MaQcao INNER JOIN tblBanggia ON tblBanggia.Mabao=tblKhach_Quangcao.Mabao WHERE tblKhach_Quangcao.MalanQC = N'" + txtmahopdongqc.Text + "'";
+            sql = "SELECT tblBao.Mabao, tblBao.Tenbao, tblTTQuangcao.MaQcao, tblTTQuangcao.TenQcao, Noidung, NgayBD, NgayKT, Dongia, (tblBanggia.Dongia * DATEDIFF(day,NgayBD,NgayKT)) as Thanhtien FROM tblKhach_Quangcao INNER JOIN tblBao ON tblKhach_Quangcao.Mabao=tblBao.Mabao INNER JOIN tblTTQuangcao ON tblKhach_Quangcao.MaQcao= tblTTQuangcao.MaQcao INNER JOIN tblBanggia ON tblBanggia.Mabao=tblKhach_Quangcao.Mabao WHERE tblKhach_Quangcao.MalanQC = N'" + txtmahopdongqc.Text + "'";
             // MessageBox.Show(Sql);
             tblHDQC = Class.Function.GetDataToTable(sql);
             DatagridView.DataSource = tblHDQC;
@@ -161,15 +161,21 @@ namespace Project.Forms
             if (cbomabao.Text == "")
             {
                 txtdongia.Text = "";
+                txtthanhtien.Text = "";
             }
             str = "Select Dongia from tblBanggia where Mabao= N'" + cbomabao.Text + "'";
             txtdongia.Text = Function.GetFieldValues(str);
+            str = "select (tblBanggia.Dongia * DATEDIFF(day,NgayBD,NgayKT)) from tblKhach_Quangcao INNER JOIN tblBanggia ON tblKhach_Quangcao.Mabao = tblBanggia.Mabao where tblKhach_Quangcao.Mabao =N'" + cbomabao.Text + "'";
+            txtthanhtien.Text = Function.GetFieldValues(str);
+
             if (cbomabao.Text == "")
             {
                 txtnoidung.Text = "";
+                
             }
             str = "Select Noidung from tblKhach_Quangcao where Mabao= N'" + cbomabao.Text + "'";
             txtnoidung.Text = Function.GetFieldValues(str);
+            
 
             if (cbomabao.Text == "")
             {
@@ -181,7 +187,7 @@ namespace Project.Forms
             txtngaybatdau.Text = Function.GetFieldValues(str);
             str = "Select NgayKT from tblKhach_Quangcao where Mabao =N'" + cbomabao.Text + "'";
             txtngayketthuc.Text = Function.GetFieldValues(str);
-
+            
         }
 
         private void DatagridView_Click(object sender, EventArgs e)
