@@ -33,9 +33,9 @@ namespace Project.Forms
             btnluu.Enabled = false;
             btnhuy.Enabled = false;
             btnin.Enabled = false;
-            btntinh.Enabled = false;
+            btntinhtien.Enabled = false;
             
-            txttongtien.Text = "0";
+            txtthanhtien.Text = "0";
 
             //txtmahopdongqc.ReadOnly = true;
             //txttennhanvien.Enabled = true;
@@ -92,7 +92,7 @@ namespace Project.Forms
             DatagridView.Columns[5].HeaderText = "Ngày bắt đầu";
             DatagridView.Columns[6].HeaderText = "Ngày kết thúc";
             DatagridView.Columns[7].HeaderText = "Đơn giá";
-            DatagridView.Columns[8].HeaderText = "Tổng tiền";
+            DatagridView.Columns[8].HeaderText = "Thành tiền";
             DatagridView.Columns[0].Width = 100;
             DatagridView.Columns[1].Width = 100;
             DatagridView.Columns[2].Width = 100;
@@ -209,7 +209,7 @@ namespace Project.Forms
             btnsua.Enabled = true;
             btnhuy.Enabled = true;
             btnin.Enabled = true;
-            btntinh.Enabled = true;
+            btntinhtien.Enabled = true;
         }
         private void btntimkiem_Click_1(object sender, EventArgs e)
         {
@@ -225,7 +225,7 @@ namespace Project.Forms
             btnhuy.Enabled = true;
             btnluu.Enabled = true;
             btnin.Enabled = true;
-            btntinh.Enabled = true;
+            btntinhtien.Enabled = true;
             cbomahopdongqc.SelectedIndex = -1;
         }
 
@@ -250,7 +250,7 @@ namespace Project.Forms
             txtngaybatdau.Text = "";
             txtngayketthuc.Text = "";
             txtdongia.Text = "0";
-            txttongtien.Text = "0";
+            txtthanhtien.Text = "0";
         }
         private void btnthem_Click_1(object sender, EventArgs e)
         {
@@ -259,7 +259,7 @@ namespace Project.Forms
             btnluu.Enabled = true;
             btnin.Enabled = false;
             btnthem.Enabled = false;
-            btntinh.Enabled = true;
+            btntinhtien.Enabled = true;
             txtmahopdongqc.Enabled = false;
             txtngayky.Enabled = false;
             txttennhanvien.Enabled = false;
@@ -450,7 +450,7 @@ namespace Project.Forms
                 txtdongia.Focus();
                 return;
             }
-            sql = "Insert into tblKhach_Quangcao (MalanQC, MaKH, Mabao, MaNV, MaQcao, Noidung, NgayBD, NgayKT, Tongtien ) VALUES (N'" + txtmahopdongqc.Text.Trim() + "',N'" + cbomakhachhang.Text.Trim() + "',N'" + cbomabao.SelectedValue.ToString() + "','" + cbomaquangcao.SelectedValue.ToString() + "','" + txttenbao.Text.Trim() + "','" + txttenquangcao.Text.Trim() + "','" + txtngaybatdau.Text.Trim() + "','" + txtngayketthuc.Text.Trim() + "','" + cbomanhanvien.SelectedValue.ToString() + "','" + cbomakhachhang.SelectedValue.ToString() + "','" + txttongtien.Text.Trim() + "')";
+            sql = "Insert into tblKhach_Quangcao (MalanQC, MaKH, Mabao, MaNV, MaQcao, Noidung, NgayBD, NgayKT, Tongtien ) VALUES (N'" + txtmahopdongqc.Text.Trim() + "',N'" + cbomakhachhang.Text.Trim() + "',N'" + cbomabao.SelectedValue.ToString() + "','" + cbomaquangcao.SelectedValue.ToString() + "','" + txttenbao.Text.Trim() + "','" + txttenquangcao.Text.Trim() + "','" + txtngaybatdau.Text.Trim() + "','" + txtngayketthuc.Text.Trim() + "','" + cbomanhanvien.SelectedValue.ToString() + "','" + cbomakhachhang.SelectedValue.ToString() + "','" + txtthanhtien.Text.Trim() + "')";
             Class.Function.RunSql(sql);
             load_datagridview();
             resetvaluesHD();
@@ -459,7 +459,7 @@ namespace Project.Forms
             btnsua.Enabled = true;
             btnin.Enabled = false;
             btnluu.Enabled = false;
-            btntinh.Enabled = false;
+            btntinhtien.Enabled = false;
         }
 
         private void btnsua_Click_1(object sender, EventArgs e)
@@ -557,7 +557,7 @@ namespace Project.Forms
             load_datagridview();
             resetvalues();
             btnin.Enabled = false;
-            btntinh.Enabled = true;
+            btntinhtien.Enabled = true;
         }
 
         private void btnin_Click_1(object sender, EventArgs e)
@@ -656,8 +656,6 @@ namespace Project.Forms
             exApp.Visible = true;
         }
 
-        
-
         private void cbomanhanvien_TextChanged(object sender, EventArgs e)
         {
             string str;
@@ -717,6 +715,7 @@ namespace Project.Forms
         }
 
         
+
     }
 }
 
