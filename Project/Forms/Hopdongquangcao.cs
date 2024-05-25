@@ -33,7 +33,7 @@ namespace Project.Forms
             btnluu.Enabled = false;
             btnhuy.Enabled = false;
             btnin.Enabled = false;
-            btntinhtien.Enabled = false;
+            btntinhtien.Enabled = true;
             
             
 
