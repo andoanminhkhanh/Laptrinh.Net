@@ -52,16 +52,17 @@ namespace Project.Forms
             //txttongtien.ReadOnly = true;
 
 
-            Class.Function.FillCombo("Select MaKH, TenKH from tblKhachhang", cbomakhachhang, "MaKH", "TenKH");
+            Class.Function.FillCombo("Select MaKH from tblKhachhang", cbomakhachhang, "MaKH", "MaKH");
             cbomakhachhang.SelectedIndex = -1;
-            Class.Function.FillCombo("Select MaNV, TenNV from tblNhanvien", cbomanhanvien, "MaNV", "TenNV");
+            Class.Function.FillCombo("Select MaNV from tblNhanvien", cbomanhanvien, "MaNV", "MaNV");
             cbomanhanvien.SelectedIndex = -1;
-            Class.Function.FillCombo("select Mabao, Tenbao from tblBao ", cbomabao, "Mabao", "Tenbao");
+            Class.Function.FillCombo("select Mabao from tblBao ", cbomabao, "Mabao", "Mabao");
             cbomabao.SelectedIndex = -1;
-            Class.Function.FillCombo("select MaQcao, TenQcao from tblTTQuangcao", cbomaquangcao, "MaQcao", "TenQcao");
+            Class.Function.FillCombo("select MaQcao from tblTTQuangcao", cbomaquangcao, "MaQcao", "MaQcao");
             cbomaquangcao.SelectedIndex = -1;
             Class.Function.FillCombo("select MalanQC from tblKhach_Quangcao", cbomahopdongqc, "MalanQC", "MalanQC");
             cbomahopdongqc.SelectedIndex = -1;
+            
 
             //Hiển thị thông tin của một hóa đơn được gọi từ form tìm kiếm
             if (txtmahopdongqc.Text != "")
@@ -139,7 +140,7 @@ namespace Project.Forms
                 txttennhanvien.Text = "";
             }
             str = "Select TenNV from tblNhanvien where MaNV= N'" + cbomanhanvien.Text + "'";
-            txttennhanvien.Text =Function.GetFieldValues(str);
+            txttennhanvien.Text = Function.GetFieldValues(str);
 
             if (cbomabao.Text == "")
             {
@@ -155,14 +156,23 @@ namespace Project.Forms
             str = "Select TenQcao from tblTTQuangcao where MaQcao= N'" + cbomaquangcao.Text + "'";
             txttenquangcao.Text = Function.GetFieldValues(str);
 
-            if (cbomabao.Text == "" )
+            if (cbomabao.Text == "")
             {
                 txtdongia.Text = "";
             }
-            str = "Select Dongia from tblBanggia where Mabao= N'" + cbomabao.Text +"'";
+            str = "Select Dongia from tblBanggia where Mabao= N'" + cbomabao.Text + "'";
             txtdongia.Text = Function.GetFieldValues(str);
 
+            if (cbomabao.Text == "")
+            {
+                txtngaybatdau.Text = "";
+                txtngayketthuc.Text = "";
 
+            }
+            str = "Select NgayBD from tblKhach_Quangcao where Mabao = N'" + cbomabao.Text + "'";
+            txtngaybatdau.Text = Function.GetFieldValues(str);
+            str = "Select NgayKT from tblKhach_Quangcao where Mabao =N'" + cbomabao.Text + "'";
+            txtngayketthuc.Text = Function.GetFieldValues(str);
         }
 
         private void DatagridView_Click(object sender, EventArgs e)
@@ -208,9 +218,6 @@ namespace Project.Forms
             cbomahopdongqc.SelectedIndex = -1;
         }
 
-
-
-
         private void resetvalues()
         {
             txtmahopdongqc.Text = "";
@@ -253,7 +260,7 @@ namespace Project.Forms
             txttenquangcao.Enabled = true;
             txtngaybatdau.Enabled = true;
             txtngayketthuc.Enabled = true;
-
+           
             resetvalues();
             txtmahopdongqc.Text = Class.Function.CreateHDKey();
             load_datagridview();
@@ -267,29 +274,7 @@ namespace Project.Forms
 
         private void btntimso_Click(object sender, EventArgs e)
         {
-            string sql;
-            sql = "select MaKH, TenKH, DiaChi, Didong, Email from tblKhachhang where DienThoai = '" + txtdienthoai.Text + "'";
-            tblkh = Class.Function.GetDataToTable(sql);
-            if (tblkh.Rows.Count == 0)
-            {
-                MessageBox.Show("Chưa có khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbomakhachhang.Text = Function.CreateCustomerKey();
-                txttenkhachhang.Enabled = true;
-                txtdiachi.Enabled = true;
-                txtdidong.Enabled = true;
-                txtemail.Enabled = true;
-                txtnoidung.Enabled = true;
-                txttenbao.Enabled = true;
-                txttenquangcao.Enabled = true;
-                txtdongia.Enabled = true;
-                txtngaybatdau.Enabled = true;
-                txtngayketthuc.Enabled = true;
-            }
-            else
-            {
-                MessageBox.Show("Đã có khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Load_ThongtinKH();
-            }
+
         }
         private void Load_ThongtinKH()
         {
@@ -307,11 +292,6 @@ namespace Project.Forms
 
         }
 
-
-        private void txtmahopdongqc_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void resetvaluesHD()
         {
@@ -649,6 +629,66 @@ namespace Project.Forms
             //exRange.Range["A6:C6"].Value = tblThongtinHD.Rows[0][6];
             exSheet.Name = "Hợp đồng quảng cáo";
             exApp.Visible = true;
+        }
+
+        
+
+        private void cbomanhanvien_TextChanged(object sender, EventArgs e)
+        {
+            string str;
+            if (cbomanhanvien.Text == "")
+            {
+                txttennhanvien.Text = "";
+            }
+            str = "Select TenNV from tblNhanvien where MaNV= N'" + cbomanhanvien.Text + "'";
+            txttennhanvien.Text = Function.GetFieldValues(str);
+        }
+
+        private void cbomakhachhang_TextChanged(object sender, EventArgs e)
+        {
+            string str;
+            if (cbomakhachhang.Text == "")
+            {
+                txttenkhachhang.Text = "";
+                txtdiachi.Text = "";
+                txtdienthoai.Text = "";
+                txtdidong.Text = "";
+                txtemail.Text = "";
+
+            }
+            str = "Select TenKH from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
+            txttenkhachhang.Text = Function.GetFieldValues(str);
+            str = "Select DiaChi from tblKhachhang where MaKH = N'" + cbomakhachhang.Text + "'";
+            txtdiachi.Text = Function.GetFieldValues(str);
+            str = "Select Dienthoai from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
+            txtdienthoai.Text = Function.GetFieldValues(str);
+            str = "Select Didong from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
+            txtdidong.Text = Function.GetFieldValues(str);
+            str = "Select Email from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
+            txtemail.Text = Function.GetFieldValues(str);
+        }
+
+        private void cbomabao_TextChanged(object sender, EventArgs e)
+        {
+            string str;
+            if (cbomabao.Text == "")
+            {
+                txttenbao.Text = "";
+            }
+            str = "Select Tenbao from tblBao where Mabao= N'" + cbomabao.Text + "'";
+            txttenbao.Text = Function.GetFieldValues(str);
+            
+        }
+
+        private void cbomaquangcao_TextChanged(object sender, EventArgs e)
+        {
+            string str;
+            if (cbomaquangcao.Text == "")
+            {
+                txttenquangcao.Text = "";
+            }
+            str = "Select TenQcao from tblTTQuangcao where MaQcao= N'" + cbomaquangcao.Text + "'";
+            txttenquangcao.Text = Function.GetFieldValues(str);
         }
     }
 }
