@@ -144,6 +144,8 @@ namespace Project.Forms
             str = "Select TenNV from tblNhanvien where MaNV= N'" + cbomanhanvien.Text + "'";
             txttennhanvien.Text = Function.GetFieldValues(str);
 
+            str = "SELECT SUM(tblBanggia.Dongia * DATEDIFF(day, tblKhach_Quangcao.NgayBD, tblKhach_Quangcao.NgayKT)) AS Tongtien FROM tblKhach_Quangcao INNER JOIN tblBanggia ON tblKhach_Quangcao.Mabao = tblBanggia.Mabao where MalanQC = N'" + txtmahopdongqc.Text + "'";
+            txtTong.Text = Function.GetFieldValues(str);
             //if (cbomabao.Text == "")
             //{
             //    txttenbao.Text = "";
@@ -171,11 +173,11 @@ namespace Project.Forms
             //if (cbomabao.Text == "")
             //{
             //    txtnoidung.Text = "";
-                
+
             //}
             //str = "Select Noidung from tblKhach_Quangcao where Mabao= N'" + cbomabao.Text + "'";
             //txtnoidung.Text = Function.GetFieldValues(str);
-            
+
 
             //if (cbomabao.Text == "")
             //{
@@ -187,7 +189,7 @@ namespace Project.Forms
             //txtngaybatdau.Text = Function.GetFieldValues(str);
             //str = "Select NgayKT from tblKhach_Quangcao where Mabao =N'" + cbomabao.Text + "'";
             //txtngayketthuc.Text = Function.GetFieldValues(str);
-            
+
         }
         private void DatagridView_Click_1(object sender, EventArgs e)
         {
