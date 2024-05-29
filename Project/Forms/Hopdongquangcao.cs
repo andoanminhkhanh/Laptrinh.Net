@@ -281,12 +281,12 @@ namespace Project.Forms
             txtmahopdongqc.Enabled = false;
             txtngayky.Enabled = false;
             txttennhanvien.Enabled = false;
-            txttenkhachhang.Enabled = false;
+            txttenkhachhang.Enabled = true;
             txtdienthoai.Enabled = true;
-            txtdiachi.Enabled = false;
-            txtdidong.Enabled = false;
-            txtemail.Enabled = false;
-            txtmalvhd.Enabled = false;
+            txtdiachi.Enabled = true;
+            txtdidong.Enabled = true;
+            txtemail.Enabled = true;
+            txtmalvhd.Enabled = true;
             txttenbao.Enabled = true;
             txttenquangcao.Enabled = true;
             txtngaybatdau.Enabled = true;
