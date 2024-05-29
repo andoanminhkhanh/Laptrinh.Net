@@ -83,6 +83,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.lblLVHD = new System.Windows.Forms.Label();
+            this.txtmalvhd = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatagridView)).BeginInit();
@@ -100,6 +102,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtmalvhd);
+            this.groupBox1.Controls.Add(this.lblLVHD);
             this.groupBox1.Controls.Add(this.txtmahopdongqc);
             this.groupBox1.Controls.Add(this.cbomakhachhang);
             this.groupBox1.Controls.Add(this.cbomanhanvien);
@@ -620,6 +624,23 @@
             this.label12.TabIndex = 1;
             this.label12.Text = "Mã Báo:";
             // 
+            // lblLVHD
+            // 
+            this.lblLVHD.AutoSize = true;
+            this.lblLVHD.Location = new System.Drawing.Point(861, 95);
+            this.lblLVHD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLVHD.Name = "lblLVHD";
+            this.lblLVHD.Size = new System.Drawing.Size(70, 16);
+            this.lblLVHD.TabIndex = 37;
+            this.lblLVHD.Text = "Mã LVHĐ: ";
+            // 
+            // txtmalvhd
+            // 
+            this.txtmalvhd.Location = new System.Drawing.Point(966, 95);
+            this.txtmalvhd.Name = "txtmalvhd";
+            this.txtmalvhd.Size = new System.Drawing.Size(201, 22);
+            this.txtmalvhd.TabIndex = 38;
+            // 
             // Hopdongquangcao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -701,5 +722,7 @@
         private System.Windows.Forms.Button btntinhtien;
         private System.Windows.Forms.TextBox txtTong;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label lblLVHD;
+        private System.Windows.Forms.TextBox txtmalvhd;
     }
 }
