@@ -113,10 +113,10 @@ namespace Project.Forms
             cbomanhanvien.Text = Class.Function.GetFieldValues(str);
             str = "SELECT MaKH FROM tblKhach_Quangcao WHERE MalanQC = N'" + txtmahopdongqc.Text + "'";
             cbomakhachhang.Text = Class.Function.GetFieldValues(str);
-            str = "SELECT Mabao FROM tblKhach_Quangcao WHERE MalanQC = N'" + txtmahopdongqc.Text + "'";
-            cbomabao.Text = Class.Function.GetFieldValues(str);
-            str = "SELECT MaQcao FROM tblKhach_Quangcao WHERE MalanQC = N'" + txtmahopdongqc.Text + "'";
-            cbomaquangcao.Text = Class.Function.GetFieldValues(str);
+            //str = "SELECT Mabao FROM tblKhach_Quangcao WHERE MalanQC = N'" + txtmahopdongqc.Text + "'";
+            //cbomabao.Text = Class.Function.GetFieldValues(str);
+            //str = "SELECT MaQcao FROM tblKhach_Quangcao WHERE MalanQC = N'" + txtmahopdongqc.Text + "'";
+            //cbomaquangcao.Text = Class.Function.GetFieldValues(str);
             if (cbomakhachhang.Text == "")
             {
                 txttenkhachhang.Text = "";
@@ -144,53 +144,52 @@ namespace Project.Forms
             str = "Select TenNV from tblNhanvien where MaNV= N'" + cbomanhanvien.Text + "'";
             txttennhanvien.Text = Function.GetFieldValues(str);
 
-            if (cbomabao.Text == "")
-            {
-                txttenbao.Text = "";
-            }
-            str = "Select Tenbao from tblBao where Mabao= N'" + cbomabao.Text + "'";
-            txttenbao.Text = Function.GetFieldValues(str);
+            //if (cbomabao.Text == "")
+            //{
+            //    txttenbao.Text = "";
+            //}
+            //str = "Select Tenbao from tblBao where Mabao= N'" + cbomabao.Text + "'";
+            //txttenbao.Text = Function.GetFieldValues(str);
 
-            if (cbomaquangcao.Text == "")
-            {
-                txttenquangcao.Text = "";
-            }
-            str = "Select TenQcao from tblTTQuangcao where MaQcao= N'" + cbomaquangcao.Text + "'";
-            txttenquangcao.Text = Function.GetFieldValues(str);
+            //if (cbomaquangcao.Text == "")
+            //{
+            //    txttenquangcao.Text = "";
+            //}
+            //str = "Select TenQcao from tblTTQuangcao where MaQcao= N'" + cbomaquangcao.Text + "'";
+            //txttenquangcao.Text = Function.GetFieldValues(str);
 
-            if (cbomabao.Text == "")
-            {
-                txtdongia.Text = "";
-                txtthanhtien.Text = "";
-            }
-            str = "Select Dongia from tblBanggia where Mabao= N'" + cbomabao.Text + "'";
-            txtdongia.Text = Function.GetFieldValues(str);
-            str = "select (tblBanggia.Dongia * DATEDIFF(day,NgayBD,NgayKT)) from tblKhach_Quangcao INNER JOIN tblBanggia ON tblKhach_Quangcao.Mabao = tblBanggia.Mabao where tblKhach_Quangcao.Mabao =N'" + cbomabao.Text + "'";
-            txtthanhtien.Text = Function.GetFieldValues(str);
+            //if (cbomabao.Text == "")
+            //{
+            //    txtdongia.Text = "";
+            //    txtthanhtien.Text = "";
+            //}
+            //str = "Select Dongia from tblBanggia where Mabao= N'" + cbomabao.Text + "'";
+            //txtdongia.Text = Function.GetFieldValues(str);
+            //str = "select (tblBanggia.Dongia * DATEDIFF(day,NgayBD,NgayKT)) from tblKhach_Quangcao INNER JOIN tblBanggia ON tblKhach_Quangcao.Mabao = tblBanggia.Mabao where tblKhach_Quangcao.Mabao =N'" + cbomabao.Text + "'";
+            //txtthanhtien.Text = Function.GetFieldValues(str);
 
-            if (cbomabao.Text == "")
-            {
-                txtnoidung.Text = "";
+            //if (cbomabao.Text == "")
+            //{
+            //    txtnoidung.Text = "";
                 
-            }
-            str = "Select Noidung from tblKhach_Quangcao where Mabao= N'" + cbomabao.Text + "'";
-            txtnoidung.Text = Function.GetFieldValues(str);
+            //}
+            //str = "Select Noidung from tblKhach_Quangcao where Mabao= N'" + cbomabao.Text + "'";
+            //txtnoidung.Text = Function.GetFieldValues(str);
             
 
-            if (cbomabao.Text == "")
-            {
-                txtngaybatdau.Text = "";
-                txtngayketthuc.Text = "";
+            //if (cbomabao.Text == "")
+            //{
+            //    txtngaybatdau.Text = "";
+            //    txtngayketthuc.Text = "";
 
-            }
-            str = "Select NgayBD from tblKhach_Quangcao where Mabao = N'" + cbomabao.Text + "'";
-            txtngaybatdau.Text = Function.GetFieldValues(str);
-            str = "Select NgayKT from tblKhach_Quangcao where Mabao =N'" + cbomabao.Text + "'";
-            txtngayketthuc.Text = Function.GetFieldValues(str);
+            //}
+            //str = "Select NgayBD from tblKhach_Quangcao where Mabao = N'" + cbomabao.Text + "'";
+            //txtngaybatdau.Text = Function.GetFieldValues(str);
+            //str = "Select NgayKT from tblKhach_Quangcao where Mabao =N'" + cbomabao.Text + "'";
+            //txtngayketthuc.Text = Function.GetFieldValues(str);
             
         }
-
-        private void DatagridView_Click(object sender, EventArgs e)
+        private void DatagridView_Click_1(object sender, EventArgs e)
         {
             if (btnthem.Enabled == false)
             {
@@ -204,12 +203,14 @@ namespace Project.Forms
                 return;
             }
             cbomabao.Text = DatagridView.CurrentRow.Cells["Mabao"].Value.ToString();
-            cbomaquangcao.Text = DatagridView.CurrentRow.Cells["Maquangcao"].Value.ToString();
             txttenbao.Text = DatagridView.CurrentRow.Cells["Tenbao"].Value.ToString();
-            txttenquangcao.Text = DatagridView.CurrentRow.Cells["Tenquangcao"].Value.ToString();
-            txtngaybatdau.Text = DatagridView.CurrentRow.Cells["Ngaybatdau"].Value.ToString();
-            txtngayketthuc.Text = DatagridView.CurrentRow.Cells["Ngayketthuc"].Value.ToString();
+            cbomaquangcao.Text = DatagridView.CurrentRow.Cells["MaQcao"].Value.ToString();
+            txttenquangcao.Text = DatagridView.CurrentRow.Cells["TenQcao"].Value.ToString();
+            txtnoidung.Text = DatagridView.CurrentRow.Cells["Noidung"].Value.ToString();
+            txtngaybatdau.Text = DatagridView.CurrentRow.Cells["NgayBD"].Value.ToString();
+            txtngayketthuc.Text = DatagridView.CurrentRow.Cells["NgayKT"].Value.ToString();
             txtdongia.Text = DatagridView.CurrentRow.Cells["Dongia"].Value.ToString();
+            txtthanhtien.Text = DatagridView.CurrentRow.Cells["Thanhtien"].Value.ToString();
 
             Load_ThongtinHD();
             btnsua.Enabled = true;
@@ -217,6 +218,8 @@ namespace Project.Forms
             btnin.Enabled = true;
             btntinhtien.Enabled = true;
         }
+
+
         private void btntimkiem_Click_1(object sender, EventArgs e)
         {
             if (cbomahopdongqc.Text == "")
@@ -706,7 +709,7 @@ namespace Project.Forms
             }
             str = "Select Tenbao from tblBao where Mabao= N'" + cbomabao.Text + "'";
             txttenbao.Text = Function.GetFieldValues(str);
-            
+
         }
 
         private void cbomaquangcao_TextChanged(object sender, EventArgs e)
@@ -721,7 +724,6 @@ namespace Project.Forms
         }
 
         
-
     }
 }
 

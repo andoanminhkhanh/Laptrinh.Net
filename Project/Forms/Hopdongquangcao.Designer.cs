@@ -492,6 +492,7 @@
             this.DatagridView.RowTemplate.Height = 24;
             this.DatagridView.Size = new System.Drawing.Size(1150, 133);
             this.DatagridView.TabIndex = 20;
+            this.DatagridView.Click += new System.EventHandler(this.DatagridView_Click_1);
             // 
             // txtnoidung
             // 
