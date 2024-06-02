@@ -183,6 +183,28 @@ namespace Project.Class
             object result = cmd.ExecuteScalar();
             return result != null ? result.ToString() : null;
         }
+        public static string CreateHDQCKey()
+        {
+            string lastHDQCID = GetLastHDQCID();
+            if (string.IsNullOrEmpty(lastHDQCID))
+            {
+                return "LQC01";
+            }
+            
+            int hdqcPart = int.Parse(lastHDQCID.Substring(2));
+            hdqcPart++; // Tăng số lên 1
+
+            
+            return "LQC" + hdqcPart.ToString("D2");
+        }
+        private static string GetLastHDQCID()
+        {
+            string query = "SELECT TOP 1 MalanQC FROM tblKhach_Quangcao ORDER BY MalanQC DESC";
+
+            SqlCommand cmd = new SqlCommand(query, Conn);
+            object result = cmd.ExecuteScalar();
+            return result != null ? result.ToString() : null;
+        }
     }
 
 }
