@@ -191,7 +191,7 @@ namespace Project.Class
                 return "LQC01";
             }
             
-            int hdqcPart = int.Parse(lastHDQCID.Substring(2));
+            int hdqcPart = int.Parse(lastHDQCID.Substring(3));
             hdqcPart++; // Tăng số lên 1
 
             

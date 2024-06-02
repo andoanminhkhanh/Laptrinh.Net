@@ -310,7 +310,7 @@ namespace Project.Forms
             txtngayketthuc.Enabled = true;
            
             resetvalues();
-            txtmahopdongqc.Text = Class.Function.CreateHDKey();
+            txtmahopdongqc.Text = Class.Function.CreateHDQCKey();
             load_datagridview();
         }
 
