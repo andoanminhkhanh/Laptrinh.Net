@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblLVHD = new System.Windows.Forms.Label();
             this.txtmahopdongqc = new System.Windows.Forms.TextBox();
             this.cbomakhachhang = new System.Windows.Forms.ComboBox();
             this.cbomanhanvien = new System.Windows.Forms.ComboBox();
@@ -83,8 +84,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.lblLVHD = new System.Windows.Forms.Label();
-            this.txtmalvhd = new System.Windows.Forms.TextBox();
+            this.cbomalvhd = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatagridView)).BeginInit();
@@ -102,7 +102,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtmalvhd);
+            this.groupBox1.Controls.Add(this.cbomalvhd);
             this.groupBox1.Controls.Add(this.lblLVHD);
             this.groupBox1.Controls.Add(this.txtmahopdongqc);
             this.groupBox1.Controls.Add(this.cbomakhachhang);
@@ -131,6 +131,16 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chung:";
+            // 
+            // lblLVHD
+            // 
+            this.lblLVHD.AutoSize = true;
+            this.lblLVHD.Location = new System.Drawing.Point(861, 95);
+            this.lblLVHD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLVHD.Name = "lblLVHD";
+            this.lblLVHD.Size = new System.Drawing.Size(70, 16);
+            this.lblLVHD.TabIndex = 37;
+            this.lblLVHD.Text = "Mã LVHĐ: ";
             // 
             // txtmahopdongqc
             // 
@@ -624,22 +634,13 @@
             this.label12.TabIndex = 1;
             this.label12.Text = "Mã Báo:";
             // 
-            // lblLVHD
+            // cbomalvhd
             // 
-            this.lblLVHD.AutoSize = true;
-            this.lblLVHD.Location = new System.Drawing.Point(861, 95);
-            this.lblLVHD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblLVHD.Name = "lblLVHD";
-            this.lblLVHD.Size = new System.Drawing.Size(70, 16);
-            this.lblLVHD.TabIndex = 37;
-            this.lblLVHD.Text = "Mã LVHĐ: ";
-            // 
-            // txtmalvhd
-            // 
-            this.txtmalvhd.Location = new System.Drawing.Point(966, 95);
-            this.txtmalvhd.Name = "txtmalvhd";
-            this.txtmalvhd.Size = new System.Drawing.Size(201, 22);
-            this.txtmalvhd.TabIndex = 38;
+            this.cbomalvhd.FormattingEnabled = true;
+            this.cbomalvhd.Location = new System.Drawing.Point(966, 92);
+            this.cbomalvhd.Name = "cbomalvhd";
+            this.cbomalvhd.Size = new System.Drawing.Size(201, 24);
+            this.cbomalvhd.TabIndex = 38;
             // 
             // Hopdongquangcao
             // 
@@ -723,6 +724,6 @@
         private System.Windows.Forms.TextBox txtTong;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label lblLVHD;
-        private System.Windows.Forms.TextBox txtmalvhd;
+        private System.Windows.Forms.ComboBox cbomalvhd;
     }
 }

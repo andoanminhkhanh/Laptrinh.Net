@@ -52,12 +52,15 @@ namespace Project.Forms
             //txtdongia.ReadOnly = true;
             //txttongtien.ReadOnly = true;
 
-
+            //Thong tin chung
             Class.Function.FillCombo("Select MaKH from tblKhachhang", cbomakhachhang, "MaKH", "MaKH");
             cbomakhachhang.SelectedIndex = -1;
             Class.Function.FillCombo("Select MaNV from tblNhanvien", cbomanhanvien, "MaNV", "MaNV");
             cbomanhanvien.SelectedIndex = -1;
-            
+            Class.Function.FillCombo("Select MaLVHD from tblLinhvuchoatdong", cbomalvhd, "Malvhd", "Malvhd");
+            cbomalvhd.SelectedIndex = -1;
+
+            //Thong tin chi tiet
             Class.Function.FillCombo("select Mabao from tblBao ", cbomabao, "Mabao", "Mabao");
             cbomabao.SelectedIndex = -1;
             Class.Function.FillCombo("select MaQcao from tblTTQuangcao", cbomaquangcao, "MaQcao", "MaQcao");
@@ -125,7 +128,7 @@ namespace Project.Forms
                 txtdienthoai.Text = "";
                 txtdidong.Text = "";
                 txtemail.Text = "";
-                txtmalvhd.Text = "";
+                cbomalvhd.Text = "";
 
             }
             str = "Select TenKH from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
@@ -138,8 +141,8 @@ namespace Project.Forms
             txtdidong.Text = Function.GetFieldValues(str);
             str = "Select Email from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
             txtemail.Text = Function.GetFieldValues(str);
-            str = "Select MaLVHD from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
-            txtmalvhd.Text = Function.GetFieldValues(str);
+            str = "Select tblLinhvuchoatdong.MaLVHD from tblLinhvuchoatdong inner join tblKhachhang on tblLinhvuchoatdong.MaLVHD = tblKhachhang.MaLVHD where MaKH= N'" + cbomakhachhang.Text + "'";
+            cbomalvhd.Text = Function.GetFieldValues(str);
 
 
             if (cbomanhanvien.Text == "")
@@ -243,6 +246,7 @@ namespace Project.Forms
             btnin.Enabled = true;
             btntinhtien.Enabled = true;
             cbomahopdongqc.SelectedIndex = -1;
+            resetvaluesHD();
         }
 
         private void resetvalues()
@@ -257,7 +261,7 @@ namespace Project.Forms
             txtemail.Text = "";
             txtdidong.Text = "";
             txtdienthoai.Text = "";
-            txtmalvhd.Text = "";
+            cbomalvhd.Text = "";
 
             cbomabao.Text = "";
             cbomaquangcao.Text = "";
@@ -269,6 +273,19 @@ namespace Project.Forms
             txtdongia.Text = "0";
             txtthanhtien.Text = "0";
             txtTong.Text= "0";
+        }
+        private void resetvaluesHD()
+        {
+            cbomabao.Text = "";
+            txttenbao.Text = "";
+            cbomaquangcao.Text = "";
+            txttenquangcao.Text = "";
+            txtngaybatdau.Text = "  /  /";
+            txtngayketthuc.Text = "  /  /";
+            txtnoidung.Text = "";
+            txtdongia.Text = "";
+            txtthanhtien.Text = "";
+            
         }
         private void btnthem_Click_1(object sender, EventArgs e)
         {
@@ -286,7 +303,7 @@ namespace Project.Forms
             txtdiachi.Enabled = true;
             txtdidong.Enabled = true;
             txtemail.Enabled = true;
-            txtmalvhd.Enabled = true;
+            cbomalvhd.Enabled = true;
             txttenbao.Enabled = true;
             txttenquangcao.Enabled = true;
             txtngaybatdau.Enabled = true;
@@ -315,7 +332,7 @@ namespace Project.Forms
                 txtdiachi.Enabled = true;
                 txtdidong.Enabled = true;
                 txtemail.Enabled = true;
-                txtmalvhd.Enabled = true;
+                cbomalvhd.Enabled = true;
 
             }
             else
@@ -337,25 +354,13 @@ namespace Project.Forms
             txtdidong.Text = Class.Function.GetFieldValues(str);
             str = "select Email from tblKhachhang where DienThoai = '" + txtdienthoai.Text + "'";
             txtemail.Text = Class.Function.GetFieldValues(str);
-            str = "select MaLVHD from tblKhachhang where DienThoai = '" + txtdienthoai.Text + "'";
-            txtmalvhd.Text = Class.Function.GetFieldValues(str);
+            str = "select MaLVHD from tblLinhvuchoatdong inner join tblKhachhang on tblLinhvuchoatdong.MaLVHD=tblKhachhang.MaLVHD where DienThoai = '" + txtdienthoai.Text + "'";
+            cbomalvhd.Text = Class.Function.GetFieldValues(str);
 
         }
 
 
-        private void resetvaluesHD()
-        {
-            cbomabao.Text = "";
-            cbomaquangcao.Text = "";
-            txtngaybatdau.Text = "  /  /";
-            txtngayketthuc.Text = "  /  /";
-            txttenbao.Text = "";
-            txttenquangcao.Text = "";
-
-            txtnoidung.Text = "";
-            txtdongia.Text = "";
-            txtTong.Text = "";
-        }
+        
 
         private void btnhuy_Click_1(object sender, EventArgs e)
         {
@@ -432,13 +437,13 @@ namespace Project.Forms
                 txtemail.Focus();
                 return;
             }
-            if (txtmalvhd.Text.Trim().Length == 0)
+            if (cbomalvhd.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn phải nhập MaLVHD", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtmalvhd.Focus();
+                cbomalvhd.Focus();
                 return;
             }
-            sql = "Insert into tblKhachhang (MaKH, TenKH, Diachi, Dienthoai, Didong, Email, MaLVHD) values (N'" + cbomakhachhang.SelectedValue + "',N'" + txttenkhachhang.Text.Trim() + "',N'" + txtdiachi.Text.Trim() + "',N'" + txtdienthoai.Text.Trim() + "', N'" + txtdidong.Text.Trim() + "',N'" + txtemail.Text.Trim() + "', N'" + txtmalvhd.Text.Trim() + "')";
+            sql = "Insert into tblKhachhang (MaKH, TenKH, Diachi, Dienthoai, Didong, Email, MaLVHD) values (N'" + cbomakhachhang.SelectedValue + "',N'" + txttenkhachhang.Text.Trim() + "',N'" + txtdiachi.Text.Trim() + "',N'" + txtdienthoai.Text.Trim() + "', N'" + txtdidong.Text.Trim() + "',N'" + txtemail.Text.Trim() + "', N'" + cbomalvhd.SelectedValue + "')";
             
             Class.Function.RunSql(sql);
             //}
@@ -538,10 +543,10 @@ namespace Project.Forms
                 txtemail.Focus();
                 return;
             }
-            if (txtmalvhd.Text.Trim().Length == 0)
+            if (cbomalvhd.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn phải nhập MaLVHD", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtmalvhd.Focus();
+                cbomalvhd.Focus();
                 return;
             }
 
@@ -713,7 +718,7 @@ namespace Project.Forms
                 txtdienthoai.Text = "";
                 txtdidong.Text = "";
                 txtemail.Text = "";
-                txtmalvhd.Text = "";
+                cbomalvhd.Text = "";
 
             }
             str = "Select TenKH from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
@@ -726,8 +731,8 @@ namespace Project.Forms
             txtdidong.Text = Function.GetFieldValues(str);
             str = "Select Email from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
             txtemail.Text = Function.GetFieldValues(str);
-            str = "Select MaLVHD from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
-            txtmalvhd.Text = Function.GetFieldValues(str);
+            str = "Select tblLinhvuchoatdong.MaLVHD from tblLinhvuchoatdong inner join tblKhachhang on tblLinhvuchoatdong.MaLVHD = tblKhachhang.MaLVHD where MaKH= N'" + cbomakhachhang.Text + "'";
+            cbomalvhd.Text = Function.GetFieldValues(str);
         }
 
         private void cbomabao_TextChanged(object sender, EventArgs e)
