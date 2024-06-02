@@ -270,7 +270,7 @@ namespace Project.Forms
             txtnoidung.Text = "";
             txtngaybatdau.Text = "";
             txtngayketthuc.Text = "";
-            txtdongia.Text = "0";
+            txtdongia.Text = "";
             txtthanhtien.Text = "0";
             txtTong.Text= "0";
         }
