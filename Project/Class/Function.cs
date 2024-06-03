@@ -16,7 +16,7 @@ namespace Project.Class
         public static string connString;
         public static void Connect()
         {
-            connString = "Data Source=DESKTOP-92TO842\\SQLEXPRESS;Initial Catalog=LTNET;Integrated Security=True;Encrypt=False";
+            connString = "Data Source=DESKTOP-6P2TSJE\\SQLEXPRESS;Initial Catalog=LTNET;Integrated Security=True;Encrypt=False";
             Conn = new SqlConnection();
             Conn.ConnectionString = connString;
             Conn.Open();
@@ -161,6 +161,29 @@ namespace Project.Class
             object result = cmd.ExecuteScalar();
             return result != null ? result.ToString() : null;
         }
+        public static string CreateHDKey()
+        {
+            string lastHDID = GetLastHDID();
+            if (string.IsNullOrEmpty(lastHDID))
+            {
+                return "LG01"; // Nếu không có nhân viên nào, bắt đầu từ NV01
+            }
+            // Tách phần số từ mã nhân viên
+            int hdPart = int.Parse(lastHDID.Substring(2));
+            hdPart++; // Tăng số lên 1
+
+            // Tạo mã nhân viên mới
+            return "LG" + hdPart.ToString("D2");
+        }
+        private static string GetLastHDID()
+        {
+            string query = "SELECT TOP 1 Malangui FROM tblKhachguibai ORDER BY Malangui DESC";
+
+            SqlCommand cmd = new SqlCommand(query, Conn);
+            object result = cmd.ExecuteScalar();
+            return result != null ? result.ToString() : null;
+        }
+
     }
 
 }
