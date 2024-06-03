@@ -273,6 +273,7 @@ namespace Project.Forms
             txtdongia.Text = "";
             txtthanhtien.Text = "0";
             txtTong.Text= "0";
+
         }
         private void resetvaluesHD()
         {
