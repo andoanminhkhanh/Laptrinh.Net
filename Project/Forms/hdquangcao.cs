@@ -134,8 +134,18 @@ namespace Project.Forms
             this.Close();
         }
 
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // frmhopdongqc
+            // 
+            this.ClientSize = new System.Drawing.Size(722, 444);
+            this.Name = "frmhopdongqc";
+            this.ResumeLayout(false);
+
+        }
     }
     
 }
-
 */

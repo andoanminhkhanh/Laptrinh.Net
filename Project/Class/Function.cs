@@ -16,12 +16,12 @@ namespace Project.Class
         public static string connString;
         public static void Connect()
         {
-            connString = "Data Source=DESKTOP-6P2TSJE\\SQLEXPRESS;Initial Catalog=LTNET;Integrated Security=True;Encrypt=False";
+            connString = "Data Source=HTVANS;Initial Catalog=LTNET;Integrated Security=True;Encrypt=False";
             Conn = new SqlConnection();
             Conn.ConnectionString = connString;
             Conn.Open();
         }
-        public static void Disconnect() 
+        public static void Disconnect()
         {
             if (Conn.State == System.Data.ConnectionState.Open)
             {
@@ -183,7 +183,28 @@ namespace Project.Class
             object result = cmd.ExecuteScalar();
             return result != null ? result.ToString() : null;
         }
+        public static string CreateHDQCKey()
+        {
+            string lastHDQCID = GetLastHDQCID();
+            if (string.IsNullOrEmpty(lastHDQCID))
+            {
+                return "LQC01";
+            }
+            
+            int hdqcPart = int.Parse(lastHDQCID.Substring(3));
+            hdqcPart++; // Tăng số lên 1
 
+            
+            return "LQC" + hdqcPart.ToString("D2");
+        }
+        private static string GetLastHDQCID()
+        {
+            string query = "SELECT TOP 1 MalanQC FROM tblKhach_Quangcao ORDER BY MalanQC DESC";
+
+            SqlCommand cmd = new SqlCommand(query, Conn);
+            object result = cmd.ExecuteScalar();
+            return result != null ? result.ToString() : null;
+        }
     }
 
 }
