@@ -36,8 +36,7 @@
             this.cbomakhachhang = new System.Windows.Forms.ComboBox();
             this.cbomanhanvien = new System.Windows.Forms.ComboBox();
             this.btntimso = new System.Windows.Forms.Button();
-            this.txtdienthoai = new System.Windows.Forms.MaskedTextBox();
-            this.txtdidong = new System.Windows.Forms.TextBox();
+            this.mskdienthoai = new System.Windows.Forms.MaskedTextBox();
             this.txtemail = new System.Windows.Forms.TextBox();
             this.txtdiachi = new System.Windows.Forms.TextBox();
             this.txttenkhachhang = new System.Windows.Forms.TextBox();
@@ -58,9 +57,9 @@
             this.txtTong = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.cbomaquangcao = new System.Windows.Forms.ComboBox();
-            this.txtngayketthuc = new System.Windows.Forms.MaskedTextBox();
+            this.mskngayketthuc = new System.Windows.Forms.MaskedTextBox();
             this.btntinhtien = new System.Windows.Forms.Button();
-            this.txtngaybatdau = new System.Windows.Forms.MaskedTextBox();
+            this.mskngaybatdau = new System.Windows.Forms.MaskedTextBox();
             this.btndong = new System.Windows.Forms.Button();
             this.btnin = new System.Windows.Forms.Button();
             this.btnhuy = new System.Windows.Forms.Button();
@@ -83,6 +82,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.mskdidong = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatagridView)).BeginInit();
@@ -100,14 +100,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.mskdidong);
             this.groupBox1.Controls.Add(this.cbomalvhd);
             this.groupBox1.Controls.Add(this.lblLVHD);
             this.groupBox1.Controls.Add(this.txtmahopdongqc);
             this.groupBox1.Controls.Add(this.cbomakhachhang);
             this.groupBox1.Controls.Add(this.cbomanhanvien);
             this.groupBox1.Controls.Add(this.btntimso);
-            this.groupBox1.Controls.Add(this.txtdienthoai);
-            this.groupBox1.Controls.Add(this.txtdidong);
+            this.groupBox1.Controls.Add(this.mskdienthoai);
             this.groupBox1.Controls.Add(this.txtemail);
             this.groupBox1.Controls.Add(this.txtdiachi);
             this.groupBox1.Controls.Add(this.txttenkhachhang);
@@ -179,24 +179,17 @@
             this.btntimso.Name = "btntimso";
             this.btntimso.Size = new System.Drawing.Size(75, 22);
             this.btntimso.TabIndex = 20;
-            this.btntimso.Text = "Tìm số";
+            this.btntimso.Text = "Tìm";
             this.btntimso.UseVisualStyleBackColor = true;
             this.btntimso.Click += new System.EventHandler(this.btntimso_Click);
             // 
-            // txtdienthoai
+            // mskdienthoai
             // 
-            this.txtdienthoai.Location = new System.Drawing.Point(565, 96);
-            this.txtdienthoai.Mask = "(999) 000-0000";
-            this.txtdienthoai.Name = "txtdienthoai";
-            this.txtdienthoai.Size = new System.Drawing.Size(200, 22);
-            this.txtdienthoai.TabIndex = 19;
-            // 
-            // txtdidong
-            // 
-            this.txtdidong.Location = new System.Drawing.Point(966, 28);
-            this.txtdidong.Name = "txtdidong";
-            this.txtdidong.Size = new System.Drawing.Size(201, 22);
-            this.txtdidong.TabIndex = 17;
+            this.mskdienthoai.Location = new System.Drawing.Point(565, 96);
+            this.mskdienthoai.Mask = "(999) 000-0000";
+            this.mskdienthoai.Name = "mskdienthoai";
+            this.mskdienthoai.Size = new System.Drawing.Size(200, 22);
+            this.mskdienthoai.TabIndex = 19;
             // 
             // txtemail
             // 
@@ -339,9 +332,9 @@
             this.groupBox2.Controls.Add(this.txtTong);
             this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.cbomaquangcao);
-            this.groupBox2.Controls.Add(this.txtngayketthuc);
+            this.groupBox2.Controls.Add(this.mskngayketthuc);
             this.groupBox2.Controls.Add(this.btntinhtien);
-            this.groupBox2.Controls.Add(this.txtngaybatdau);
+            this.groupBox2.Controls.Add(this.mskngaybatdau);
             this.groupBox2.Controls.Add(this.btndong);
             this.groupBox2.Controls.Add(this.btnin);
             this.groupBox2.Controls.Add(this.btnhuy);
@@ -396,14 +389,14 @@
             this.cbomaquangcao.TabIndex = 29;
             this.cbomaquangcao.TextChanged += new System.EventHandler(this.cbomaquangcao_TextChanged);
             // 
-            // txtngayketthuc
+            // mskngayketthuc
             // 
-            this.txtngayketthuc.Location = new System.Drawing.Point(799, 75);
-            this.txtngayketthuc.Mask = "00/00/0000";
-            this.txtngayketthuc.Name = "txtngayketthuc";
-            this.txtngayketthuc.Size = new System.Drawing.Size(154, 22);
-            this.txtngayketthuc.TabIndex = 28;
-            this.txtngayketthuc.ValidatingType = typeof(System.DateTime);
+            this.mskngayketthuc.Location = new System.Drawing.Point(801, 71);
+            this.mskngayketthuc.Mask = "00/00/0000";
+            this.mskngayketthuc.Name = "mskngayketthuc";
+            this.mskngayketthuc.Size = new System.Drawing.Size(154, 22);
+            this.mskngayketthuc.TabIndex = 28;
+            this.mskngayketthuc.ValidatingType = typeof(System.DateTime);
             // 
             // btntinhtien
             // 
@@ -414,14 +407,14 @@
             this.btntinhtien.Text = "Tính tiền";
             this.btntinhtien.UseVisualStyleBackColor = true;
             // 
-            // txtngaybatdau
+            // mskngaybatdau
             // 
-            this.txtngaybatdau.Location = new System.Drawing.Point(799, 43);
-            this.txtngaybatdau.Mask = "00/00/0000";
-            this.txtngaybatdau.Name = "txtngaybatdau";
-            this.txtngaybatdau.Size = new System.Drawing.Size(154, 22);
-            this.txtngaybatdau.TabIndex = 27;
-            this.txtngaybatdau.ValidatingType = typeof(System.DateTime);
+            this.mskngaybatdau.Location = new System.Drawing.Point(799, 43);
+            this.mskngaybatdau.Mask = "00/00/0000";
+            this.mskngaybatdau.Name = "mskngaybatdau";
+            this.mskngaybatdau.Size = new System.Drawing.Size(154, 22);
+            this.mskngaybatdau.TabIndex = 27;
+            this.mskngaybatdau.ValidatingType = typeof(System.DateTime);
             // 
             // btndong
             // 
@@ -620,6 +613,14 @@
             this.label12.TabIndex = 1;
             this.label12.Text = "Mã Báo:";
             // 
+            // mskdidong
+            // 
+            this.mskdidong.Location = new System.Drawing.Point(966, 28);
+            this.mskdidong.Mask = "(999) 000-0000";
+            this.mskdidong.Name = "mskdidong";
+            this.mskdidong.Size = new System.Drawing.Size(200, 22);
+            this.mskdidong.TabIndex = 39;
+            // 
             // Hopdongquangcao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -652,8 +653,7 @@
         private System.Windows.Forms.ComboBox cbomakhachhang;
         private System.Windows.Forms.ComboBox cbomanhanvien;
         private System.Windows.Forms.Button btntimso;
-        private System.Windows.Forms.MaskedTextBox txtdienthoai;
-        private System.Windows.Forms.TextBox txtdidong;
+        private System.Windows.Forms.MaskedTextBox mskdienthoai;
         private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.TextBox txtdiachi;
         private System.Windows.Forms.TextBox txttenkhachhang;
@@ -672,8 +672,8 @@
         private System.Windows.Forms.Button btntimkiem;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cbomaquangcao;
-        private System.Windows.Forms.MaskedTextBox txtngayketthuc;
-        private System.Windows.Forms.MaskedTextBox txtngaybatdau;
+        private System.Windows.Forms.MaskedTextBox mskngayketthuc;
+        private System.Windows.Forms.MaskedTextBox mskngaybatdau;
         private System.Windows.Forms.Button btndong;
         private System.Windows.Forms.Button btnin;
         private System.Windows.Forms.Button btnhuy;
@@ -701,5 +701,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label lblLVHD;
         private System.Windows.Forms.ComboBox cbomalvhd;
+        private System.Windows.Forms.MaskedTextBox mskdidong;
     }
 }
