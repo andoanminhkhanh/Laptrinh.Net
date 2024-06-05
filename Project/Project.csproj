@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\Debug6\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -76,6 +76,12 @@
     </Compile>
     <Compile Include="Forms\Chuyenmon.Designer.cs">
       <DependentUpon>Chuyenmon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dangnhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dangnhap.Designer.cs">
+      <DependentUpon>Dangnhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Chuyenmon.resx">
       <DependentUpon>Chuyenmon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dangnhap.resx">
+      <DependentUpon>Dangnhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

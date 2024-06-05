@@ -52,6 +52,7 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnHopdongvietbai = new System.Windows.Forms.Button();
             this.btnHopdongquangcao = new System.Windows.Forms.Button();
+            this.btnTimkiem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgridKhachhang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -200,7 +201,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(100, 504);
+            this.btnThem.Location = new System.Drawing.Point(50, 504);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(88, 30);
             this.btnThem.TabIndex = 19;
@@ -210,7 +211,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(267, 504);
+            this.btnSua.Location = new System.Drawing.Point(202, 504);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(88, 30);
             this.btnSua.TabIndex = 20;
@@ -220,7 +221,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(449, 504);
+            this.btnXoa.Location = new System.Drawing.Point(378, 504);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(88, 30);
             this.btnXoa.TabIndex = 21;
@@ -230,7 +231,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(619, 504);
+            this.btnLuu.Location = new System.Drawing.Point(547, 504);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(88, 30);
             this.btnLuu.TabIndex = 22;
@@ -240,7 +241,7 @@
             // 
             // btnBoqua
             // 
-            this.btnBoqua.Location = new System.Drawing.Point(791, 504);
+            this.btnBoqua.Location = new System.Drawing.Point(718, 504);
             this.btnBoqua.Name = "btnBoqua";
             this.btnBoqua.Size = new System.Drawing.Size(88, 30);
             this.btnBoqua.TabIndex = 23;
@@ -250,7 +251,7 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(956, 504);
+            this.btnThoat.Location = new System.Drawing.Point(998, 504);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(88, 30);
             this.btnThoat.TabIndex = 24;
@@ -280,11 +281,22 @@
             this.btnHopdongquangcao.UseVisualStyleBackColor = true;
             this.btnHopdongquangcao.Click += new System.EventHandler(this.btnHopdongquangcao_Click);
             // 
+            // btnTimkiem
+            // 
+            this.btnTimkiem.Location = new System.Drawing.Point(855, 504);
+            this.btnTimkiem.Name = "btnTimkiem";
+            this.btnTimkiem.Size = new System.Drawing.Size(94, 29);
+            this.btnTimkiem.TabIndex = 27;
+            this.btnTimkiem.Text = "Tìm kiếm";
+            this.btnTimkiem.UseVisualStyleBackColor = true;
+            this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
+            // 
             // Khachhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1149, 605);
+            this.Controls.Add(this.btnTimkiem);
             this.Controls.Add(this.btnHopdongquangcao);
             this.Controls.Add(this.btnHopdongvietbai);
             this.Controls.Add(this.btnThoat);
@@ -310,7 +322,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Khachhang";
-            this.Text = "Khachhang";
+            this.Text = "Danh mục khách hàng";
             this.Load += new System.EventHandler(this.Khachhang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgridKhachhang)).EndInit();
             this.ResumeLayout(false);
@@ -344,5 +356,6 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnHopdongvietbai;
         private System.Windows.Forms.Button btnHopdongquangcao;
+        private System.Windows.Forms.Button btnTimkiem;
     }
 }

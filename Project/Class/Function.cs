@@ -16,7 +16,7 @@ namespace Project.Class
         public static string connString;
         public static void Connect()
         {
-            connString = "Data Source=HTVANS;Initial Catalog=LTNET;Integrated Security=True;Encrypt=False";
+            connString = "Data Source=DESKTOP-6P2TSJE\\SQLEXPRESS;Initial Catalog=LTNET;Integrated Security=True;Encrypt=False";
             Conn = new SqlConnection();
             Conn.ConnectionString = connString;
             Conn.Open();
@@ -173,7 +173,7 @@ namespace Project.Class
             hdPart++; // Tăng số lên 1
 
             // Tạo mã nhân viên mới
-            return "LG" + hdPart.ToString("D2");
+            return "HDVB" + hdPart.ToString("D2");
         }
         private static string GetLastHDID()
         {

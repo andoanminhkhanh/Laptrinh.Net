@@ -238,7 +238,7 @@ namespace Project.Forms
             ResetValues();
             btnBoqua.Enabled = false;
         }
-
+        
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string sql;
@@ -275,6 +275,35 @@ namespace Project.Forms
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        DataTable tbltkkh;
+        private void btnTimkiem_Click(object sender, EventArgs e)
+        {
+            string sql;
+            if ((txtMakhachhang.Text == "") && (txtTenkhachhang.Text == "") && (mskDienthoai.Text == "(   )    -") && (mskDidong.Text == "(   )    -"))
+            {
+                MessageBox.Show("Hãy nhập một điều kiện tìm kiếm!!!", "Yêu cầu...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            sql = "select * from tblkhachhang where 1=1";
+            if (txtMakhachhang.Text != "")
+                sql = sql + "AND MaKH like N'%" + txtMakhachhang.Text + "%'";
+            if (txtTenkhachhang.Text != "")
+                sql = sql + "and MaKH like N'%" + txtMakhachhang.Text + "%'";
+            if (mskDienthoai.Text != "")
+                sql = sql + "and Dienthoai =" + mskDienthoai.Text;
+            if (mskDidong.Text != "")
+                sql = sql + "and Didong =" + mskDidong.Text ;
+            tbltkkh = Class.Function.GetDataToTable(sql);
+            if (tbltkkh.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ResetValues();
+            }
+            else
+                MessageBox.Show("Có " + tbltkkh.Rows.Count + " bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            dgridKhachhang.DataSource = tbltkkh;
+            Load_data();
         }
     }
 }
