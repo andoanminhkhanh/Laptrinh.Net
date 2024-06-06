@@ -775,11 +775,11 @@ namespace Project.Forms
                 // Truy vấn cơ sở dữ liệu để lấy giá tiền tương ứng
                 string query1 = $"SELECT Dongia FROM tblBanggia WHERE Mabao = N'{mabao}' AND MaQcao = N'{maquangcao}'";
                 string dongia = Class.Function.GetFieldValues(query1);
-                string query2 = $"SELECT (Dongia*DATEDIFF(day,NgayKT,NgayBD)) as Thanhtien from tblKhach_Quangcao inner join tblBanggia on tblKhach_Quangcao.Mabao = tblBanggia.Mabao Where tblBanggia.Mabao = N'{mabao}' AND tblBanggia.MaQcao = N'{maquangcao}'";
+                string query2 = $"SELECT (Dongia*DATEDIFF(day,NgayBD,NgayKT)) as Thanhtien from tblKhach_Quangcao inner join tblBanggia on tblKhach_Quangcao.Mabao = tblBanggia.Mabao Where tblBanggia.Mabao = N'{mabao}' AND tblBanggia.MaQcao = N'{maquangcao}'";
                 string thanhtien = Class.Function.GetFieldValues(query2);
-                string query3 = $"SELECT NgayBD From tblKhach_Quangcao WHERE Mabao = N'{mabao}' AND MaQcao = N'{maquangcao}'";
+                string query3 = $"SELECT NgayBD from tblKhach_Quangcao inner join tblBanggia on tblKhach_Quangcao.Mabao = tblBanggia.Mabao Where tblBanggia.Mabao = N'{mabao}' AND tblBanggia.MaQcao = N'{maquangcao}'";
                 string ngaybd = Class.Function.GetFieldValues(query3);
-                string query4 = $"SELECT NgayKT From tblKhach_Quangcao WHERE Mabao = N'{mabao}' AND MaQcao = N'{maquangcao}'";
+                string query4 = $"SELECT NgayKT from tblKhach_Quangcao inner join tblBanggia on tblKhach_Quangcao.Mabao = tblBanggia.Mabao Where tblBanggia.Mabao = N'{mabao}' AND tblBanggia.MaQcao = N'{maquangcao}'";
                 string ngaykt = Class.Function.GetFieldValues(query4);
                 // Hiển thị đơn giá và ngày trong textbox Đơn giá
                 txtdongia.Text = string.IsNullOrEmpty(dongia) ? "0" : dongia;
