@@ -393,6 +393,7 @@
             this.cbomaquangcao.Name = "cbomaquangcao";
             this.cbomaquangcao.Size = new System.Drawing.Size(154, 24);
             this.cbomaquangcao.TabIndex = 29;
+            //this.cbomaquangcao.SelectedIndexChanged += new System.EventHandler(this.cbomaquangcao_SelectedIndexChanged);
             this.cbomaquangcao.TextChanged += new System.EventHandler(this.cbomaquangcao_TextChanged);
             // 
             // mskngayketthuc
@@ -527,6 +528,7 @@
             this.cbomabao.Name = "cbomabao";
             this.cbomabao.Size = new System.Drawing.Size(154, 24);
             this.cbomabao.TabIndex = 10;
+            //this.cbomabao.SelectedIndexChanged += new System.EventHandler(this.cbomabao_SelectedIndexChanged);
             this.cbomabao.TextChanged += new System.EventHandler(this.cbomabao_TextChanged);
             // 
             // label20
