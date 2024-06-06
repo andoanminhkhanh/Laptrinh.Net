@@ -33,7 +33,7 @@ namespace Project.Forms
             btnluu.Enabled = false;
             btnhuy.Enabled = false;
             btnin.Enabled = false;
-            btntinhtien.Enabled = true;
+            
             
             
 
@@ -226,7 +226,7 @@ namespace Project.Forms
             btnsua.Enabled = true;
             btnhuy.Enabled = true;
             btnin.Enabled = true;
-            btntinhtien.Enabled = true;
+            
         }
 
 
@@ -244,7 +244,7 @@ namespace Project.Forms
             btnhuy.Enabled = true;
             btnluu.Enabled = true;
             btnin.Enabled = true;
-            btntinhtien.Enabled = true;
+            
             cbomahopdongqc.SelectedIndex = -1;
             resetvaluesHD();
         }
@@ -295,7 +295,7 @@ namespace Project.Forms
             btnluu.Enabled = true;
             btnin.Enabled = false;
             btnthem.Enabled = false;
-            btntinhtien.Enabled = true;
+            
             txtmahopdongqc.Enabled = false;
             
             txttennhanvien.Enabled = false;
@@ -495,7 +495,7 @@ namespace Project.Forms
             btnsua.Enabled = true;
             btnin.Enabled = false;
             btnluu.Enabled = false;
-            btntinhtien.Enabled = false;
+            
         }
 
         private void btnsua_Click_1(object sender, EventArgs e)
@@ -599,7 +599,7 @@ namespace Project.Forms
             load_datagridview();
             resetvalues();
             btnin.Enabled = false;
-            btntinhtien.Enabled = true;
+            
         }
 
         private void btnin_Click_1(object sender, EventArgs e)
