@@ -34,6 +34,8 @@ namespace Project.Forms
             dgridTL.DataSource = tblTL;
             dgridTL.Columns[0].HeaderText = "Mã thể loại";
             dgridTL.Columns[1].HeaderText = "Tên thể loại";
+            dgridTL.Columns[0].Width = 250;
+            dgridTL.Columns[1].Width = 250;
             dgridTL.AllowUserToAddRows = false;
             dgridTL.EditMode = DataGridViewEditMode.EditProgrammatically;
         }

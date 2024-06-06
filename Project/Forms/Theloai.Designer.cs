@@ -40,12 +40,13 @@
             this.txtMatheloai = new System.Windows.Forms.TextBox();
             this.lblTheloai = new System.Windows.Forms.Label();
             this.dgridTL = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgridTL)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDong
             // 
-            this.btnDong.Location = new System.Drawing.Point(606, 420);
+            this.btnDong.Location = new System.Drawing.Point(535, 421);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(61, 33);
             this.btnDong.TabIndex = 30;
@@ -55,7 +56,7 @@
             // 
             // btnBoqua
             // 
-            this.btnBoqua.Location = new System.Drawing.Point(511, 420);
+            this.btnBoqua.Location = new System.Drawing.Point(440, 421);
             this.btnBoqua.Name = "btnBoqua";
             this.btnBoqua.Size = new System.Drawing.Size(61, 33);
             this.btnBoqua.TabIndex = 29;
@@ -65,7 +66,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(416, 420);
+            this.btnLuu.Location = new System.Drawing.Point(345, 421);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(61, 33);
             this.btnLuu.TabIndex = 28;
@@ -75,7 +76,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(322, 420);
+            this.btnXoa.Location = new System.Drawing.Point(251, 421);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(61, 33);
             this.btnXoa.TabIndex = 27;
@@ -85,7 +86,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(228, 420);
+            this.btnSua.Location = new System.Drawing.Point(157, 421);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(61, 33);
             this.btnSua.TabIndex = 26;
@@ -95,7 +96,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(130, 420);
+            this.btnThem.Location = new System.Drawing.Point(59, 421);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(61, 33);
             this.btnThem.TabIndex = 25;
@@ -105,7 +106,7 @@
             // 
             // txtTentheloai
             // 
-            this.txtTentheloai.Location = new System.Drawing.Point(293, 136);
+            this.txtTentheloai.Location = new System.Drawing.Point(222, 137);
             this.txtTentheloai.Name = "txtTentheloai";
             this.txtTentheloai.Size = new System.Drawing.Size(290, 23);
             this.txtTentheloai.TabIndex = 24;
@@ -113,7 +114,7 @@
             // lblTenLVHD
             // 
             this.lblTenLVHD.AutoSize = true;
-            this.lblTenLVHD.Location = new System.Drawing.Point(184, 136);
+            this.lblTenLVHD.Location = new System.Drawing.Point(113, 137);
             this.lblTenLVHD.Name = "lblTenLVHD";
             this.lblTenLVHD.Size = new System.Drawing.Size(70, 15);
             this.lblTenLVHD.TabIndex = 23;
@@ -122,7 +123,7 @@
             // lblMatheloai
             // 
             this.lblMatheloai.AutoSize = true;
-            this.lblMatheloai.Location = new System.Drawing.Point(184, 95);
+            this.lblMatheloai.Location = new System.Drawing.Point(113, 96);
             this.lblMatheloai.Name = "lblMatheloai";
             this.lblMatheloai.Size = new System.Drawing.Size(69, 15);
             this.lblMatheloai.TabIndex = 22;
@@ -130,7 +131,7 @@
             // 
             // txtMatheloai
             // 
-            this.txtMatheloai.Location = new System.Drawing.Point(293, 92);
+            this.txtMatheloai.Location = new System.Drawing.Point(222, 93);
             this.txtMatheloai.Name = "txtMatheloai";
             this.txtMatheloai.Size = new System.Drawing.Size(290, 23);
             this.txtMatheloai.TabIndex = 21;
@@ -138,27 +139,37 @@
             // lblTheloai
             // 
             this.lblTheloai.AutoSize = true;
-            this.lblTheloai.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTheloai.Location = new System.Drawing.Point(296, 28);
+            this.lblTheloai.Font = new System.Drawing.Font("Segoe UI", 17.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTheloai.Location = new System.Drawing.Point(216, 29);
             this.lblTheloai.Name = "lblTheloai";
-            this.lblTheloai.Size = new System.Drawing.Size(181, 30);
+            this.lblTheloai.Size = new System.Drawing.Size(234, 31);
             this.lblTheloai.TabIndex = 20;
-            this.lblTheloai.Text = "Danh mục thể loại";
+            this.lblTheloai.Text = "DANH MỤC THỂ LOẠI";
             // 
             // dgridTL
             // 
             this.dgridTL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgridTL.Location = new System.Drawing.Point(130, 176);
+            this.dgridTL.Location = new System.Drawing.Point(59, 177);
             this.dgridTL.Name = "dgridTL";
             this.dgridTL.Size = new System.Drawing.Size(537, 226);
             this.dgridTL.TabIndex = 19;
             this.dgridTL.Click += new System.EventHandler(this.dgridTL_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(535, 36);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // mnuTheloai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 519);
+            this.ClientSize = new System.Drawing.Size(657, 493);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnBoqua);
             this.Controls.Add(this.btnLuu);
@@ -196,5 +207,6 @@
         private System.Windows.Forms.TextBox txtMatheloai;
         private System.Windows.Forms.Label lblTheloai;
         private System.Windows.Forms.DataGridView dgridTL;
+        private System.Windows.Forms.Button button1;
     }
 }
