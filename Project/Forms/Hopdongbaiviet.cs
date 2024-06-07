@@ -274,6 +274,7 @@ namespace Project.Forms
             }
 
             //ở đây
+            
             foreach (DataRow row in tblHDBV.Rows)
             {
                 sql = $"INSERT INTO tblKhachguibai (Malangui, Ngayky, MaKH, Matheloai, Mabao, Tieude, Noidung, MaNV, Ngaydang, Nhuanbut) " +
