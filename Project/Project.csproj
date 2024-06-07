@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug3\</OutputPath>
+    <OutputPath>bin\Debug34\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -52,6 +52,12 @@
     </Compile>
     <Compile Include="Forms\Banggia.Designer.cs">
       <DependentUpon>Banggia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaocaoKhanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaocaoKhanh.Designer.cs">
+      <DependentUpon>BaocaoKhanh.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Báo.cs">
       <SubType>Form</SubType>
@@ -159,6 +165,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Banggia.resx">
       <DependentUpon>Banggia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaocaoKhanh.resx">
+      <DependentUpon>BaocaoKhanh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Báo.resx">
       <DependentUpon>Báo.cs</DependentUpon>

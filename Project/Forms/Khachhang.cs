@@ -279,20 +279,37 @@ namespace Project.Forms
         private void btnTimkiem_Click(object sender, EventArgs e)
         {
             string sql;
-            if ((txtMakhachhang.Text == "") && (txtTenkhachhang.Text == "") && (mskDienthoai.Text == "(   )    -") && (mskDidong.Text == "(   )    -"))
+            if (string.IsNullOrWhiteSpace(txtMakhachhang.Text) &&
+                string.IsNullOrWhiteSpace(txtTenkhachhang.Text) &&
+                string.IsNullOrWhiteSpace(mskDienthoai.Text.Trim(new char[] { '(', ')', ' ', '-' })) &&
+                string.IsNullOrWhiteSpace(mskDidong.Text.Trim(new char[] { '(', ')', ' ', '-' })))
             {
                 MessageBox.Show("Hãy nhập một điều kiện tìm kiếm!!!", "Yêu cầu...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            sql = "select * from tblKhachhang where 1=1";
-            if (txtMakhachhang.Text != "")
-                sql = sql + "AND MaKH like N'%" + txtMakhachhang.Text + "%'";
-            if (txtTenkhachhang.Text != "")
-                sql = sql + "AND TenKH like N'%" + txtTenkhachhang.Text + "%'";
-            if (mskDienthoai.Text != "")
-                sql = sql + "AND Dienthoai =" + mskDienthoai.Text;
-            if (mskDidong.Text != "")
-                sql = sql + "AND Didong =" + mskDidong.Text ;
+
+            sql = "SELECT * FROM tblKhachhang WHERE 1=1";
+
+            if (!string.IsNullOrWhiteSpace(txtMakhachhang.Text))
+            {
+                sql += " AND MaKH LIKE N'%" + txtMakhachhang.Text + "%'";
+            }
+            if (!string.IsNullOrWhiteSpace(txtTenkhachhang.Text))
+            {
+                sql += " AND TenKH LIKE N'%" + txtTenkhachhang.Text + "%'";
+            }
+            if (!string.IsNullOrWhiteSpace(mskDienthoai.Text.Trim(new char[] { '(', ')', ' ', '-' })))
+            {
+                sql += " AND Dienthoai LIKE N'%" + mskDienthoai.Text.Trim() + "%'";
+            }
+            if (!string.IsNullOrWhiteSpace(mskDidong.Text.Trim(new char[] { '(', ')', ' ', '-' })))
+            {
+                sql += " AND Didong LIKE N'%" + mskDidong.Text.Trim() + "%'";
+            }
+            if (!string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                sql += " AND Email LIKE N'%" + txtEmail.Text + "%'";
+            }
 
             tblkh = Class.Function.GetDataToTable(sql);
 
@@ -302,29 +319,11 @@ namespace Project.Forms
                 ResetValues();
             }
             else
-                MessageBox.Show("Có " + tblkh.Rows.Count + " bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            dgridKhachhang.DataSource = tblkh;
-            //Load_DataGridView();
+            {
+                MessageBox.Show("Có " + tblkh.Rows.Count + " bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgridKhachhang.DataSource = tblkh;
+            }
             ResetValues();
         }
-        //private void Load_DataGridView()
-        //{
-        //    dgridKhachhang.Columns[0].HeaderText = "Mã khách hàng";
-        //    dgridKhachhang.Columns[1].HeaderText = "Tên khách hàng";
-        //    dgridKhachhang.Columns[2].HeaderText = "Địa chỉ";
-        //    dgridKhachhang.Columns[3].HeaderText = "Điện thoại";
-        //    dgridKhachhang.Columns[4].HeaderText = "Di động";
-        //    dgridKhachhang.Columns[5].HeaderText = "Email";
-        //    dgridKhachhang.Columns[6].HeaderText = "Mã lĩnh vực hoạt động";
-        //    dgridKhachhang.Columns[0].Width = 80;
-        //    dgridKhachhang.Columns[1].Width = 150;
-        //    dgridKhachhang.Columns[0].Width = 100;
-        //    dgridKhachhang.Columns[1].Width = 100;
-        //    dgridKhachhang.Columns[0].Width = 100;
-        //    dgridKhachhang.Columns[1].Width = 100;
-        //    dgridKhachhang.Columns[0].Width = 100;
-        //    dgridKhachhang.AllowUserToAddRows = false;
-        //    dgridKhachhang.EditMode =DataGridViewEditMode.EditProgrammatically;
-        //}
     }
 }

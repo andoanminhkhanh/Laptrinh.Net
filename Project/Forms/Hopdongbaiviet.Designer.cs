@@ -77,6 +77,8 @@
             this.mskDienthoai = new System.Windows.Forms.MaskedTextBox();
             this.lblDienthoai = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtNgayky = new System.Windows.Forms.TextBox();
             this.gb2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgridHopdongbaiviet)).BeginInit();
             this.gb1.SuspendLayout();
@@ -254,6 +256,7 @@
             this.dgridHopdongbaiviet.RowHeadersWidth = 51;
             this.dgridHopdongbaiviet.Size = new System.Drawing.Size(843, 209);
             this.dgridHopdongbaiviet.TabIndex = 14;
+            this.dgridHopdongbaiviet.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgridHopdongbaiviet_CellDoubleClick);
             this.dgridHopdongbaiviet.Click += new System.EventHandler(this.dgridHopdongbaiviet_Click);
             // 
             // btnSua
@@ -410,6 +413,8 @@
             // 
             // gb1
             // 
+            this.gb1.Controls.Add(this.txtNgayky);
+            this.gb1.Controls.Add(this.label15);
             this.gb1.Controls.Add(this.btnTim);
             this.gb1.Controls.Add(this.txtDiachi);
             this.gb1.Controls.Add(this.lblDiachi);
@@ -496,7 +501,7 @@
             // 
             // txtMakhach
             // 
-            this.txtMakhach.Location = new System.Drawing.Point(120, 129);
+            this.txtMakhach.Location = new System.Drawing.Point(120, 122);
             this.txtMakhach.Margin = new System.Windows.Forms.Padding(4);
             this.txtMakhach.Name = "txtMakhach";
             this.txtMakhach.Size = new System.Drawing.Size(157, 27);
@@ -552,7 +557,7 @@
             // cbManhanvien
             // 
             this.cbManhanvien.FormattingEnabled = true;
-            this.cbManhanvien.Location = new System.Drawing.Point(120, 78);
+            this.cbManhanvien.Location = new System.Drawing.Point(120, 74);
             this.cbManhanvien.Margin = new System.Windows.Forms.Padding(4);
             this.cbManhanvien.Name = "cbManhanvien";
             this.cbManhanvien.Size = new System.Drawing.Size(157, 28);
@@ -607,6 +612,22 @@
             this.label1.Size = new System.Drawing.Size(262, 37);
             this.label1.TabIndex = 47;
             this.label1.Text = "HỢP ĐỒNG BÀI VIẾT";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(11, 170);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(65, 20);
+            this.label15.TabIndex = 48;
+            this.label15.Text = "Ngày ký:";
+            // 
+            // txtNgayky
+            // 
+            this.txtNgayky.Location = new System.Drawing.Point(120, 165);
+            this.txtNgayky.Name = "txtNgayky";
+            this.txtNgayky.Size = new System.Drawing.Size(157, 27);
+            this.txtNgayky.TabIndex = 49;
             // 
             // Hopdongbaiviet
             // 
@@ -684,5 +705,7 @@
         private System.Windows.Forms.Label lblBangchu;
         private System.Windows.Forms.TextBox txtTongtien;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtNgayky;
+        private System.Windows.Forms.Label label15;
     }
 }
