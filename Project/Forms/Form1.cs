@@ -15,6 +15,7 @@ namespace Project
         public Form1()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
         }
         
         

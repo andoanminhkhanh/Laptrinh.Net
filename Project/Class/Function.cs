@@ -16,7 +16,7 @@ namespace Project.Class
         public static string connString;
         public static void Connect()
         {
-            connString = "Data Source=DESKTOP-6P2TSJE\\SQLEXPRESS;Initial Catalog=LTNET;Integrated Security=True;Encrypt=False";
+            connString = "Data Source=LAPTOP-THOQUC6C\\MSSQLSERVER01;Initial Catalog=LTNET;Integrated Security=True;Encrypt=False";
             Conn = new SqlConnection();
             Conn.ConnectionString = connString;
             Conn.Open();
@@ -116,7 +116,7 @@ namespace Project.Class
         public static string convertdatetime(string d)
         {
             string[] parts = d.Split('/');
-            string dt = String.Format("{0}/{1}/{2}", parts[1], parts[0], parts[2]);
+            string dt = string.Format("{0}/{1}/{2}", parts[1], parts[0], parts[2]);
             return dt;
         }
         public static string CreateKey()
