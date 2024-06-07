@@ -15,6 +15,7 @@ namespace Project.Forms
         public Chucnang()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
         }
 
         private void Chucnang_Load(object sender, EventArgs e)
