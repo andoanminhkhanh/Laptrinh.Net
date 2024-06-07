@@ -38,14 +38,14 @@
             // 
             // txtTendangnhap
             // 
-            this.txtTendangnhap.Location = new System.Drawing.Point(333, 99);
+            this.txtTendangnhap.Location = new System.Drawing.Point(729, 203);
             this.txtTendangnhap.Name = "txtTendangnhap";
             this.txtTendangnhap.Size = new System.Drawing.Size(234, 22);
             this.txtTendangnhap.TabIndex = 0;
             // 
             // txtMatkhau
             // 
-            this.txtMatkhau.Location = new System.Drawing.Point(333, 164);
+            this.txtMatkhau.Location = new System.Drawing.Point(729, 263);
             this.txtMatkhau.Name = "txtMatkhau";
             this.txtMatkhau.Size = new System.Drawing.Size(234, 22);
             this.txtMatkhau.TabIndex = 1;
@@ -53,19 +53,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(251, 33);
+            this.label1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(595, 110);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(289, 35);
+            this.label1.Size = new System.Drawing.Size(399, 45);
             this.label1.TabIndex = 2;
             this.label1.Text = "ĐĂNG NHẬP HỆ THỐNG";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Location = new System.Drawing.Point(201, 105);
+            this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label2.Location = new System.Drawing.Point(600, 206);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 16);
             this.label2.TabIndex = 3;
@@ -74,9 +76,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label3.Location = new System.Drawing.Point(201, 164);
+            this.label3.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label3.Location = new System.Drawing.Point(600, 269);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 16);
             this.label3.TabIndex = 4;
@@ -85,8 +88,8 @@
             // btnDangnhap
             // 
             this.btnDangnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangnhap.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnDangnhap.Location = new System.Drawing.Point(333, 233);
+            this.btnDangnhap.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnDangnhap.Location = new System.Drawing.Point(684, 331);
             this.btnDangnhap.Name = "btnDangnhap";
             this.btnDangnhap.Size = new System.Drawing.Size(120, 37);
             this.btnDangnhap.TabIndex = 5;
@@ -98,8 +101,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackgroundImage = global::Project.Properties.Resources.Thiết_kế_chưa_có_tên__3_;
+            this.ClientSize = new System.Drawing.Size(1055, 530);
             this.Controls.Add(this.btnDangnhap);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

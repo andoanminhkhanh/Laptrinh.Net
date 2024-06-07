@@ -30,113 +30,39 @@
         {
             this.txtTenchucnang = new System.Windows.Forms.TextBox();
             this.txtMachucnang = new System.Windows.Forms.TextBox();
-            this.btnDong = new System.Windows.Forms.Button();
-            this.btnBoqua = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
             this.DataGridView = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnBoqua = new System.Windows.Forms.Button();
+            this.btnDong = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTenchucnang
             // 
-            this.txtTenchucnang.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTenchucnang.Location = new System.Drawing.Point(476, 192);
+            this.txtTenchucnang.Location = new System.Drawing.Point(220, 160);
             this.txtTenchucnang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenchucnang.Name = "txtTenchucnang";
-            this.txtTenchucnang.Size = new System.Drawing.Size(239, 45);
+            this.txtTenchucnang.Size = new System.Drawing.Size(199, 27);
             this.txtTenchucnang.TabIndex = 31;
             // 
             // txtMachucnang
             // 
-            this.txtMachucnang.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMachucnang.Location = new System.Drawing.Point(476, 124);
+            this.txtMachucnang.Location = new System.Drawing.Point(220, 104);
             this.txtMachucnang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMachucnang.Name = "txtMachucnang";
-            this.txtMachucnang.Size = new System.Drawing.Size(239, 45);
+            this.txtMachucnang.Size = new System.Drawing.Size(199, 27);
             this.txtMachucnang.TabIndex = 30;
-            // 
-            // btnDong
-            // 
-            this.btnDong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDong.Location = new System.Drawing.Point(970, 562);
-            this.btnDong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(83, 40);
-            this.btnDong.TabIndex = 29;
-            this.btnDong.Text = "Đóng";
-            this.btnDong.UseVisualStyleBackColor = true;
-            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
-            // 
-            // btnBoqua
-            // 
-            this.btnBoqua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnBoqua.Location = new System.Drawing.Point(838, 563);
-            this.btnBoqua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnBoqua.Name = "btnBoqua";
-            this.btnBoqua.Size = new System.Drawing.Size(83, 39);
-            this.btnBoqua.TabIndex = 28;
-            this.btnBoqua.Text = "Bỏ qua";
-            this.btnBoqua.UseVisualStyleBackColor = true;
-            this.btnBoqua.Click += new System.EventHandler(this.btnBoqua_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnLuu.Location = new System.Drawing.Point(697, 563);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(83, 39);
-            this.btnLuu.TabIndex = 27;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSua.Location = new System.Drawing.Point(534, 563);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(83, 39);
-            this.btnSua.TabIndex = 26;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXoa.Location = new System.Drawing.Point(384, 563);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(83, 39);
-            this.btnXoa.TabIndex = 25;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThem.Location = new System.Drawing.Point(252, 563);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(83, 39);
-            this.btnThem.TabIndex = 24;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // DataGridView
             // 
             this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridView.Location = new System.Drawing.Point(252, 296);
+            this.DataGridView.Location = new System.Drawing.Point(44, 244);
             this.DataGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DataGridView.Name = "DataGridView";
             this.DataGridView.RowHeadersWidth = 62;
@@ -148,46 +74,147 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(253, 199);
+            this.label3.Location = new System.Drawing.Point(73, 164);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(196, 38);
+            this.label3.Size = new System.Drawing.Size(104, 20);
             this.label3.TabIndex = 22;
             this.label3.Text = "Tên chức năng";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(254, 124);
+            this.label2.Location = new System.Drawing.Point(73, 108);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 38);
+            this.label2.Size = new System.Drawing.Size(102, 20);
             this.label2.TabIndex = 21;
             this.label2.Text = "Mã chức năng";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(490, 33);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(267, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(431, 54);
+            this.label1.Size = new System.Drawing.Size(290, 37);
             this.label1.TabIndex = 20;
             this.label1.Text = "QUẢN LÝ CHỨC NĂNG";
             // 
+            // btnLuu
+            // 
+            this.btnLuu.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLuu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLuu.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuu.Image = global::Project.Properties.Resources.pngtree_save_vector_icon_png_image_3758949__2_;
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLuu.Location = new System.Drawing.Point(489, 549);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnLuu.Size = new System.Drawing.Size(88, 40);
+            this.btnLuu.TabIndex = 37;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuu.UseVisualStyleBackColor = false;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnXoa.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.Image = global::Project.Properties.Resources.images__1___1_;
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa.Location = new System.Drawing.Point(176, 549);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnXoa.Size = new System.Drawing.Size(83, 40);
+            this.btnXoa.TabIndex = 36;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.UseVisualStyleBackColor = false;
+            // 
+            // btnBoqua
+            // 
+            this.btnBoqua.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBoqua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnBoqua.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnBoqua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBoqua.Image = global::Project.Properties.Resources._87754cae9952a8f0bd5f0ac47a62854a_t;
+            this.btnBoqua.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBoqua.Location = new System.Drawing.Point(630, 549);
+            this.btnBoqua.Name = "btnBoqua";
+            this.btnBoqua.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnBoqua.Size = new System.Drawing.Size(93, 40);
+            this.btnBoqua.TabIndex = 35;
+            this.btnBoqua.Text = "Bỏ qua";
+            this.btnBoqua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBoqua.UseVisualStyleBackColor = false;
+            // 
+            // btnDong
+            // 
+            this.btnDong.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnDong.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnDong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDong.Image = global::Project.Properties.Resources.pngtree_shutdown_vector_icon_png_image_3722547__1_;
+            this.btnDong.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDong.Location = new System.Drawing.Point(762, 549);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnDong.Size = new System.Drawing.Size(83, 40);
+            this.btnDong.TabIndex = 34;
+            this.btnDong.Text = "Đóng";
+            this.btnDong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDong.UseVisualStyleBackColor = false;
+            // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSua.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Image = global::Project.Properties.Resources.images__2___1_;
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.Location = new System.Drawing.Point(326, 549);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnSua.Size = new System.Drawing.Size(93, 40);
+            this.btnSua.TabIndex = 33;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.UseVisualStyleBackColor = false;
+            // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.Image = global::Project.Properties.Resources.plus_24844_1280__1___2_;
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.Location = new System.Drawing.Point(44, 549);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnThem.Size = new System.Drawing.Size(75, 40);
+            this.btnThem.TabIndex = 32;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.UseVisualStyleBackColor = false;
+            // 
             // Chucnang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1323, 703);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(963, 636);
+            this.Controls.Add(this.btnLuu);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnBoqua);
+            this.Controls.Add(this.btnDong);
+            this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtTenchucnang);
             this.Controls.Add(this.txtMachucnang);
-            this.Controls.Add(this.btnDong);
-            this.Controls.Add(this.btnBoqua);
-            this.Controls.Add(this.btnLuu);
-            this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.btnXoa);
-            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.DataGridView);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -207,15 +234,15 @@
 
         private System.Windows.Forms.TextBox txtTenchucnang;
         private System.Windows.Forms.TextBox txtMachucnang;
-        private System.Windows.Forms.Button btnDong;
-        private System.Windows.Forms.Button btnBoqua;
-        private System.Windows.Forms.Button btnLuu;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView DataGridView;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnBoqua;
+        private System.Windows.Forms.Button btnDong;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnThem;
     }
 }

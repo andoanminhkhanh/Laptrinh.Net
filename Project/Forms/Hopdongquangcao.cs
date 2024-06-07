@@ -30,7 +30,7 @@ namespace Project.Forms
             Function.Connect();
             cbomahopdongqc.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            btnthem.Enabled = true;
+            btnthembao.Enabled = true;
             btnluu.Enabled = false;
             btnhuy.Enabled = false;
             btnin.Enabled = false;
@@ -146,7 +146,7 @@ namespace Project.Forms
         
         private void DatagridView_Click_1(object sender, EventArgs e)
         {
-            if (btnthem.Enabled == false)
+            if (btnthembao.Enabled == false)
             {
                 MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtmahopdongqc.Focus();
@@ -238,7 +238,7 @@ namespace Project.Forms
             btnhuy.Enabled = false;
             btnluu.Enabled = true;
             btnin.Enabled = false;
-            btnthem.Enabled = false;
+            btnthembao.Enabled = false;
 
             txtmahopdongqc.Enabled = false;
             txtngayky.Enabled = false;
@@ -434,7 +434,7 @@ namespace Project.Forms
             load_datagridview();
             resetvaluesHD();
             btnhuy.Enabled = false;
-            btnthem.Enabled = true;
+            btnthembao.Enabled = true;
             btnsua.Enabled = true;
             btnin.Enabled = false;
             btnluu.Enabled = false;

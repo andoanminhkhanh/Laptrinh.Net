@@ -57,12 +57,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnthem = new System.Windows.Forms.Button();
-            this.btnxoa = new System.Windows.Forms.Button();
-            this.btnsua = new System.Windows.Forms.Button();
-            this.btnluu = new System.Windows.Forms.Button();
-            this.btnboqua = new System.Windows.Forms.Button();
             this.btnthoat = new System.Windows.Forms.Button();
+            this.btnluu = new System.Windows.Forms.Button();
+            this.btnxoa = new System.Windows.Forms.Button();
+            this.btnboqua = new System.Windows.Forms.Button();
+            this.btnsua = new System.Windows.Forms.Button();
+            this.btnthem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -334,76 +334,119 @@
             this.label2.TabIndex = 30;
             this.label2.Text = "Mã NV";
             // 
-            // btnthem
+            // btnthoat
             // 
-            this.btnthem.Location = new System.Drawing.Point(70, 536);
-            this.btnthem.Name = "btnthem";
-            this.btnthem.Size = new System.Drawing.Size(75, 23);
-            this.btnthem.TabIndex = 58;
-            this.btnthem.Text = "Thêm";
-            this.btnthem.UseVisualStyleBackColor = true;
-            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
-            // 
-            // btnxoa
-            // 
-            this.btnxoa.Location = new System.Drawing.Point(218, 536);
-            this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(75, 23);
-            this.btnxoa.TabIndex = 59;
-            this.btnxoa.Text = "Xóa";
-            this.btnxoa.UseVisualStyleBackColor = true;
-            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
-            // 
-            // btnsua
-            // 
-            this.btnsua.Location = new System.Drawing.Point(377, 536);
-            this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(75, 23);
-            this.btnsua.TabIndex = 60;
-            this.btnsua.Text = "Sửa";
-            this.btnsua.UseVisualStyleBackColor = true;
-            this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
+            this.btnthoat.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnthoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnthoat.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnthoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnthoat.Image = global::Project.Properties.Resources.pngtree_shutdown_vector_icon_png_image_3722547__1_1;
+            this.btnthoat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnthoat.Location = new System.Drawing.Point(842, 589);
+            this.btnthoat.Name = "btnthoat";
+            this.btnthoat.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnthoat.Size = new System.Drawing.Size(89, 40);
+            this.btnthoat.TabIndex = 70;
+            this.btnthoat.Text = "Thoát";
+            this.btnthoat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnthoat.UseVisualStyleBackColor = false;
             // 
             // btnluu
             // 
-            this.btnluu.Location = new System.Drawing.Point(544, 536);
+            this.btnluu.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnluu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnluu.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnluu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnluu.Image = global::Project.Properties.Resources.pngtree_save_vector_icon_png_image_3758949__2_;
+            this.btnluu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnluu.Location = new System.Drawing.Point(544, 589);
             this.btnluu.Name = "btnluu";
-            this.btnluu.Size = new System.Drawing.Size(75, 23);
-            this.btnluu.TabIndex = 61;
+            this.btnluu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnluu.Size = new System.Drawing.Size(83, 40);
+            this.btnluu.TabIndex = 69;
             this.btnluu.Text = "Lưu";
-            this.btnluu.UseVisualStyleBackColor = true;
-            this.btnluu.Click += new System.EventHandler(this.btnluu_Click);
+            this.btnluu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnluu.UseVisualStyleBackColor = false;
+            // 
+            // btnxoa
+            // 
+            this.btnxoa.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnxoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnxoa.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnxoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnxoa.Image = global::Project.Properties.Resources.images__1___1_;
+            this.btnxoa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnxoa.Location = new System.Drawing.Point(218, 589);
+            this.btnxoa.Name = "btnxoa";
+            this.btnxoa.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnxoa.Size = new System.Drawing.Size(92, 40);
+            this.btnxoa.TabIndex = 68;
+            this.btnxoa.Text = "Xóa";
+            this.btnxoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnxoa.UseVisualStyleBackColor = false;
             // 
             // btnboqua
             // 
-            this.btnboqua.Location = new System.Drawing.Point(694, 536);
+            this.btnboqua.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnboqua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnboqua.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnboqua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnboqua.Image = global::Project.Properties.Resources._87754cae9952a8f0bd5f0ac47a62854a_t;
+            this.btnboqua.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnboqua.Location = new System.Drawing.Point(694, 589);
             this.btnboqua.Name = "btnboqua";
-            this.btnboqua.Size = new System.Drawing.Size(75, 23);
-            this.btnboqua.TabIndex = 62;
+            this.btnboqua.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnboqua.Size = new System.Drawing.Size(94, 40);
+            this.btnboqua.TabIndex = 67;
             this.btnboqua.Text = "Bỏ qua";
-            this.btnboqua.UseVisualStyleBackColor = true;
-            this.btnboqua.Click += new System.EventHandler(this.btnboqua_Click);
+            this.btnboqua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnboqua.UseVisualStyleBackColor = false;
             // 
-            // btnthoat
+            // btnsua
             // 
-            this.btnthoat.Location = new System.Drawing.Point(842, 536);
-            this.btnthoat.Name = "btnthoat";
-            this.btnthoat.Size = new System.Drawing.Size(75, 23);
-            this.btnthoat.TabIndex = 63;
-            this.btnthoat.Text = "Thoát";
-            this.btnthoat.UseVisualStyleBackColor = true;
-            this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
+            this.btnsua.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnsua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnsua.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnsua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsua.Image = global::Project.Properties.Resources.images__2___1_;
+            this.btnsua.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnsua.Location = new System.Drawing.Point(377, 589);
+            this.btnsua.Name = "btnsua";
+            this.btnsua.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnsua.Size = new System.Drawing.Size(87, 40);
+            this.btnsua.TabIndex = 65;
+            this.btnsua.Text = "Sửa";
+            this.btnsua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnsua.UseVisualStyleBackColor = false;
+            // 
+            // btnthem
+            // 
+            this.btnthem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnthem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnthem.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnthem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnthem.Image = global::Project.Properties.Resources.plus_24844_1280__1___2_;
+            this.btnthem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnthem.Location = new System.Drawing.Point(70, 589);
+            this.btnthem.Name = "btnthem";
+            this.btnthem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnthem.Size = new System.Drawing.Size(75, 40);
+            this.btnthem.TabIndex = 64;
+            this.btnthem.Text = "Thêm";
+            this.btnthem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnthem.UseVisualStyleBackColor = false;
             // 
             // Quanlynhanvien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 571);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1012, 665);
             this.Controls.Add(this.btnthoat);
-            this.Controls.Add(this.btnboqua);
             this.Controls.Add(this.btnluu);
-            this.Controls.Add(this.btnsua);
             this.Controls.Add(this.btnxoa);
+            this.Controls.Add(this.btnboqua);
+            this.Controls.Add(this.btnsua);
             this.Controls.Add(this.btnthem);
             this.Controls.Add(this.chknu);
             this.Controls.Add(this.chknam);
@@ -474,11 +517,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnthem;
-        private System.Windows.Forms.Button btnxoa;
-        private System.Windows.Forms.Button btnsua;
-        private System.Windows.Forms.Button btnluu;
-        private System.Windows.Forms.Button btnboqua;
         private System.Windows.Forms.Button btnthoat;
+        private System.Windows.Forms.Button btnluu;
+        private System.Windows.Forms.Button btnxoa;
+        private System.Windows.Forms.Button btnboqua;
+        private System.Windows.Forms.Button btnsua;
+        private System.Windows.Forms.Button btnthem;
     }
 }
