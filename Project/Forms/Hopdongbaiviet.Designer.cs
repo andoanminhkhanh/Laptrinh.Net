@@ -77,6 +77,8 @@
             this.mskDienthoai = new System.Windows.Forms.MaskedTextBox();
             this.lblDienthoai = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtNgayky = new System.Windows.Forms.TextBox();
             this.gb2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgridHopdongbaiviet)).BeginInit();
             this.gb1.SuspendLayout();
@@ -451,6 +453,8 @@
             // 
             // gb1
             // 
+            this.gb1.Controls.Add(this.txtNgayky);
+            this.gb1.Controls.Add(this.label15);
             this.gb1.Controls.Add(this.btnTim);
             this.gb1.Controls.Add(this.txtDiachi);
             this.gb1.Controls.Add(this.lblDiachi);
@@ -472,11 +476,11 @@
             this.gb1.Controls.Add(this.mskDienthoai);
             this.gb1.Controls.Add(this.lblDienthoai);
             this.gb1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb1.Location = new System.Drawing.Point(96, 78);
+            this.gb1.Location = new System.Drawing.Point(96, 65);
             this.gb1.Margin = new System.Windows.Forms.Padding(4);
             this.gb1.Name = "gb1";
             this.gb1.Padding = new System.Windows.Forms.Padding(4);
-            this.gb1.Size = new System.Drawing.Size(994, 204);
+            this.gb1.Size = new System.Drawing.Size(994, 217);
             this.gb1.TabIndex = 50;
             this.gb1.TabStop = false;
             this.gb1.Text = "Thông tin chung";
@@ -649,6 +653,22 @@
             this.label1.TabIndex = 47;
             this.label1.Text = "HỢP ĐỒNG BÀI VIẾT";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(8, 180);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(65, 20);
+            this.label15.TabIndex = 48;
+            this.label15.Text = "Ngày ký:";
+            // 
+            // txtNgayky
+            // 
+            this.txtNgayky.Location = new System.Drawing.Point(120, 176);
+            this.txtNgayky.Name = "txtNgayky";
+            this.txtNgayky.Size = new System.Drawing.Size(157, 27);
+            this.txtNgayky.TabIndex = 49;
+            // 
             // Hopdongbaiviet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -726,5 +746,7 @@
         private System.Windows.Forms.Button btnIn;
         private System.Windows.Forms.Button btnDong;
         private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.TextBox txtNgayky;
+        private System.Windows.Forms.Label label15;
     }
 }
