@@ -24,7 +24,7 @@ namespace Project.Forms
             InitializeComponent();
         }
 
-        private void Hopdongquangcao_Load (object sender, EventArgs e)
+        private void Hopdongquangcao_Load(object sender, EventArgs e)
         {
             Function.Connect();
             cbomahopdongqc.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -33,9 +33,9 @@ namespace Project.Forms
             btnluu.Enabled = false;
             btnhuy.Enabled = false;
             btnin.Enabled = false;
-            btntinhtien.Enabled = true;
-            
-            
+
+
+
 
             //txtmahopdongqc.ReadOnly = true;
             //txttennhanvien.Enabled = true;
@@ -67,7 +67,7 @@ namespace Project.Forms
             cbomaquangcao.SelectedIndex = -1;
             Class.Function.FillCombo("select MalanQC from tblKhach_Quangcao", cbomahopdongqc, "MalanQC", "MalanQC");
             cbomahopdongqc.SelectedIndex = -1;
-            
+
 
             //Hiển thị thông tin của một hóa đơn được gọi từ form tìm kiếm
             if (txtmahopdongqc.Text != "")
@@ -112,7 +112,7 @@ namespace Project.Forms
         private void Load_ThongtinHD()
         {
             string str;
-            
+
             str = "SELECT MaNV FROM tblKhach_Quangcao WHERE MalanQC = N'" + txtmahopdongqc.Text + "'";
             cbomanhanvien.Text = Class.Function.GetFieldValues(str);
             str = "SELECT MaKH FROM tblKhach_Quangcao WHERE MalanQC = N'" + txtmahopdongqc.Text + "'";
@@ -226,7 +226,7 @@ namespace Project.Forms
             btnsua.Enabled = true;
             btnhuy.Enabled = true;
             btnin.Enabled = true;
-            btntinhtien.Enabled = true;
+
         }
 
 
@@ -244,7 +244,7 @@ namespace Project.Forms
             btnhuy.Enabled = true;
             btnluu.Enabled = true;
             btnin.Enabled = true;
-            btntinhtien.Enabled = true;
+
             cbomahopdongqc.SelectedIndex = -1;
             resetvaluesHD();
         }
@@ -252,7 +252,7 @@ namespace Project.Forms
         private void resetvalues()
         {
             txtmahopdongqc.Text = "";
-          
+
             cbomanhanvien.Text = "";
             txttennhanvien.Text = "";
             cbomakhachhang.Text = "";
@@ -272,7 +272,7 @@ namespace Project.Forms
             mskngayketthuc.Text = "";
             txtdongia.Text = "";
             txtthanhtien.Text = "0";
-            txtTong.Text= "0";
+            txtTong.Text = "0";
 
         }
         private void resetvaluesHD()
@@ -286,7 +286,7 @@ namespace Project.Forms
             txtnoidung.Text = "";
             txtdongia.Text = "";
             txtthanhtien.Text = "";
-            
+
         }
         private void btnthem_Click_1(object sender, EventArgs e)
         {
@@ -295,9 +295,9 @@ namespace Project.Forms
             btnluu.Enabled = true;
             btnin.Enabled = false;
             btnthem.Enabled = false;
-            btntinhtien.Enabled = true;
+
             txtmahopdongqc.Enabled = false;
-            
+
             txttennhanvien.Enabled = false;
             txttenkhachhang.Enabled = true;
             mskdienthoai.Enabled = true;
@@ -309,7 +309,7 @@ namespace Project.Forms
             txttenquangcao.Enabled = true;
             mskngaybatdau.Enabled = true;
             mskngayketthuc.Enabled = true;
-           
+
             resetvalues();
             txtmahopdongqc.Text = Class.Function.CreateHDQCKey();
             load_datagridview();
@@ -361,7 +361,7 @@ namespace Project.Forms
         }
 
 
-        
+
 
         private void btnhuy_Click_1(object sender, EventArgs e)
         {
@@ -384,7 +384,7 @@ namespace Project.Forms
                 resetvalues();
             }
         }
-       
+
 
         private void btnluu_Click_1(object sender, EventArgs e)
         {
@@ -445,7 +445,7 @@ namespace Project.Forms
                 return;
             }
             sql = "Insert into tblKhachhang (MaKH, TenKH, Diachi, Dienthoai, Didong, Email, MaLVHD) values (N'" + cbomakhachhang.SelectedValue + "',N'" + txttenkhachhang.Text.Trim() + "',N'" + txtdiachi.Text.Trim() + "',N'" + mskdienthoai.Text.Trim() + "', N'" + mskdidong.Text.Trim() + "',N'" + txtemail.Text.Trim() + "', N'" + cbomalvhd.SelectedValue + "')";
-            
+
             Class.Function.RunSql(sql);
             //}
             if (cbomabao.Text.Length == 0)
@@ -486,7 +486,7 @@ namespace Project.Forms
                 return;
             }
             sql = "Insert into tblKhach_Quangcao (MalanQC, MaKH, Mabao, MaNV, MaQcao, Noidung, NgayBD, NgayKT, Tongtien ) values (N'" + txtmahopdongqc.Text.Trim() + "',N'" + cbomakhachhang.SelectedValue + "', N'" + cbomabao.SelectedValue + "', N'" + cbomanhanvien.SelectedValue + "',N'" + cbomaquangcao.SelectedValue + "',N'" + txtnoidung.Text.Trim() + "', N'" + mskngaybatdau.Text.Trim() + "',N'" + mskngayketthuc.Text.Trim() + "',N'" + txtTong.Text.Trim() + "')";
-                        
+
             Class.Function.RunSql(sql);
             load_datagridview();
             resetvaluesHD();
@@ -495,7 +495,7 @@ namespace Project.Forms
             btnsua.Enabled = true;
             btnin.Enabled = false;
             btnluu.Enabled = false;
-            btntinhtien.Enabled = false;
+
         }
 
         private void btnsua_Click_1(object sender, EventArgs e)
@@ -599,7 +599,7 @@ namespace Project.Forms
             load_datagridview();
             resetvalues();
             btnin.Enabled = false;
-            btntinhtien.Enabled = true;
+
         }
 
         private void btnin_Click_1(object sender, EventArgs e)
@@ -745,6 +745,7 @@ namespace Project.Forms
             }
             str = "Select Tenbao from tblBao where Mabao= N'" + cbomabao.Text + "'";
             txttenbao.Text = Function.GetFieldValues(str);
+            UpdateDongia();
 
         }
 
@@ -757,9 +758,38 @@ namespace Project.Forms
             }
             str = "Select TenQcao from tblTTQuangcao where MaQcao= N'" + cbomaquangcao.Text + "'";
             txttenquangcao.Text = Function.GetFieldValues(str);
+            UpdateDongia();
         }
 
-        
+
+
+
+        private void UpdateDongia()
+        {
+            // Kiểm tra xem cả hai combobox đều đã có giá trị được chọn
+            if (cbomabao.SelectedValue != null && cbomaquangcao.SelectedValue != null)
+            {
+                string mabao = cbomabao.SelectedValue.ToString();
+                string maquangcao = cbomaquangcao.SelectedValue.ToString();
+
+                // Truy vấn cơ sở dữ liệu để lấy giá tiền tương ứng
+                string query1 = $"SELECT Dongia FROM tblBanggia WHERE Mabao = N'{mabao}' AND MaQcao = N'{maquangcao}'";
+                string dongia = Class.Function.GetFieldValues(query1);
+                string query2 = $"SELECT (Dongia*DATEDIFF(day,NgayBD,NgayKT)) as Thanhtien from tblKhach_Quangcao inner join tblBanggia on tblKhach_Quangcao.Mabao = tblBanggia.Mabao Where tblBanggia.Mabao = N'{mabao}' AND tblBanggia.MaQcao = N'{maquangcao}'";
+                string thanhtien = Class.Function.GetFieldValues(query2);
+                string query3 = $"SELECT NgayBD from tblKhach_Quangcao inner join tblBanggia on tblKhach_Quangcao.Mabao = tblBanggia.Mabao Where tblBanggia.Mabao = N'{mabao}' AND tblBanggia.MaQcao = N'{maquangcao}'";
+                string ngaybd = Class.Function.GetFieldValues(query3);
+                string query4 = $"SELECT NgayKT from tblKhach_Quangcao inner join tblBanggia on tblKhach_Quangcao.Mabao = tblBanggia.Mabao Where tblBanggia.Mabao = N'{mabao}' AND tblBanggia.MaQcao = N'{maquangcao}'";
+                string ngaykt = Class.Function.GetFieldValues(query4);
+                // Hiển thị đơn giá và ngày trong textbox Đơn giá
+                txtdongia.Text = string.IsNullOrEmpty(dongia) ? "0" : dongia;
+                mskngaybatdau.Text = string.IsNullOrEmpty(ngaybd) ? "  /  /    " : ngaybd;
+                mskngayketthuc.Text = string.IsNullOrEmpty(ngaykt) ? "  /  /    " : ngaykt;
+                // Hiển thị thành tiền tính từ đơn giá *(Ngày KT - Ngày BD)
+                txtthanhtien.Text = string.IsNullOrEmpty(thanhtien) ? "0" : thanhtien;
+
+            }
+        }
     }
 }
 

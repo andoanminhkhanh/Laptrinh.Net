@@ -84,7 +84,19 @@ namespace Project
             a.Show();
         }
 
-        private void báoToolStripMenuItem_Click(object sender, EventArgs e)
+        /*private void báoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.Báo a = new Forms.Báo();
+            a.Show();
+        }*/
+
+        private void thểLoạiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.mnuTheloai a = new Forms.mnuTheloai();
+            a.Show();
+        }
+
+        private void báoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Forms.Báo a = new Forms.Báo();
             a.Show();

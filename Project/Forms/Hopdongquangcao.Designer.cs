@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.mskdidong = new System.Windows.Forms.MaskedTextBox();
             this.cbomalvhd = new System.Windows.Forms.ComboBox();
             this.lblLVHD = new System.Windows.Forms.Label();
             this.txtmahopdongqc = new System.Windows.Forms.TextBox();
@@ -58,7 +59,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.cbomaquangcao = new System.Windows.Forms.ComboBox();
             this.mskngayketthuc = new System.Windows.Forms.MaskedTextBox();
-            this.btntinhtien = new System.Windows.Forms.Button();
             this.mskngaybatdau = new System.Windows.Forms.MaskedTextBox();
             this.btndong = new System.Windows.Forms.Button();
             this.btnin = new System.Windows.Forms.Button();
@@ -82,7 +82,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.mskdidong = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatagridView)).BeginInit();
@@ -127,6 +126,14 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chung:";
+            // 
+            // mskdidong
+            // 
+            this.mskdidong.Location = new System.Drawing.Point(966, 28);
+            this.mskdidong.Mask = "(999) 000-0000";
+            this.mskdidong.Name = "mskdidong";
+            this.mskdidong.Size = new System.Drawing.Size(200, 22);
+            this.mskdidong.TabIndex = 39;
             // 
             // cbomalvhd
             // 
@@ -333,7 +340,6 @@
             this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.cbomaquangcao);
             this.groupBox2.Controls.Add(this.mskngayketthuc);
-            this.groupBox2.Controls.Add(this.btntinhtien);
             this.groupBox2.Controls.Add(this.mskngaybatdau);
             this.groupBox2.Controls.Add(this.btndong);
             this.groupBox2.Controls.Add(this.btnin);
@@ -387,6 +393,7 @@
             this.cbomaquangcao.Name = "cbomaquangcao";
             this.cbomaquangcao.Size = new System.Drawing.Size(154, 24);
             this.cbomaquangcao.TabIndex = 29;
+            //this.cbomaquangcao.SelectedIndexChanged += new System.EventHandler(this.cbomaquangcao_SelectedIndexChanged);
             this.cbomaquangcao.TextChanged += new System.EventHandler(this.cbomaquangcao_TextChanged);
             // 
             // mskngayketthuc
@@ -397,15 +404,6 @@
             this.mskngayketthuc.Size = new System.Drawing.Size(154, 22);
             this.mskngayketthuc.TabIndex = 28;
             this.mskngayketthuc.ValidatingType = typeof(System.DateTime);
-            // 
-            // btntinhtien
-            // 
-            this.btntinhtien.Location = new System.Drawing.Point(1102, 124);
-            this.btntinhtien.Name = "btntinhtien";
-            this.btntinhtien.Size = new System.Drawing.Size(87, 34);
-            this.btntinhtien.TabIndex = 30;
-            this.btntinhtien.Text = "Tính tiền";
-            this.btntinhtien.UseVisualStyleBackColor = true;
             // 
             // mskngaybatdau
             // 
@@ -530,6 +528,7 @@
             this.cbomabao.Name = "cbomabao";
             this.cbomabao.Size = new System.Drawing.Size(154, 24);
             this.cbomabao.TabIndex = 10;
+            //this.cbomabao.SelectedIndexChanged += new System.EventHandler(this.cbomabao_SelectedIndexChanged);
             this.cbomabao.TextChanged += new System.EventHandler(this.cbomabao_TextChanged);
             // 
             // label20
@@ -613,14 +612,6 @@
             this.label12.TabIndex = 1;
             this.label12.Text = "Mã Báo:";
             // 
-            // mskdidong
-            // 
-            this.mskdidong.Location = new System.Drawing.Point(966, 28);
-            this.mskdidong.Mask = "(999) 000-0000";
-            this.mskdidong.Name = "mskdidong";
-            this.mskdidong.Size = new System.Drawing.Size(200, 22);
-            this.mskdidong.TabIndex = 39;
-            // 
             // Hopdongquangcao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -696,7 +687,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button btntinhtien;
         private System.Windows.Forms.TextBox txtTong;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label lblLVHD;
