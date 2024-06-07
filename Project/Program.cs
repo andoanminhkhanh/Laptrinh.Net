@@ -17,7 +17,7 @@ namespace Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Dangnhap());
+            Application.Run(new Form1());
         }
     }
 }

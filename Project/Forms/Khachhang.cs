@@ -19,7 +19,7 @@ namespace Project.Forms
         }
         private void Khachhang_Load(object sender, EventArgs e)
         {
-            txtMakhachhang.Enabled = false;
+            txtMakhachhang.Enabled = true;
             btnLuu.Enabled = false;
             btnBoqua.Enabled = false;
             Load_data();
@@ -97,7 +97,7 @@ namespace Project.Forms
             btnLuu.Enabled = true;
             btnThem.Enabled = false;
             ResetValues();
-            txtMakhachhang.Enabled = true;
+            txtMakhachhang.Enabled = false;
             txtMakhachhang.Focus();
             string newCustomerID = Function.CreateCustomerKey();
 
@@ -276,7 +276,6 @@ namespace Project.Forms
         {
             this.Close();
         }
-        DataTable tbltkkh;
         private void btnTimkiem_Click(object sender, EventArgs e)
         {
             string sql;
@@ -285,25 +284,47 @@ namespace Project.Forms
                 MessageBox.Show("Hãy nhập một điều kiện tìm kiếm!!!", "Yêu cầu...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            sql = "select * from tblkhachhang where 1=1";
+            sql = "select * from tblKhachhang where 1=1";
             if (txtMakhachhang.Text != "")
                 sql = sql + "AND MaKH like N'%" + txtMakhachhang.Text + "%'";
             if (txtTenkhachhang.Text != "")
-                sql = sql + "and MaKH like N'%" + txtMakhachhang.Text + "%'";
+                sql = sql + "AND TenKH like N'%" + txtTenkhachhang.Text + "%'";
             if (mskDienthoai.Text != "")
-                sql = sql + "and Dienthoai =" + mskDienthoai.Text;
+                sql = sql + "AND Dienthoai =" + mskDienthoai.Text;
             if (mskDidong.Text != "")
-                sql = sql + "and Didong =" + mskDidong.Text ;
-            tbltkkh = Class.Function.GetDataToTable(sql);
-            if (tbltkkh.Rows.Count == 0)
+                sql = sql + "AND Didong =" + mskDidong.Text ;
+
+            tblkh = Class.Function.GetDataToTable(sql);
+
+            if (tblkh.Rows.Count == 0)
             {
                 MessageBox.Show("Không có bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ResetValues();
             }
             else
-                MessageBox.Show("Có " + tbltkkh.Rows.Count + " bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            dgridKhachhang.DataSource = tbltkkh;
-            Load_data();
+                MessageBox.Show("Có " + tblkh.Rows.Count + " bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            dgridKhachhang.DataSource = tblkh;
+            //Load_DataGridView();
+            ResetValues();
         }
+        //private void Load_DataGridView()
+        //{
+        //    dgridKhachhang.Columns[0].HeaderText = "Mã khách hàng";
+        //    dgridKhachhang.Columns[1].HeaderText = "Tên khách hàng";
+        //    dgridKhachhang.Columns[2].HeaderText = "Địa chỉ";
+        //    dgridKhachhang.Columns[3].HeaderText = "Điện thoại";
+        //    dgridKhachhang.Columns[4].HeaderText = "Di động";
+        //    dgridKhachhang.Columns[5].HeaderText = "Email";
+        //    dgridKhachhang.Columns[6].HeaderText = "Mã lĩnh vực hoạt động";
+        //    dgridKhachhang.Columns[0].Width = 80;
+        //    dgridKhachhang.Columns[1].Width = 150;
+        //    dgridKhachhang.Columns[0].Width = 100;
+        //    dgridKhachhang.Columns[1].Width = 100;
+        //    dgridKhachhang.Columns[0].Width = 100;
+        //    dgridKhachhang.Columns[1].Width = 100;
+        //    dgridKhachhang.Columns[0].Width = 100;
+        //    dgridKhachhang.AllowUserToAddRows = false;
+        //    dgridKhachhang.EditMode =DataGridViewEditMode.EditProgrammatically;
+        //}
     }
 }

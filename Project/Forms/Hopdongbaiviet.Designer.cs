@@ -33,6 +33,9 @@
             this.lblDiachi = new System.Windows.Forms.Label();
             this.cbMahopdong = new System.Windows.Forms.ComboBox();
             this.gb2 = new System.Windows.Forms.GroupBox();
+            this.lblBangchu = new System.Windows.Forms.Label();
+            this.txtTongtien = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.btnThembaiviet = new System.Windows.Forms.Button();
             this.txtNhuanbut = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -74,9 +77,6 @@
             this.mskDienthoai = new System.Windows.Forms.MaskedTextBox();
             this.lblDienthoai = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtTongtien = new System.Windows.Forms.TextBox();
-            this.lblBangchu = new System.Windows.Forms.Label();
             this.gb2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgridHopdongbaiviet)).BeginInit();
             this.gb1.SuspendLayout();
@@ -120,6 +120,7 @@
             this.cbMahopdong.Name = "cbMahopdong";
             this.cbMahopdong.Size = new System.Drawing.Size(157, 28);
             this.cbMahopdong.TabIndex = 52;
+            this.cbMahopdong.DropDown += new System.EventHandler(this.cbMahopdong_DropDown);
             // 
             // gb2
             // 
@@ -156,6 +157,31 @@
             this.gb2.TabStop = false;
             this.gb2.Text = "Thông tin hợp đồng";
             // 
+            // lblBangchu
+            // 
+            this.lblBangchu.AutoSize = true;
+            this.lblBangchu.Location = new System.Drawing.Point(8, 477);
+            this.lblBangchu.Name = "lblBangchu";
+            this.lblBangchu.Size = new System.Drawing.Size(78, 20);
+            this.lblBangchu.TabIndex = 61;
+            this.lblBangchu.Text = "Bằng chữ: ";
+            // 
+            // txtTongtien
+            // 
+            this.txtTongtien.Location = new System.Drawing.Point(656, 470);
+            this.txtTongtien.Name = "txtTongtien";
+            this.txtTongtien.Size = new System.Drawing.Size(199, 27);
+            this.txtTongtien.TabIndex = 60;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(566, 477);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(72, 20);
+            this.label14.TabIndex = 59;
+            this.label14.Text = "Tổng tiền";
+            // 
             // btnThembaiviet
             // 
             this.btnThembaiviet.Location = new System.Drawing.Point(47, 440);
@@ -164,6 +190,7 @@
             this.btnThembaiviet.TabIndex = 58;
             this.btnThembaiviet.Text = "Thêm bài viết";
             this.btnThembaiviet.UseVisualStyleBackColor = true;
+            this.btnThembaiviet.Click += new System.EventHandler(this.btnThembaiviet_Click);
             // 
             // txtNhuanbut
             // 
@@ -580,31 +607,6 @@
             this.label1.Size = new System.Drawing.Size(262, 37);
             this.label1.TabIndex = 47;
             this.label1.Text = "HỢP ĐỒNG BÀI VIẾT";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(566, 477);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(72, 20);
-            this.label14.TabIndex = 59;
-            this.label14.Text = "Tổng tiền";
-            // 
-            // txtTongtien
-            // 
-            this.txtTongtien.Location = new System.Drawing.Point(656, 470);
-            this.txtTongtien.Name = "txtTongtien";
-            this.txtTongtien.Size = new System.Drawing.Size(199, 27);
-            this.txtTongtien.TabIndex = 60;
-            // 
-            // lblBangchu
-            // 
-            this.lblBangchu.AutoSize = true;
-            this.lblBangchu.Location = new System.Drawing.Point(8, 477);
-            this.lblBangchu.Name = "lblBangchu";
-            this.lblBangchu.Size = new System.Drawing.Size(78, 20);
-            this.lblBangchu.TabIndex = 61;
-            this.lblBangchu.Text = "Bằng chữ: ";
             // 
             // Hopdongbaiviet
             // 
