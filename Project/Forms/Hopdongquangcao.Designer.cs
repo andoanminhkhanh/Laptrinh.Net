@@ -55,16 +55,17 @@
             this.label21 = new System.Windows.Forms.Label();
             this.btntimkiem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtTong = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.cbomaquangcao = new System.Windows.Forms.ComboBox();
-            this.mskngayketthuc = new System.Windows.Forms.MaskedTextBox();
-            this.mskngaybatdau = new System.Windows.Forms.MaskedTextBox();
-            this.btndong = new System.Windows.Forms.Button();
             this.btnin = new System.Windows.Forms.Button();
+            this.txtTong = new System.Windows.Forms.TextBox();
+            this.btndong = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
             this.btnhuy = new System.Windows.Forms.Button();
+            this.cbomaquangcao = new System.Windows.Forms.ComboBox();
             this.btnsua = new System.Windows.Forms.Button();
             this.btnluu = new System.Windows.Forms.Button();
+            this.mskngayketthuc = new System.Windows.Forms.MaskedTextBox();
+            this.btnthembao = new System.Windows.Forms.Button();
+            this.mskngaybatdau = new System.Windows.Forms.MaskedTextBox();
             this.btnthem = new System.Windows.Forms.Button();
             this.DatagridView = new System.Windows.Forms.DataGridView();
             this.txtnoidung = new System.Windows.Forms.TextBox();
@@ -310,7 +311,7 @@
             // cbomahopdongqc
             // 
             this.cbomahopdongqc.FormattingEnabled = true;
-            this.cbomahopdongqc.Location = new System.Drawing.Point(164, 702);
+            this.cbomahopdongqc.Location = new System.Drawing.Point(134, 758);
             this.cbomahopdongqc.Name = "cbomahopdongqc";
             this.cbomahopdongqc.Size = new System.Drawing.Size(154, 24);
             this.cbomahopdongqc.TabIndex = 33;
@@ -318,7 +319,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(36, 710);
+            this.label21.Location = new System.Drawing.Point(36, 761);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(92, 16);
             this.label21.TabIndex = 32;
@@ -326,7 +327,7 @@
             // 
             // btntimkiem
             // 
-            this.btntimkiem.Location = new System.Drawing.Point(355, 702);
+            this.btntimkiem.Location = new System.Drawing.Point(314, 759);
             this.btntimkiem.Name = "btntimkiem";
             this.btntimkiem.Size = new System.Drawing.Size(75, 23);
             this.btntimkiem.TabIndex = 31;
@@ -336,16 +337,17 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtTong);
-            this.groupBox2.Controls.Add(this.label22);
-            this.groupBox2.Controls.Add(this.cbomaquangcao);
-            this.groupBox2.Controls.Add(this.mskngayketthuc);
-            this.groupBox2.Controls.Add(this.mskngaybatdau);
-            this.groupBox2.Controls.Add(this.btndong);
             this.groupBox2.Controls.Add(this.btnin);
+            this.groupBox2.Controls.Add(this.txtTong);
+            this.groupBox2.Controls.Add(this.btndong);
+            this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.btnhuy);
+            this.groupBox2.Controls.Add(this.cbomaquangcao);
             this.groupBox2.Controls.Add(this.btnsua);
             this.groupBox2.Controls.Add(this.btnluu);
+            this.groupBox2.Controls.Add(this.mskngayketthuc);
+            this.groupBox2.Controls.Add(this.btnthembao);
+            this.groupBox2.Controls.Add(this.mskngaybatdau);
             this.groupBox2.Controls.Add(this.btnthem);
             this.groupBox2.Controls.Add(this.DatagridView);
             this.groupBox2.Controls.Add(this.txtnoidung);
@@ -365,10 +367,27 @@
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Location = new System.Drawing.Point(45, 254);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1243, 427);
+            this.groupBox2.Size = new System.Drawing.Size(1243, 498);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin chi tiết:";
+            // 
+            // btnin
+            // 
+            this.btnin.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnin.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnin.Image = global::Project.Properties.Resources._535198__1_;
+            this.btnin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnin.Location = new System.Drawing.Point(1004, 426);
+            this.btnin.Name = "btnin";
+            this.btnin.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnin.Size = new System.Drawing.Size(116, 36);
+            this.btnin.TabIndex = 74;
+            this.btnin.Text = "In hợp đồng";
+            this.btnin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnin.UseVisualStyleBackColor = false;
             // 
             // txtTong
             // 
@@ -376,6 +395,23 @@
             this.txtTong.Name = "txtTong";
             this.txtTong.Size = new System.Drawing.Size(154, 22);
             this.txtTong.TabIndex = 32;
+            // 
+            // btndong
+            // 
+            this.btndong.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btndong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btndong.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btndong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndong.Image = global::Project.Properties.Resources.pngtree_shutdown_vector_icon_png_image_3722547__1_;
+            this.btndong.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btndong.Location = new System.Drawing.Point(1132, 424);
+            this.btndong.Name = "btndong";
+            this.btndong.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btndong.Size = new System.Drawing.Size(75, 38);
+            this.btndong.TabIndex = 73;
+            this.btndong.Text = "Đóng";
+            this.btndong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btndong.UseVisualStyleBackColor = false;
             // 
             // label22
             // 
@@ -386,6 +422,23 @@
             this.label22.TabIndex = 31;
             this.label22.Text = "Tổng tiền:";
             // 
+            // btnhuy
+            // 
+            this.btnhuy.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnhuy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnhuy.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnhuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnhuy.Image = global::Project.Properties.Resources.images__1___1_;
+            this.btnhuy.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnhuy.Location = new System.Drawing.Point(854, 426);
+            this.btnhuy.Name = "btnhuy";
+            this.btnhuy.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnhuy.Size = new System.Drawing.Size(139, 36);
+            this.btnhuy.TabIndex = 72;
+            this.btnhuy.Text = "Hủy hợp đồng";
+            this.btnhuy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnhuy.UseVisualStyleBackColor = false;
+            // 
             // cbomaquangcao
             // 
             this.cbomaquangcao.FormattingEnabled = true;
@@ -393,8 +446,41 @@
             this.cbomaquangcao.Name = "cbomaquangcao";
             this.cbomaquangcao.Size = new System.Drawing.Size(154, 24);
             this.cbomaquangcao.TabIndex = 29;
-            //this.cbomaquangcao.SelectedIndexChanged += new System.EventHandler(this.cbomaquangcao_SelectedIndexChanged);
             this.cbomaquangcao.TextChanged += new System.EventHandler(this.cbomaquangcao_TextChanged);
+            // 
+            // btnsua
+            // 
+            this.btnsua.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnsua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnsua.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnsua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsua.Image = global::Project.Properties.Resources.images__2___1_;
+            this.btnsua.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnsua.Location = new System.Drawing.Point(756, 426);
+            this.btnsua.Name = "btnsua";
+            this.btnsua.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnsua.Size = new System.Drawing.Size(75, 36);
+            this.btnsua.TabIndex = 71;
+            this.btnsua.Text = "Sửa";
+            this.btnsua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnsua.UseVisualStyleBackColor = false;
+            // 
+            // btnluu
+            // 
+            this.btnluu.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnluu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnluu.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnluu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnluu.Image = global::Project.Properties.Resources.pngtree_save_vector_icon_png_image_3758949__2_;
+            this.btnluu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnluu.Location = new System.Drawing.Point(658, 426);
+            this.btnluu.Name = "btnluu";
+            this.btnluu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnluu.Size = new System.Drawing.Size(75, 36);
+            this.btnluu.TabIndex = 70;
+            this.btnluu.Text = "Lưu";
+            this.btnluu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnluu.UseVisualStyleBackColor = false;
             // 
             // mskngayketthuc
             // 
@@ -405,6 +491,23 @@
             this.mskngayketthuc.TabIndex = 28;
             this.mskngayketthuc.ValidatingType = typeof(System.DateTime);
             // 
+            // btnthembao
+            // 
+            this.btnthembao.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnthembao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnthembao.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnthembao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnthembao.Image = global::Project.Properties.Resources.plus_24844_1280__1___2_;
+            this.btnthembao.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnthembao.Location = new System.Drawing.Point(372, 426);
+            this.btnthembao.Name = "btnthembao";
+            this.btnthembao.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnthembao.Size = new System.Drawing.Size(122, 36);
+            this.btnthembao.TabIndex = 69;
+            this.btnthembao.Text = "Thêm bài báo";
+            this.btnthembao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnthembao.UseVisualStyleBackColor = false;
+            // 
             // mskngaybatdau
             // 
             this.mskngaybatdau.Location = new System.Drawing.Point(799, 43);
@@ -414,65 +517,22 @@
             this.mskngaybatdau.TabIndex = 27;
             this.mskngaybatdau.ValidatingType = typeof(System.DateTime);
             // 
-            // btndong
-            // 
-            this.btndong.Location = new System.Drawing.Point(1132, 384);
-            this.btndong.Name = "btndong";
-            this.btndong.Size = new System.Drawing.Size(75, 23);
-            this.btndong.TabIndex = 26;
-            this.btndong.Text = "Đóng";
-            this.btndong.UseVisualStyleBackColor = true;
-            this.btndong.Click += new System.EventHandler(this.btndong_Click_1);
-            // 
-            // btnin
-            // 
-            this.btnin.Location = new System.Drawing.Point(978, 384);
-            this.btnin.Name = "btnin";
-            this.btnin.Size = new System.Drawing.Size(119, 23);
-            this.btnin.TabIndex = 25;
-            this.btnin.Text = "In Hợp đồng";
-            this.btnin.UseVisualStyleBackColor = true;
-            this.btnin.Click += new System.EventHandler(this.btnin_Click_1);
-            // 
-            // btnhuy
-            // 
-            this.btnhuy.Location = new System.Drawing.Point(816, 384);
-            this.btnhuy.Name = "btnhuy";
-            this.btnhuy.Size = new System.Drawing.Size(139, 23);
-            this.btnhuy.TabIndex = 24;
-            this.btnhuy.Text = "Hủy Hợp đồng";
-            this.btnhuy.UseVisualStyleBackColor = true;
-            this.btnhuy.Click += new System.EventHandler(this.btnhuy_Click_1);
-            // 
-            // btnsua
-            // 
-            this.btnsua.Location = new System.Drawing.Point(707, 384);
-            this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(75, 23);
-            this.btnsua.TabIndex = 23;
-            this.btnsua.Text = "Sửa";
-            this.btnsua.UseVisualStyleBackColor = true;
-            this.btnsua.Click += new System.EventHandler(this.btnsua_Click_1);
-            // 
-            // btnluu
-            // 
-            this.btnluu.Location = new System.Drawing.Point(583, 384);
-            this.btnluu.Name = "btnluu";
-            this.btnluu.Size = new System.Drawing.Size(75, 23);
-            this.btnluu.TabIndex = 22;
-            this.btnluu.Text = "Lưu";
-            this.btnluu.UseVisualStyleBackColor = true;
-            this.btnluu.Click += new System.EventHandler(this.btnluu_Click_1);
-            // 
             // btnthem
             // 
-            this.btnthem.Location = new System.Drawing.Point(415, 384);
+            this.btnthem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnthem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnthem.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnthem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnthem.Image = global::Project.Properties.Resources.plus_24844_1280__1___2_;
+            this.btnthem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnthem.Location = new System.Drawing.Point(500, 426);
             this.btnthem.Name = "btnthem";
-            this.btnthem.Size = new System.Drawing.Size(134, 23);
-            this.btnthem.TabIndex = 21;
-            this.btnthem.Text = "Thêm Hợp đồng";
-            this.btnthem.UseVisualStyleBackColor = true;
-            this.btnthem.Click += new System.EventHandler(this.btnthem_Click_1);
+            this.btnthem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnthem.Size = new System.Drawing.Size(139, 36);
+            this.btnthem.TabIndex = 68;
+            this.btnthem.Text = "Thêm hợp đồng";
+            this.btnthem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnthem.UseVisualStyleBackColor = false;
             // 
             // DatagridView
             // 
@@ -528,7 +588,6 @@
             this.cbomabao.Name = "cbomabao";
             this.cbomabao.Size = new System.Drawing.Size(154, 24);
             this.cbomabao.TabIndex = 10;
-            //this.cbomabao.SelectedIndexChanged += new System.EventHandler(this.cbomabao_SelectedIndexChanged);
             this.cbomabao.TextChanged += new System.EventHandler(this.cbomabao_TextChanged);
             // 
             // label20
@@ -616,7 +675,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1342, 737);
+            this.ClientSize = new System.Drawing.Size(1354, 786);
             this.Controls.Add(this.cbomahopdongqc);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.btntimkiem);
@@ -665,12 +724,6 @@
         private System.Windows.Forms.ComboBox cbomaquangcao;
         private System.Windows.Forms.MaskedTextBox mskngayketthuc;
         private System.Windows.Forms.MaskedTextBox mskngaybatdau;
-        private System.Windows.Forms.Button btndong;
-        private System.Windows.Forms.Button btnin;
-        private System.Windows.Forms.Button btnhuy;
-        private System.Windows.Forms.Button btnsua;
-        private System.Windows.Forms.Button btnluu;
-        private System.Windows.Forms.Button btnthem;
         private System.Windows.Forms.DataGridView DatagridView;
         private System.Windows.Forms.TextBox txtnoidung;
         private System.Windows.Forms.TextBox txtthanhtien;
@@ -692,5 +745,12 @@
         private System.Windows.Forms.Label lblLVHD;
         private System.Windows.Forms.ComboBox cbomalvhd;
         private System.Windows.Forms.MaskedTextBox mskdidong;
+        private System.Windows.Forms.Button btnin;
+        private System.Windows.Forms.Button btndong;
+        private System.Windows.Forms.Button btnhuy;
+        private System.Windows.Forms.Button btnsua;
+        private System.Windows.Forms.Button btnluu;
+        private System.Windows.Forms.Button btnthembao;
+        private System.Windows.Forms.Button btnthem;
     }
 }
