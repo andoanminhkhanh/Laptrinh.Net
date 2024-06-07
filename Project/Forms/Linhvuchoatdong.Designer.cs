@@ -133,7 +133,7 @@
             this.btnThoat.Location = new System.Drawing.Point(812, 481);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnThoat.Size = new System.Drawing.Size(75, 40);
+            this.btnThoat.Size = new System.Drawing.Size(85, 40);
             this.btnThoat.TabIndex = 36;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -150,7 +150,7 @@
             this.btnLuu.Location = new System.Drawing.Point(521, 481);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnLuu.Size = new System.Drawing.Size(75, 40);
+            this.btnLuu.Size = new System.Drawing.Size(86, 40);
             this.btnLuu.TabIndex = 35;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -167,7 +167,7 @@
             this.btnXoa.Location = new System.Drawing.Point(359, 481);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnXoa.Size = new System.Drawing.Size(75, 40);
+            this.btnXoa.Size = new System.Drawing.Size(88, 40);
             this.btnXoa.TabIndex = 34;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -184,7 +184,7 @@
             this.btnBoqua.Location = new System.Drawing.Point(665, 481);
             this.btnBoqua.Name = "btnBoqua";
             this.btnBoqua.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnBoqua.Size = new System.Drawing.Size(75, 40);
+            this.btnBoqua.Size = new System.Drawing.Size(89, 40);
             this.btnBoqua.TabIndex = 33;
             this.btnBoqua.Text = "Bỏ qua";
             this.btnBoqua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -201,7 +201,7 @@
             this.button8.Location = new System.Drawing.Point(216, 481);
             this.button8.Name = "button8";
             this.button8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button8.Size = new System.Drawing.Size(75, 40);
+            this.button8.Size = new System.Drawing.Size(94, 40);
             this.button8.TabIndex = 31;
             this.button8.Text = "Sửa";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -218,7 +218,7 @@
             this.button2.Location = new System.Drawing.Point(75, 481);
             this.button2.Name = "button2";
             this.button2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button2.Size = new System.Drawing.Size(75, 40);
+            this.button2.Size = new System.Drawing.Size(93, 40);
             this.button2.TabIndex = 30;
             this.button2.Text = "Thêm";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -228,6 +228,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(994, 554);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnLuu);

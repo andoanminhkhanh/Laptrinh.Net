@@ -110,7 +110,7 @@
             this.btnLuu.Location = new System.Drawing.Point(480, 530);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnLuu.Size = new System.Drawing.Size(75, 40);
+            this.btnLuu.Size = new System.Drawing.Size(92, 40);
             this.btnLuu.TabIndex = 35;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -127,7 +127,7 @@
             this.btnXoa.Location = new System.Drawing.Point(167, 530);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnXoa.Size = new System.Drawing.Size(75, 40);
+            this.btnXoa.Size = new System.Drawing.Size(83, 40);
             this.btnXoa.TabIndex = 34;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -144,7 +144,7 @@
             this.btnBoqua.Location = new System.Drawing.Point(621, 530);
             this.btnBoqua.Name = "btnBoqua";
             this.btnBoqua.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnBoqua.Size = new System.Drawing.Size(83, 40);
+            this.btnBoqua.Size = new System.Drawing.Size(92, 40);
             this.btnBoqua.TabIndex = 33;
             this.btnBoqua.Text = "Bỏ qua";
             this.btnBoqua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -178,7 +178,7 @@
             this.btnSua.Location = new System.Drawing.Point(317, 530);
             this.btnSua.Name = "btnSua";
             this.btnSua.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSua.Size = new System.Drawing.Size(75, 40);
+            this.btnSua.Size = new System.Drawing.Size(87, 40);
             this.btnSua.TabIndex = 31;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -205,6 +205,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(925, 605);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnXoa);

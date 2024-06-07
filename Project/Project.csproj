@@ -345,5 +345,8 @@
   <ItemGroup>
     <None Include="Resources\Chưa có tên %281500 x 760 px%29 %281550 x 780 px%29 %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-icon-search-3d-png-image_2661788 %281%29.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

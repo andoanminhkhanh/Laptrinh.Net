@@ -121,14 +121,14 @@
   <data name="Thiết kế chưa có tên (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Thiết kế chưa có tên (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pngtree-shutdown-vector-icon-png-image_3722547 (1)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngtree-shutdown-vector-icon-png-image_3722547 (1)2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pngtree-save-vector-icon-png-image_3758949 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-save-vector-icon-png-image_3758949 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pngtree-save-vector-icon-png-image_3758949 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngtree-save-vector-icon-png-image_3758949 (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Thiết kế chưa có tên (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Thiết kế chưa có tên (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="images (2) (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images (2) (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Thiết kế chưa có tên (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Thiết kế chưa có tên (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,9 +145,6 @@
   <data name="Thiết kế chưa có tên (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Thiết kế chưa có tên (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pngtree-shutdown-vector-icon-png-image_3722547 (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngtree-shutdown-vector-icon-png-image_3722547 (1)1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,8 +154,8 @@
   <data name="87754cae9952a8f0bd5f0ac47a62854a_t" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\87754cae9952a8f0bd5f0ac47a62854a_t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Chưa có tên (1500 x 760 px) (1550 x 780 px)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Chưa có tên (1500 x 760 px) (1550 x 780 px).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="535198 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\535198 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="back1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\back1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,23 +166,29 @@
   <data name="plus-24844_1280 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus-24844_1280 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="535198 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\535198 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Chưa có tên (1500 x 760 px) (1550 x 780 px) (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Chưa có tên (1500 x 760 px) (1550 x 780 px) (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pngtree-save-icon-design--essential-icon-vector-design-png-image_877651 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngtree-save-icon-design--essential-icon-vector-design-png-image_877651 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pngtree-shutdown-vector-icon-png-image_3722547 (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-shutdown-vector-icon-png-image_3722547 (1)1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="plus-24844_1280 (1)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus-24844_1280 (1)2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pngtree-save-icon-design--essential-icon-vector-design-png-image_877651 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-save-icon-design--essential-icon-vector-design-png-image_877651 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Thiết kế chưa có tên (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Thiết kế chưa có tên (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Chưa có tên (1500 x 760 px)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Chưa có tên (1500 x 760 px).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pngtree-save-vector-icon-png-image_3758949 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngtree-save-vector-icon-png-image_3758949 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Chưa có tên (1500 x 760 px) (1550 x 780 px)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Chưa có tên (1500 x 760 px) (1550 x 780 px).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images (2) (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images (2) (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pngtree-shutdown-vector-icon-png-image_3722547 (1)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-shutdown-vector-icon-png-image_3722547 (1)2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Thiết kế chưa có tên (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Thiết kế chưa có tên (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,7 +196,7 @@
   <data name="pngtree-save-icon-design--essential-icon-vector-design-png-image_877651 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngtree-save-icon-design--essential-icon-vector-design-png-image_877651 (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Chưa có tên (1500 x 760 px) (1550 x 780 px) (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Chưa có tên (1500 x 760 px) (1550 x 780 px) (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pngtree-icon-search-3d-png-image_2661788 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-icon-search-3d-png-image_2661788 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

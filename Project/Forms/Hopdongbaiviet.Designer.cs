@@ -165,10 +165,10 @@
             this.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIn.Image = global::Project.Properties.Resources._535198__1_;
             this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnIn.Location = new System.Drawing.Point(656, 482);
+            this.btnIn.Location = new System.Drawing.Point(680, 482);
             this.btnIn.Name = "btnIn";
             this.btnIn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnIn.Size = new System.Drawing.Size(116, 36);
+            this.btnIn.Size = new System.Drawing.Size(133, 36);
             this.btnIn.TabIndex = 67;
             this.btnIn.Text = "In hợp đồng";
             this.btnIn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -182,10 +182,10 @@
             this.btnDong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDong.Image = global::Project.Properties.Resources.pngtree_shutdown_vector_icon_png_image_3722547__1_;
             this.btnDong.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDong.Location = new System.Drawing.Point(784, 480);
+            this.btnDong.Location = new System.Drawing.Point(832, 480);
             this.btnDong.Name = "btnDong";
             this.btnDong.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnDong.Size = new System.Drawing.Size(75, 38);
+            this.btnDong.Size = new System.Drawing.Size(87, 38);
             this.btnDong.TabIndex = 66;
             this.btnDong.Text = "Đóng";
             this.btnDong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -199,10 +199,10 @@
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuy.Image = global::Project.Properties.Resources.images__1___1_;
             this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHuy.Location = new System.Drawing.Point(506, 482);
+            this.btnHuy.Location = new System.Drawing.Point(512, 482);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnHuy.Size = new System.Drawing.Size(139, 36);
+            this.btnHuy.Size = new System.Drawing.Size(152, 36);
             this.btnHuy.TabIndex = 65;
             this.btnHuy.Text = "Hủy hợp đồng";
             this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -216,10 +216,10 @@
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Image = global::Project.Properties.Resources.images__2___1_;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSua.Location = new System.Drawing.Point(408, 482);
+            this.btnSua.Location = new System.Drawing.Point(404, 481);
             this.btnSua.Name = "btnSua";
             this.btnSua.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSua.Size = new System.Drawing.Size(75, 36);
+            this.btnSua.Size = new System.Drawing.Size(92, 36);
             this.btnSua.TabIndex = 64;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -233,10 +233,10 @@
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Image = global::Project.Properties.Resources.pngtree_save_vector_icon_png_image_3758949__2_;
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLuu.Location = new System.Drawing.Point(310, 482);
+            this.btnLuu.Location = new System.Drawing.Point(299, 482);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnLuu.Size = new System.Drawing.Size(75, 36);
+            this.btnLuu.Size = new System.Drawing.Size(86, 36);
             this.btnLuu.TabIndex = 63;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -250,7 +250,7 @@
             this.btnThembaiviet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThembaiviet.Image = global::Project.Properties.Resources.plus_24844_1280__1___2_;
             this.btnThembaiviet.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThembaiviet.Location = new System.Drawing.Point(24, 482);
+            this.btnThembaiviet.Location = new System.Drawing.Point(12, 482);
             this.btnThembaiviet.Name = "btnThembaiviet";
             this.btnThembaiviet.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnThembaiviet.Size = new System.Drawing.Size(122, 36);
@@ -267,7 +267,7 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Image = global::Project.Properties.Resources.plus_24844_1280__1___2_;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThem.Location = new System.Drawing.Point(152, 482);
+            this.btnThem.Location = new System.Drawing.Point(146, 481);
             this.btnThem.Name = "btnThem";
             this.btnThem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnThem.Size = new System.Drawing.Size(139, 36);
@@ -653,6 +653,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1162, 960);
             this.Controls.Add(this.cbMahopdong);
             this.Controls.Add(this.label13);

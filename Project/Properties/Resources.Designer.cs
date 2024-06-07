@@ -203,6 +203,16 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pngtree_icon_search_3d_png_image_2661788__1_ {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-icon-search-3d-png-image_2661788 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngtree_save_icon_design__essential_icon_vector_design_png_image_877651__1_ {
             get {
                 object obj = ResourceManager.GetObject("pngtree-save-icon-design--essential-icon-vector-design-png-image_877651 (1)", resourceCulture);

@@ -165,7 +165,7 @@
             this.btnluu.Location = new System.Drawing.Point(472, 574);
             this.btnluu.Name = "btnluu";
             this.btnluu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnluu.Size = new System.Drawing.Size(75, 40);
+            this.btnluu.Size = new System.Drawing.Size(85, 40);
             this.btnluu.TabIndex = 35;
             this.btnluu.Text = "Lưu";
             this.btnluu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -199,7 +199,7 @@
             this.btnboqua.Location = new System.Drawing.Point(608, 574);
             this.btnboqua.Name = "btnboqua";
             this.btnboqua.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnboqua.Size = new System.Drawing.Size(75, 40);
+            this.btnboqua.Size = new System.Drawing.Size(89, 40);
             this.btnboqua.TabIndex = 33;
             this.btnboqua.Text = "Bỏ qua";
             this.btnboqua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -216,7 +216,7 @@
             this.btnsua.Location = new System.Drawing.Point(337, 574);
             this.btnsua.Name = "btnsua";
             this.btnsua.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnsua.Size = new System.Drawing.Size(75, 40);
+            this.btnsua.Size = new System.Drawing.Size(90, 40);
             this.btnsua.TabIndex = 31;
             this.btnsua.Text = "Sửa";
             this.btnsua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -243,6 +243,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1131, 744);
             this.Controls.Add(this.btnthoat);
             this.Controls.Add(this.btnluu);

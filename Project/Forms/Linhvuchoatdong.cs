@@ -15,6 +15,7 @@ namespace Project.Forms
         public Linhvuchoatdong()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
         }
 
         private void Linhvuchoatdong_Load(object sender, EventArgs e)

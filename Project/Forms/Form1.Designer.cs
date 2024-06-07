@@ -57,21 +57,19 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MnuQuanlyKhachhang,
             this.mnu_Phongban,
             this.báoToolStripMenuItem,
             this.mnu_QC});
-            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(39, 874);
+            this.menuStrip1.Size = new System.Drawing.Size(1924, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "Quản lý Khách hàng";
-            this.menuStrip1.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical270;
             // 
             // MnuQuanlyKhachhang
             // 
@@ -80,7 +78,7 @@
             this.mnuKhachhang,
             this.mnuLvhd});
             this.MnuQuanlyKhachhang.Name = "MnuQuanlyKhachhang";
-            this.MnuQuanlyKhachhang.Size = new System.Drawing.Size(28, 144);
+            this.MnuQuanlyKhachhang.Size = new System.Drawing.Size(148, 24);
             this.MnuQuanlyKhachhang.Text = "Quản lý Khách hàng";
             // 
             // mnuKhachhang
@@ -106,7 +104,7 @@
             this.trinhdoToolStripMenuItem,
             this.phòngBanToolStripMenuItem});
             this.mnu_Phongban.Name = "mnu_Phongban";
-            this.mnu_Phongban.Size = new System.Drawing.Size(28, 130);
+            this.mnu_Phongban.Size = new System.Drawing.Size(148, 24);
             this.mnu_Phongban.Text = "Quản lý nhân viên";
             // 
             // mnu_Nhanvien
@@ -151,7 +149,7 @@
             this.báoToolStripMenuItem1,
             this.thểLoạiToolStripMenuItem});
             this.báoToolStripMenuItem.Name = "báoToolStripMenuItem";
-            this.báoToolStripMenuItem.Size = new System.Drawing.Size(28, 39);
+            this.báoToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
             this.báoToolStripMenuItem.Text = "Báo";
             // 
             // chứcNăngToolStripMenuItem
@@ -181,7 +179,7 @@
             this.mnu_TTQC,
             this.mnu_banggia});
             this.mnu_QC.Name = "mnu_QC";
-            this.mnu_QC.Size = new System.Drawing.Size(28, 85);
+            this.mnu_QC.Size = new System.Drawing.Size(148, 24);
             this.mnu_QC.Text = "Quảng cáo";
             // 
             // mnu_TTQC
@@ -202,7 +200,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(860, 15);
+            this.label1.Location = new System.Drawing.Point(818, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(249, 42);
             this.label1.TabIndex = 1;
@@ -216,10 +214,10 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = global::Project.Properties.Resources.pngtree_shutdown_vector_icon_png_image_3722547__1_2;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(1741, 21);
+            this.button3.Location = new System.Drawing.Point(1781, 811);
             this.button3.Name = "button3";
             this.button3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button3.Size = new System.Drawing.Size(132, 36);
+            this.button3.Size = new System.Drawing.Size(119, 28);
             this.button3.TabIndex = 64;
             this.button3.Text = "Đăng xuất";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

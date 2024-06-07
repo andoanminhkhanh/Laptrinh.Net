@@ -57,7 +57,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(595, 110);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(413, 46);
+            this.label1.Size = new System.Drawing.Size(399, 45);
             this.label1.TabIndex = 2;
             this.label1.Text = "ĐĂNG NHẬP HỆ THỐNG";
             // 
@@ -103,7 +103,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImage = global::Project.Properties.Resources.Thiết_kế_chưa_có_tên__3_;
-            this.ClientSize = new System.Drawing.Size(1049, 524);
+            this.ClientSize = new System.Drawing.Size(1055, 530);
             this.Controls.Add(this.btnDangnhap);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

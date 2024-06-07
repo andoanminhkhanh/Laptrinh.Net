@@ -116,7 +116,7 @@
             this.btnLuu.Location = new System.Drawing.Point(371, 478);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnLuu.Size = new System.Drawing.Size(75, 40);
+            this.btnLuu.Size = new System.Drawing.Size(91, 40);
             this.btnLuu.TabIndex = 37;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -130,10 +130,10 @@
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Image = global::Project.Properties.Resources.images__1___1_;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoa.Location = new System.Drawing.Point(271, 478);
+            this.btnXoa.Location = new System.Drawing.Point(258, 478);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnXoa.Size = new System.Drawing.Size(75, 40);
+            this.btnXoa.Size = new System.Drawing.Size(94, 40);
             this.btnXoa.TabIndex = 36;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -147,10 +147,10 @@
             this.btnBoqua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBoqua.Image = global::Project.Properties.Resources._87754cae9952a8f0bd5f0ac47a62854a_t;
             this.btnBoqua.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBoqua.Location = new System.Drawing.Point(475, 478);
+            this.btnBoqua.Location = new System.Drawing.Point(482, 478);
             this.btnBoqua.Name = "btnBoqua";
             this.btnBoqua.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnBoqua.Size = new System.Drawing.Size(84, 40);
+            this.btnBoqua.Size = new System.Drawing.Size(97, 40);
             this.btnBoqua.TabIndex = 35;
             this.btnBoqua.Text = "Bỏ qua";
             this.btnBoqua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -164,10 +164,10 @@
             this.btnDong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDong.Image = global::Project.Properties.Resources.pngtree_shutdown_vector_icon_png_image_3722547__1_;
             this.btnDong.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDong.Location = new System.Drawing.Point(595, 478);
+            this.btnDong.Location = new System.Drawing.Point(613, 478);
             this.btnDong.Name = "btnDong";
             this.btnDong.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnDong.Size = new System.Drawing.Size(75, 40);
+            this.btnDong.Size = new System.Drawing.Size(84, 40);
             this.btnDong.TabIndex = 34;
             this.btnDong.Text = "Đóng";
             this.btnDong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -181,10 +181,10 @@
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Image = global::Project.Properties.Resources.images__2___1_;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSua.Location = new System.Drawing.Point(166, 478);
+            this.btnSua.Location = new System.Drawing.Point(148, 478);
             this.btnSua.Name = "btnSua";
             this.btnSua.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSua.Size = new System.Drawing.Size(75, 40);
+            this.btnSua.Size = new System.Drawing.Size(89, 40);
             this.btnSua.TabIndex = 33;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -198,7 +198,7 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Image = global::Project.Properties.Resources.plus_24844_1280__1___2_;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThem.Location = new System.Drawing.Point(59, 478);
+            this.btnThem.Location = new System.Drawing.Point(50, 478);
             this.btnThem.Name = "btnThem";
             this.btnThem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnThem.Size = new System.Drawing.Size(75, 40);
@@ -211,6 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(801, 576);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnXoa);
