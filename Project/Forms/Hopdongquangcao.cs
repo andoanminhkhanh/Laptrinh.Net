@@ -82,15 +82,12 @@ namespace Project.Forms
             DatagridView.DataSource = tblHDQC;
 
             DatagridView.Columns[0].HeaderText = "Mã báo";
-            DatagridView.Columns[1].HeaderText = "Tên báo";
-            DatagridView.Columns[2].HeaderText = "Mã quảng cáo";
-            DatagridView.Columns[3].HeaderText = "Tên quảng cáo";
-            DatagridView.Columns[4].HeaderText = "Ngày ký";
-            DatagridView.Columns[5].HeaderText = "Nội dung";
-            DatagridView.Columns[6].HeaderText = "Ngày bắt đầu";
-            DatagridView.Columns[7].HeaderText = "Ngày kết thúc";
-            DatagridView.Columns[8].HeaderText = "Đơn giá";
-            DatagridView.Columns[9].HeaderText = "Thành tiền";
+            DatagridView.Columns[1].HeaderText = "Mã quảng cáo";
+            DatagridView.Columns[2].HeaderText = "Ngày ký";
+            DatagridView.Columns[3].HeaderText = "Nội dung";
+            DatagridView.Columns[4].HeaderText = "Ngày bắt đầu";
+            DatagridView.Columns[5].HeaderText = "Ngày kết thúc";
+            DatagridView.Columns[6].HeaderText = "Thành tiền";
             DatagridView.Columns[0].Width = 100;
             DatagridView.Columns[1].Width = 100;
             DatagridView.Columns[2].Width = 100;
@@ -98,9 +95,7 @@ namespace Project.Forms
             DatagridView.Columns[4].Width = 100;
             DatagridView.Columns[5].Width = 200;
             DatagridView.Columns[6].Width = 100;
-            DatagridView.Columns[7].Width = 100;
-            DatagridView.Columns[8].Width = 100;
-            DatagridView.Columns[9].Width = 100;
+            
             DatagridView.AllowUserToAddRows = false;
             DatagridView.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
