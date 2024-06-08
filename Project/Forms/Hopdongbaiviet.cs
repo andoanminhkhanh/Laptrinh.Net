@@ -509,13 +509,13 @@ namespace Project.Forms
             exRange.Range["C6:E6"].Value = tblThongtinHD.Rows[0][0].ToString();
             exRange.Range["B7:B7"].Value = "Khách hàng:";
             exRange.Range["C7:E7"].MergeCells = true;
-            exRange.Range["C7:E7"].Value = tblThongtinHD.Rows[0][3].ToString();
+            exRange.Range["C7:E7"].Value = tblThongtinHD.Rows[0][1].ToString();
             exRange.Range["B8:B8"].Value = "Địa chỉ:";
             exRange.Range["C8:E8"].MergeCells = true;
-            exRange.Range["C8:E8"].Value = tblThongtinHD.Rows[0][4].ToString();
+            exRange.Range["C8:E8"].Value = tblThongtinHD.Rows[0][2].ToString();
             exRange.Range["B9:B9"].Value = "Điện thoại:";
-            //exRange.Range["C9:E9"].MergeCells = true;
-            //exRange.Range["C9:E9"].Value = tblThongtinHD.Rows[0][5].ToString();
+            exRange.Range["C9:E9"].MergeCells = true;
+            exRange.Range["C9:E9"].Value = tblThongtinHD.Rows[0][3].ToString();
             //Lấy thông tin các mặt hàng
             sql = "SELECT b.Tentheloai, c.Tenbao, a.Ngaydang, a.Tieude, a.Noidung, a.Nhuanbut FROM tblKhachguibai AS a , tblTheloai AS b, tblBao AS c WHERE a.Malangui = N'" + txtMahopdong.Text + "' AND a.Matheloai = b.Matheloai AND a.Mabao = c.Mabao";
             tblThongtinCTHD = Class.Function.GetDataToTable(sql);
@@ -547,11 +547,12 @@ namespace Project.Forms
             exRange.Range["A1:C1"].Value = "Hà Nội, " + DateTime.Now.ToString(" 'ngày' d 'tháng' M 'năm' yyyy");
             exRange.Range["A2:C2"].Font.Italic = true;
             exRange.Range["A2:C2"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+            exRange.Range["A2:C2"].MergeCells = true;
             exRange.Range["A2:C2"].Value = "Nhân viên";
             exRange.Range["A6:C6"].MergeCells = true;
             exRange.Range["A6:C6"].Font.Italic = true;
             exRange.Range["A6:C6"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-            //exRange.Range["A6:C6"].Value = tblThongtinHD.Rows[0][6];
+            exRange.Range["A6:C6"].Value = tblThongtinHD.Rows[0][4];
             exSheet.Name = "Hợp đồng bài viết";
             exApp.Visible = true;
         }
