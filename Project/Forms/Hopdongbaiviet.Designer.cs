@@ -78,7 +78,6 @@
             this.mskDienthoai = new System.Windows.Forms.MaskedTextBox();
             this.lblDienthoai = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.gb2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgridHopdongbaiviet)).BeginInit();
             this.gb1.SuspendLayout();
@@ -669,21 +668,12 @@
             this.label1.TabIndex = 47;
             this.label1.Text = "HỢP ĐỒNG BÀI VIẾT";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(873, 31);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 26);
-            this.textBox1.TabIndex = 59;
-            // 
             // Hopdongbaiviet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1306, 1050);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.gb1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gb2);
@@ -752,6 +742,5 @@
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.TextBox txtNgayky;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

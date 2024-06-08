@@ -34,7 +34,6 @@
             this.txtMatheloai = new System.Windows.Forms.TextBox();
             this.lblTheloai = new System.Windows.Forms.Label();
             this.dgridTL = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnBoqua = new System.Windows.Forms.Button();
@@ -49,7 +48,7 @@
             this.txtTentheloai.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTentheloai.Location = new System.Drawing.Point(639, 223);
             this.txtTentheloai.Name = "txtTentheloai";
-            this.txtTentheloai.Size = new System.Drawing.Size(431, 43);
+            this.txtTentheloai.Size = new System.Drawing.Size(431, 51);
             this.txtTentheloai.TabIndex = 24;
             // 
             // lblTenLVHD
@@ -58,7 +57,7 @@
             this.lblTenLVHD.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTenLVHD.Location = new System.Drawing.Point(456, 221);
             this.lblTenLVHD.Name = "lblTenLVHD";
-            this.lblTenLVHD.Size = new System.Drawing.Size(166, 38);
+            this.lblTenLVHD.Size = new System.Drawing.Size(194, 45);
             this.lblTenLVHD.TabIndex = 23;
             this.lblTenLVHD.Text = "Tên thể loại:";
             // 
@@ -68,7 +67,7 @@
             this.lblMatheloai.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblMatheloai.Location = new System.Drawing.Point(457, 164);
             this.lblMatheloai.Name = "lblMatheloai";
-            this.lblMatheloai.Size = new System.Drawing.Size(162, 38);
+            this.lblMatheloai.Size = new System.Drawing.Size(191, 45);
             this.lblMatheloai.TabIndex = 22;
             this.lblMatheloai.Text = "Mã thể loại:";
             // 
@@ -77,7 +76,7 @@
             this.txtMatheloai.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtMatheloai.Location = new System.Drawing.Point(639, 159);
             this.txtMatheloai.Name = "txtMatheloai";
-            this.txtMatheloai.Size = new System.Drawing.Size(431, 43);
+            this.txtMatheloai.Size = new System.Drawing.Size(431, 51);
             this.txtMatheloai.TabIndex = 21;
             // 
             // lblTheloai
@@ -86,7 +85,7 @@
             this.lblTheloai.Font = new System.Drawing.Font("Segoe UI Semibold", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTheloai.Location = new System.Drawing.Point(611, 82);
             this.lblTheloai.Name = "lblTheloai";
-            this.lblTheloai.Size = new System.Drawing.Size(459, 60);
+            this.lblTheloai.Size = new System.Drawing.Size(545, 70);
             this.lblTheloai.TabIndex = 20;
             this.lblTheloai.Text = "DANH MỤC THỂ LOẠI";
             // 
@@ -99,15 +98,6 @@
             this.dgridTL.Size = new System.Drawing.Size(1222, 325);
             this.dgridTL.TabIndex = 19;
             this.dgridTL.Click += new System.EventHandler(this.dgridTL_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(535, 36);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // btnLuu
             // 
@@ -219,7 +209,7 @@
             // 
             // mnuTheloai
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1924, 889);
@@ -229,7 +219,6 @@
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtTentheloai);
             this.Controls.Add(this.lblTenLVHD);
             this.Controls.Add(this.lblMatheloai);
@@ -254,7 +243,6 @@
         private System.Windows.Forms.TextBox txtMatheloai;
         private System.Windows.Forms.Label lblTheloai;
         private System.Windows.Forms.DataGridView dgridTL;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnBoqua;
