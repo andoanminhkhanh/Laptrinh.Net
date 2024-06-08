@@ -20,6 +20,7 @@ namespace Project.Forms
         {
             InitializeComponent();
             //this.SizeChanged += new EventHandler(Hopdongbaiviet_SizeChanged);
+            this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
 
         }
         private void Hopdongbaiviet_Load(object sender, EventArgs e)
@@ -722,6 +723,16 @@ namespace Project.Forms
                 // Xử lý ngoại lệ nếu có
                 MessageBox.Show("Lỗi khi cập nhật tổng tiền: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbMahopdong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

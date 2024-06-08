@@ -15,6 +15,7 @@ namespace Project.Forms
         public Trinhdo()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
         }
 
         private void Trinhdo_Load(object sender, EventArgs e)

@@ -15,6 +15,7 @@ namespace Project.Forms
         public Chuyenmon()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
         }
 
         private void Chuyenmon_Load(object sender, EventArgs e)
@@ -177,6 +178,36 @@ namespace Project.Forms
         private void btnDong_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnThem_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoa_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLuu_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDong_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBoqua_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSua_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

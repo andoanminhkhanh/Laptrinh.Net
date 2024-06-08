@@ -15,6 +15,7 @@ namespace Project.Forms
         public TTQuangcao()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
         }
 
         private void TTQuangcao_Load(object sender, EventArgs e)

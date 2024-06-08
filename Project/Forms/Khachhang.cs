@@ -16,6 +16,7 @@ namespace Project.Forms
         public Khachhang()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
         }
         private void Khachhang_Load(object sender, EventArgs e)
         {

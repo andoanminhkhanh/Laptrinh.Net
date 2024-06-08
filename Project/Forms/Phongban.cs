@@ -16,6 +16,7 @@ namespace Project.Forms
         public Phongban()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
         }
 
         private void Phongban_Load(object sender, EventArgs e)
@@ -204,6 +205,16 @@ namespace Project.Forms
             Load_DataGridView();
             ResetValues();
             btnboqua.Enabled = false;
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -16,6 +16,7 @@ namespace Project.Forms
         public Banggia()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
         }
 
         private void Banggia_Load(object sender, EventArgs e)

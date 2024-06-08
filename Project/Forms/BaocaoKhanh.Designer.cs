@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtLoaihopdong = new System.Windows.Forms.TextBox();
             this.cboLoaiquangcao = new System.Windows.Forms.ComboBox();
             this.cboTheloai = new System.Windows.Forms.ComboBox();
             this.cboLoaibao = new System.Windows.Forms.ComboBox();
@@ -53,7 +54,6 @@
             this.lblBangchu = new System.Windows.Forms.Label();
             this.btnHienthi = new System.Windows.Forms.Button();
             this.btnInbaocao = new System.Windows.Forms.Button();
-            this.txtLoaihopdong = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -94,6 +94,13 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
+            // 
+            // txtLoaihopdong
+            // 
+            this.txtLoaihopdong.Location = new System.Drawing.Point(160, 28);
+            this.txtLoaihopdong.Name = "txtLoaihopdong";
+            this.txtLoaihopdong.Size = new System.Drawing.Size(121, 22);
+            this.txtLoaihopdong.TabIndex = 24;
             // 
             // cboLoaiquangcao
             // 
@@ -300,18 +307,11 @@
             this.btnInbaocao.Text = "In báo cáo";
             this.btnInbaocao.UseVisualStyleBackColor = true;
             // 
-            // txtLoaihopdong
-            // 
-            this.txtLoaihopdong.Location = new System.Drawing.Point(160, 28);
-            this.txtLoaihopdong.Name = "txtLoaihopdong";
-            this.txtLoaihopdong.Size = new System.Drawing.Size(121, 22);
-            this.txtLoaihopdong.TabIndex = 24;
-            // 
             // BaocaoKhanh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 565);
+            this.ClientSize = new System.Drawing.Size(1882, 889);
             this.Controls.Add(this.btnInbaocao);
             this.Controls.Add(this.btnHienthi);
             this.Controls.Add(this.lblBangchu);
