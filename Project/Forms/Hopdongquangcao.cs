@@ -527,7 +527,7 @@ namespace Project.Forms
                     $"VALUES (N'{txtmahopdongqc.Text.Trim()}', N'{txtmakhachhang.Text.Trim()}', " +
                     $"N'{row["Mabao"].ToString()}', N'{cbomanhanvien.SelectedValue}',N'{row["MaQcao"].ToString()}', " +
                     $"N'{row["Noidung"].ToString()}', " +
-                    $"N'{row["NgayBD"].ToString()}',N'{row["NgayKT"].ToString()}, N'{row["ThanhTien"].ToString()}','{Class.Function.convertdatetime(txtngayky.Text.Trim())}')";
+                    $"N'{row["NgayBD"].ToString()}',N'{row["NgayKT"].ToString()}', N'{row["ThanhTien"].ToString()}','{Class.Function.convertdatetime(txtngayky.Text.Trim())}')";
                 Class.Function.RunSql(sql);
             }
             MessageBox.Show("Hợp đồng đã được lưu thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

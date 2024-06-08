@@ -45,6 +45,7 @@
             this.mnu_QC = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_TTQC = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_banggia = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDoanhthuvietbai = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -62,7 +63,8 @@
             this.MnuQuanlyKhachhang,
             this.mnu_Phongban,
             this.báoToolStripMenuItem,
-            this.mnu_QC});
+            this.mnu_QC,
+            this.mnuDoanhthuvietbai});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -196,6 +198,13 @@
             this.mnu_banggia.Text = "Bảng giá";
             this.mnu_banggia.Click += new System.EventHandler(this.mnu_banggia_Click);
             // 
+            // mnuDoanhthuvietbai
+            // 
+            this.mnuDoanhthuvietbai.Name = "mnuDoanhthuvietbai";
+            this.mnuDoanhthuvietbai.Size = new System.Drawing.Size(145, 24);
+            this.mnuDoanhthuvietbai.Text = "Doanh thu viết bài";
+            this.mnuDoanhthuvietbai.Click += new System.EventHandler(this.mnuDoanhthuvietbai_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -316,6 +325,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ToolStripMenuItem mnuDoanhthuvietbai;
     }
 }
 
