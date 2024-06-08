@@ -76,7 +76,7 @@ namespace Project.Forms
         private void load_datagridview()
         {
             string sql;
-            sql = "SELECT tblBao.Mabao, tblBao.Tenbao, tblTTQuangcao.MaQcao, tblTTQuangcao.TenQcao,Ngayky, Noidung, NgayBD, NgayKT, Dongia, ThanhTien FROM tblKhach_Quangcao INNER JOIN tblBao ON tblKhach_Quangcao.Mabao=tblBao.Mabao INNER JOIN tblTTQuangcao ON tblKhach_Quangcao.MaQcao= tblTTQuangcao.MaQcao INNER JOIN tblBanggia ON tblBanggia.Mabao=tblKhach_Quangcao.Mabao WHERE tblKhach_Quangcao.MalanQC = N'" + txtmahopdongqc.Text + "'";
+            sql = "SELECT Mabao, MaQcao,Ngayky, Noidung, NgayBD, NgayKT,  ThanhTien FROM tblKhach_Quangcao WHERE MalanQC = N'" + txtmahopdongqc.Text + "'";
             // MessageBox.Show(Sql);
             tblHDQC = Class.Function.GetDataToTable(sql);
             DatagridView.DataSource = tblHDQC;
@@ -213,13 +213,10 @@ namespace Project.Forms
                 return;
             }
             cbomabao.Text = DatagridView.CurrentRow.Cells["Mabao"].Value.ToString();
-            txttenbao.Text = DatagridView.CurrentRow.Cells["Tenbao"].Value.ToString();
             cbomaquangcao.Text = DatagridView.CurrentRow.Cells["MaQcao"].Value.ToString();
-            txttenquangcao.Text = DatagridView.CurrentRow.Cells["TenQcao"].Value.ToString();
             txtnoidung.Text = DatagridView.CurrentRow.Cells["Noidung"].Value.ToString();
             mskngaybatdau.Text = DatagridView.CurrentRow.Cells["NgayBD"].Value.ToString();
             mskngayketthuc.Text = DatagridView.CurrentRow.Cells["NgayKT"].Value.ToString();
-            txtdongia.Text = DatagridView.CurrentRow.Cells["Dongia"].Value.ToString();
             txtthanhtien.Text = DatagridView.CurrentRow.Cells["ThanhTien"].Value.ToString();
 
 
