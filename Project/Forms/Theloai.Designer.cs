@@ -34,7 +34,6 @@
             this.txtMatheloai = new System.Windows.Forms.TextBox();
             this.lblTheloai = new System.Windows.Forms.Label();
             this.dgridTL = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnBoqua = new System.Windows.Forms.Button();
@@ -48,7 +47,7 @@
             // 
             this.txtTentheloai.Location = new System.Drawing.Point(222, 137);
             this.txtTentheloai.Name = "txtTentheloai";
-            this.txtTentheloai.Size = new System.Drawing.Size(290, 27);
+            this.txtTentheloai.Size = new System.Drawing.Size(290, 23);
             this.txtTentheloai.TabIndex = 24;
             // 
             // lblTenLVHD
@@ -56,7 +55,7 @@
             this.lblTenLVHD.AutoSize = true;
             this.lblTenLVHD.Location = new System.Drawing.Point(113, 137);
             this.lblTenLVHD.Name = "lblTenLVHD";
-            this.lblTenLVHD.Size = new System.Drawing.Size(89, 20);
+            this.lblTenLVHD.Size = new System.Drawing.Size(70, 15);
             this.lblTenLVHD.TabIndex = 23;
             this.lblTenLVHD.Text = "Tên thể loại:";
             // 
@@ -65,7 +64,7 @@
             this.lblMatheloai.AutoSize = true;
             this.lblMatheloai.Location = new System.Drawing.Point(113, 96);
             this.lblMatheloai.Name = "lblMatheloai";
-            this.lblMatheloai.Size = new System.Drawing.Size(87, 20);
+            this.lblMatheloai.Size = new System.Drawing.Size(69, 15);
             this.lblMatheloai.TabIndex = 22;
             this.lblMatheloai.Text = "Mã thể loại:";
             // 
@@ -73,7 +72,7 @@
             // 
             this.txtMatheloai.Location = new System.Drawing.Point(222, 93);
             this.txtMatheloai.Name = "txtMatheloai";
-            this.txtMatheloai.Size = new System.Drawing.Size(290, 27);
+            this.txtMatheloai.Size = new System.Drawing.Size(290, 23);
             this.txtMatheloai.TabIndex = 21;
             // 
             // lblTheloai
@@ -82,7 +81,7 @@
             this.lblTheloai.Font = new System.Drawing.Font("Segoe UI", 17.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTheloai.Location = new System.Drawing.Point(216, 29);
             this.lblTheloai.Name = "lblTheloai";
-            this.lblTheloai.Size = new System.Drawing.Size(297, 40);
+            this.lblTheloai.Size = new System.Drawing.Size(234, 31);
             this.lblTheloai.TabIndex = 20;
             this.lblTheloai.Text = "DANH MỤC THỂ LOẠI";
             // 
@@ -95,15 +94,6 @@
             this.dgridTL.Size = new System.Drawing.Size(638, 226);
             this.dgridTL.TabIndex = 19;
             this.dgridTL.Click += new System.EventHandler(this.dgridTL_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(535, 36);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // btnLuu
             // 
@@ -209,7 +199,7 @@
             // 
             // mnuTheloai
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(801, 576);
@@ -219,7 +209,6 @@
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtTentheloai);
             this.Controls.Add(this.lblTenLVHD);
             this.Controls.Add(this.lblMatheloai);
@@ -244,7 +233,6 @@
         private System.Windows.Forms.TextBox txtMatheloai;
         private System.Windows.Forms.Label lblTheloai;
         private System.Windows.Forms.DataGridView dgridTL;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnBoqua;
