@@ -103,9 +103,12 @@ namespace Project
             a.Show();
         }
 
-        private void báoCáoToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
+        
 
+        private void mnuquangcao_Click(object sender, EventArgs e)
+        {
+            Forms.BaocaoKhanh a = new Forms.BaocaoKhanh();
+            a.Show();
         }
     }
 }

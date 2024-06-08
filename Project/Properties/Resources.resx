@@ -127,6 +127,9 @@
   <data name="87754cae9952a8f0bd5f0ac47a62854a_t" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\87754cae9952a8f0bd5f0ac47a62854a_t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="441929653_3769105683318392_868396525526167215_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\441929653_3769105683318392_868396525526167215_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Thiết kế chưa có tên (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Thiết kế chưa có tên (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,11 +151,17 @@
   <data name="Thiết kế chưa có tên (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Thiết kế chưa có tên (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="436421249_2647133658779534_7141885601216133645_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\436421249_2647133658779534_7141885601216133645_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Chưa có tên (1500 x 760 px) (1550 x 780 px) (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Chưa có tên (1500 x 760 px) (1550 x 780 px) (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pngtree-shutdown-vector-icon-png-image_3722547 (1)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-shutdown-vector-icon-png-image_3722547 (1)2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Chưa có tên (1500 x 760 px)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Chưa có tên (1500 x 760 px).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,6 +193,9 @@
   <data name="images (1) (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images (1) (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="446056014_827278169341993_2610279680746106665_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\446056014_827278169341993_2610279680746106665_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="backchuan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backchuan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -193,25 +205,34 @@
   <data name="pngtree-shutdown-vector-icon-png-image_3722547 (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngtree-shutdown-vector-icon-png-image_3722547 (1)1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="446071873_436039592692347_2599294787270549582_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\446071873_436039592692347_2599294787270549582_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="plus-24844_1280 (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus-24844_1280 (1)1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="téttttt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\téttttt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="back1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\back1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="backchuan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\backchuan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="441948836_1923812524704834_6160606014717349549_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\441948836_1923812524704834_6160606014717349549_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="447485800_1368545040506185_7660568087407175114_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\447485800_1368545040506185_7660568087407175114_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Thiết kế chưa có tên (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Thiết kế chưa có tên (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pngtree-shutdown-vector-icon-png-image_3722547 (1)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngtree-shutdown-vector-icon-png-image_3722547 (1)2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="backchuan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backchuan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Thiết kế chưa có tên (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Thiết kế chưa có tên (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="téttttt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\téttttt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="442006989_420897634184388_1524545736119045602_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\442006989_420897634184388_1524545736119045602_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

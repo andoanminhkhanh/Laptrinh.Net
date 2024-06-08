@@ -844,6 +844,8 @@ namespace Project.Forms
                 DatagridView.Rows.RemoveAt(rowIndex);
             }
         }
+
+        
     }
 }
 
