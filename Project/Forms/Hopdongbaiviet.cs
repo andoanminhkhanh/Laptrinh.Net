@@ -63,9 +63,9 @@ namespace Project.Forms
             dgridHopdongbaiviet.Columns[4].HeaderText = "Ngày đăng";
             dgridHopdongbaiviet.Columns[5].HeaderText = "Nhuận bút";
             dgridHopdongbaiviet.Columns[0].Width = 100;
-            dgridHopdongbaiviet.Columns[1].Width = 80;
-            dgridHopdongbaiviet.Columns[2].Width = 115;
-            dgridHopdongbaiviet.Columns[3].Width = 115;
+            dgridHopdongbaiviet.Columns[1].Width = 90;
+            dgridHopdongbaiviet.Columns[2].Width = 120;
+            dgridHopdongbaiviet.Columns[3].Width = 120;
             dgridHopdongbaiviet.Columns[4].Width = 80;
             dgridHopdongbaiviet.Columns[5].Width = 80;
             dgridHopdongbaiviet.AllowUserToAddRows = false;
@@ -105,6 +105,7 @@ namespace Project.Forms
             txtTongtien.Text = Class.Function.GetFieldValues(str);
 
             lblBangchu.Text = "Bằng chữ: " + Class.Function.ChuyenSoSangChu(txtTongtien.Text);
+            //btnBoqua.Enabled = true;
             /*str = "Select Matheloai from tblTheloai Where Matheloai=N'"+ cbMatheloai.Text + "'";
             cbMatheloai.Text = Function.GetFieldValues(str);
             str = "Select Mabao from tblBao where Mabao=N'"+ cbMabao.Text + "'";
@@ -161,13 +162,14 @@ namespace Project.Forms
             txtDiachi.Enabled = false;
             txtEmail.Enabled = false;
             cbLVHD.Enabled = false;
+            txtTongtien.Enabled = false;
+            txtNgayky.Text = DateTime.Now.ToShortDateString();
             resetvalues();
             txtMahopdong.Text = Class.Function.CreateHDKey();
             Load_datagridview();
         }
         private void resetvalues()
         {
-            txtNgayky.Text = DateTime.Now.ToShortDateString();
             txtMahopdong.Text = "";
             txtMakhach.Text = "";
             txtTenkhach.Text = "";
@@ -183,6 +185,8 @@ namespace Project.Forms
             cbManhanvien.Text = "";
             mskNgaydang.Text = "";
             txtNhuanbut.Text = "0";
+            txtNgayky.Text = "";
+            Load_datagridview() ;
         }
 
         private void btnDong_Click(object sender, EventArgs e)
@@ -262,6 +266,21 @@ namespace Project.Forms
                 cbLVHD.Focus();
                 return;
             }
+            DateTime ngayDang;
+
+            string strNgayDang = mskNgaydang.Text;
+            bool isNgayDangValid = DateTime.TryParseExact(strNgayDang, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out ngayDang);
+            if (!isNgayDangValid)
+            {
+                MessageBox.Show("Ngày đăng không hợp lệ. Vui lòng nhập lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // Kiểm tra nếu Ngày đăng nhỏ hơn ngày hiện tại
+            if (ngayDang < DateTime.Now.Date)
+            {
+                MessageBox.Show("Ngày đăng phải lớn hơn hoặc bằng ngày hiện tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             // Save Customer Information if not exists
             string customerID = txtMakhach.Text.Trim();
             string query = $"SELECT COUNT(*) FROM tblKhachhang WHERE MaKH = N'{customerID}'";
@@ -288,7 +307,7 @@ namespace Project.Forms
             }
             MessageBox.Show("Hợp đồng đã được lưu thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Load_datagridview();
-            resetvaluesHD();
+            resetvalues();
             btnHuy.Enabled = false;
             btnThem.Enabled = true;
             //btnSua.Enabled = true;
@@ -723,6 +742,16 @@ namespace Project.Forms
                 // Xử lý ngoại lệ nếu có
                 MessageBox.Show("Lỗi khi cập nhật tổng tiền: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void btnBoqua_Click_1(object sender, EventArgs e)
+        {
+            resetvalues();
+            btnBoqua.Enabled = false;
+            btnThem.Enabled = true;
+            btnHuy.Enabled = true;
+            btnLuu.Enabled = false;
+            btnTimkiem.Enabled = true;
+            cbMahopdong.Enabled = true;
         }
     }
 }

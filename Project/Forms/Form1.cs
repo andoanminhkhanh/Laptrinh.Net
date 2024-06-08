@@ -103,9 +103,7 @@ namespace Project
             a.Show();
         }
 
-        
-
-        private void mnuquangcao_Click(object sender, EventArgs e)
+        private void mnubaiviet_Click(object sender, EventArgs e)
         {
             Forms.BaocaoKhanh a = new Forms.BaocaoKhanh();
             a.Show();
