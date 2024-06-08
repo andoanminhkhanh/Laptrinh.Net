@@ -19,7 +19,7 @@ namespace Project.Forms
         public Hopdongbaiviet()
         {
             InitializeComponent();
-            //this.SizeChanged += new EventHandler(Hopdongbaiviet_SizeChanged);
+            this.WindowState = FormWindowState.Maximized;
 
         }
         private void Hopdongbaiviet_Load(object sender, EventArgs e)
