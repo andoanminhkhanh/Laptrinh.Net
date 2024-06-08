@@ -173,7 +173,7 @@ namespace Project.Class
                 return "HDBV01"; // Nếu không có nhân viên nào, bắt đầu từ NV01
             }
             // Tách phần số từ mã nhân viên
-            int hdPart = int.Parse(lastHDID.Substring(2));
+            int hdPart = int.Parse(lastHDID.Substring(4));
             hdPart++; // Tăng số lên 1
 
             // Tạo mã nhân viên mới
