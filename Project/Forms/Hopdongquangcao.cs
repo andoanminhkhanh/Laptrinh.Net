@@ -362,7 +362,9 @@ namespace Project.Forms
             mskdidong.Text = Class.Function.GetFieldValues(str);
             str = "select Email from tblKhachhang where Dienthoai = '" + mskdienthoai.Text + "'";
             txttenmail.Text = Class.Function.GetFieldValues(str);
-            str = "select MaLVHD from tblLinhvuchoatdong inner join tblKhachhang on tblLinhvuchoatdong.MaLVHD=tblKhachhang.MaLVHD where Dienthoai = '" + mskdienthoai.Text + "'";
+            //str = "select MaLVHD from tblLinhvuchoatdong inner join tblKhachhang on tblLinhvuchoatdong.MaLVHD=tblKhachhang.MaLVHD where Dienthoai = '" + mskdienthoai.Text + "'";
+            //cbomalvhd.Text = Class.Function.GetFieldValues(str);
+            str = "select MaLVHD from tblKhachhang where DienThoai = '" + mskdienthoai.Text + "'";
             cbomalvhd.Text = Class.Function.GetFieldValues(str);
 
         }
