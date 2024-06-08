@@ -16,7 +16,7 @@ namespace Project.Class
         public static string connString;
         public static void Connect()
         {
-            connString = "Data Source=DESKTOP-6P2TSJE\\SQLEXPRESS;Initial Catalog=LTNET;Integrated Security=True;Encrypt=False";
+            connString = "Data Source=LAPTOP-2RCJLQ9Q;Initial Catalog=LTNET;Integrated Security=True;Encrypt=False";
             Conn = new SqlConnection();
             Conn.ConnectionString = connString;
             Conn.Open();
@@ -114,11 +114,29 @@ namespace Project.Class
             else return false;
         }
         public static string convertdatetime(string d)
+        /*{
+            string[] parts = d.Split('/');
+            string dt = string.Format("{1}/{0}/{2}", parts[1], parts[0], parts[2]);
+            return dt;
+        }*/
         {
             string[] parts = d.Split('/');
-            string dt = string.Format("{0}/{1}/{2}", parts[1], parts[0], parts[2]);
-            return dt;
+
+            // Kiểm tra xem có đủ phần tử để truy cập không
+            if (parts.Length == 3)
+            {
+                // Sắp xếp lại các phần tử và định dạng ngày tháng
+                string dt = String.Format("{0}/{1}/{2}", parts[1], parts[0], parts[2]);
+                return dt;
+            }
+            else
+            {
+                // Trả về một giá trị mặc định hoặc thông báo lỗi tùy thuộc vào yêu cầu của bạn
+                return "Invalid date format";
+            }
         }
+
+
         public static string CreateKey()
         {
             string lastEmployeeID = GetLastEmployeeID();
