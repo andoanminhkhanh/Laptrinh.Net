@@ -50,19 +50,6 @@ namespace Project.Forms
 
             DataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
-
-        private void btnthem_Click(object sender, EventArgs e)
-        {
-            btnsua.Enabled = false;
-            btnxoa.Enabled = false;
-            btnboqua.Enabled = true;
-            btnluu.Enabled = true;
-            btnthem.Enabled = false;
-            ResetValues();
-
-            txtmaphong.Enabled = true;
-            txtmaphong.Focus();
-        }
         private void ResetValues()
         {
             txtmaphong.Text = "";
@@ -71,18 +58,6 @@ namespace Project.Forms
             mskdienthoai.Text = "";
             
         }
-
-        private void btnboqua_Click(object sender, EventArgs e)
-        {
-            ResetValues();
-            btnboqua.Enabled = false;
-            btnthem.Enabled = true;
-            btnxoa.Enabled = true;
-            btnsua.Enabled = true;
-            btnluu.Enabled = false;
-            txtmaphong.Enabled = false;
-        }
-
         private void DataGridView_Click(object sender, EventArgs e)
         {
             if (btnthem.Enabled == false)
@@ -105,13 +80,78 @@ namespace Project.Forms
             btnxoa.Enabled = true;
             btnboqua.Enabled = true;
         }
-
-        private void btnthoat_Click(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
 
-        private void btnluu_Click(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnthem_Click_1(object sender, EventArgs e)
+        {
+            btnsua.Enabled = false;
+            btnxoa.Enabled = false;
+            btnboqua.Enabled = true;
+            btnluu.Enabled = true;
+            btnthem.Enabled = false;
+            ResetValues();
+
+            txtmaphong.Enabled = true;
+            txtmaphong.Focus();
+        }
+
+        private void btnxoa_Click_1(object sender, EventArgs e)
+        {
+            string sql;
+            if (tblpb.Rows.Count == 0)
+            {
+                MessageBox.Show("Khong co du lieu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtmaphong.Text == "")
+            {
+                MessageBox.Show("Ban chua co ban ghi nao", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (MessageBox.Show("Ban muon xoa khong", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                sql = "DELETE tblPhongban WHERE Maphong=N'" + txtmaphong.Text + "'";
+                Class.Function.RunSqlDel(sql);
+                Load_DataGridView();
+                ResetValues();
+            }
+        }
+
+        private void btnsua_Click_1(object sender, EventArgs e)
+        {
+            string sql;
+            if (tblpb.Rows.Count == 0)
+            {
+                MessageBox.Show("Khong co du lieu ton tai", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtmaphong.Text == "")
+            {
+                MessageBox.Show("Ban chua chon ban ghi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txttenphong.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Ban can nhap ten phong", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txttenphong.Focus();
+                return;
+            }
+            sql = "UPDATE tblPhongban SET Tenphong=N'" + txttenphong.Text.ToString() + "', Mabao='" + cbomabao.Text.ToString() + "', Dienthoai='" + mskdienthoai.Text.ToString() + "' WHERE Maphong=N'" + txtmaphong.Text + "'";
+            Class.Function.RunSql(sql);
+            Load_DataGridView();
+            ResetValues();
+            btnboqua.Enabled = false;
+        }
+
+        private void btnluu_Click_1(object sender, EventArgs e)
         {
             string sql;
             if (txtmaphong.Text == "")
@@ -159,63 +199,20 @@ namespace Project.Forms
             txtmaphong.Enabled = false;
         }
 
-        private void btnxoa_Click(object sender, EventArgs e)
+        private void btnboqua_Click_1(object sender, EventArgs e)
         {
-            string sql;
-            if (tblpb.Rows.Count == 0)
-            {
-                MessageBox.Show("Khong co du lieu", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Information);
-                return;
-            }
-            if (txtmaphong.Text == "")
-            {
-                MessageBox.Show("Ban chua co ban ghi nao", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (MessageBox.Show("Ban muon xoa khong", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-            {
-                sql = "DELETE tblPhongban WHERE Maphong=N'" + txtmaphong.Text + "'";
-                Class.Function.RunSqlDel(sql);
-                Load_DataGridView();
-                ResetValues();
-            }
-        }
-
-        private void btnsua_Click(object sender, EventArgs e)
-        {
-            string sql;
-            if (tblpb.Rows.Count == 0)
-            {
-                MessageBox.Show("Khong co du lieu ton tai", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (txtmaphong.Text == "")
-            {
-                MessageBox.Show("Ban chua chon ban ghi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (txttenphong.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Ban can nhap ten phong", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txttenphong.Focus();
-                return;
-            }
-            sql = "UPDATE tblPhongban SET Tenphong=N'" + txttenphong.Text.ToString() + "', Mabao='" + cbomabao.Text.ToString() + "', Dienthoai='" + mskdienthoai.Text.ToString() + "' WHERE Maphong=N'" + txtmaphong.Text + "'";
-            Class.Function.RunSql(sql);
-            Load_DataGridView();
             ResetValues();
             btnboqua.Enabled = false;
-
+            btnthem.Enabled = true;
+            btnxoa.Enabled = true;
+            btnsua.Enabled = true;
+            btnluu.Enabled = false;
+            txtmaphong.Enabled = false;
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void btnthoat_Click_1(object sender, EventArgs e)
         {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }

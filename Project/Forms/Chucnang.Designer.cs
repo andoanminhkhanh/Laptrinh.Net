@@ -49,7 +49,7 @@
             this.txtTenchucnang.Location = new System.Drawing.Point(654, 232);
             this.txtTenchucnang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenchucnang.Name = "txtTenchucnang";
-            this.txtTenchucnang.Size = new System.Drawing.Size(497, 43);
+            this.txtTenchucnang.Size = new System.Drawing.Size(497, 36);
             this.txtTenchucnang.TabIndex = 31;
             // 
             // txtMachucnang
@@ -58,7 +58,7 @@
             this.txtMachucnang.Location = new System.Drawing.Point(654, 176);
             this.txtMachucnang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMachucnang.Name = "txtMachucnang";
-            this.txtMachucnang.Size = new System.Drawing.Size(497, 43);
+            this.txtMachucnang.Size = new System.Drawing.Size(497, 36);
             this.txtMachucnang.TabIndex = 30;
             // 
             // DataGridView
@@ -79,7 +79,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(416, 232);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(196, 38);
+            this.label3.Size = new System.Drawing.Size(152, 30);
             this.label3.TabIndex = 22;
             this.label3.Text = "Tên chức năng";
             // 
@@ -89,7 +89,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(416, 176);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 38);
+            this.label2.Size = new System.Drawing.Size(149, 30);
             this.label2.TabIndex = 21;
             this.label2.Text = "Mã chức năng";
             // 
@@ -99,7 +99,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(590, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(484, 60);
+            this.label1.Size = new System.Drawing.Size(386, 47);
             this.label1.TabIndex = 20;
             this.label1.Text = "QUẢN LÝ CHỨC NĂNG";
             // 
@@ -120,6 +120,7 @@
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click_1);
             // 
             // btnXoa
             // 
@@ -138,6 +139,7 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
             // 
             // btnBoqua
             // 
@@ -156,6 +158,7 @@
             this.btnBoqua.Text = "Bỏ qua";
             this.btnBoqua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBoqua.UseVisualStyleBackColor = false;
+            this.btnBoqua.Click += new System.EventHandler(this.btnBoqua_Click_1);
             // 
             // btnDong
             // 
@@ -174,6 +177,7 @@
             this.btnDong.Text = "Đóng";
             this.btnDong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDong.UseVisualStyleBackColor = false;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click_1);
             // 
             // btnSua
             // 
@@ -192,6 +196,7 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click_1);
             // 
             // btnThem
             // 
@@ -210,13 +215,14 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
             // 
             // Chucnang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1613, 889);
+            this.ClientSize = new System.Drawing.Size(1540, 889);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnBoqua);

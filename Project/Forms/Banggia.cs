@@ -75,7 +75,14 @@ namespace Project.Forms
             btnboqua.Enabled = true;
         }
 
-        private void btnthem_Click(object sender, EventArgs e)
+        private void ResetValues()
+        {
+            cbomabao.Text = "";
+            cbomaqc.Text = "";
+            txtdongia.Text = "";
+
+        }
+        private void btnthem_Click_1(object sender, EventArgs e)
         {
             btnsua.Enabled = false;
             btnxoa.Enabled = false;
@@ -88,33 +95,58 @@ namespace Project.Forms
             cbomabao.Enabled = true;
             cbomabao.Focus();
         }
-        private void ResetValues()
-        {
-            cbomabao.Text = "";
-            cbomaqc.Text = "";
-            txtdongia.Text = "";
 
+        private void btnxoa_Click_1(object sender, EventArgs e)
+        {
+            string sql;
+            if (tblbg.Rows.Count == 0)
+            {
+                MessageBox.Show("Khong co du lieu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (cbomabao.Text == "")
+            {
+                MessageBox.Show("Ban chua co ban ghi nao", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (MessageBox.Show("Ban muon xoa khong", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                sql = "DELETE tblBanggia WHERE Mabao=N'" + cbomabao.Text + "'";
+                Class.Function.RunSqlDel(sql);
+                Load_DataGridView();
+                ResetValues();
+            }
         }
 
-        private void btnboqua_Click(object sender, EventArgs e)
+        private void btnsua_Click_1(object sender, EventArgs e)
         {
+            string sql;
+            if (tblbg.Rows.Count == 0)
+            {
+                MessageBox.Show("Khong co du lieu ton tai", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (cbomabao.Text == "")
+            {
+                MessageBox.Show("Ban chua chon ban ghi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (cbomaqc.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Ban can nhap ma qc", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbomaqc.Focus();
+                return;
+            }
+            sql = "UPDATE tblBanggia SET MaQcao=N'" + cbomaqc.Text.ToString() + "', Dongia='" + txtdongia.Text.ToString() + "' WHERE Mabao=N'" + cbomabao.Text + "'";
+            Class.Function.RunSql(sql);
+            Load_DataGridView();
             ResetValues();
             btnboqua.Enabled = false;
-            btnthem.Enabled = true;
-            btnxoa.Enabled = true;
-            btnsua.Enabled = true;
-            btnluu.Enabled = false;
-            cbomabao.Enabled = false;
-            cbomaqc.Enabled = false;
-
+            cbomabao.Enabled = true;
+            cbomaqc.Enabled = true;
         }
 
-        private void btnthoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnluu_Click(object sender, EventArgs e)
+        private void btnluu_Click_1(object sender, EventArgs e)
         {
             string sql;
             if (cbomabao.Text == "")
@@ -151,56 +183,21 @@ namespace Project.Forms
             cbomaqc.Enabled = false;
         }
 
-        private void btnxoa_Click(object sender, EventArgs e)
+        private void btnboqua_Click_1(object sender, EventArgs e)
         {
-            string sql;
-            if (tblbg.Rows.Count == 0)
-            {
-                MessageBox.Show("Khong co du lieu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (cbomabao.Text == "")
-            {
-                MessageBox.Show("Ban chua co ban ghi nao", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (MessageBox.Show("Ban muon xoa khong", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-            {
-                sql = "DELETE tblBanggia WHERE Mabao=N'" + cbomabao.Text + "'";
-                Class.Function.RunSqlDel(sql);
-                Load_DataGridView();
-                ResetValues();
-            }
-
-        }
-
-        private void btnsua_Click(object sender, EventArgs e)
-        {
-            
-            string sql;
-            if (tblbg.Rows.Count == 0)
-            {
-                MessageBox.Show("Khong co du lieu ton tai", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (cbomabao.Text == "")
-            {
-                MessageBox.Show("Ban chua chon ban ghi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (cbomaqc.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Ban can nhap ma qc", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbomaqc.Focus();
-                return;
-            }
-            sql = "UPDATE tblBanggia SET MaQcao=N'" + cbomaqc.Text.ToString() + "', Dongia='" + txtdongia.Text.ToString() + "' WHERE Mabao=N'" + cbomabao.Text + "'";
-            Class.Function.RunSql(sql);
-            Load_DataGridView();
             ResetValues();
             btnboqua.Enabled = false;
-            cbomabao.Enabled = true;
-            cbomaqc.Enabled = true;
+            btnthem.Enabled = true;
+            btnxoa.Enabled = true;
+            btnsua.Enabled = true;
+            btnluu.Enabled = false;
+            cbomabao.Enabled = false;
+            cbomaqc.Enabled = false;
+        }
+
+        private void btnthoat_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
