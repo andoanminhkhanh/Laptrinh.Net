@@ -16,7 +16,7 @@ namespace Project.Class
         public static string connString;
         public static void Connect()
         {
-            connString = "Data Source=LAPTOP-2RCJLQ9Q;Initial Catalog=LTNET;Integrated Security=True;Encrypt=False";
+            connString = "Data Source=HTVANS;Initial Catalog=LTNET;Integrated Security=True;Encrypt=False";
             Conn = new SqlConnection();
             Conn.ConnectionString = connString;
             Conn.Open();
@@ -114,29 +114,11 @@ namespace Project.Class
             else return false;
         }
         public static string convertdatetime(string d)
-        /*{
-            string[] parts = d.Split('/');
-            string dt = string.Format("{1}/{0}/{2}", parts[1], parts[0], parts[2]);
-            return dt;
-        }*/
         {
             string[] parts = d.Split('/');
-
-            // Kiểm tra xem có đủ phần tử để truy cập không
-            if (parts.Length == 3)
-            {
-                // Sắp xếp lại các phần tử và định dạng ngày tháng
-                string dt = String.Format("{0}/{1}/{2}", parts[1], parts[0], parts[2]);
-                return dt;
-            }
-            else
-            {
-                // Trả về một giá trị mặc định hoặc thông báo lỗi tùy thuộc vào yêu cầu của bạn
-                return "Invalid date format";
-            }
+            string dt = string.Format("{0}/{1}/{2}", parts[1], parts[0], parts[2]);
+            return dt;
         }
-
-
         public static string CreateKey()
         {
             string lastEmployeeID = GetLastEmployeeID();
@@ -227,6 +209,7 @@ namespace Project.Class
             object result = cmd.ExecuteScalar();
             return result != null ? result.ToString() : null;
         }
+
         public static string ChuyenSoSangChu(string sNumber)
         {
             if (sNumber.Contains("."))
@@ -247,94 +230,109 @@ namespace Project.Class
 
             string[] mNumText = new string[]
             {
-                "không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"
+        "không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"
             };
 
             string[] mPowersText = new string[]
             {
-                "", "nghìn", "triệu", "tỷ"
+        "", "nghìn", "triệu", "tỷ"
             };
 
             string result = "";
             int len = sNumber.Length;
+            int groupIndex = 0;
 
-            // Xử lý các nhóm ba chữ số
-            for (int i = 0; i < len; i += 3)
+            while (len > 0)
             {
-                int groupSize = Math.Min(3, len - i);
-                string group = sNumber.Substring(len - i - groupSize, groupSize);
+                int groupSize = Math.Min(3, len);
+                string group = sNumber.Substring(len - groupSize, groupSize);
+                len -= groupSize;
+
                 if (!int.TryParse(group, out int number))
                 {
                     return "Số tiền không hợp lệ.";
                 }
 
                 string groupResult = "";
+                bool hasHundred = false;
 
-                // Xử lý hàng đơn vị, chục và trăm
-                for (int j = groupSize - 1; j >= 0; j--)
+                for (int i = 0; i < groupSize; i++)
                 {
                     int digit = number % 10;
                     number /= 10;
 
-                    if (digit == 0)
+                    if (i == 0)
                     {
-                        // Bỏ qua các chữ số 0
-                        if (j == 2 && groupResult != "")
+                        if (digit == 1 && groupSize > 1 && group[groupSize - 2] != '1')
                         {
-                            groupResult = "không trăm " + groupResult;
+                            groupResult = "mốt " + groupResult;
                         }
-                        else if (j == 1)
+                        else if (digit == 5 && groupSize > 1)
                         {
-                            groupResult = "linh " + groupResult;
-                        }
-                    }
-                    else
-                    {
-                        // Thêm vào chữ số
-                        if (j == 2)
-                        {
-                            groupResult = mNumText[digit] + " trăm " + groupResult;
-                        }
-                        else if (j == 1)
-                        {
-                            if (digit == 1)
-                            {
-                                groupResult = "mười " + groupResult;
-                            }
-                            else
-                            {
-                                groupResult = mNumText[digit] + " mươi " + groupResult;
-                            }
+                            groupResult = "lăm " + groupResult;
                         }
                         else
                         {
                             groupResult = mNumText[digit] + " " + groupResult;
                         }
                     }
-                }
-
-                // Thêm vào đơn vị (nghìn, triệu, tỷ)
-                groupResult += " " + mPowersText[i / 3];
-
-                // Nối vào kết quả chính
-                if (result != "")
-                {
-                    if (groupResult.Trim() != "")
+                    else if (i == 1)
                     {
-                        result = groupResult + " " + result;
+                        if (digit == 0)
+                        {
+                            if (!string.IsNullOrEmpty(groupResult))
+                            {
+                                groupResult = "linh " + groupResult;
+                            }
+                        }
+                        else if (digit == 1)
+                        {
+                            groupResult = "mười " + groupResult;
+                        }
+                        else
+                        {
+                            groupResult = mNumText[digit] + " mươi " + groupResult;
+                        }
+                    }
+                    else if (i == 2)
+                    {
+                        hasHundred = true;
+                        groupResult = mNumText[digit] + " trăm " + groupResult;
                     }
                 }
-                else
+
+                // Bỏ qua nhóm nếu toàn bộ là số 0
+                if (group != "000")
                 {
-                    result = groupResult;
+                    if (!string.IsNullOrEmpty(groupResult))
+                    {
+                        groupResult = groupResult.Trim();
+                        if (groupIndex > 0)
+                        {
+                            groupResult += " " + mPowersText[groupIndex];
+                        }
+
+                        if (result != "")
+                        {
+                            result = groupResult + " " + result;
+                        }
+                        else
+                        {
+                            result = groupResult;
+                        }
+                    }
                 }
+
+                groupIndex++;
             }
 
+            return result.Trim();
             // Viết hoa chữ cái đầu tiên
             result = char.ToUpper(result[0]) + result.Substring(1).Trim();
 
             return result + " đồng";
         }
+
     }
 }
 

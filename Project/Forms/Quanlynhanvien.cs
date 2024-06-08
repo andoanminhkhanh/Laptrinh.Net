@@ -16,6 +16,7 @@ namespace Project.Forms
         public Quanlynhanvien()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
         }
 
         private void Quanlynhanvien_Load(object sender, EventArgs e)

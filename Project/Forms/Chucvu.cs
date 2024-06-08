@@ -15,6 +15,7 @@ namespace Project.Forms
         public Chucvu()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
         }
 
         private void Chucvu_Load(object sender, EventArgs e)

@@ -15,6 +15,7 @@ namespace Project.Forms
         public mnuTheloai()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
         }
 
         private void mnuTheloai_Load(object sender, EventArgs e)

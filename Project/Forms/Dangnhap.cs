@@ -16,6 +16,7 @@ namespace Project.Forms
         {
             InitializeComponent();
             txtMatkhau.PasswordChar = '*';
+            this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
 
         }
 
