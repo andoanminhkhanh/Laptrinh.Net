@@ -36,7 +36,6 @@
             this.cbomalvhd = new System.Windows.Forms.ComboBox();
             this.lblLVHD = new System.Windows.Forms.Label();
             this.txtmahopdongqc = new System.Windows.Forms.TextBox();
-            this.cbomakhachhang = new System.Windows.Forms.ComboBox();
             this.cbomanhanvien = new System.Windows.Forms.ComboBox();
             this.btntimso = new System.Windows.Forms.Button();
             this.mskdienthoai = new System.Windows.Forms.MaskedTextBox();
@@ -70,7 +69,6 @@
             this.btndong = new System.Windows.Forms.Button();
             this.btnin = new System.Windows.Forms.Button();
             this.btnhuy = new System.Windows.Forms.Button();
-            this.btnsua = new System.Windows.Forms.Button();
             this.btnluu = new System.Windows.Forms.Button();
             this.btnthem = new System.Windows.Forms.Button();
             this.DatagridView = new System.Windows.Forms.DataGridView();
@@ -88,6 +86,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.txtmakhachhang = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatagridView)).BeginInit();
@@ -105,13 +104,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtmakhachhang);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtngayky);
             this.groupBox1.Controls.Add(this.mskdidong);
             this.groupBox1.Controls.Add(this.cbomalvhd);
             this.groupBox1.Controls.Add(this.lblLVHD);
             this.groupBox1.Controls.Add(this.txtmahopdongqc);
-            this.groupBox1.Controls.Add(this.cbomakhachhang);
             this.groupBox1.Controls.Add(this.cbomanhanvien);
             this.groupBox1.Controls.Add(this.btntimso);
             this.groupBox1.Controls.Add(this.mskdienthoai);
@@ -188,16 +187,6 @@
             this.txtmahopdongqc.Name = "txtmahopdongqc";
             this.txtmahopdongqc.Size = new System.Drawing.Size(226, 26);
             this.txtmahopdongqc.TabIndex = 29;
-            // 
-            // cbomakhachhang
-            // 
-            this.cbomakhachhang.FormattingEnabled = true;
-            this.cbomakhachhang.Location = new System.Drawing.Point(636, 39);
-            this.cbomakhachhang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbomakhachhang.Name = "cbomakhachhang";
-            this.cbomakhachhang.Size = new System.Drawing.Size(316, 28);
-            this.cbomakhachhang.TabIndex = 22;
-            this.cbomakhachhang.TextChanged += new System.EventHandler(this.cbomakhachhang_TextChanged);
             // 
             // cbomanhanvien
             // 
@@ -388,7 +377,6 @@
             this.groupBox2.Controls.Add(this.btndong);
             this.groupBox2.Controls.Add(this.btnin);
             this.groupBox2.Controls.Add(this.btnhuy);
-            this.groupBox2.Controls.Add(this.btnsua);
             this.groupBox2.Controls.Add(this.btnluu);
             this.groupBox2.Controls.Add(this.btnthem);
             this.groupBox2.Controls.Add(this.DatagridView);
@@ -417,7 +405,7 @@
             // 
             // btnboqua
             // 
-            this.btnboqua.Location = new System.Drawing.Point(521, 480);
+            this.btnboqua.Location = new System.Drawing.Point(627, 480);
             this.btnboqua.Name = "btnboqua";
             this.btnboqua.Size = new System.Drawing.Size(75, 29);
             this.btnboqua.TabIndex = 63;
@@ -541,24 +529,13 @@
             this.btnhuy.Name = "btnhuy";
             this.btnhuy.Size = new System.Drawing.Size(156, 29);
             this.btnhuy.TabIndex = 24;
-            this.btnhuy.Text = "Hủy báo";
+            this.btnhuy.Text = "Hủy hợp đồng";
             this.btnhuy.UseVisualStyleBackColor = true;
             this.btnhuy.Click += new System.EventHandler(this.btnhuy_Click_1);
             // 
-            // btnsua
-            // 
-            this.btnsua.Location = new System.Drawing.Point(795, 480);
-            this.btnsua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(84, 29);
-            this.btnsua.TabIndex = 23;
-            this.btnsua.Text = "Sửa";
-            this.btnsua.UseVisualStyleBackColor = true;
-            this.btnsua.Click += new System.EventHandler(this.btnsua_Click_1);
-            // 
             // btnluu
             // 
-            this.btnluu.Location = new System.Drawing.Point(656, 480);
+            this.btnluu.Location = new System.Drawing.Point(764, 480);
             this.btnluu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnluu.Name = "btnluu";
             this.btnluu.Size = new System.Drawing.Size(84, 29);
@@ -569,7 +546,7 @@
             // 
             // btnthem
             // 
-            this.btnthem.Location = new System.Drawing.Point(310, 480);
+            this.btnthem.Location = new System.Drawing.Point(421, 480);
             this.btnthem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnthem.Name = "btnthem";
             this.btnthem.Size = new System.Drawing.Size(151, 29);
@@ -588,6 +565,7 @@
             this.DatagridView.RowTemplate.Height = 24;
             this.DatagridView.Size = new System.Drawing.Size(1294, 166);
             this.DatagridView.TabIndex = 20;
+            this.DatagridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatagridView_CellDoubleClick);
             this.DatagridView.Click += new System.EventHandler(this.DatagridView_Click_1);
             // 
             // txtnoidung
@@ -631,7 +609,6 @@
             this.cbomabao.Name = "cbomabao";
             this.cbomabao.Size = new System.Drawing.Size(173, 28);
             this.cbomabao.TabIndex = 10;
-//            this.cbomabao.SelectedIndexChanged += new System.EventHandler(this.cbomabao_SelectedIndexChanged);
             this.cbomabao.TextChanged += new System.EventHandler(this.cbomabao_TextChanged);
             // 
             // label20
@@ -714,6 +691,13 @@
             this.label12.TabIndex = 1;
             this.label12.Text = "Mã Báo:";
             // 
+            // txtmakhachhang
+            // 
+            this.txtmakhachhang.Location = new System.Drawing.Point(636, 35);
+            this.txtmakhachhang.Name = "txtmakhachhang";
+            this.txtmakhachhang.Size = new System.Drawing.Size(316, 26);
+            this.txtmakhachhang.TabIndex = 42;
+            // 
             // Hopdongquangcao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -744,7 +728,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtmahopdongqc;
-        private System.Windows.Forms.ComboBox cbomakhachhang;
         private System.Windows.Forms.ComboBox cbomanhanvien;
         private System.Windows.Forms.Button btntimso;
         private System.Windows.Forms.MaskedTextBox mskdienthoai;
@@ -771,7 +754,6 @@
         private System.Windows.Forms.Button btndong;
         private System.Windows.Forms.Button btnin;
         private System.Windows.Forms.Button btnhuy;
-        private System.Windows.Forms.Button btnsua;
         private System.Windows.Forms.Button btnluu;
         private System.Windows.Forms.Button btnthem;
         private System.Windows.Forms.DataGridView DatagridView;
@@ -801,5 +783,6 @@
         private System.Windows.Forms.TextBox txtthanhtien;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button btnboqua;
+        private System.Windows.Forms.TextBox txtmakhachhang;
     }
 }

@@ -33,14 +33,14 @@ namespace Project.Forms
             btnthembao.Enabled = true;
             btnin.Enabled = false;
             btnluu.Enabled = false;
-            btnsua.Enabled = false;
+            //btnsua.Enabled = false;
             btnhuy.Enabled = false;
 
 
 
             //Thong tin chung
-            Class.Function.FillCombo("Select MaKH from tblKhachhang", cbomakhachhang, "MaKH", "MaKH");
-            cbomakhachhang.SelectedIndex = -1;
+            //Class.Function.FillCombo("Select MaKH from tblKhachhang", cbomakhachhang, "MaKH", "MaKH");
+            //cbomakhachhang.SelectedIndex = -1;
             Class.Function.FillCombo("Select MaNV from tblNhanvien", cbomanhanvien, "MaNV", "MaNV");
             cbomanhanvien.SelectedIndex = -1;
             Class.Function.FillCombo("Select MaLVHD from tblLinhvuchoatdong", cbomalvhd, "Malvhd", "Malvhd");
@@ -75,7 +75,7 @@ namespace Project.Forms
         private void load_datagridview()
         {
             string sql;
-            sql = "SELECT tblBao.Mabao, tblBao.Tenbao, tblTTQuangcao.MaQcao, tblTTQuangcao.TenQcao, Noidung, NgayBD, NgayKT, Dongia, ThanhTien FROM tblKhach_Quangcao INNER JOIN tblBao ON tblKhach_Quangcao.Mabao=tblBao.Mabao INNER JOIN tblTTQuangcao ON tblKhach_Quangcao.MaQcao= tblTTQuangcao.MaQcao INNER JOIN tblBanggia ON tblBanggia.Mabao=tblKhach_Quangcao.Mabao WHERE tblKhach_Quangcao.MalanQC = N'" + txtmahopdongqc.Text + "'"; //and tblKhach_Quangcao.Mabao = N'" + cbomabao.Text + "' and tblKhach_Quangcao.MaQcao = N'" + cbomaquangcao.Text + "'";
+            sql = "SELECT tblBao.Mabao, tblBao.Tenbao, tblTTQuangcao.MaQcao, tblTTQuangcao.TenQcao,Ngayky, Noidung, NgayBD, NgayKT, Dongia, ThanhTien FROM tblKhach_Quangcao INNER JOIN tblBao ON tblKhach_Quangcao.Mabao=tblBao.Mabao INNER JOIN tblTTQuangcao ON tblKhach_Quangcao.MaQcao= tblTTQuangcao.MaQcao INNER JOIN tblBanggia ON tblBanggia.Mabao=tblKhach_Quangcao.Mabao WHERE tblKhach_Quangcao.MalanQC = N'" + txtmahopdongqc.Text + "'";
             // MessageBox.Show(Sql);
             tblHDQC = Class.Function.GetDataToTable(sql);
             DatagridView.DataSource = tblHDQC;
@@ -84,20 +84,22 @@ namespace Project.Forms
             DatagridView.Columns[1].HeaderText = "Tên báo";
             DatagridView.Columns[2].HeaderText = "Mã quảng cáo";
             DatagridView.Columns[3].HeaderText = "Tên quảng cáo";
-            DatagridView.Columns[4].HeaderText = "Nội dung";
-            DatagridView.Columns[5].HeaderText = "Ngày bắt đầu";
-            DatagridView.Columns[6].HeaderText = "Ngày kết thúc";
-            DatagridView.Columns[7].HeaderText = "Đơn giá";
-            DatagridView.Columns[8].HeaderText = "Thành tiền";
+            DatagridView.Columns[4].HeaderText = "Ngày ký";
+            DatagridView.Columns[5].HeaderText = "Nội dung";
+            DatagridView.Columns[6].HeaderText = "Ngày bắt đầu";
+            DatagridView.Columns[7].HeaderText = "Ngày kết thúc";
+            DatagridView.Columns[8].HeaderText = "Đơn giá";
+            DatagridView.Columns[9].HeaderText = "Thành tiền";
             DatagridView.Columns[0].Width = 100;
             DatagridView.Columns[1].Width = 100;
             DatagridView.Columns[2].Width = 100;
             DatagridView.Columns[3].Width = 100;
-            DatagridView.Columns[4].Width = 200;
-            DatagridView.Columns[5].Width = 100;
+            DatagridView.Columns[4].Width = 100;
+            DatagridView.Columns[5].Width = 200;
             DatagridView.Columns[6].Width = 100;
             DatagridView.Columns[7].Width = 100;
             DatagridView.Columns[8].Width = 100;
+            DatagridView.Columns[9].Width = 100;
             DatagridView.AllowUserToAddRows = false;
             DatagridView.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
@@ -109,9 +111,11 @@ namespace Project.Forms
             str = "SELECT MaNV FROM tblKhach_Quangcao WHERE MalanQC = N'" + txtmahopdongqc.Text + "'";
             cbomanhanvien.Text = Class.Function.GetFieldValues(str);
             str = "SELECT MaKH FROM tblKhach_Quangcao WHERE MalanQC = N'" + txtmahopdongqc.Text + "'";
-            cbomakhachhang.Text = Class.Function.GetFieldValues(str);
-            
-            if (cbomakhachhang.Text == "")
+            txtmakhachhang.Text = Class.Function.GetFieldValues(str);
+            str = "Select Ngayky from tblKhach_Quangcao where MalanQC = N'" + txtmahopdongqc.Text + "'";
+            txtngayky.Text = Class.Function.GetFieldValues(str);
+
+            if (txtmakhachhang.Text == "")
             {
                 txttenkhachhang.Text = "";
                 txtdiachi.Text = "";
@@ -121,17 +125,17 @@ namespace Project.Forms
                 cbomalvhd.Text = "";
 
             }
-            str = "Select TenKH from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
+            str = "Select TenKH from tblKhachhang where MaKH= N'" + txtmakhachhang.Text + "'";
             txttenkhachhang.Text = Function.GetFieldValues(str);
-            str = "Select DiaChi from tblKhachhang where MaKH = N'" + cbomakhachhang.Text + "'";
+            str = "Select DiaChi from tblKhachhang where MaKH = N'" + txtmakhachhang.Text + "'";
             txtdiachi.Text = Function.GetFieldValues(str);
-            str = "Select Dienthoai from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
+            str = "Select Dienthoai from tblKhachhang where MaKH= N'" + txtmakhachhang.Text + "'";
             mskdienthoai.Text = Function.GetFieldValues(str);
-            str = "Select Didong from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
+            str = "Select Didong from tblKhachhang where MaKH= N'" + txtmakhachhang.Text + "'";
             mskdidong.Text = Function.GetFieldValues(str);
-            str = "Select Email from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
+            str = "Select Email from tblKhachhang where MaKH= N'" + txtmakhachhang.Text + "'";
             txttenmail.Text = Function.GetFieldValues(str);
-            str = "Select tblLinhvuchoatdong.MaLVHD from tblLinhvuchoatdong inner join tblKhachhang on tblLinhvuchoatdong.MaLVHD = tblKhachhang.MaLVHD where MaKH= N'" + cbomakhachhang.Text + "'";
+            str = "Select tblLinhvuchoatdong.MaLVHD from tblLinhvuchoatdong inner join tblKhachhang on tblLinhvuchoatdong.MaLVHD = tblKhachhang.MaLVHD where MaKH= N'" + txtmakhachhang.Text + "'";
             cbomalvhd.Text = Function.GetFieldValues(str);
 
 
@@ -142,16 +146,19 @@ namespace Project.Forms
             str = "Select TenNV from tblNhanvien where MaNV= N'" + cbomanhanvien.Text + "'";
             txttennhanvien.Text = Function.GetFieldValues(str);
 
-            //str = "SELECT SUM(Thanhtien) AS Tongtien FROM tblKhach_Quangcao where MalanQC = N'" + txtmahopdongqc.Text + "'";
-            //txtTong.Text = Function.GetFieldValues(str);
+            str = "SELECT SUM(Thanhtien) FROM tblKhach_Quangcao where MalanQC = N'" + txtmahopdongqc.Text + "'";
+            txtTong.Text = Function.GetFieldValues(str);
 
 
             //Khi nhap bao, qcao dc don gia 
             str = "Select Dongia from tblBanggia where Mabao= N'" + cbomabao.Text + "' and MaQcao = N'" + cbomaquangcao.Text + "'";
             txtdongia.Text = Function.GetFieldValues(str);
             //Thanhtien
-            //str = "SELECT (DATEDIFF(day, NgayBD, NgayKT) + 1) * Dongia FROM tblKhach_Quangcao JOIN tblBanggia ON tblKhach_Quangcao.Mabao = tblBanggia.Mabao AND tblKhach_Quangcao.MaQcao = tblBanggia.MaQcao where MalanQC = N'" + txtmahopdongqc.Text + "'and tblKhach_Quangcao.Mabao= N'" + cbomabao.Text + "' and tblKhach_Quangcao.MaQcao = N'" + cbomaquangcao.Text + "'";
-            //txtthanhtien.Text = Function.GetFieldValues(str);
+            str = "SELECT ThanhTien FROM tblKhach_Quangcao where MalanQC = N'" + txtmahopdongqc.Text + "'and tblKhach_Quangcao.Mabao= N'" + cbomabao.Text + "' and tblKhach_Quangcao.MaQcao = N'" + cbomaquangcao.Text + "'";
+            txtthanhtien.Text = Function.GetFieldValues(str);
+
+            lblBangchu.Text = "Bằng chữ: " + Class.Function.ChuyenSoSangChu(txtTong.Text);
+
         }
         //5 
         private void mskngaybatdau_MaskChanged(object sender, EventArgs e)
@@ -184,26 +191,21 @@ namespace Project.Forms
         //6 
         private void CalculateTotal()
         {
-            if (decimal.TryParse(mskngaybatdau.Text, out decimal ngaybatdau) && decimal.TryParse(txtdongia.Text, out decimal dongia) && decimal.TryParse(mskngayketthuc.Text, out decimal ngayketthuc))
+            if (DateTime.TryParse(mskngaybatdau.Text, out DateTime ngaybatdau) && DateTime.TryParse(mskngayketthuc.Text, out DateTime ngayketthuc) && decimal.TryParse(txtdongia.Text, out decimal dongia))
             {
-                decimal thanhtien = ((ngayketthuc - ngaybatdau)* dongia);
+                TimeSpan chenhLechNgay = ngayketthuc - ngaybatdau;
+                decimal thanhtien = (chenhLechNgay.Days * dongia);
                 txtthanhtien.Text = thanhtien.ToString("0.00"); // Định dạng thành tiền với 2 chữ số thập phân
                 CalculateTotalPrice(); // Update the total price whenever the line item total changes
             }
             else
             {
-                //MessageBox.Show("Vui lòng nhập số lượng và đơn giá hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MessageBox.Show("Vui lòng nhập ngay hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void DatagridView_Click_1(object sender, EventArgs e)
         {
-            if (btnthembao.Enabled == false)
-            {
-                MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtmahopdongqc.Focus();
-                return;
-            }
             if (tblHDQC.Rows.Count == 0)
             {
                 MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -221,7 +223,7 @@ namespace Project.Forms
 
 
             Load_ThongtinHD();
-            btnsua.Enabled = true;
+            //btnsua.Enabled = true;
             btnhuy.Enabled = true;
             btnin.Enabled = true;
 
@@ -239,12 +241,14 @@ namespace Project.Forms
             txtmahopdongqc.Text = cbomahopdongqc.Text;
             Load_ThongtinHD();
             load_datagridview();
-            btnhuy.Enabled = true;
-            btnluu.Enabled = true;
+            btnhuy.Enabled = false;
+            btnluu.Enabled = false;
             btnin.Enabled = true;
             btnboqua.Enabled = true;
             btnthem.Enabled = false;
-
+            btnthembao.Enabled = false;
+            btntimkiem.Enabled = false;
+            cbomahopdongqc.Enabled = false;
             cbomahopdongqc.SelectedIndex = -1;
         }
 
@@ -257,7 +261,7 @@ namespace Project.Forms
 
             cbomanhanvien.Text = "";
             txttennhanvien.Text = "";
-            cbomakhachhang.Text = "";
+            txtmakhachhang.Text = "";
             txttenkhachhang.Text = "";
             txtdiachi.Text = "";
             txttenmail.Text = "";
@@ -276,6 +280,7 @@ namespace Project.Forms
             txtTong.Text = "0";
             txtthanhtien.Text = "0";
 
+            load_datagridview();
         } 
         private void resetvaluesHD()
         {
@@ -292,13 +297,15 @@ namespace Project.Forms
         //4 
         private void btnthem_Click_1(object sender, EventArgs e)
         {
-            btnsua.Enabled = false;
+            //btnsua.Enabled = false;
             btnhuy.Enabled = true;
             btnluu.Enabled = true;
             btnin.Enabled = false;
             btnthembao.Enabled = true;
             btnboqua.Enabled = true;
+            btntimkiem.Enabled = false;
 
+            cbomahopdongqc.Enabled = false;
             txtmahopdongqc.Enabled = false;
             txtngayky.Enabled = false;
             txttennhanvien.Enabled = false;
@@ -326,21 +333,23 @@ namespace Project.Forms
                 this.Close();
         }
 
-        //11
-        /*
         private void btntimso_Click(object sender, EventArgs e)
         {
             string sql;
-            sql = "select MaKH, TenKH, Diachi, Didong, Email, MaLVHD from tblKhachhang where Dienthoai = '" + mskdienthoai.Text + "'";
+            sql = "select MaKH, TenKH, DiaChi, Didong, Email, MaLVHD from tblKhachhang where DienThoai = '" + mskdienthoai.Text + "'";
             tblkh = Class.Function.GetDataToTable(sql);
             if (tblkh.Rows.Count == 0)
             {
                 MessageBox.Show("Chưa có khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbomakhachhang.Text = Function.CreateCustomerKey();
+                txtmakhachhang.Text = Function.CreateCustomerKey();
                 txttenkhachhang.Enabled = true;
                 txtdiachi.Enabled = true;
                 mskdidong.Enabled = true;
                 txttenmail.Enabled = true;
+                txtnoidung.Enabled = true;
+                mskngaybatdau.Enabled = true;
+                txtthanhtien.Enabled = true;
+                mskngayketthuc.Enabled = true;
                 cbomalvhd.Enabled = true;
             }
             else
@@ -348,12 +357,13 @@ namespace Project.Forms
                 MessageBox.Show("Đã có khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Load_ThongtinKH();
             }
-        }*/
+        }
+
         private void Load_ThongtinKH()
         {
             string str;
             str = "select MaKH from tblKhachhang where Dienthoai = '" + mskdienthoai.Text + "'";
-            cbomakhachhang.Text = Class.Function.GetFieldValues(str);
+            txtmakhachhang.Text = Class.Function.GetFieldValues(str);
             str = "select TenKH from tblKhachhang where Dienthoai = '" + mskdienthoai.Text + "'";
             txttenkhachhang.Text = Class.Function.GetFieldValues(str);
             str = "select Diachi from tblKhachhang where Dienthoai = '" + mskdienthoai.Text + "'";
@@ -362,11 +372,8 @@ namespace Project.Forms
             mskdidong.Text = Class.Function.GetFieldValues(str);
             str = "select Email from tblKhachhang where Dienthoai = '" + mskdienthoai.Text + "'";
             txttenmail.Text = Class.Function.GetFieldValues(str);
-            //str = "select MaLVHD from tblLinhvuchoatdong inner join tblKhachhang on tblLinhvuchoatdong.MaLVHD=tblKhachhang.MaLVHD where Dienthoai = '" + mskdienthoai.Text + "'";
-            //cbomalvhd.Text = Class.Function.GetFieldValues(str);
             str = "select MaLVHD from tblKhachhang where DienThoai = '" + mskdienthoai.Text + "'";
             cbomalvhd.Text = Class.Function.GetFieldValues(str);
-
         }
         
        
@@ -404,17 +411,17 @@ namespace Project.Forms
                 MessageBox.Show("Bạn phải nhập mã nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cbomanhanvien.Focus();
                 return;
-            }
+            }/*
             if (txttennhanvien.Text.Length == 0)
             {
                 MessageBox.Show("Bạn phải nhập tên nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txttennhanvien.Focus();
-            }
+            }*/
 
-            if (cbomakhachhang.Text.Trim().Length == 0)
+            if (txtmakhachhang.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn phải nhập mã khách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbomakhachhang.Focus();
+                txtmakhachhang.Focus();
                 return;
             }
             if (txttenkhachhang.Text.Trim().Length == 0)
@@ -495,12 +502,12 @@ namespace Project.Forms
                 return;
             }
 
-            //sql = "Insert into tblKhach_Quangcao (MalanQC, MaKH, Mabao, MaNV, MaQcao, Noidung, NgayBD, NgayKT, Thanhtien) values (N'" + txtmahopdongqc.Text.Trim() + "',N'" + cbomakhachhang.SelectedValue + "', N'" + cbomabao.SelectedValue + "', N'" + cbomanhanvien.SelectedValue + "',N'" + cbomaquangcao.SelectedValue + "',N'" + txtnoidung.Text.Trim() + "', N'" + mskngaybatdau.Text.Trim() + "',N'" + mskngayketthuc.Text.Trim() + "',N'" + txtthanhtien.Text.Trim() + "')";
+            //sql = "Insert into tblKhach_Quangcao (MalanQC, MaKH, Mabao, MaNV, MaQcao, Noidung, NgayBD, NgayKT, Thanhtien) values (N'" + txtmahopdongqc.Text.Trim() + "',N'" + txtmakhachhang.SelectedValue + "', N'" + cbomabao.SelectedValue + "', N'" + cbomanhanvien.SelectedValue + "',N'" + cbomaquangcao.SelectedValue + "',N'" + txtnoidung.Text.Trim() + "', N'" + mskngaybatdau.Text.Trim() + "',N'" + mskngayketthuc.Text.Trim() + "',N'" + txtthanhtien.Text.Trim() + "')";
 
             //Class.Function.RunSql(sql);
 
             // Save Customer Information if not exists
-            string customerID = cbomakhachhang.SelectedValue.ToString();
+            string customerID = txtmakhachhang.Text.Trim();
             string query = $"SELECT COUNT(*) FROM tblKhachhang WHERE MaKH = N'{customerID}'";
             int customerCount = int.Parse(Class.Function.GetFieldValues(query));
 
@@ -508,7 +515,7 @@ namespace Project.Forms
             {
                 // Insert new customer information
                 query = $"INSERT INTO tblkhachhang (MaKH, TenKH, DiaChi, DienThoai, Didong, Email, MaLVHD) " +
-                        $"VALUES (N'" + cbomakhachhang.SelectedValue.ToString() + "',N'" + txttenkhachhang.Text.Trim() + "',N'" + txtdiachi.Text.Trim() + "','" + mskdienthoai.Text + "','" + mskdidong.Text + "','" + txttenmail.Text.Trim() + "','" + cbomalvhd.SelectedValue.ToString() + "')";
+                        $"VALUES (N'" + txtmakhachhang.Text.Trim() + "',N'" + txttenkhachhang.Text.Trim() + "',N'" + txtdiachi.Text.Trim() + "','" + mskdienthoai.Text + "','" + mskdidong.Text + "','" + txttenmail.Text.Trim() + "','" + cbomalvhd.SelectedValue.ToString() + "')";
                 Class.Function.RunSql(query);
             }
 
@@ -516,23 +523,23 @@ namespace Project.Forms
 
             foreach (DataRow row in tblHDQC.Rows)
             {
-                sql = $"INSERT INTO tblKhach_Quangcao (MalanQC, Ngayky, MaKH, MaQcao, Mabao, Noidung, MaNV, NgayBD, NgayKT, ThanhTien) " +
-                    $"VALUES (N'{txtmahopdongqc.Text.Trim()}', '{Class.Function.convertdatetime(txtngayky.Text.Trim())}', " +
-                    $"N'{cbomakhachhang.SelectedValue.ToString()}', N'{row["MaQcao"].ToString()}', N'{row["Mabao"].ToString()}', " +
-                    $"N'{row["Noidung"].ToString()}', N'{cbomanhanvien.SelectedValue}', " +
-                    $"N'{row["NgayBD"].ToString()}',N'{row["NgayKT"].ToString()}, N'{row["ThanhTien"].ToString()}')";
+                sql = $"INSERT INTO tblKhach_Quangcao (MalanQC, MaKH, Mabao, MaNV, MaQcao,Noidung, NgayBD, NgayKT, ThanhTien, Ngayky) " +
+                    $"VALUES (N'{txtmahopdongqc.Text.Trim()}', N'{txtmakhachhang.Text.Trim()}', " +
+                    $"N'{row["Mabao"].ToString()}', N'{cbomanhanvien.SelectedValue}',N'{row["MaQcao"].ToString()}', " +
+                    $"N'{row["Noidung"].ToString()}', " +
+                    $"N'{row["NgayBD"].ToString()}',N'{row["NgayKT"].ToString()}, N'{row["ThanhTien"].ToString()}','{Class.Function.convertdatetime(txtngayky.Text.Trim())}')";
                 Class.Function.RunSql(sql);
             }
             MessageBox.Show("Hợp đồng đã được lưu thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             load_datagridview();
             btnhuy.Enabled = false;
             btnthembao.Enabled = true;
-            btnsua.Enabled = true;
+            //btnsua.Enabled = true;
             btnin.Enabled = false;
             btnluu.Enabled = false;
 
         }
-
+        /*
         private void btnsua_Click_1(object sender, EventArgs e)
         {
             string sql;
@@ -635,7 +642,7 @@ namespace Project.Forms
             resetvalues();
             btnin.Enabled = false;
 
-        }
+        }*/
 
         private void btnin_Click_1(object sender, EventArgs e)
         {
@@ -693,7 +700,7 @@ namespace Project.Forms
             //exRange.Range["C9:E9"].MergeCells = true;
             //exRange.Range["C9:E9"].Value = tblThongtinHD.Rows[0][5].ToString();
             //Lấy thông tin các mặt hàng
-            sql = "SELECT b.TenQcao, c.Tenbao, a.NgayBD, a.NgayKT, a.Noidung, d.Dongia, a.Tongtien FROM tblKhach_Quangcao AS a , tblTTQuangcao AS b, tblBao AS c, tblBanggia as d WHERE a.MalanQC = N'" + txtmahopdongqc.Text + "' AND a.MaQcao = N'" + cbomaquangcao.Text + "' AND a.Mabao = N'" + cbomabao.Text + "'";
+            sql = "SELECT b.TenQcao, c.Tenbao, a.NgayBD, a.NgayKT, a.Noidung, d.Dongia, a.ThanhTien FROM tblKhach_Quangcao AS a , tblTTQuangcao AS b, tblBao AS c, tblBanggia as d WHERE a.MalanQC = N'" + txtmahopdongqc.Text + "' AND a.MaQcao = N'" + cbomaquangcao.Text + "' AND a.Mabao = N'" + cbomabao.Text + "'and a.Mabao = c.Mabao  and a.MaQcao = b.MaQcao and a.Mabao = d.Mabao and a.MaQcao = d.MaQcao";
             tblThongtinCTHD = Class.Function.GetDataToTable(sql);
             //Tạo dòng tiêu đề bảng
             exRange.Range["A11:F11"].Font.Bold = true;
@@ -706,7 +713,7 @@ namespace Project.Forms
             exRange.Range["E11:E11"].Value = "Ngày kết thúc";
             exRange.Range["F11:F11"].Value = "Nội dung";
             exRange.Range["G11:G11"].Value = "Đơn giá";
-            exRange.Range["H11:H11"].Value = "Tổng tiền";
+            exRange.Range["H11:H11"].Value = "Thành tiền";
             for (hang = 0; hang <= tblThongtinCTHD.Rows.Count - 1; hang++)
             {
                 //Điền số thứ tự vào cột 1 từ dòng 12
@@ -743,34 +750,6 @@ namespace Project.Forms
             str = "Select TenNV from tblNhanvien where MaNV= N'" + cbomanhanvien.Text + "'";
             txttennhanvien.Text = Function.GetFieldValues(str);
         }
-
-        private void cbomakhachhang_TextChanged(object sender, EventArgs e)
-        {
-            string str;
-            if (cbomakhachhang.Text == "")
-            {
-                txttenkhachhang.Text = "";
-                txtdiachi.Text = "";
-                mskdienthoai.Text = "";
-                mskdidong.Text = "";
-                txttenmail.Text = "";
-                cbomalvhd.Text = "";
-
-            }
-            str = "Select TenKH from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
-            txttenkhachhang.Text = Function.GetFieldValues(str);
-            str = "Select DiaChi from tblKhachhang where MaKH = N'" + cbomakhachhang.Text + "'";
-            txtdiachi.Text = Function.GetFieldValues(str);
-            str = "Select Dienthoai from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
-            mskdienthoai.Text = Function.GetFieldValues(str);
-            str = "Select Didong from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
-            mskdidong.Text = Function.GetFieldValues(str);
-            str = "Select Email from tblKhachhang where MaKH= N'" + cbomakhachhang.Text + "'";
-            txttenmail.Text = Function.GetFieldValues(str);
-            str = "Select tblLinhvuchoatdong.MaLVHD from tblLinhvuchoatdong inner join tblKhachhang on tblLinhvuchoatdong.MaLVHD = tblKhachhang.MaLVHD where MaKH= N'" + cbomakhachhang.Text + "'";
-            cbomalvhd.Text = Function.GetFieldValues(str);
-        }
-
         private void cbomabao_TextChanged(object sender, EventArgs e)
         {
             string str;
@@ -807,16 +786,16 @@ namespace Project.Forms
                 // Truy vấn cơ sở dữ liệu để lấy giá tiền tương ứng
                 string query1 = $"SELECT Dongia FROM tblBanggia WHERE Mabao = N'{mabao}' AND MaQcao = N'{maquangcao}'";
                 string dongia = Class.Function.GetFieldValues(query1);
-                string query2 = $"SELECT (Dongia*DATEDIFF(day,NgayBD,NgayKT)) as Thanhtien from tblKhach_Quangcao inner join tblBanggia on tblKhach_Quangcao.Mabao = tblBanggia.Mabao Where tblBanggia.Mabao = N'{mabao}' AND tblBanggia.MaQcao = N'{maquangcao}'";
+                string query2 = $"SELECT ThanhTien from tblKhach_Quangcao Where Mabao = N'{mabao}' AND MaQcao = N'{maquangcao}'";
                 string thanhtien = Class.Function.GetFieldValues(query2);
-                string query3 = $"SELECT NgayBD from tblKhach_Quangcao inner join tblBanggia on tblKhach_Quangcao.Mabao = tblBanggia.Mabao Where tblBanggia.Mabao = N'{mabao}' AND tblBanggia.MaQcao = N'{maquangcao}'";
-                string ngaybd = Class.Function.GetFieldValues(query3);
-                string query4 = $"SELECT NgayKT from tblKhach_Quangcao inner join tblBanggia on tblKhach_Quangcao.Mabao = tblBanggia.Mabao Where tblBanggia.Mabao = N'{mabao}' AND tblBanggia.MaQcao = N'{maquangcao}'";
-                string ngaykt = Class.Function.GetFieldValues(query4);
+                //string query3 = $"SELECT NgayBD from tblKhach_Quangcao Where Mabao = N'{mabao}' AND MaQcao = N'{maquangcao}'";
+                //string ngaybd = Class.Function.GetFieldValues(query3);
+                //string query4 = $"SELECT NgayKT from tblKhach_Quangcao Where Mabao = N'{mabao}' AND MaQcao = N'{maquangcao}'";
+                //string ngaykt = Class.Function.GetFieldValues(query4);
                 // Hiển thị đơn giá và ngày trong textbox Đơn giá
                 txtdongia.Text = string.IsNullOrEmpty(dongia) ? "0" : dongia;
-                mskngaybatdau.Text = string.IsNullOrEmpty(ngaybd) ? "  /  /    " : ngaybd;
-                mskngayketthuc.Text = string.IsNullOrEmpty(ngaykt) ? "  /  /    " : ngaykt;
+                //mskngaybatdau.Text = string.IsNullOrEmpty(ngaybd) ? "  /  /    " : ngaybd;
+                //mskngayketthuc.Text = string.IsNullOrEmpty(ngaykt) ? "  /  /    " : ngaykt;
                 // Hiển thị thành tiền tính từ đơn giá *(Ngày KT - Ngày BD)
                 //txtthanhtien.Text = string.IsNullOrEmpty(thanhtien) ? "0" : thanhtien;
 
@@ -868,7 +847,7 @@ namespace Project.Forms
             }
             if (string.IsNullOrEmpty(txtngayky.Text))
             {
-                MessageBox.Show("Vui lòng nhập ngày đăng ký", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập ngày ký", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (cbomaquangcao.SelectedIndex == -1)
@@ -908,19 +887,18 @@ namespace Project.Forms
             }
 
             // Tính toán thành tiền
-            CalculateTotal();
+            //CalculateTotal();
 
             // Cập nhật lại DataGridView
             DatagridView.DataSource = tblHDQC;
+
             // Tính toán lại tổng tiền
             CalculateTotalPrice();
 
             // Reset các giá trị nhập vào
-            resetvaluesHD();
+            resetvaluesHD(); 
         }
 
-        
-        
         //18 
         private void btnboqua_Click(object sender, EventArgs e)
         {
@@ -928,36 +906,45 @@ namespace Project.Forms
             btnboqua.Enabled = false;
             btnthem.Enabled = true;
             btnhuy.Enabled = true;
-            btnsua.Enabled = true;
+            //btnsua.Enabled = true;
             btnluu.Enabled = false;
+            btntimkiem.Enabled=true;
+            cbomahopdongqc.Enabled = true;
         }
 
-        private void btntimso_Click(object sender, EventArgs e)
+        private void DatagridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string sql;
-            sql = "select MaKH, TenKH, DiaChi, Didong, Email, MaLVHD from tblKhachhang where DienThoai = '" + mskdienthoai.Text + "'";
-            tblkh = Class.Function.GetDataToTable(sql);
-            if (tblkh.Rows.Count == 0)
+            if (tblHDQC.Rows.Count == 0)
             {
-                MessageBox.Show("Chưa có khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbomakhachhang.Text = Function.CreateCustomerKey();
-                txttenkhachhang.Enabled = true;
-                txtdiachi.Enabled = true;
-                mskdidong.Enabled = true;
-                txttenmail.Enabled = true;
-                txtnoidung.Enabled = true;
-                mskngaybatdau.Enabled = true;
-                txtthanhtien.Enabled = true;
-                mskngayketthuc.Enabled = true;
-                cbomalvhd.Enabled = true;
+                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
-            else
+
+            if ((MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
-                MessageBox.Show("Đã có khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Load_ThongtinKH();
+                // Lấy chỉ số dòng hiện tại
+                int rowIndex = e.RowIndex;
+
+                // Lấy mã báo, mã qc và thành tiền của dòng hiện tại
+                string mabao = DatagridView.Rows[rowIndex].Cells["Mabao"].Value.ToString();
+                string maqc = DatagridView.Rows[rowIndex].Cells["MaQcao"].Value.ToString();
+                double thanhtien = Convert.ToDouble(DatagridView.Rows[rowIndex].Cells["ThanhTien"].Value.ToString());
+
+                // Xóa hàng tạm thời khỏi DataGridView
+                DelBaoTamThoi(rowIndex);
+
+                // Cập nhật lại tổng tiền cho hóa đơn
+                DelUpdateTongtien(txtmahopdongqc.Text, thanhtien);
             }
         }
-
+        private void DelBaoTamThoi(int rowIndex)
+        {
+            // Xóa hàng tạm thời khỏi DataGridView
+            if (rowIndex >= 0 && rowIndex < DatagridView.Rows.Count)
+            {
+                DatagridView.Rows.RemoveAt(rowIndex);
+            }
+        }
     }
 }
 
