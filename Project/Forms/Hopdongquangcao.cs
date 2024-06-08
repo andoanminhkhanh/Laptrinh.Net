@@ -273,7 +273,7 @@ namespace Project.Forms
             txtthanhtien.Text = "0";
 
             load_datagridview();
-        } 
+        }
         private void resetvaluesHD()
         {
             cbomabao.Text = "";
@@ -367,8 +367,8 @@ namespace Project.Forms
             str = "select MaLVHD from tblKhachhang where DienThoai = '" + mskdienthoai.Text + "'";
             cbomalvhd.Text = Class.Function.GetFieldValues(str);
         }
-        
-       
+
+
 
         //14 
         private void btnhuy_Click_1(object sender, EventArgs e)
@@ -594,13 +594,17 @@ namespace Project.Forms
                 exRange.Range["A1:C1"].Font.Italic = true;
                 exRange.Range["A1:C1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
                 exRange.Range["A1:C1"].Value = "Nhân viên";
+                exRange.Range["A4:C4"].MergeCells = true;
+                exRange.Range["A4:C4"].Font.Italic = true;
+                exRange.Range["A4:C4"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+                exRange.Range["A4:C4"].Value = tblThongtinHD.Rows[0][4];
             }
 
             exSheet.Name = "Hợp đồng quảng cáo";
             exApp.Visible = true;
         }
 
-        private void cbomanhanvien_TextChanged(object sender, EventArgs e)
+    private void cbomanhanvien_TextChanged(object sender, EventArgs e)
         {
             string str;
             if (cbomanhanvien.Text == "")
@@ -774,14 +778,11 @@ namespace Project.Forms
             {
                 DataRow newRow = tblHDQC.NewRow();
                 newRow["Mabao"] = cbomabao.SelectedValue;
-                newRow["Tenbao"] = txttenbao.Text;
                 newRow["MaQcao"] = cbomaquangcao.SelectedValue;
-                newRow["TenQcao"] = txttenquangcao.Text;
                 newRow["Ngayky"] = txtngayky.Text;
                 newRow["Noidung"] = txtnoidung.Text;
                 newRow["NgayBD"] = mskngaybatdau.Text;
                 newRow["NgayKT"] = mskngayketthuc.Text;
-                newRow["Dongia"] = txtdongia.Text;
                 newRow["ThanhTien"] = txtthanhtien.Text;
                 tblHDQC.Rows.Add(newRow);
             } 
