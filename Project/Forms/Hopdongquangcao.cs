@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using COMExcel = Microsoft.Office.Interop.Excel;
 using System.Xml;
+using System.Globalization;
 //using Quanlybanhang.Class;
 
 
@@ -43,7 +44,7 @@ namespace Project.Forms
             //cbomakhachhang.SelectedIndex = -1;
             Class.Function.FillCombo("Select MaNV from tblNhanvien", cbomanhanvien, "MaNV", "MaNV");
             cbomanhanvien.SelectedIndex = -1;
-            Class.Function.FillCombo("Select MaLVHD from tblLinhvuchoatdong", cbomalvhd, "Malvhd", "Malvhd");
+            Class.Function.FillCombo("Select MaLVHD, TenLVHD from tblLinhvuchoatdong", cbomalvhd, "Malvhd", "Tenlvhd");
             cbomalvhd.SelectedIndex = -1;
 
             //Thong tin chi tiet
@@ -75,31 +76,25 @@ namespace Project.Forms
         private void load_datagridview()
         {
             string sql;
-            sql = "SELECT tblBao.Mabao, tblBao.Tenbao, tblTTQuangcao.MaQcao, tblTTQuangcao.TenQcao,Ngayky, Noidung, NgayBD, NgayKT, Dongia, ThanhTien FROM tblKhach_Quangcao INNER JOIN tblBao ON tblKhach_Quangcao.Mabao=tblBao.Mabao INNER JOIN tblTTQuangcao ON tblKhach_Quangcao.MaQcao= tblTTQuangcao.MaQcao INNER JOIN tblBanggia ON tblBanggia.Mabao=tblKhach_Quangcao.Mabao WHERE tblKhach_Quangcao.MalanQC = N'" + txtmahopdongqc.Text + "'";
+            sql = "SELECT Mabao, MaQcao,Ngayky, Noidung, NgayBD, NgayKT,  ThanhTien FROM tblKhach_Quangcao WHERE MalanQC = N'" + txtmahopdongqc.Text + "'";
             // MessageBox.Show(Sql);
             tblHDQC = Class.Function.GetDataToTable(sql);
             DatagridView.DataSource = tblHDQC;
 
             DatagridView.Columns[0].HeaderText = "Mã báo";
-            DatagridView.Columns[1].HeaderText = "Tên báo";
-            DatagridView.Columns[2].HeaderText = "Mã quảng cáo";
-            DatagridView.Columns[3].HeaderText = "Tên quảng cáo";
-            DatagridView.Columns[4].HeaderText = "Ngày ký";
-            DatagridView.Columns[5].HeaderText = "Nội dung";
-            DatagridView.Columns[6].HeaderText = "Ngày bắt đầu";
-            DatagridView.Columns[7].HeaderText = "Ngày kết thúc";
-            DatagridView.Columns[8].HeaderText = "Đơn giá";
-            DatagridView.Columns[9].HeaderText = "Thành tiền";
+            DatagridView.Columns[1].HeaderText = "Mã quảng cáo";
+            DatagridView.Columns[2].HeaderText = "Ngày ký";
+            DatagridView.Columns[3].HeaderText = "Nội dung";
+            DatagridView.Columns[4].HeaderText = "Ngày bắt đầu";
+            DatagridView.Columns[5].HeaderText = "Ngày kết thúc";
+            DatagridView.Columns[6].HeaderText = "Thành tiền";
             DatagridView.Columns[0].Width = 100;
             DatagridView.Columns[1].Width = 100;
             DatagridView.Columns[2].Width = 100;
-            DatagridView.Columns[3].Width = 100;
+            DatagridView.Columns[3].Width = 200;
             DatagridView.Columns[4].Width = 100;
-            DatagridView.Columns[5].Width = 200;
+            DatagridView.Columns[5].Width = 100;
             DatagridView.Columns[6].Width = 100;
-            DatagridView.Columns[7].Width = 100;
-            DatagridView.Columns[8].Width = 100;
-            DatagridView.Columns[9].Width = 100;
             DatagridView.AllowUserToAddRows = false;
             DatagridView.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
@@ -212,13 +207,10 @@ namespace Project.Forms
                 return;
             }
             cbomabao.Text = DatagridView.CurrentRow.Cells["Mabao"].Value.ToString();
-            txttenbao.Text = DatagridView.CurrentRow.Cells["Tenbao"].Value.ToString();
             cbomaquangcao.Text = DatagridView.CurrentRow.Cells["MaQcao"].Value.ToString();
-            txttenquangcao.Text = DatagridView.CurrentRow.Cells["TenQcao"].Value.ToString();
             txtnoidung.Text = DatagridView.CurrentRow.Cells["Noidung"].Value.ToString();
             mskngaybatdau.Text = DatagridView.CurrentRow.Cells["NgayBD"].Value.ToString();
             mskngayketthuc.Text = DatagridView.CurrentRow.Cells["NgayKT"].Value.ToString();
-            txtdongia.Text = DatagridView.CurrentRow.Cells["Dongia"].Value.ToString();
             txtthanhtien.Text = DatagridView.CurrentRow.Cells["ThanhTien"].Value.ToString();
 
 
@@ -298,7 +290,7 @@ namespace Project.Forms
         private void btnthem_Click_1(object sender, EventArgs e)
         {
             //btnsua.Enabled = false;
-            btnhuy.Enabled = true;
+            btnhuy.Enabled = false;
             btnluu.Enabled = true;
             btnin.Enabled = false;
             btnthembao.Enabled = true;
@@ -460,53 +452,8 @@ namespace Project.Forms
                 cbomalvhd.Focus();
                 return;
             }
-            //sql = "Insert into tblKhachhang (MaKH, TenKH, Diachi, Dienthoai, Didong, Email, MaLVHD) values (N'" + cbomakhachhang.SelectedValue + "',N'" + txttenkhachhang.Text.Trim() + "',N'" + txtdiachi.Text.Trim() + "',N'" + mskdienthoai.Text.Trim() + "', N'" + mskdidong.Text.Trim() + "',N'" + btntenmail.Text.Trim() + "', N'" + cbomalvhd.SelectedValue + "')";
 
-            //Class.Function.RunSql(sql);
-            
-            if (cbomabao.Text.Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập mã báo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbomabao.Focus();
-                return;
-            }
-            if (cbomaquangcao.Text.Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập mã quảng cáo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbomaquangcao.Focus();
-                return;
-            }
-            if (txtnoidung.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập nội dung", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtnoidung.Focus();
-                return;
-            }
-
-            if (mskngaybatdau.Text == "  /  /")
-            {
-                MessageBox.Show("Bạn phải nhập ngày bắt đầu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                mskngaybatdau.Focus();
-                return;
-            }
-            if (mskngayketthuc.Text == "  /  /")
-            {
-                MessageBox.Show("Bạn phải nhập ngày kết thúc", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                mskngayketthuc.Focus();
-                return;
-            }
-            if (txtdongia.Text == "")
-            {
-                MessageBox.Show("Bạn phải nhập đơn giá", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtdongia.Focus();
-                return;
-            }
-
-            //sql = "Insert into tblKhach_Quangcao (MalanQC, MaKH, Mabao, MaNV, MaQcao, Noidung, NgayBD, NgayKT, Thanhtien) values (N'" + txtmahopdongqc.Text.Trim() + "',N'" + txtmakhachhang.SelectedValue + "', N'" + cbomabao.SelectedValue + "', N'" + cbomanhanvien.SelectedValue + "',N'" + cbomaquangcao.SelectedValue + "',N'" + txtnoidung.Text.Trim() + "', N'" + mskngaybatdau.Text.Trim() + "',N'" + mskngayketthuc.Text.Trim() + "',N'" + txtthanhtien.Text.Trim() + "')";
-
-            //Class.Function.RunSql(sql);
-
-            // Save Customer Information if not exists
+            // luu khach 
             string customerID = txtmakhachhang.Text.Trim();
             string query = $"SELECT COUNT(*) FROM tblKhachhang WHERE MaKH = N'{customerID}'";
             int customerCount = int.Parse(Class.Function.GetFieldValues(query));
@@ -519,19 +466,20 @@ namespace Project.Forms
                 Class.Function.RunSql(query);
             }
 
-            //ở đây
+            //luu hop dong 
 
             foreach (DataRow row in tblHDQC.Rows)
             {
-                sql = $"INSERT INTO tblKhach_Quangcao (MalanQC, MaKH, Mabao, MaNV, MaQcao,Noidung, NgayBD, NgayKT, ThanhTien, Ngayky) " +
-                    $"VALUES (N'{txtmahopdongqc.Text.Trim()}', N'{txtmakhachhang.Text.Trim()}', " +
-                    $"N'{row["Mabao"].ToString()}', N'{cbomanhanvien.SelectedValue}',N'{row["MaQcao"].ToString()}', " +
-                    $"N'{row["Noidung"].ToString()}', " +
-                    $"N'{row["NgayBD"].ToString()}',N'{row["NgayKT"].ToString()}', N'{row["ThanhTien"].ToString()}','{Class.Function.convertdatetime(txtngayky.Text.Trim())}')";
+                sql = $"INSERT INTO tblKhach_Quangcao (MalanQC, MaKH, Mabao, MaNV, MaQcao, Noidung, NgayBD, NgayKT, ThanhTien, Ngayky) " +
+                     $"VALUES (N'{txtmahopdongqc.Text.Trim()}', N'{txtmakhachhang.Text.Trim()}', " +
+                     $"N'{row["Mabao"].ToString()}', N'{cbomanhanvien.SelectedValue}', N'{row["MaQcao"].ToString()}', " +
+                     $"N'{row["Noidung"].ToString()}', " +
+                     $"'{row["NgayBD"].ToString()}',N'{row["NgayKT"].ToString()}', N'{row["ThanhTien"].ToString()}','{Class.Function.convertdatetime(txtngayky.Text.Trim())}')";
                 Class.Function.RunSql(sql);
             }
             MessageBox.Show("Hợp đồng đã được lưu thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             load_datagridview();
+            resetvalues();
             btnhuy.Enabled = false;
             btnthembao.Enabled = true;
             //btnsua.Enabled = true;
@@ -539,111 +487,6 @@ namespace Project.Forms
             btnluu.Enabled = false;
 
         }
-        /*
-        private void btnsua_Click_1(object sender, EventArgs e)
-        {
-            string sql;
-            txtmahopdongqc.Enabled = false;
-            cbomanhanvien.Enabled = false;
-            cbomakhachhang.Enabled = false;
-            if (tblHDQC.Rows.Count == 0)
-            {
-                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (txtmahopdongqc.Text == "")
-            {
-                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (txttenkhachhang.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập tên khách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txttenkhachhang.Focus();
-                return;
-            }
-            if (txtdiachi.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtdiachi.Focus();
-                return;
-            }
-            if (mskdidong.Text == "(   )    -")
-            {
-                MessageBox.Show("Bạn phải nhập di động", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                mskdidong.Focus();
-                return;
-            }
-            if (mskdienthoai.Text == "(   )    -")
-            {
-                MessageBox.Show("Bạn phải nhập điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                mskdienthoai.Focus();
-                return;
-            }
-            if (txttenmail.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txttenmail.Focus();
-                return;
-            }
-            if (cbomalvhd.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập MaLVHD", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbomalvhd.Focus();
-                return;
-            }
-
-            if (cbomabao.Text == "")
-            {
-                MessageBox.Show("Bạn phải nhập mã báo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbomabao.Focus();
-                return;
-            }
-            if (cbomaquangcao.Text == "")
-            {
-                MessageBox.Show("Bạn phải nhập mã quảng cáo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbomaquangcao.Focus();
-                return;
-            }
-            if (txttenbao.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập tên báo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txttenbao.Focus();
-                return;
-            }
-            if (txttenquangcao.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập tên quảng cáo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txttenquangcao.Focus();
-                return;
-            }
-            if (mskngaybatdau.Text == "  /  /")
-            {
-                MessageBox.Show("Bạn phải nhập ngày bắt đầu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                mskngaybatdau.Focus();
-                return;
-            }
-            if (mskngayketthuc.Text == "  /  /")
-            {
-                MessageBox.Show("Bạn phải nhập ngày kết thúc", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                mskngayketthuc.Focus();
-                return;
-            }
-            if (txtdongia.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập đơn giá", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtdongia.Focus();
-                return;
-            }
-            sql = "UPDATE tblKhach_Quangcao SET MaKH='" + cbomakhachhang.Text.Trim().ToString() + "',Mabao=N'" + cbomabao.SelectedValue.ToString() + "',MaQcao='" + cbomaquangcao.SelectedValue.ToString() + "',Noidung='" + txtnoidung.Text.Trim().ToString() + "', MaNV='" + cbomanhanvien.SelectedValue.ToString() + "',NgayBD='" + mskngaybatdau.Text + "',NgayKT='" + mskngayketthuc.Text + "' WHERE MalanQC=N'" + txtmahopdongqc.Text + "' AND MaQcao = N'" + cbomaquangcao.Text + "' AND Mabao = N'" + cbomabao.Text + "'";
-            Class.Function.RunSql(sql);
-            Load_ThongtinHD();
-            load_datagridview();
-            resetvalues();
-            btnin.Enabled = false;
-
-        }*/
-
         private void btnin_Click_1(object sender, EventArgs e)
         {
             COMExcel.Application exApp = new COMExcel.Application();
@@ -653,13 +496,16 @@ namespace Project.Forms
             string sql;
             int hang = 0, cot = 0;
             DataTable tblThongtinHD, tblThongtinCTHD;
+
             exBook = exApp.Workbooks.Add(COMExcel.XlWBATemplate.xlWBATWorksheet);
             exSheet = exBook.Worksheets[1];
             exRange = exSheet.Cells[1, 1];
+
+            // Định dạng tiêu đề công ty
             exRange.Range["A1:B3"].Font.Size = 10;
-            exRange.Range["A1:B3"].Font.Name = "Times new roman";
+            exRange.Range["A1:B3"].Font.Name = "Times New Roman";
             exRange.Range["A1:B3"].Font.Bold = true;
-            exRange.Range["A1:B3"].Font.ColorIndex = 5; //Màu xanh da trời
+            exRange.Range["A1:B3"].Font.ColorIndex = 5; // Màu xanh da trời
             exRange.Range["A1:A1"].ColumnWidth = 7;
             exRange.Range["B1:B1"].ColumnWidth = 15;
             exRange.Range["A1:B1"].MergeCells = true;
@@ -674,68 +520,82 @@ namespace Project.Forms
             exRange.Range["A3:B3"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
             exRange.Range["A3:B3"].Value = "Điện thoại: (09)87654321";
 
-
+            // Định dạng tiêu đề hợp đồng
             exRange.Range["C2:E2"].Font.Size = 16;
-            exRange.Range["C2:E2"].Font.Name = "Times new roman";
+            exRange.Range["C2:E2"].Font.Name = "Times New Roman";
             exRange.Range["C2:E2"].Font.Bold = true;
-            exRange.Range["C2:E2"].Font.ColorIndex = 3; //Màu đỏ
+            exRange.Range["C2:E2"].Font.ColorIndex = 3; // Màu đỏ
             exRange.Range["C2:E2"].MergeCells = true;
             exRange.Range["C2:E2"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
             exRange.Range["C2:E2"].Value = "HỢP ĐỒNG QUẢNG CÁO";
-            // Biểu diễn thông tin chung của hóa đơn bán
-            sql = "SELECT a.MalanQC, b.TenKH, b.Diachi, b.Dienthoai, c.TenNV FROM tblKhach_Quangcao AS a, tblKhachhang AS b, tblNhanvien AS c WHERE a.MalanQC = N'" + txtmahopdongqc.Text + "' AND a.MaKH = b.MaKH AND a.MaNV =c.MaNV";
+
+            // Biểu diễn thông tin chung của hợp đồng quảng cáo
+            sql = "SELECT a.MalanQC, b.TenKH, b.Diachi, b.Dienthoai, c.TenNV FROM tblKhach_Quangcao AS a, tblKhachhang AS b, tblNhanvien AS c WHERE a.MalanQC = N'" + txtmahopdongqc.Text + "' AND a.MaKH = b.MaKH AND a.MaNV = c.MaNV";
             tblThongtinHD = Class.Function.GetDataToTable(sql);
-            exRange.Range["B6:C9"].Font.Size = 12;
-            exRange.Range["B6:C9"].Font.Name = "Times new roman";
-            exRange.Range["B6:B6"].Value = "Mã hợp đồng:";
-            exRange.Range["C6:E6"].MergeCells = true;
-            exRange.Range["C6:E6"].Value = tblThongtinHD.Rows[0][0].ToString();
-            exRange.Range["B7:B7"].Value = "Khách hàng:";
-            exRange.Range["C7:E7"].MergeCells = true;
-            exRange.Range["C7:E7"].Value = tblThongtinHD.Rows[0][3].ToString();
-            exRange.Range["B8:B8"].Value = "Địa chỉ:";
-            exRange.Range["C8:E8"].MergeCells = true;
-            exRange.Range["C8:E8"].Value = tblThongtinHD.Rows[0][4].ToString();
-            exRange.Range["B9:B9"].Value = "Điện thoại:";
-            //exRange.Range["C9:E9"].MergeCells = true;
-            //exRange.Range["C9:E9"].Value = tblThongtinHD.Rows[0][5].ToString();
-            //Lấy thông tin các mặt hàng
-            sql = "SELECT b.TenQcao, c.Tenbao, a.NgayBD, a.NgayKT, a.Noidung, d.Dongia, a.ThanhTien FROM tblKhach_Quangcao AS a , tblTTQuangcao AS b, tblBao AS c, tblBanggia as d WHERE a.MalanQC = N'" + txtmahopdongqc.Text + "' AND a.MaQcao = N'" + cbomaquangcao.Text + "' AND a.Mabao = N'" + cbomabao.Text + "'and a.Mabao = c.Mabao  and a.MaQcao = b.MaQcao and a.Mabao = d.Mabao and a.MaQcao = d.MaQcao";
-            tblThongtinCTHD = Class.Function.GetDataToTable(sql);
-            //Tạo dòng tiêu đề bảng
-            exRange.Range["A11:F11"].Font.Bold = true;
-            exRange.Range["A11:F11"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-            exRange.Range["C11:F11"].ColumnWidth = 12;
-            exRange.Range["A11:A11"].Value = "STT";
-            exRange.Range["B11:B11"].Value = "Tên quảng cáo";
-            exRange.Range["C11:C11"].Value = "Tên báo";
-            exRange.Range["D11:D11"].Value = "Ngày bắt đầu";
-            exRange.Range["E11:E11"].Value = "Ngày kết thúc";
-            exRange.Range["F11:F11"].Value = "Nội dung";
-            exRange.Range["G11:G11"].Value = "Đơn giá";
-            exRange.Range["H11:H11"].Value = "Thành tiền";
-            for (hang = 0; hang <= tblThongtinCTHD.Rows.Count - 1; hang++)
+            if (tblThongtinHD.Rows.Count > 0)
             {
-                //Điền số thứ tự vào cột 1 từ dòng 12
-                exSheet.Cells[1][hang + 12] = hang + 1;
-                for (cot = 0; cot <= tblThongtinCTHD.Columns.Count - 1; cot++)
-                    //Điền thông tin hàng từ cột thứ 2, dòng 12
-                    exSheet.Cells[cot + 2][hang + 12] = tblThongtinCTHD.Rows[hang][cot].ToString();
+                exRange.Range["B6:C9"].Font.Size = 12;
+                exRange.Range["B6:C9"].Font.Name = "Times New Roman";
+                exRange.Range["B6:B6"].Value = "Mã hợp đồng:";
+                exRange.Range["C6:E6"].MergeCells = true;
+                exRange.Range["C6:E6"].Value = tblThongtinHD.Rows[0][0].ToString();
+                exRange.Range["B7:B7"].Value = "Khách hàng:";
+                exRange.Range["C7:E7"].MergeCells = true;
+                exRange.Range["C7:E7"].Value = tblThongtinHD.Rows[0][1].ToString();
+                exRange.Range["B8:B8"].Value = "Địa chỉ:";
+                exRange.Range["C8:E8"].MergeCells = true;
+                exRange.Range["C8:E8"].Value = tblThongtinHD.Rows[0][2].ToString();
+                exRange.Range["B9:B9"].Value = "Điện thoại:";
+                exRange.Range["C9:E9"].MergeCells = true;
+                exRange.Range["C9:E9"].Value = tblThongtinHD.Rows[0][3].ToString();
             }
 
-            exRange = exSheet.Cells[4][hang + 17]; //Ô A1 
-            exRange.Range["A1:C1"].MergeCells = true;
-            exRange.Range["A1:C1"].Font.Italic = true;
-            exRange.Range["A1:C1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-            //DateTime d = Convert.ToDateTime(tblThongtinHD.Rows[0][1]);
-            exRange.Range["A1:C1"].Value = "Hà Nội, " + DateTime.Now.ToString(" 'ngày' d 'tháng' M 'năm' yyyy");
-            exRange.Range["A2:C2"].Font.Italic = true;
-            exRange.Range["A2:C2"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-            exRange.Range["A2:C2"].Value = "Nhân viên";
-            exRange.Range["A6:C6"].MergeCells = true;
-            exRange.Range["A6:C6"].Font.Italic = true;
-            exRange.Range["A6:C6"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-            //exRange.Range["A6:C6"].Value = tblThongtinHD.Rows[0][6];
+            // Lấy thông tin chi tiết hợp đồng
+            sql = "SELECT b.TenQcao, c.Tenbao, a.NgayBD, a.NgayKT, a.Noidung, d.Dongia, a.ThanhTien FROM tblKhach_Quangcao AS a, tblTTQuangcao AS b, tblBao AS c, tblBanggia as d WHERE a.MalanQC = N'" + txtmahopdongqc.Text + "' AND a.MaQcao = b.MaQcao AND a.Mabao = c.Mabao AND a.MaQcao = d.MaQcao AND a.Mabao = d.Mabao";
+            tblThongtinCTHD = Class.Function.GetDataToTable(sql);
+            if (tblThongtinCTHD.Rows.Count > 0)
+            {
+                // Tạo dòng tiêu đề bảng
+                exRange.Range["A11:H11"].Font.Bold = true;
+                exRange.Range["A11:H11"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+                exRange.Range["A11:H11"].ColumnWidth = 12;
+                exRange.Range["A11:A11"].Value = "STT";
+                exRange.Range["B11:B11"].Value = "Tên quảng cáo";
+                exRange.Range["C11:C11"].Value = "Tên báo";
+                exRange.Range["D11:D11"].Value = "Ngày bắt đầu";
+                exRange.Range["E11:E11"].Value = "Ngày kết thúc";
+                exRange.Range["F11:F11"].Value = "Nội dung";
+                exRange.Range["G11:G11"].Value = "Đơn giá";
+                exRange.Range["H11:H11"].Value = "Thành tiền";
+
+                for (hang = 0; hang <= tblThongtinCTHD.Rows.Count - 1; hang++)
+                {
+                    // Điền số thứ tự vào cột 1 từ dòng 12
+                    exSheet.Cells[hang + 12, 1] = hang + 1;
+                    for (cot = 0; cot <= tblThongtinCTHD.Columns.Count - 1; cot++)
+                    {
+                        // Điền thông tin hàng từ cột thứ 2, dòng 12
+                        exSheet.Cells[hang + 12, cot + 2] = tblThongtinCTHD.Rows[hang][cot].ToString();
+                    }
+                }
+
+                // Ghi "Nhân viên" chỉ một lần dưới phần chữ ký
+                exRange = exSheet.Cells[hang + 17, 1]; // Ô A1 
+                exRange.Range["A1:C1"].MergeCells = true;
+                exRange.Range["A1:C1"].Font.Italic = true;
+                exRange.Range["A1:C1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+                exRange.Range["A1:C1"].Value = "Hà Nội, " + DateTime.Now.ToString(" 'ngày' dd 'tháng' MM 'năm' yyyy");
+                exRange.Range["A2:C2"].Font.Italic = true;
+                exRange.Range["A2:C2"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+
+                // Ghi "Nhân viên" dưới chữ ký
+                exRange = exSheet.Cells[hang + 18, 1]; // Dòng tiếp theo của ô A1
+                exRange.Range["A1:C1"].MergeCells = true;
+                exRange.Range["A1:C1"].Font.Italic = true;
+                exRange.Range["A1:C1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+                exRange.Range["A1:C1"].Value = "Nhân viên";
+            }
+
             exSheet.Name = "Hợp đồng quảng cáo";
             exApp.Visible = true;
         }
@@ -885,9 +745,49 @@ namespace Project.Forms
                 MessageBox.Show("Vui lòng nhập ngày kết thúc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (DateTime.ParseExact(txtngayky.Text, "dd/mm/yyyy", CultureInfo.InvariantCulture) >= DateTime.ParseExact(mskngaybatdau.Text, "dd/mm/yyyy", CultureInfo.InvariantCulture))
+            {
+                MessageBox.Show("Ngày bắt đầu phải lớn hơn hoặc bằng ngày ký", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mskngayketthuc.Text = "";
+                mskngaybatdau.Text = "";
+                return;
+            }
+
+            if (DateTime.ParseExact(mskngaybatdau.Text, "dd/mm/yyyy", CultureInfo.InvariantCulture) >= DateTime.ParseExact(mskngayketthuc.Text, "dd/mm/yyyy", CultureInfo.InvariantCulture))
+            {
+                MessageBox.Show("Ngày kết thúc phải lớn hơn hoặc bằng ngày bắt đầu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mskngayketthuc.Text = "";
+                mskngaybatdau.Text = "";
+                return;
+            }
+            
+            bool productExists = false;
+            foreach (DataRow row in tblHDQC.Rows)
+            {
+                if ((row["Mabao"].ToString() == cbomabao.SelectedValue.ToString()) && (row["MaQcao"].ToString() == cbomaquangcao.SelectedValue.ToString()))
+                {
+                    MessageBox.Show("Đã có bài viết thuộc mã báo, mã quảng cáo này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            if (!productExists)
+            {
+                DataRow newRow = tblHDQC.NewRow();
+                newRow["Mabao"] = cbomabao.SelectedValue;
+                newRow["Tenbao"] = txttenbao.Text;
+                newRow["MaQcao"] = cbomaquangcao.SelectedValue;
+                newRow["TenQcao"] = txttenquangcao.Text;
+                newRow["Ngayky"] = txtngayky.Text;
+                newRow["Noidung"] = txtnoidung.Text;
+                newRow["NgayBD"] = mskngaybatdau.Text;
+                newRow["NgayKT"] = mskngayketthuc.Text;
+                newRow["Dongia"] = txtdongia.Text;
+                newRow["ThanhTien"] = txtthanhtien.Text;
+                tblHDQC.Rows.Add(newRow);
+            } 
 
             // Tính toán thành tiền
-            //CalculateTotal();
+            CalculateTotal();
 
             // Cập nhật lại DataGridView
             DatagridView.DataSource = tblHDQC;
@@ -898,7 +798,6 @@ namespace Project.Forms
             // Reset các giá trị nhập vào
             resetvaluesHD(); 
         }
-
         //18 
         private void btnboqua_Click(object sender, EventArgs e)
         {

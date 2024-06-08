@@ -62,7 +62,13 @@ namespace Project.Forms
             btnBoqua.Enabled = true;
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
+        private void ResetValues()
+        {
+            txtMachucnang.Text = "";
+            txtTenchucnang.Text = "";
+        }
+
+        private void btnThem_Click_1(object sender, EventArgs e)
         {
             btnThem.Enabled = false;
             btnSua.Enabled = false;
@@ -73,24 +79,56 @@ namespace Project.Forms
             txtMachucnang.Focus();
             ResetValues();
         }
-        private void ResetValues()
+
+        private void btnXoa_Click_1(object sender, EventArgs e)
         {
-            txtMachucnang.Text = "";
-            txtTenchucnang.Text = "";
+            string sql;
+            if (tblCN.Rows.Count == 0)
+            {
+                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtMachucnang.Text == "")
+            {
+                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                sql = "DELETE tblChucnang WHERE Machucnang=N'" + txtMachucnang.Text + "'";
+                Class.Function.RunSql(sql);
+                Load_DataGridView();
+                ResetValues();
+            }
         }
 
-        private void btnBoqua_Click(object sender, EventArgs e)
+        private void btnSua_Click_1(object sender, EventArgs e)
         {
+            string sql;
+            if (tblCN.Rows.Count == 0)
+            {
+                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtMachucnang.Text == "")
+            {
+                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtTenchucnang.Text == "")
+            {
+                MessageBox.Show("Bạn phải nhập tên chức năng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenchucnang.Focus();
+                return;
+            }
+            sql = "UPDATE tblChucnang SET Tenchucnang=N'" + txtTenchucnang.Text.Trim() + "' WHERE Machucnang=N'" + txtMachucnang.Text + "'";
+            Class.Function.RunSql(sql);
+            Load_DataGridView();
             ResetValues();
-            btnThem.Enabled = true;
-            btnXoa.Enabled = true;
-            btnSua.Enabled = true;
             btnBoqua.Enabled = false;
-            btnLuu.Enabled = false;
-            txtMachucnang.Enabled = false;
         }
 
-        private void btnLuu_Click(object sender, EventArgs e)
+        private void btnLuu_Click_1(object sender, EventArgs e)
         {
             string sql;
             if (txtMachucnang.Text == "")
@@ -127,55 +165,18 @@ namespace Project.Forms
             txtMachucnang.Enabled = false;
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnBoqua_Click_1(object sender, EventArgs e)
         {
-            string sql;
-            if (tblCN.Rows.Count == 0)
-            {
-                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (txtMachucnang.Text == "")
-            {
-                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (txtTenchucnang.Text == "")
-            {
-                MessageBox.Show("Bạn phải nhập tên chức năng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtTenchucnang.Focus();
-                return;
-            }
-            sql = "UPDATE tblChucnang SET Tenchucnang=N'" + txtTenchucnang.Text.Trim() + "' WHERE Machucnang=N'" + txtMachucnang.Text + "'";
-            Class.Function.RunSql(sql);
-            Load_DataGridView();
             ResetValues();
+            btnThem.Enabled = true;
+            btnXoa.Enabled = true;
+            btnSua.Enabled = true;
             btnBoqua.Enabled = false;
+            btnLuu.Enabled = false;
+            txtMachucnang.Enabled = false;
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            string sql;
-            if (tblCN.Rows.Count == 0)
-            {
-                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (txtMachucnang.Text == "")
-            {
-                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
-            {
-                sql = "DELETE tblChucnang WHERE Machucnang=N'" + txtMachucnang.Text + "'";
-                Class.Function.RunSql(sql);
-                Load_DataGridView();
-                ResetValues();
-            }
-        }
-
-        private void btnDong_Click(object sender, EventArgs e)
+        private void btnDong_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

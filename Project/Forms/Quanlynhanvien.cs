@@ -16,6 +16,7 @@ namespace Project.Forms
         public Quanlynhanvien()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
         }
 
         private void Quanlynhanvien_Load(object sender, EventArgs e)
@@ -133,8 +134,40 @@ namespace Project.Forms
             btnxoa.Enabled = true;
             btnboqua.Enabled = true;
         }
+        private void ResetValues()
+        {
+            txtmanv.Text = "";
+            txttennv.Text = "";
+            cbomabao.Text = "";
+            cbophongban.Text = "";
+            cbochucvu.Text = "";
+            cbotrinhdo.Text = "";
+            cbochuyenmon.Text = "";
+            txtdiachi.Text = "";
+            mskdienthoai.Text = "";
+            mskmobile.Text = "";
+            txtemail.Text = "";
+            mskngaysinh.Text = "";
+            chknam.Checked = false;
+            chknu.Checked = false;
+        }
+        private void chknam_Click(object sender, EventArgs e)
+        {
+            chknu.Enabled = false;
+            if (chknam.Checked == false)
+            { chknu.Enabled = true; }
+   
+        }
 
-        private void btnthem_Click(object sender, EventArgs e)
+        private void chknu_Click(object sender, EventArgs e)
+        {
+            chknam.Enabled = false;
+            
+            if (chknu.Checked == false)
+            { chknam.Enabled = true; }
+        }
+
+        private void btnthem_Click_1(object sender, EventArgs e)
         {
             btnsua.Enabled = false;
             btnxoa.Enabled = false;
@@ -157,41 +190,59 @@ namespace Project.Forms
             // Hiển thị mã nhân viên mới lên TextBox hoặc sử dụng cho mục đích khác
             txtmanv.Text = newEmployeeID;
         }
-        private void ResetValues()
+
+        private void btnxoa_Click_1(object sender, EventArgs e)
         {
-            txtmanv.Text = "";
-            txttennv.Text = "";
-            cbomabao.Text = "";
-            cbophongban.Text = "";
-            cbochucvu.Text = "";
-            cbotrinhdo.Text = "";
-            cbochuyenmon.Text = "";
-            txtdiachi.Text = "";
-            mskdienthoai.Text = "";
-            mskmobile.Text = "";
-            txtemail.Text = "";
-            mskngaysinh.Text = "";
-            chknam.Checked = false;
-            chknu.Checked = false;
+            string sql;
+            if (tblnv.Rows.Count == 0)
+            {
+                MessageBox.Show("Khong co du lieu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (cbomabao.Text == "")
+            {
+                MessageBox.Show("Ban chua co ban ghi nao", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (MessageBox.Show("Ban muon xoa khong", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                sql = "DELETE tblNhanvien WHERE MaNV=N'" + txtmanv.Text + "'";
+                Class.Function.RunSqlDel(sql);
+                Load_DataGridView();
+                ResetValues();
+            }
         }
 
-        private void btnthoat_Click(object sender, EventArgs e)
+        private void btnsua_Click_1(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void btnboqua_Click(object sender, EventArgs e)
-        {
+            string sql;
+            if (tblnv.Rows.Count == 0)
+            {
+                MessageBox.Show("Khong co du lieu ton tai", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtmanv.Text == "")
+            {
+                MessageBox.Show("Ban chua chon ban ghi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txttennv.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Ban can nhap ma qc", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txttennv.Focus();
+                return;
+            }
+            sql = "UPDATE tblNhanvien SET TenNV=N'" + txtmanv.Text.ToString() + "',Gioitinh=N'" + chknam.Text.ToString() + "',Ngaysinh='" + Class.Function.convertdatetime(mskngaysinh.Text) + "'N,Maphong='" + cbophongban.Text.ToString() + "'," +
+                "Matrinhdo='" + cbotrinhdo.Text.ToString() + "',Machucvu='" + cbochucvu.Text.ToString() + "',MaCM='" + cbochuyenmon.Text.ToString() + "',Diachi='" + txtdiachi.Text.ToString() + "', Dienthoai='" + mskdienthoai.Text.ToString() + "',Mobile='" + mskdienthoai.Text.ToString() + "',Email='" + mskmobile.Text.ToString() + "',Mabao='" + cbomabao.Text.ToString() + "' WHERE MaNV=N'" + cbomabao.Text + "'";
+            Class.Function.RunSql(sql);
+            Load_DataGridView();
             ResetValues();
             btnboqua.Enabled = false;
-            btnthem.Enabled = true;
-            btnxoa.Enabled = true;
-            btnsua.Enabled = true;
-            btnluu.Enabled = false;
-            txtmanv.Enabled = false;
+            cbomabao.Enabled = true;
+            cbophongban.Enabled = true;
         }
 
-        private void btnluu_Click(object sender, EventArgs e)
+        private void btnluu_Click_1(object sender, EventArgs e)
         {
             string sql;
             cbochucvu.Enabled = true;
@@ -232,7 +283,7 @@ namespace Project.Forms
                 mskdienthoai.Focus();
                 return;
             }
-         
+
             if (mskngaysinh.Text == "  /  /")
             {
                 MessageBox.Show("Phai nhap ngay sinh", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -267,74 +318,22 @@ namespace Project.Forms
             btnboqua.Enabled = false;
             btnluu.Enabled = false;
             txtmanv.Enabled = false;
-            
         }
 
-        private void btnxoa_Click(object sender, EventArgs e)
+        private void btnboqua_Click_1(object sender, EventArgs e)
         {
-            string sql;
-            if (tblnv.Rows.Count == 0)
-            {
-                MessageBox.Show("Khong co du lieu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (cbomabao.Text == "")
-            {
-                MessageBox.Show("Ban chua co ban ghi nao", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (MessageBox.Show("Ban muon xoa khong", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-            {
-                sql = "DELETE tblNhanvien WHERE MaNV=N'" + txtmanv.Text + "'";
-                Class.Function.RunSqlDel(sql);
-                Load_DataGridView();
-                ResetValues();
-            }
-        }
-
-        private void btnsua_Click(object sender, EventArgs e)
-        {
-            string sql;
-            if (tblnv.Rows.Count == 0)
-            {
-                MessageBox.Show("Khong co du lieu ton tai", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (txtmanv.Text == "")
-            {
-                MessageBox.Show("Ban chua chon ban ghi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (txttennv.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Ban can nhap ma qc", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txttennv.Focus();
-                return;
-            }
-            sql = "UPDATE tblNhanvien SET TenNV=N'" + txtmanv.Text.ToString() + "',Gioitinh=N'" + chknam.Text.ToString() + "',Ngaysinh='" + Class.Function.convertdatetime(mskngaysinh.Text) + "'N,Maphong='" + cbophongban.Text.ToString() + "'," +
-                "Matrinhdo='" + cbotrinhdo.Text.ToString() + "',Machucvu='" + cbochucvu.Text.ToString() + "',MaCM='" + cbochuyenmon.Text.ToString() + "',Diachi='" + txtdiachi.Text.ToString() + "', Dienthoai='" + mskdienthoai.Text.ToString() + "',Mobile='" + mskdienthoai.Text.ToString() + "',Email='" + mskmobile.Text.ToString() + "',Mabao='" + cbomabao.Text.ToString() + "' WHERE MaNV=N'" + cbomabao.Text + "'";
-            Class.Function.RunSql(sql);
-            Load_DataGridView();
             ResetValues();
             btnboqua.Enabled = false;
-            cbomabao.Enabled = true;
-            cbophongban.Enabled = true;
+            btnthem.Enabled = true;
+            btnxoa.Enabled = true;
+            btnsua.Enabled = true;
+            btnluu.Enabled = false;
+            txtmanv.Enabled = false;
         }
 
-        private void chknam_Click(object sender, EventArgs e)
+        private void btnthoat_Click(object sender, EventArgs e)
         {
-            chknu.Enabled = false;
-            if (chknam.Checked == false)
-            { chknu.Enabled = true; }
-   
-        }
-
-        private void chknu_Click(object sender, EventArgs e)
-        {
-            chknam.Enabled = false;
-            
-            if (chknu.Checked == false)
-            { chknam.Enabled = true; }
+            this.Close();
         }
     }
 }

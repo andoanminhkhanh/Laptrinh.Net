@@ -15,7 +15,7 @@ namespace Project
         public Form1()
         {
             InitializeComponent();
-            //this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
+            this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
         }
         
         
@@ -103,10 +103,9 @@ namespace Project
             a.Show();
         }
 
-        private void mnuDoanhthuvietbai_Click(object sender, EventArgs e)
+        private void báoCáoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Forms.DoanhthuHDBV a = new Forms.DoanhthuHDBV();
-            a.Show();
+
         }
     }
 }

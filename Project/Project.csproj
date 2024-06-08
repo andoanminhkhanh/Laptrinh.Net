@@ -135,6 +135,12 @@
     <Compile Include="Forms\Quanlynhanvien.Designer.cs">
       <DependentUpon>Quanlynhanvien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\testtttttt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\testtttttt.Designer.cs">
+      <DependentUpon>testtttttt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Theloai.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Quanlynhanvien.resx">
       <DependentUpon>Quanlynhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\testtttttt.resx">
+      <DependentUpon>testtttttt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Theloai.resx">
       <DependentUpon>Theloai.cs</DependentUpon>
@@ -347,6 +356,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pngtree-icon-search-3d-png-image_2661788 %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chưa có tên %281500 x 760 px%29 %281550 x 780 px%29 %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backchuan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backchuan %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backchuan1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\téttttt.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

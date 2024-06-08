@@ -103,7 +103,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImage = global::Project.Properties.Resources.Thiết_kế_chưa_có_tên__3_;
-            this.ClientSize = new System.Drawing.Size(1055, 530);
+            this.ClientSize = new System.Drawing.Size(1882, 889);
             this.Controls.Add(this.btnDangnhap);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

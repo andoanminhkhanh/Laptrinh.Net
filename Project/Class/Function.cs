@@ -16,7 +16,7 @@ namespace Project.Class
         public static string connString;
         public static void Connect()
         {
-            connString = "Data Source=DESKTOP-6P2TSJE\\SQLEXPRESS;Initial Catalog=LTNET;Integrated Security=True;Encrypt=False";
+            connString = "Data Source=HTVANS;Initial Catalog=LTNET;Integrated Security=True;Encrypt=False";
             Conn = new SqlConnection();
             Conn.ConnectionString = connString;
             Conn.Open();
@@ -209,6 +209,7 @@ namespace Project.Class
             object result = cmd.ExecuteScalar();
             return result != null ? result.ToString() : null;
         }
+
         public static string ChuyenSoSangChu(string sNumber)
         {
             if (sNumber.Contains("."))
@@ -229,12 +230,12 @@ namespace Project.Class
 
             string[] mNumText = new string[]
             {
-"không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"
+        "không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"
             };
 
             string[] mPowersText = new string[]
             {
-"", "nghìn", "triệu", "tỷ"
+        "", "nghìn", "triệu", "tỷ"
             };
 
             string result = "";
@@ -331,6 +332,7 @@ namespace Project.Class
 
             return result + " đồng";
         }
+
     }
 }
 
