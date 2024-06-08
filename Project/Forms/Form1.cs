@@ -102,5 +102,10 @@ namespace Project
             Forms.Báo a = new Forms.Báo();
             a.Show();
         }
+
+        private void báoCáoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

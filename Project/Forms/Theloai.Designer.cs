@@ -48,7 +48,7 @@
             this.txtTentheloai.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTentheloai.Location = new System.Drawing.Point(639, 223);
             this.txtTentheloai.Name = "txtTentheloai";
-            this.txtTentheloai.Size = new System.Drawing.Size(431, 51);
+            this.txtTentheloai.Size = new System.Drawing.Size(431, 36);
             this.txtTentheloai.TabIndex = 24;
             // 
             // lblTenLVHD
@@ -57,7 +57,7 @@
             this.lblTenLVHD.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTenLVHD.Location = new System.Drawing.Point(456, 221);
             this.lblTenLVHD.Name = "lblTenLVHD";
-            this.lblTenLVHD.Size = new System.Drawing.Size(194, 45);
+            this.lblTenLVHD.Size = new System.Drawing.Size(129, 30);
             this.lblTenLVHD.TabIndex = 23;
             this.lblTenLVHD.Text = "Tên thể loại:";
             // 
@@ -67,7 +67,7 @@
             this.lblMatheloai.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblMatheloai.Location = new System.Drawing.Point(457, 164);
             this.lblMatheloai.Name = "lblMatheloai";
-            this.lblMatheloai.Size = new System.Drawing.Size(191, 45);
+            this.lblMatheloai.Size = new System.Drawing.Size(126, 30);
             this.lblMatheloai.TabIndex = 22;
             this.lblMatheloai.Text = "Mã thể loại:";
             // 
@@ -76,7 +76,7 @@
             this.txtMatheloai.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtMatheloai.Location = new System.Drawing.Point(639, 159);
             this.txtMatheloai.Name = "txtMatheloai";
-            this.txtMatheloai.Size = new System.Drawing.Size(431, 51);
+            this.txtMatheloai.Size = new System.Drawing.Size(431, 36);
             this.txtMatheloai.TabIndex = 21;
             // 
             // lblTheloai
@@ -85,7 +85,7 @@
             this.lblTheloai.Font = new System.Drawing.Font("Segoe UI Semibold", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTheloai.Location = new System.Drawing.Point(611, 82);
             this.lblTheloai.Name = "lblTheloai";
-            this.lblTheloai.Size = new System.Drawing.Size(545, 70);
+            this.lblTheloai.Size = new System.Drawing.Size(368, 47);
             this.lblTheloai.TabIndex = 20;
             this.lblTheloai.Text = "DANH MỤC THỂ LOẠI";
             // 
@@ -116,6 +116,7 @@
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
@@ -134,6 +135,7 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnBoqua
             // 
@@ -152,6 +154,7 @@
             this.btnBoqua.Text = "Bỏ qua";
             this.btnBoqua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBoqua.UseVisualStyleBackColor = false;
+            this.btnBoqua.Click += new System.EventHandler(this.btnBoqua_Click);
             // 
             // btnDong
             // 
@@ -170,6 +173,7 @@
             this.btnDong.Text = "Đóng";
             this.btnDong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDong.UseVisualStyleBackColor = false;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnSua
             // 
@@ -188,6 +192,7 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -206,13 +211,14 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // mnuTheloai
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1924, 889);
+            this.ClientSize = new System.Drawing.Size(1540, 889);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnBoqua);

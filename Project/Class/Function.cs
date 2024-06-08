@@ -16,7 +16,7 @@ namespace Project.Class
         public static string connString;
         public static void Connect()
         {
-            connString = "Data Source=LAPTOP-THOQUC6C\\MSSQLSERVER01;Initial Catalog=LTNET;Integrated Security=True;Encrypt=False";
+            connString = "Data Source=LAPTOP-2RCJLQ9Q;Initial Catalog=LTNET;Integrated Security=True;Encrypt=False";
             Conn = new SqlConnection();
             Conn.ConnectionString = connString;
             Conn.Open();
@@ -173,7 +173,7 @@ namespace Project.Class
                 return "HDBV01"; // Nếu không có nhân viên nào, bắt đầu từ NV01
             }
             // Tách phần số từ mã nhân viên
-            int hdPart = int.Parse(lastHDID.Substring(2));
+            int hdPart = int.Parse(lastHDID.Substring(4));
             hdPart++; // Tăng số lên 1
 
             // Tạo mã nhân viên mới
