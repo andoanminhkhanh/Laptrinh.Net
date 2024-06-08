@@ -103,6 +103,36 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backchuan {
+            get {
+                object obj = ResourceManager.GetObject("backchuan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backchuan__1_ {
+            get {
+                object obj = ResourceManager.GetObject("backchuan (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backchuan1 {
+            get {
+                object obj = ResourceManager.GetObject("backchuan1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Chưa_có_tên__1500_x_760_px_ {
             get {
                 object obj = ResourceManager.GetObject("Chưa có tên (1500 x 760 px)", resourceCulture);
@@ -286,6 +316,16 @@ namespace Project.Properties {
         internal static System.Drawing.Bitmap pngtree_shutdown_vector_icon_png_image_3722547__1_2 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-shutdown-vector-icon-png-image_3722547 (1)2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap téttttt {
+            get {
+                object obj = ResourceManager.GetObject("téttttt", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

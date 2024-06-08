@@ -16,7 +16,7 @@ namespace Project.Class
         public static string connString;
         public static void Connect()
         {
-            connString = "Data Source=LAPTOP-2RCJLQ9Q;Initial Catalog=LTNET;Integrated Security=True;Encrypt=False";
+            connString = "Data Source=HTVANS;Initial Catalog=LTNET;Integrated Security=True;Encrypt=False";
             Conn = new SqlConnection();
             Conn.ConnectionString = connString;
             Conn.Open();

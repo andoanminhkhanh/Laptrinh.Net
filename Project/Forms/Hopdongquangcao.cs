@@ -91,9 +91,9 @@ namespace Project.Forms
             DatagridView.Columns[0].Width = 100;
             DatagridView.Columns[1].Width = 100;
             DatagridView.Columns[2].Width = 100;
-            DatagridView.Columns[3].Width = 100;
+            DatagridView.Columns[3].Width = 200;
             DatagridView.Columns[4].Width = 100;
-            DatagridView.Columns[5].Width = 200;
+            DatagridView.Columns[5].Width = 100;
             DatagridView.Columns[6].Width = 100;
             DatagridView.AllowUserToAddRows = false;
             DatagridView.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -290,7 +290,7 @@ namespace Project.Forms
         private void btnthem_Click_1(object sender, EventArgs e)
         {
             //btnsua.Enabled = false;
-            btnhuy.Enabled = true;
+            btnhuy.Enabled = false;
             btnluu.Enabled = true;
             btnin.Enabled = false;
             btnthembao.Enabled = true;
@@ -594,8 +594,6 @@ namespace Project.Forms
                 exRange.Range["A1:C1"].Font.Italic = true;
                 exRange.Range["A1:C1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
                 exRange.Range["A1:C1"].Value = "Nhân viên";
-                exRange.Range["A4:C4"].MergeCells = true;
-                exRange.Range["A4:C4"].Value = tblThongtinHD.Rows[0][4];
             }
 
             exSheet.Name = "Hợp đồng quảng cáo";
@@ -776,11 +774,14 @@ namespace Project.Forms
             {
                 DataRow newRow = tblHDQC.NewRow();
                 newRow["Mabao"] = cbomabao.SelectedValue;
+                newRow["Tenbao"] = txttenbao.Text;
                 newRow["MaQcao"] = cbomaquangcao.SelectedValue;
+                newRow["TenQcao"] = txttenquangcao.Text;
                 newRow["Ngayky"] = txtngayky.Text;
                 newRow["Noidung"] = txtnoidung.Text;
                 newRow["NgayBD"] = mskngaybatdau.Text;
                 newRow["NgayKT"] = mskngayketthuc.Text;
+                newRow["Dongia"] = txtdongia.Text;
                 newRow["ThanhTien"] = txtthanhtien.Text;
                 tblHDQC.Rows.Add(newRow);
             } 
