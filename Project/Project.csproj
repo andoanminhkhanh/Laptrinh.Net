@@ -53,6 +53,12 @@
     <Compile Include="Forms\Banggia.Designer.cs">
       <DependentUpon>Banggia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BaocaoDTHDBV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaocaoDTHDBV.Designer.cs">
+      <DependentUpon>BaocaoDTHDBV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BaocaoKhanh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Banggia.resx">
       <DependentUpon>Banggia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaocaoDTHDBV.resx">
+      <DependentUpon>BaocaoDTHDBV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BaocaoKhanh.resx">
       <DependentUpon>BaocaoKhanh.cs</DependentUpon>

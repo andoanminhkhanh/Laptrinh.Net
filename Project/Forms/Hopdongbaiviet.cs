@@ -105,7 +105,7 @@ namespace Project.Forms
             txtTongtien.Text = Class.Function.GetFieldValues(str);
 
             lblBangchu.Text = "Bằng chữ: " + Class.Function.ChuyenSoSangChu(txtTongtien.Text);
-            btnBoqua.Enabled = true;
+            //btnBoqua.Enabled = true;
             /*str = "Select Matheloai from tblTheloai Where Matheloai=N'"+ cbMatheloai.Text + "'";
             cbMatheloai.Text = Function.GetFieldValues(str);
             str = "Select Mabao from tblBao where Mabao=N'"+ cbMabao.Text + "'";
@@ -186,6 +186,7 @@ namespace Project.Forms
             mskNgaydang.Text = "";
             txtNhuanbut.Text = "0";
             txtNgayky.Text = "";
+            Load_datagridview() ;
         }
 
         private void btnDong_Click(object sender, EventArgs e)
@@ -742,14 +743,12 @@ namespace Project.Forms
                 MessageBox.Show("Lỗi khi cập nhật tổng tiền: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void btnBoqua_Click(object sender, EventArgs e)
+        private void btnBoqua_Click_1(object sender, EventArgs e)
         {
             resetvalues();
             btnBoqua.Enabled = false;
             btnThem.Enabled = true;
             btnHuy.Enabled = true;
-            //btnsua.Enabled = true;
             btnLuu.Enabled = false;
             btnTimkiem.Enabled = true;
             cbMahopdong.Enabled = true;
