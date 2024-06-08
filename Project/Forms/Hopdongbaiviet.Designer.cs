@@ -114,7 +114,7 @@
             // 
             this.cbMahopdong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMahopdong.FormattingEnabled = true;
-            this.cbMahopdong.Location = new System.Drawing.Point(114, 732);
+            this.cbMahopdong.Location = new System.Drawing.Point(94, 426);
             this.cbMahopdong.Name = "cbMahopdong";
             this.cbMahopdong.Size = new System.Drawing.Size(119, 23);
             this.cbMahopdong.TabIndex = 52;
@@ -123,7 +123,10 @@
             // gb2
             // 
             this.gb2.Controls.Add(this.btnIn);
+            this.gb2.Controls.Add(this.btnTimkiem);
+            this.gb2.Controls.Add(this.cbMahopdong);
             this.gb2.Controls.Add(this.btnDong);
+            this.gb2.Controls.Add(this.label13);
             this.gb2.Controls.Add(this.btnHuy);
             this.gb2.Controls.Add(this.btnLuu);
             this.gb2.Controls.Add(this.btnThembaiviet);
@@ -269,7 +272,7 @@
             // lblBangchu
             // 
             this.lblBangchu.AutoSize = true;
-            this.lblBangchu.Location = new System.Drawing.Point(5, 467);
+            this.lblBangchu.Location = new System.Drawing.Point(6, 367);
             this.lblBangchu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBangchu.Name = "lblBangchu";
             this.lblBangchu.Size = new System.Drawing.Size(63, 15);
@@ -278,7 +281,7 @@
             // 
             // txtTongtien
             // 
-            this.txtTongtien.Location = new System.Drawing.Point(488, 454);
+            this.txtTongtien.Location = new System.Drawing.Point(539, 361);
             this.txtTongtien.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtTongtien.Name = "txtTongtien";
             this.txtTongtien.Size = new System.Drawing.Size(150, 23);
@@ -287,7 +290,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(430, 460);
+            this.label14.Location = new System.Drawing.Point(466, 364);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(57, 15);
@@ -411,7 +414,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(31, 738);
+            this.label13.Location = new System.Drawing.Point(6, 426);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(82, 15);
             this.label13.TabIndex = 49;
@@ -420,7 +423,7 @@
             // btnTimkiem
             // 
             this.btnTimkiem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimkiem.Location = new System.Drawing.Point(245, 731);
+            this.btnTimkiem.Location = new System.Drawing.Point(224, 426);
             this.btnTimkiem.Name = "btnTimkiem";
             this.btnTimkiem.Size = new System.Drawing.Size(65, 25);
             this.btnTimkiem.TabIndex = 58;
@@ -642,9 +645,6 @@
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(871, 780);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.cbMahopdong);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.btnTimkiem);
             this.Controls.Add(this.gb1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gb2);
