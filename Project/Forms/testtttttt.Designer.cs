@@ -55,6 +55,7 @@
             this.mnu_TTQC = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_banggia = new System.Windows.Forms.ToolStripMenuItem();
             this.báoCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -66,19 +67,21 @@
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(351, 794);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 760);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(206, 114);
+            this.panel1.Size = new System.Drawing.Size(1375, 86);
             this.panel1.TabIndex = 0;
             // 
             // button1
             // 
             this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.Location = new System.Drawing.Point(10, 14);
+            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(186, 86);
+            this.button1.Size = new System.Drawing.Size(1375, 86);
             this.button1.TabIndex = 69;
             this.button1.Text = "Quản lý bài viết";
             this.button1.UseVisualStyleBackColor = false;
@@ -88,19 +91,21 @@
             this.panel3.AutoSize = true;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.panel3.Controls.Add(this.button2);
-            this.panel3.Location = new System.Drawing.Point(609, 794);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 586);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(265, 114);
+            this.panel3.Size = new System.Drawing.Size(1375, 86);
             this.panel3.TabIndex = 1;
             // 
             // button2
             // 
             this.button2.AutoSize = true;
             this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.Location = new System.Drawing.Point(12, 14);
+            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button2.Location = new System.Drawing.Point(0, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(238, 86);
+            this.button2.Size = new System.Drawing.Size(1375, 86);
             this.button2.TabIndex = 70;
             this.button2.Text = "Quản lý quảng cáo";
             this.button2.UseVisualStyleBackColor = false;
@@ -109,9 +114,10 @@
             // 
             this.panel4.AutoSize = true;
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.panel4.Location = new System.Drawing.Point(1268, 794);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 672);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(299, 114);
+            this.panel4.Size = new System.Drawing.Size(1375, 0);
             this.panel4.TabIndex = 1;
             // 
             // panel5
@@ -119,19 +125,21 @@
             this.panel5.AutoSize = true;
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.panel5.Controls.Add(this.button4);
-            this.panel5.Location = new System.Drawing.Point(930, 794);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 672);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(287, 114);
+            this.panel5.Size = new System.Drawing.Size(1375, 88);
             this.panel5.TabIndex = 1;
             // 
             // button4
             // 
             this.button4.AutoSize = true;
             this.button4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button4.Location = new System.Drawing.Point(16, 13);
+            this.button4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button4.Location = new System.Drawing.Point(0, 0);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(256, 88);
+            this.button4.Size = new System.Drawing.Size(1375, 88);
             this.button4.TabIndex = 71;
             this.button4.Text = "Quản lý hợp đồng";
             this.button4.UseVisualStyleBackColor = false;
@@ -140,10 +148,11 @@
             // 
             this.button5.AutoSize = true;
             this.button5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button5.Location = new System.Drawing.Point(1283, 806);
+            this.button5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button5.Location = new System.Drawing.Point(0, 506);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(272, 88);
+            this.button5.Size = new System.Drawing.Size(1375, 80);
             this.button5.TabIndex = 72;
             this.button5.Text = "Báo cáo doanh thu";
             this.button5.UseVisualStyleBackColor = false;
@@ -151,10 +160,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(859, 58);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(909, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 42);
+            this.label1.Size = new System.Drawing.Size(293, 52);
             this.label1.TabIndex = 73;
             this.label1.Text = "TRANG CHỦ";
             // 
@@ -297,14 +306,28 @@
             this.báoCáoToolStripMenuItem.Size = new System.Drawing.Size(128, 42);
             this.báoCáoToolStripMenuItem.Text = "Báo cáo";
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.AutoSize = true;
+            this.panel2.BackgroundImage = global::Project.Properties.Resources.téttttt;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(0, 123);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1393, 377);
+            this.panel2.TabIndex = 75;
+            // 
             // testtttttt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackgroundImage = global::Project.Properties.Resources.backchuan1;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1375, 846);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button5);
@@ -358,5 +381,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnu_TTQC;
         private System.Windows.Forms.ToolStripMenuItem mnu_banggia;
         private System.Windows.Forms.ToolStripMenuItem báoCáoToolStripMenuItem;
+        private System.Windows.Forms.Panel panel2;
     }
 }

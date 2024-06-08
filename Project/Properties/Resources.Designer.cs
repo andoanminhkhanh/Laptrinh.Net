@@ -323,6 +323,16 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap téttttt {
+            get {
+                object obj = ResourceManager.GetObject("téttttt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Thiết_kế_chưa_có_tên__1_ {
             get {
                 object obj = ResourceManager.GetObject("Thiết kế chưa có tên (1)", resourceCulture);
