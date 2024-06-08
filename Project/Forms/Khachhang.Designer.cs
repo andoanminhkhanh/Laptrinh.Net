@@ -237,6 +237,7 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnLuu
             // 
@@ -254,6 +255,7 @@
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
@@ -271,6 +273,7 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnBoqua
             // 
@@ -288,6 +291,7 @@
             this.btnBoqua.Text = "Bỏ qua";
             this.btnBoqua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBoqua.UseVisualStyleBackColor = false;
+            this.btnBoqua.Click += new System.EventHandler(this.btnBoqua_Click);
             // 
             // btnSua
             // 
@@ -305,6 +309,7 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -322,6 +327,7 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnTimkiem
             // 
@@ -339,6 +345,7 @@
             this.btnTimkiem.Text = "Tìm kiếm";
             this.btnTimkiem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTimkiem.UseVisualStyleBackColor = false;
+            this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
             // 
             // Khachhang
             // 

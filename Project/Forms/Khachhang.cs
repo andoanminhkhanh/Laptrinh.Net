@@ -38,7 +38,7 @@ namespace Project.Forms
             txtEmail.Text = "";
             cboMalvhd.Text = "";
         }
-        private void Load_data() 
+        private void Load_data()
         {
             string sql;
             sql = "select Makh, Tenkh, Diachi, Dienthoai, Didong, Email, Malvhd from tblkhachhang";
@@ -60,6 +60,22 @@ namespace Project.Forms
             dgridKhachhang.Columns[0].Width = 100;
             dgridKhachhang.AllowUserToAddRows = false;
             dgridKhachhang.EditMode = DataGridViewEditMode.EditProgrammatically;
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+            btnBoqua.Enabled = true;
+            btnLuu.Enabled = true;
+            btnThem.Enabled = false;
+            ResetValues();
+            txtMakhachhang.Enabled = false;
+            txtMakhachhang.Focus();
+            string newCustomerID = Function.CreateCustomerKey();
+
+            // Hiển thị mã nhân viên mới lên TextBox hoặc sử dụng cho mục đích khác
+            txtMakhachhang.Text = newCustomerID;
         }
 
         private void dgridKhachhang_Click(object sender, EventArgs e)
@@ -88,23 +104,6 @@ namespace Project.Forms
             btnXoa.Enabled = true;
             btnBoqua.Enabled = true;
         }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            btnSua.Enabled = false;
-            btnXoa.Enabled = false;
-            btnBoqua.Enabled = true;
-            btnLuu.Enabled = true;
-            btnThem.Enabled = false;
-            ResetValues();
-            txtMakhachhang.Enabled = false;
-            txtMakhachhang.Focus();
-            string newCustomerID = Function.CreateCustomerKey();
-
-            // Hiển thị mã nhân viên mới lên TextBox hoặc sử dụng cho mục đích khác
-            txtMakhachhang.Text = newCustomerID;
-        }
-       
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -171,18 +170,6 @@ namespace Project.Forms
             txtMakhachhang.Enabled = false;
         }
 
-        private void btnHopdongvietbai_Click(object sender, EventArgs e)
-        {
-            Forms.Hopdongbaiviet a = new Forms.Hopdongbaiviet();
-            a.Show();
-        }
-
-        private void btnHopdongquangcao_Click(object sender, EventArgs e)
-        {
-            Forms.Hopdongquangcao b = new Forms.Hopdongquangcao();
-            b.Show();
-        }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             string sql;
@@ -196,13 +183,13 @@ namespace Project.Forms
                 MessageBox.Show("Bạn chưa nhập bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (txtTenkhachhang.Text.Trim().Length == 0) 
+            if (txtTenkhachhang.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn phải nhập tên khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTenkhachhang.Focus();
                 return;
             }
-            if (txtDiachi.Text.Trim().Length == 0) 
+            if (txtDiachi.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn phải nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtDiachi.Focus();
@@ -226,7 +213,7 @@ namespace Project.Forms
                 txtEmail.Focus();
                 return;
             }
-            if (cboMalvhd.Text.Trim().Length == 0) 
+            if (cboMalvhd.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn phải nhập mã lĩnh vực hoạt động", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cboMalvhd.Focus();
@@ -238,7 +225,7 @@ namespace Project.Forms
             ResetValues();
             btnBoqua.Enabled = false;
         }
-        
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string sql;
@@ -276,6 +263,7 @@ namespace Project.Forms
         {
             this.Close();
         }
+
         private void btnTimkiem_Click(object sender, EventArgs e)
         {
             string sql;
@@ -324,6 +312,18 @@ namespace Project.Forms
                 dgridKhachhang.DataSource = tblkh;
             }
             ResetValues();
+        }
+
+        private void btnHopdongvietbai_Click(object sender, EventArgs e)
+        {
+            Forms.Hopdongbaiviet a = new Forms.Hopdongbaiviet();
+            a.Show();
+        }
+
+        private void btnHopdongquangcao_Click(object sender, EventArgs e)
+        {
+            Forms.Hopdongquangcao b = new Forms.Hopdongquangcao();
+            b.Show();
         }
     }
 }

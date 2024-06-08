@@ -67,7 +67,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1924, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1246, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "Quản lý Khách hàng";
             // 
@@ -78,7 +78,7 @@
             this.mnuKhachhang,
             this.mnuLvhd});
             this.MnuQuanlyKhachhang.Name = "MnuQuanlyKhachhang";
-            this.MnuQuanlyKhachhang.Size = new System.Drawing.Size(148, 24);
+            this.MnuQuanlyKhachhang.Size = new System.Drawing.Size(154, 24);
             this.MnuQuanlyKhachhang.Text = "Quản lý Khách hàng";
             // 
             // mnuKhachhang
@@ -104,7 +104,7 @@
             this.trinhdoToolStripMenuItem,
             this.phòngBanToolStripMenuItem});
             this.mnu_Phongban.Name = "mnu_Phongban";
-            this.mnu_Phongban.Size = new System.Drawing.Size(148, 24);
+            this.mnu_Phongban.Size = new System.Drawing.Size(140, 24);
             this.mnu_Phongban.Text = "Quản lý nhân viên";
             // 
             // mnu_Nhanvien
@@ -149,7 +149,7 @@
             this.báoToolStripMenuItem1,
             this.thểLoạiToolStripMenuItem});
             this.báoToolStripMenuItem.Name = "báoToolStripMenuItem";
-            this.báoToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
+            this.báoToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.báoToolStripMenuItem.Text = "Báo";
             // 
             // chứcNăngToolStripMenuItem
@@ -179,7 +179,7 @@
             this.mnu_TTQC,
             this.mnu_banggia});
             this.mnu_QC.Name = "mnu_QC";
-            this.mnu_QC.Size = new System.Drawing.Size(148, 24);
+            this.mnu_QC.Size = new System.Drawing.Size(95, 24);
             this.mnu_QC.Text = "Quảng cáo";
             // 
             // mnu_TTQC
@@ -268,9 +268,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.BackgroundImage = global::Project.Properties.Resources.Chưa_có_tên__1500_x_760_px___1550_x_780_px___1_;
+            this.BackgroundImage = global::Project.Properties.Resources.Chưa_có_tên__1500_x_760_px_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1924, 874);
+            this.ClientSize = new System.Drawing.Size(1246, 521);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
@@ -282,6 +282,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);

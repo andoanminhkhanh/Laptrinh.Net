@@ -36,7 +36,6 @@
             this.btnIn = new System.Windows.Forms.Button();
             this.btnDong = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnThembaiviet = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -59,6 +58,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.btnTimkiem = new System.Windows.Forms.Button();
             this.gb1 = new System.Windows.Forms.GroupBox();
+            this.txtNgayky = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.cbLVHD = new System.Windows.Forms.ComboBox();
@@ -77,8 +78,6 @@
             this.mskDienthoai = new System.Windows.Forms.MaskedTextBox();
             this.lblDienthoai = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtNgayky = new System.Windows.Forms.TextBox();
             this.gb2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgridHopdongbaiviet)).BeginInit();
             this.gb1.SuspendLayout();
@@ -129,7 +128,6 @@
             this.gb2.Controls.Add(this.btnIn);
             this.gb2.Controls.Add(this.btnDong);
             this.gb2.Controls.Add(this.btnHuy);
-            this.gb2.Controls.Add(this.btnSua);
             this.gb2.Controls.Add(this.btnLuu);
             this.gb2.Controls.Add(this.btnThembaiviet);
             this.gb2.Controls.Add(this.btnThem);
@@ -175,6 +173,7 @@
             this.btnIn.Text = "In hợp đồng";
             this.btnIn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIn.UseVisualStyleBackColor = false;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // btnDong
             // 
@@ -192,6 +191,7 @@
             this.btnDong.Text = "Đóng";
             this.btnDong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDong.UseVisualStyleBackColor = false;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnHuy
             // 
@@ -209,23 +209,7 @@
             this.btnHuy.Text = "Hủy hợp đồng";
             this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHuy.UseVisualStyleBackColor = false;
-            // 
-            // btnSua
-            // 
-            this.btnSua.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSua.Cursor = System.Windows.Forms.Cursors.AppStarting;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Image = global::Project.Properties.Resources.images__2___1_;
-            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSua.Location = new System.Drawing.Point(404, 481);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSua.Size = new System.Drawing.Size(92, 36);
-            this.btnSua.TabIndex = 64;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnLuu
             // 
@@ -235,7 +219,7 @@
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Image = global::Project.Properties.Resources.pngtree_save_vector_icon_png_image_3758949__2_;
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLuu.Location = new System.Drawing.Point(299, 482);
+            this.btnLuu.Location = new System.Drawing.Point(407, 482);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnLuu.Size = new System.Drawing.Size(86, 36);
@@ -243,6 +227,7 @@
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnThembaiviet
             // 
@@ -252,7 +237,7 @@
             this.btnThembaiviet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThembaiviet.Image = global::Project.Properties.Resources.plus_24844_1280__1___2_;
             this.btnThembaiviet.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThembaiviet.Location = new System.Drawing.Point(12, 482);
+            this.btnThembaiviet.Location = new System.Drawing.Point(120, 482);
             this.btnThembaiviet.Name = "btnThembaiviet";
             this.btnThembaiviet.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnThembaiviet.Size = new System.Drawing.Size(122, 36);
@@ -260,6 +245,7 @@
             this.btnThembaiviet.Text = "Thêm bài viết";
             this.btnThembaiviet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThembaiviet.UseVisualStyleBackColor = false;
+            this.btnThembaiviet.Click += new System.EventHandler(this.btnThembaiviet_Click);
             // 
             // btnThem
             // 
@@ -269,7 +255,7 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Image = global::Project.Properties.Resources.plus_24844_1280__1___2_;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThem.Location = new System.Drawing.Point(146, 481);
+            this.btnThem.Location = new System.Drawing.Point(255, 482);
             this.btnThem.Name = "btnThem";
             this.btnThem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnThem.Size = new System.Drawing.Size(139, 36);
@@ -277,6 +263,7 @@
             this.btnThem.Text = "Thêm hợp đồng";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // lblBangchu
             // 
@@ -330,6 +317,7 @@
             this.dgridHopdongbaiviet.RowHeadersWidth = 51;
             this.dgridHopdongbaiviet.Size = new System.Drawing.Size(907, 209);
             this.dgridHopdongbaiviet.TabIndex = 14;
+            this.dgridHopdongbaiviet.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgridHopdongbaiviet_CellDoubleClick);
             this.dgridHopdongbaiviet.Click += new System.EventHandler(this.dgridHopdongbaiviet_Click);
             // 
             // label4
@@ -484,6 +472,22 @@
             this.gb1.TabIndex = 50;
             this.gb1.TabStop = false;
             this.gb1.Text = "Thông tin chung";
+            // 
+            // txtNgayky
+            // 
+            this.txtNgayky.Location = new System.Drawing.Point(120, 176);
+            this.txtNgayky.Name = "txtNgayky";
+            this.txtNgayky.Size = new System.Drawing.Size(157, 27);
+            this.txtNgayky.TabIndex = 49;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(8, 180);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(65, 20);
+            this.label15.TabIndex = 48;
+            this.label15.Text = "Ngày ký:";
             // 
             // txtEmail
             // 
@@ -653,22 +657,6 @@
             this.label1.TabIndex = 47;
             this.label1.Text = "HỢP ĐỒNG BÀI VIẾT";
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(8, 180);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(65, 20);
-            this.label15.TabIndex = 48;
-            this.label15.Text = "Ngày ký:";
-            // 
-            // txtNgayky
-            // 
-            this.txtNgayky.Location = new System.Drawing.Point(120, 176);
-            this.txtNgayky.Name = "txtNgayky";
-            this.txtNgayky.Size = new System.Drawing.Size(157, 27);
-            this.txtNgayky.TabIndex = 49;
-            // 
             // Hopdongbaiviet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -685,7 +673,6 @@
             this.Name = "Hopdongbaiviet";
             this.Text = "Hợp đồng bài viết";
             this.Load += new System.EventHandler(this.Hopdongbaiviet_Load);
-            this.SizeChanged += new System.EventHandler(this.Hopdongbaiviet_SizeChanged);
             this.gb2.ResumeLayout(false);
             this.gb2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgridHopdongbaiviet)).EndInit();
@@ -742,7 +729,6 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnThembaiviet;
         private System.Windows.Forms.Button btnLuu;
-        private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnIn;
         private System.Windows.Forms.Button btnDong;
         private System.Windows.Forms.Button btnHuy;

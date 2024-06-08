@@ -19,7 +19,7 @@ namespace Project.Forms
         public Hopdongbaiviet()
         {
             InitializeComponent();
-            this.SizeChanged += new EventHandler(Hopdongbaiviet_SizeChanged);
+            //this.SizeChanged += new EventHandler(Hopdongbaiviet_SizeChanged);
 
         }
         private void Hopdongbaiviet_Load(object sender, EventArgs e)
@@ -62,10 +62,10 @@ namespace Project.Forms
             dgridHopdongbaiviet.Columns[3].HeaderText = "Nội dung";
             dgridHopdongbaiviet.Columns[4].HeaderText = "Ngày đăng";
             dgridHopdongbaiviet.Columns[5].HeaderText = "Nhuận bút";
-            dgridHopdongbaiviet.Columns[0].Width = 80;
-            dgridHopdongbaiviet.Columns[1].Width = 50;
-            dgridHopdongbaiviet.Columns[2].Width = 100;
-            dgridHopdongbaiviet.Columns[3].Width = 100;
+            dgridHopdongbaiviet.Columns[0].Width = 100;
+            dgridHopdongbaiviet.Columns[1].Width = 80;
+            dgridHopdongbaiviet.Columns[2].Width = 115;
+            dgridHopdongbaiviet.Columns[3].Width = 115;
             dgridHopdongbaiviet.Columns[4].Width = 80;
             dgridHopdongbaiviet.Columns[5].Width = 80;
             dgridHopdongbaiviet.AllowUserToAddRows = false;
@@ -138,13 +138,14 @@ namespace Project.Forms
             mskNgaydang.Text = dgridHopdongbaiviet.CurrentRow.Cells["Ngaydang"].Value.ToString();
             txtNhuanbut.Text = dgridHopdongbaiviet.CurrentRow.Cells["Nhuanbut"].Value.ToString();
             Load_TTHD();
-            btnSua.Enabled = true;
+            //btnSua.Enabled = true;
             btnHuy.Enabled = true;
             btnIn.Enabled = true;
         }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
-            btnSua.Enabled = false;
+            //btnSua.Enabled = false;
             btnHuy.Enabled = false;
             btnLuu.Enabled = true;
             btnIn.Enabled = false;
@@ -183,6 +184,7 @@ namespace Project.Forms
             mskNgaydang.Text = "";
             txtNhuanbut.Text = "0";
         }
+
         private void btnDong_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc chắn đóng menu này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
@@ -274,13 +276,13 @@ namespace Project.Forms
             }
 
             //ở đây
-            
+
             foreach (DataRow row in tblHDBV.Rows)
             {
                 sql = $"INSERT INTO tblKhachguibai (Malangui, Ngayky, MaKH, Matheloai, Mabao, Tieude, Noidung, MaNV, Ngaydang, Nhuanbut) " +
                     $"VALUES (N'{txtMahopdong.Text.Trim()}', '{Class.Function.convertdatetime(txtNgayky.Text.Trim())}', " +
                     $"N'{txtMakhach.Text.Trim()}', N'{row["Matheloai"].ToString()}', N'{row["Mabao"].ToString()}', " +
-                    $"N'{row["Tieude"].ToString()}', N'{row["Noidung"].ToString()}', N'{cbManhanvien.SelectedValue}', "+
+                    $"N'{row["Tieude"].ToString()}', N'{row["Noidung"].ToString()}', N'{cbManhanvien.SelectedValue}', " +
                     $"N'{row["Ngaydang"].ToString()}', N'{row["Nhuanbut"].ToString()}')";
                 Class.Function.RunSql(sql);
             }
@@ -289,7 +291,7 @@ namespace Project.Forms
             resetvaluesHD();
             btnHuy.Enabled = false;
             btnThem.Enabled = true;
-            btnSua.Enabled = true;
+            //btnSua.Enabled = true;
             btnIn.Enabled = false;
             btnLuu.Enabled = false;
         }
@@ -346,6 +348,7 @@ namespace Project.Forms
             //str = "insert into tblKhachhang(MaKH, TenKH, DiaChi, DienThoai, Didong, Email, MaLVHD) values (N'" + txtMakhach.Text.Trim() + "', N '" + txtTenkhach.Text.Trim() + "', N'" + txtDiachi.Text.Trim() + "', '" + mskDienthoai.Text + "', '"+ mskDidong.Text +"', '"+ txtEmail.Text.Trim() +"', '"+ cbLVHD.SelectedValue.ToString() + "'";
             //Function.RunSql(str);
         }
+
         private void btnHuy_Click(object sender, EventArgs e)
         {
             string sql;
@@ -367,95 +370,96 @@ namespace Project.Forms
                 resetvalues();
             }
         }
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            string sql;
-            txtMahopdong.Enabled = false;
-            cbManhanvien.Enabled = false;
-            txtMakhach.Enabled = false;
-            if (tblHDBV.Rows.Count == 0)
-            {
-                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (txtMahopdong.Text == "")
-            {
-                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (txtTenkhach.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập tên khách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtTenkhach.Focus();
-                return;
-            }
-            if (txtDiachi.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtDiachi.Focus();
-                return;
-            }
-            if (mskDidong.Text == "(   )    -")
-            {
-                MessageBox.Show("Bạn phải nhập di động", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                mskDidong.Focus();
-                return;
-            }
-            if (mskDienthoai.Text == "(   )    -")
-            {
-                MessageBox.Show("Bạn phải nhập điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                mskDienthoai.Focus();
-                return;
-            }
-            if (txtEmail.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtDiachi.Focus();
-                return;
-            }
-            if (cbLVHD.Text.Length == 0)
-            {
-                MessageBox.Show("Bạn phải chọn lĩnh vực hoạt động", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbLVHD.Focus();
-                return;
-            }
-            if (cbMatheloai.Text == "")
-            {
-                MessageBox.Show("Bạn phải nhập mã thể loại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbMatheloai.Focus();
-                return;
-            }
-            if (cbMabao.Text == "")
-            {
-                MessageBox.Show("Bạn phải nhập mã báo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbMabao.Focus();
-                return;
-            }
-            if (txtTieude.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập tiêu đề", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtTieude.Focus();
-                return;
-            }
-            if (mskNgaydang.Text == "  /  /")
-            {
-                MessageBox.Show("Bạn phải nhập ngày đăng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                mskNgaydang.Focus();
-                return;
-            }
-            if (txtNhuanbut.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập nhuận bút", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtNhuanbut.Focus();
-                return;
-            }
-            sql = "UPDATE tblKhachguibai SET MaKH='" + txtMakhach.Text.Trim().ToString() + "',Matheloai=N'" + cbMatheloai.SelectedValue.ToString() + "',Mabao=N'" + cbMabao.SelectedValue.ToString() + "',Tieude=N'" + txtTieude.Text.Trim().ToString() + "', Noidung=N'" + txtNoidung.Text.Trim().ToString() + "',MaNV=N'" + cbManhanvien.SelectedValue.ToString() + "',Ngaydang='" + mskNgaydang.Text + "', Nhuanbut='" + txtNhuanbut.Text.Trim().ToString() + "' WHERE Malangui=N'" + txtMahopdong.Text + "'";
-            Class.Function.RunSql(sql);
-            Load_TTHD();
-            Load_datagridview();
-            resetvalues();
-            btnIn.Enabled = false;
-        }
+
+        //private void btnSua_Click(object sender, EventArgs e)
+        //{
+        //    string sql;
+        //    txtMahopdong.Enabled = false;
+        //    cbManhanvien.Enabled = false;
+        //    txtMakhach.Enabled = false;
+        //    if (tblHDBV.Rows.Count == 0)
+        //    {
+        //        MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        return;
+        //    }
+        //    if (txtMahopdong.Text == "")
+        //    {
+        //        MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        return;
+        //    }
+        //    if (txtTenkhach.Text.Trim().Length == 0)
+        //    {
+        //        MessageBox.Show("Bạn phải nhập tên khách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        txtTenkhach.Focus();
+        //        return;
+        //    }
+        //    if (txtDiachi.Text.Trim().Length == 0)
+        //    {
+        //        MessageBox.Show("Bạn phải nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        txtDiachi.Focus();
+        //        return;
+        //    }
+        //    if (mskDidong.Text == "(   )    -")
+        //    {
+        //        MessageBox.Show("Bạn phải nhập di động", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        mskDidong.Focus();
+        //        return;
+        //    }
+        //    if (mskDienthoai.Text == "(   )    -")
+        //    {
+        //        MessageBox.Show("Bạn phải nhập điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        mskDienthoai.Focus();
+        //        return;
+        //    }
+        //    if (txtEmail.Text.Trim().Length == 0)
+        //    {
+        //        MessageBox.Show("Bạn phải nhập email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        txtDiachi.Focus();
+        //        return;
+        //    }
+        //    if (cbLVHD.Text.Length == 0)
+        //    {
+        //        MessageBox.Show("Bạn phải chọn lĩnh vực hoạt động", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        cbLVHD.Focus();
+        //        return;
+        //    }
+        //    if (cbMatheloai.Text == "")
+        //    {
+        //        MessageBox.Show("Bạn phải nhập mã thể loại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        cbMatheloai.Focus();
+        //        return;
+        //    }
+        //    if (cbMabao.Text == "")
+        //    {
+        //        MessageBox.Show("Bạn phải nhập mã báo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        cbMabao.Focus();
+        //        return;
+        //    }
+        //    if (txtTieude.Text.Trim().Length == 0)
+        //    {
+        //        MessageBox.Show("Bạn phải nhập tiêu đề", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        txtTieude.Focus();
+        //        return;
+        //    }
+        //    if (mskNgaydang.Text == "  /  /")
+        //    {
+        //        MessageBox.Show("Bạn phải nhập ngày đăng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        mskNgaydang.Focus();
+        //        return;
+        //    }
+        //    if (txtNhuanbut.Text.Trim().Length == 0)
+        //    {
+        //        MessageBox.Show("Bạn phải nhập nhuận bút", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        txtNhuanbut.Focus();
+        //        return;
+        //    }
+        //    sql = "UPDATE tblKhachguibai SET MaKH=N'" + txtMakhach.Text.ToString() + "',Matheloai=N'" + cbMatheloai.Text.ToString() + "',Mabao=N'" + cbMabao.Text.ToString() + "',Tieude=N'" + txtTieude.Text.ToString() + "', Noidung=N'" + txtNoidung.Text.ToString() + "',MaNV=N'" + cbManhanvien.SelectedValue.ToString() + "',Ngaydang='" + mskNgaydang.Text + "', Nhuanbut='" + txtNhuanbut.Text.Trim().ToString() + "', Ngayky='"+ txtNgayky.Text.Trim().ToString()+"' WHERE Malangui=N'" + txtMahopdong.Text + "'";
+        //    Class.Function.RunSql(sql);
+        //    Load_TTHD();
+        //    Load_datagridview();
+        //    resetvalues();
+        //    btnIn.Enabled = false;
+        //}
 
         private void btnIn_Click(object sender, EventArgs e)
         {
@@ -552,15 +556,6 @@ namespace Project.Forms
             exApp.Visible = true;
         }
 
-        private void Hopdongbaiviet_SizeChanged(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                // Thực hiện các thao tác cần thiết khi form được mở rộng toàn màn hình
-                // Ví dụ: cập nhật lại giao diện, điều chỉnh kích thước các điều khiển, v.v.
-            }
-        }
-
         private void cbMatheloai_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateNhuanBut();
@@ -597,6 +592,7 @@ namespace Project.Forms
             txtTongtien.Text = tongtien.ToString("0.00");
             lblBangchu.Text = "Bằng chữ: " + Class.Function.ChuyenSoSangChu(txtTongtien.Text);
         }
+
         private void btnThembaiviet_Click(object sender, EventArgs e)
         {
             // Kiểm tra các trường dữ liệu có được nhập đầy đủ không

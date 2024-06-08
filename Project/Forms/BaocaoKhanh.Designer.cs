@@ -30,6 +30,12 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboLoaiquangcao = new System.Windows.Forms.ComboBox();
+            this.cboTheloai = new System.Windows.Forms.ComboBox();
+            this.cboLoaibao = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
             this.txtDoanhthu = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -47,13 +53,7 @@
             this.lblBangchu = new System.Windows.Forms.Label();
             this.btnHienthi = new System.Windows.Forms.Button();
             this.btnInbaocao = new System.Windows.Forms.Button();
-            this.cboLoaihopdong = new System.Windows.Forms.ComboBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cboLoaibao = new System.Windows.Forms.ComboBox();
-            this.cboTheloai = new System.Windows.Forms.ComboBox();
-            this.cboLoaiquangcao = new System.Windows.Forms.ComboBox();
+            this.txtLoaihopdong = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -70,13 +70,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtLoaihopdong);
             this.groupBox1.Controls.Add(this.cboLoaiquangcao);
             this.groupBox1.Controls.Add(this.cboTheloai);
             this.groupBox1.Controls.Add(this.cboLoaibao);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.cboLoaihopdong);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtDoanhthu);
             this.groupBox1.Controls.Add(this.label8);
@@ -94,6 +94,61 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
+            // 
+            // cboLoaiquangcao
+            // 
+            this.cboLoaiquangcao.FormattingEnabled = true;
+            this.cboLoaiquangcao.Location = new System.Drawing.Point(160, 117);
+            this.cboLoaiquangcao.Name = "cboLoaiquangcao";
+            this.cboLoaiquangcao.Size = new System.Drawing.Size(121, 24);
+            this.cboLoaiquangcao.TabIndex = 23;
+            // 
+            // cboTheloai
+            // 
+            this.cboTheloai.FormattingEnabled = true;
+            this.cboTheloai.Location = new System.Drawing.Point(160, 87);
+            this.cboTheloai.Name = "cboTheloai";
+            this.cboTheloai.Size = new System.Drawing.Size(121, 24);
+            this.cboTheloai.TabIndex = 22;
+            // 
+            // cboLoaibao
+            // 
+            this.cboLoaibao.FormattingEnabled = true;
+            this.cboLoaibao.Location = new System.Drawing.Point(160, 57);
+            this.cboLoaibao.Name = "cboLoaibao";
+            this.cboLoaibao.Size = new System.Drawing.Size(121, 24);
+            this.cboLoaibao.TabIndex = 21;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(44, 125);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 16);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Loại quảng cáo";
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(331, 63);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(108, 20);
+            this.radioButton2.TabIndex = 19;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Theo khoảng";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(331, 30);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(93, 20);
+            this.radioButton1.TabIndex = 18;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Theo ngày";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -245,68 +300,12 @@
             this.btnInbaocao.Text = "In báo cáo";
             this.btnInbaocao.UseVisualStyleBackColor = true;
             // 
-            // cboLoaihopdong
+            // txtLoaihopdong
             // 
-            this.cboLoaihopdong.FormattingEnabled = true;
-            this.cboLoaihopdong.Location = new System.Drawing.Point(160, 26);
-            this.cboLoaihopdong.Name = "cboLoaihopdong";
-            this.cboLoaihopdong.Size = new System.Drawing.Size(121, 24);
-            this.cboLoaihopdong.TabIndex = 17;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(331, 30);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(93, 20);
-            this.radioButton1.TabIndex = 18;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Theo ngày";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(331, 63);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(108, 20);
-            this.radioButton2.TabIndex = 19;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Theo khoảng";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 125);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 16);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Loại quảng cáo";
-            // 
-            // cboLoaibao
-            // 
-            this.cboLoaibao.FormattingEnabled = true;
-            this.cboLoaibao.Location = new System.Drawing.Point(160, 57);
-            this.cboLoaibao.Name = "cboLoaibao";
-            this.cboLoaibao.Size = new System.Drawing.Size(121, 24);
-            this.cboLoaibao.TabIndex = 21;
-            // 
-            // cboTheloai
-            // 
-            this.cboTheloai.FormattingEnabled = true;
-            this.cboTheloai.Location = new System.Drawing.Point(160, 87);
-            this.cboTheloai.Name = "cboTheloai";
-            this.cboTheloai.Size = new System.Drawing.Size(121, 24);
-            this.cboTheloai.TabIndex = 22;
-            // 
-            // cboLoaiquangcao
-            // 
-            this.cboLoaiquangcao.FormattingEnabled = true;
-            this.cboLoaiquangcao.Location = new System.Drawing.Point(160, 117);
-            this.cboLoaiquangcao.Name = "cboLoaiquangcao";
-            this.cboLoaiquangcao.Size = new System.Drawing.Size(121, 24);
-            this.cboLoaiquangcao.TabIndex = 23;
+            this.txtLoaihopdong.Location = new System.Drawing.Point(160, 28);
+            this.txtLoaihopdong.Name = "txtLoaihopdong";
+            this.txtLoaihopdong.Size = new System.Drawing.Size(121, 22);
+            this.txtLoaihopdong.TabIndex = 24;
             // 
             // BaocaoKhanh
             // 
@@ -351,7 +350,6 @@
         private System.Windows.Forms.TextBox txtTongtien;
         private System.Windows.Forms.Label lblBangchu;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox cboLoaihopdong;
         private System.Windows.Forms.Button btnHienthi;
         private System.Windows.Forms.Button btnInbaocao;
         private System.Windows.Forms.RadioButton radioButton2;
@@ -360,5 +358,6 @@
         private System.Windows.Forms.ComboBox cboLoaiquangcao;
         private System.Windows.Forms.ComboBox cboTheloai;
         private System.Windows.Forms.ComboBox cboLoaibao;
+        private System.Windows.Forms.TextBox txtLoaihopdong;
     }
 }

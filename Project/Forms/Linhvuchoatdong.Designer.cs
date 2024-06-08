@@ -34,14 +34,12 @@
             this.txtMalvhd = new System.Windows.Forms.TextBox();
             this.txtTenlvhd = new System.Windows.Forms.TextBox();
             this.dgridLvhd = new System.Windows.Forms.DataGridView();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnBoqua = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgridLvhd)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,28 +98,6 @@
             this.dgridLvhd.TabIndex = 5;
             this.dgridLvhd.Click += new System.EventHandler(this.dgridLvhd_Click);
             // 
-            // btnThem
-            // 
-            this.btnThem.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnThem.Location = new System.Drawing.Point(75, 440);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(81, 35);
-            this.btnThem.TabIndex = 6;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSua.Location = new System.Drawing.Point(216, 440);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(81, 35);
-            this.btnSua.TabIndex = 7;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
             // btnThoat
             // 
             this.btnThoat.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -138,6 +114,7 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnLuu
             // 
@@ -155,6 +132,7 @@
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
@@ -172,6 +150,7 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnBoqua
             // 
@@ -189,40 +168,43 @@
             this.btnBoqua.Text = "Bỏ qua";
             this.btnBoqua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBoqua.UseVisualStyleBackColor = true;
+            this.btnBoqua.Click += new System.EventHandler(this.btnBoqua_Click);
             // 
-            // button8
+            // btnSua
             // 
-            this.button8.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button8.Cursor = System.Windows.Forms.Cursors.AppStarting;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Image = global::Project.Properties.Resources.images__2___1_;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.Location = new System.Drawing.Point(216, 481);
-            this.button8.Name = "button8";
-            this.button8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button8.Size = new System.Drawing.Size(94, 40);
-            this.button8.TabIndex = 31;
-            this.button8.Text = "Sửa";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnSua.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSua.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Image = global::Project.Properties.Resources.images__2___1_;
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.Location = new System.Drawing.Point(216, 481);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnSua.Size = new System.Drawing.Size(94, 40);
+            this.btnSua.TabIndex = 31;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // button2
+            // btnThem
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Cursor = System.Windows.Forms.Cursors.AppStarting;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::Project.Properties.Resources.plus_24844_1280__1___2_;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(75, 481);
-            this.button2.Name = "button2";
-            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button2.Size = new System.Drawing.Size(93, 40);
-            this.button2.TabIndex = 30;
-            this.button2.Text = "Thêm";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnThem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.Image = global::Project.Properties.Resources.plus_24844_1280__1___2_;
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.Location = new System.Drawing.Point(75, 481);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnThem.Size = new System.Drawing.Size(93, 40);
+            this.btnThem.TabIndex = 30;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // Linhvuchoatdong
             // 
@@ -234,8 +216,6 @@
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnBoqua);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.dgridLvhd);
@@ -261,13 +241,11 @@
         private System.Windows.Forms.TextBox txtMalvhd;
         private System.Windows.Forms.TextBox txtTenlvhd;
         private System.Windows.Forms.DataGridView dgridLvhd;
-        private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnBoqua;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnThem;
     }
 }
