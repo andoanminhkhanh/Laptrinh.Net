@@ -631,6 +631,7 @@
             this.cbomabao.Name = "cbomabao";
             this.cbomabao.Size = new System.Drawing.Size(173, 28);
             this.cbomabao.TabIndex = 10;
+//            this.cbomabao.SelectedIndexChanged += new System.EventHandler(this.cbomabao_SelectedIndexChanged);
             this.cbomabao.TextChanged += new System.EventHandler(this.cbomabao_TextChanged);
             // 
             // label20

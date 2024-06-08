@@ -286,8 +286,8 @@ namespace Project.Forms
             mskngaybatdau.Text = "  /  /";
             mskngayketthuc.Text = "  /  /";
             txtnoidung.Text = "";
-            txtdongia.Text = "";
-
+            txtdongia.Text = "0";
+            txtthanhtien.Text = "0";
         }
         //4 
         private void btnthem_Click_1(object sender, EventArgs e)
@@ -326,13 +326,14 @@ namespace Project.Forms
                 this.Close();
         }
 
-        //11 
+        //11
+        /*
         private void btntimso_Click(object sender, EventArgs e)
         {
             string sql;
             sql = "select MaKH, TenKH, Diachi, Didong, Email, MaLVHD from tblKhachhang where Dienthoai = '" + mskdienthoai.Text + "'";
             tblkh = Class.Function.GetDataToTable(sql);
-            if (tblkh.Rows.Count <= 0)
+            if (tblkh.Rows.Count == 0)
             {
                 MessageBox.Show("Chưa có khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cbomakhachhang.Text = Function.CreateCustomerKey();
@@ -347,7 +348,7 @@ namespace Project.Forms
                 MessageBox.Show("Đã có khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Load_ThongtinKH();
             }
-        }
+        }*/
         private void Load_ThongtinKH()
         {
             string str;
@@ -366,16 +367,6 @@ namespace Project.Forms
 
         }
         
-        //12 
-        private string GetPhoneNumber(string phoneNumber)
-        {
-            string digits = new string(phoneNumber.Where(char.IsDigit).ToArray());
-            if (digits.Length >= 10)
-            {
-                return digits.Substring(digits.Length - 10);
-            }
-            return "";
-        }
        
 
         //14 
@@ -394,11 +385,10 @@ namespace Project.Forms
             }
             if (MessageBox.Show("Bạn có chắn chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                // ?????????????
-                sql = "DELETE tblKhachguibai WHERE Malangui=N'" + txtmahopdongqc.Text + "'";
+                sql = "DELETE tblKhach_Quangcao WHERE MalanQC=N'" + txtmahopdongqc.Text + "'";
                 Class.Function.RunSqlDel(sql);
                 load_datagridview();
-                resetvalues();
+                resetvaluesHD();
             }
         }
 
@@ -502,10 +492,36 @@ namespace Project.Forms
                 txtdongia.Focus();
                 return;
             }
-           
-            sql = "Insert into tblKhach_Quangcao (MalanQC, MaKH, Mabao, MaNV, MaQcao, Noidung, NgayBD, NgayKT, Thanhtien) values (N'" + txtmahopdongqc.Text.Trim() + "',N'" + cbomakhachhang.SelectedValue + "', N'" + cbomabao.SelectedValue + "', N'" + cbomanhanvien.SelectedValue + "',N'" + cbomaquangcao.SelectedValue + "',N'" + txtnoidung.Text.Trim() + "', N'" + mskngaybatdau.Text.Trim() + "',N'" + mskngayketthuc.Text.Trim() + "',N'" + txtthanhtien.Text.Trim() + "')";
 
-            Class.Function.RunSql(sql);
+            //sql = "Insert into tblKhach_Quangcao (MalanQC, MaKH, Mabao, MaNV, MaQcao, Noidung, NgayBD, NgayKT, Thanhtien) values (N'" + txtmahopdongqc.Text.Trim() + "',N'" + cbomakhachhang.SelectedValue + "', N'" + cbomabao.SelectedValue + "', N'" + cbomanhanvien.SelectedValue + "',N'" + cbomaquangcao.SelectedValue + "',N'" + txtnoidung.Text.Trim() + "', N'" + mskngaybatdau.Text.Trim() + "',N'" + mskngayketthuc.Text.Trim() + "',N'" + txtthanhtien.Text.Trim() + "')";
+
+            //Class.Function.RunSql(sql);
+
+            // Save Customer Information if not exists
+            string customerID = cbomakhachhang.SelectedValue.ToString();
+            string query = $"SELECT COUNT(*) FROM tblKhachhang WHERE MaKH = N'{customerID}'";
+            int customerCount = int.Parse(Class.Function.GetFieldValues(query));
+
+            if (customerCount == 0)
+            {
+                // Insert new customer information
+                query = $"INSERT INTO tblkhachhang (MaKH, TenKH, DiaChi, DienThoai, Didong, Email, MaLVHD) " +
+                        $"VALUES (N'" + cbomakhachhang.SelectedValue.ToString() + "',N'" + txttenkhachhang.Text.Trim() + "',N'" + txtdiachi.Text.Trim() + "','" + mskdienthoai.Text + "','" + mskdidong.Text + "','" + txttenmail.Text.Trim() + "','" + cbomalvhd.SelectedValue.ToString() + "')";
+                Class.Function.RunSql(query);
+            }
+
+            //ở đây
+
+            foreach (DataRow row in tblHDQC.Rows)
+            {
+                sql = $"INSERT INTO tblKhach_Quangcao (MalanQC, Ngayky, MaKH, MaQcao, Mabao, Noidung, MaNV, NgayBD, NgayKT, ThanhTien) " +
+                    $"VALUES (N'{txtmahopdongqc.Text.Trim()}', '{Class.Function.convertdatetime(txtngayky.Text.Trim())}', " +
+                    $"N'{cbomakhachhang.SelectedValue.ToString()}', N'{row["MaQcao"].ToString()}', N'{row["Mabao"].ToString()}', " +
+                    $"N'{row["Noidung"].ToString()}', N'{cbomanhanvien.SelectedValue}', " +
+                    $"N'{row["NgayBD"].ToString()}',N'{row["NgayKT"].ToString()}, N'{row["ThanhTien"].ToString()}')";
+                Class.Function.RunSql(sql);
+            }
+            MessageBox.Show("Hợp đồng đã được lưu thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             load_datagridview();
             btnhuy.Enabled = false;
             btnthembao.Enabled = true;
@@ -898,19 +914,11 @@ namespace Project.Forms
             CalculateTotalPrice();
 
             // Reset các giá trị nhập vào
-            ResetProductInputs();
+            resetvaluesHD();
         }
 
-        //9 
-        private void ResetProductInputs()
-        {
-            cbomabao.SelectedIndex = -1;
-            cbomaquangcao.SelectedIndex = -1;
-            txtnoidung.Clear();
-            txtdongia.Text = "0";
-            mskngaybatdau.Clear();
-            mskngayketthuc.Clear();
-        }
+        
+        
         //18 
         private void btnboqua_Click(object sender, EventArgs e)
         {
@@ -922,7 +930,32 @@ namespace Project.Forms
             btnluu.Enabled = false;
         }
 
-        
+        private void btntimso_Click(object sender, EventArgs e)
+        {
+            string sql;
+            sql = "select MaKH, TenKH, DiaChi, Didong, Email, MaLVHD from tblKhachhang where DienThoai = '" + mskdienthoai.Text + "'";
+            tblkh = Class.Function.GetDataToTable(sql);
+            if (tblkh.Rows.Count == 0)
+            {
+                MessageBox.Show("Chưa có khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbomakhachhang.Text = Function.CreateCustomerKey();
+                txttenkhachhang.Enabled = true;
+                txtdiachi.Enabled = true;
+                mskdidong.Enabled = true;
+                txttenmail.Enabled = true;
+                txtnoidung.Enabled = true;
+                mskngaybatdau.Enabled = true;
+                txtthanhtien.Enabled = true;
+                mskngayketthuc.Enabled = true;
+                cbomalvhd.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Đã có khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Load_ThongtinKH();
+            }
+        }
+
     }
 }
 
