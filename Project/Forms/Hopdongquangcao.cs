@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using COMExcel = Microsoft.Office.Interop.Excel;
 using System.Xml;
+using System.Globalization;
 //using Quanlybanhang.Class;
 
 
@@ -43,7 +44,7 @@ namespace Project.Forms
             //cbomakhachhang.SelectedIndex = -1;
             Class.Function.FillCombo("Select MaNV from tblNhanvien", cbomanhanvien, "MaNV", "MaNV");
             cbomanhanvien.SelectedIndex = -1;
-            Class.Function.FillCombo("Select MaLVHD from tblLinhvuchoatdong", cbomalvhd, "Malvhd", "Malvhd");
+            Class.Function.FillCombo("Select MaLVHD, TenLVHD from tblLinhvuchoatdong", cbomalvhd, "Malvhd", "Tenlvhd");
             cbomalvhd.SelectedIndex = -1;
 
             //Thong tin chi tiet
@@ -135,7 +136,7 @@ namespace Project.Forms
             mskdidong.Text = Function.GetFieldValues(str);
             str = "Select Email from tblKhachhang where MaKH= N'" + txtmakhachhang.Text + "'";
             txttenmail.Text = Function.GetFieldValues(str);
-            str = "Select tblLinhvuchoatdong.MaLVHD from tblKhachhang where MaKH= N'" + txtmakhachhang.Text + "'";
+            str = "Select tblLinhvuchoatdong.MaLVHD from tblLinhvuchoatdong inner join tblKhachhang on tblLinhvuchoatdong.MaLVHD = tblKhachhang.MaLVHD where MaKH= N'" + txtmakhachhang.Text + "'";
             cbomalvhd.Text = Function.GetFieldValues(str);
 
 
@@ -487,7 +488,7 @@ namespace Project.Forms
             }
             MessageBox.Show("Hợp đồng đã được lưu thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             load_datagridview();
-            resetvaluesHD();
+            resetvalues();
             btnhuy.Enabled = false;
             btnthembao.Enabled = true;
             //btnsua.Enabled = true;
@@ -648,7 +649,7 @@ namespace Project.Forms
                 //mskngaybatdau.Text = string.IsNullOrEmpty(ngaybd) ? "  /  /    " : ngaybd;
                 //mskngayketthuc.Text = string.IsNullOrEmpty(ngaykt) ? "  /  /    " : ngaykt;
                 // Hiển thị thành tiền tính từ đơn giá *(Ngày KT - Ngày BD)
-                txtthanhtien.Text = string.IsNullOrEmpty(thanhtien) ? "0" : thanhtien;
+                //txtthanhtien.Text = string.IsNullOrEmpty(thanhtien) ? "0" : thanhtien;
 
             }
         }
@@ -736,6 +737,22 @@ namespace Project.Forms
                 MessageBox.Show("Vui lòng nhập ngày kết thúc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (DateTime.ParseExact(txtngayky.Text, "dd/mm/yyyy", CultureInfo.InvariantCulture) >= DateTime.ParseExact(mskngaybatdau.Text, "dd/mm/yyyy", CultureInfo.InvariantCulture))
+            {
+                MessageBox.Show("Ngày bắt đầu phải lớn hơn hoặc bằng ngày ký", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mskngayketthuc.Text = "";
+                mskngaybatdau.Text = "";
+                return;
+            }
+
+            if (DateTime.ParseExact(mskngaybatdau.Text, "dd/mm/yyyy", CultureInfo.InvariantCulture) >= DateTime.ParseExact(mskngayketthuc.Text, "dd/mm/yyyy", CultureInfo.InvariantCulture))
+            {
+                MessageBox.Show("Ngày kết thúc phải lớn hơn hoặc bằng ngày bắt đầu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mskngayketthuc.Text = "";
+                mskngaybatdau.Text = "";
+                return;
+            }
+            
             bool productExists = false;
             foreach (DataRow row in tblHDQC.Rows)
             {

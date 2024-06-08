@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtmakhachhang = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtngayky = new System.Windows.Forms.TextBox();
             this.mskdidong = new System.Windows.Forms.MaskedTextBox();
@@ -86,7 +87,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtmakhachhang = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatagridView)).BeginInit();
@@ -96,7 +96,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(188, 19);
+            this.label1.Location = new System.Drawing.Point(435, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(396, 45);
             this.label1.TabIndex = 2;
@@ -135,6 +135,13 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chung:";
+            // 
+            // txtmakhachhang
+            // 
+            this.txtmakhachhang.Location = new System.Drawing.Point(636, 35);
+            this.txtmakhachhang.Name = "txtmakhachhang";
+            this.txtmakhachhang.Size = new System.Drawing.Size(316, 26);
+            this.txtmakhachhang.TabIndex = 42;
             // 
             // label3
             // 
@@ -690,13 +697,6 @@
             this.label12.Size = new System.Drawing.Size(68, 20);
             this.label12.TabIndex = 1;
             this.label12.Text = "Mã Báo:";
-            // 
-            // txtmakhachhang
-            // 
-            this.txtmakhachhang.Location = new System.Drawing.Point(636, 35);
-            this.txtmakhachhang.Name = "txtmakhachhang";
-            this.txtmakhachhang.Size = new System.Drawing.Size(316, 26);
-            this.txtmakhachhang.TabIndex = 42;
             // 
             // Hopdongquangcao
             // 
