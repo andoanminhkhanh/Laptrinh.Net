@@ -845,11 +845,11 @@ namespace Project.Forms
                 MessageBox.Show("Vui lòng nhập mã hợp đồng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (string.IsNullOrEmpty(txtngayky.Text))
-            {
-                MessageBox.Show("Vui lòng nhập ngày ký", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            //if (string.IsNullOrEmpty(txtngayky.Text))
+            //{
+            //    MessageBox.Show("Vui lòng nhập ngày ký", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
             if (cbomaquangcao.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng chọn mã quang cáo.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
