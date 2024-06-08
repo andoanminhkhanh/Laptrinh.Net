@@ -15,6 +15,7 @@ namespace Project.Forms
         public Báo()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
         }
 
         private void Báo_Load(object sender, EventArgs e)
@@ -78,8 +79,7 @@ namespace Project.Forms
             btnXoa.Enabled = true;
             btnBoqua.Enabled = true;
         }
-
-        private void btnThem_Click(object sender, EventArgs e)
+        private void btnThem_Click_1(object sender, EventArgs e)
         {
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
@@ -91,67 +91,29 @@ namespace Project.Forms
             txtMabao.Focus();
         }
 
-        private void btnLuu_Click(object sender, EventArgs e)
+        private void btnXoa_Click_1(object sender, EventArgs e)
         {
             string sql;
-            if (txtMabao.Text.Trim().Length == 0)
+            if (tblbao.Rows.Count == 0)
             {
-                MessageBox.Show("Bạn phải nhập mã báo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtMabao.Focus();
+                MessageBox.Show("Không còn dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (txtTenbao.Text.Trim().Length == 0)
+            if (txtMabao.Text == "")
             {
-                MessageBox.Show("Bạn phải nhập tên báo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtTenbao.Focus();
+                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (txtDiachi.Text.Trim().Length == 0)
+            if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                MessageBox.Show("Bạn phải nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtDiachi.Focus();
-                return;
+                sql = "delete tblbao where Mabao = N'" + txtMabao.Text + "'";
+                Class.Function.RunSql(sql);
+                Load_data();
+                ResetValues();
             }
-            if (mskDienthoai.Text == "(   )    -")
-            {
-                MessageBox.Show("Bạn phải nhập số điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                mskDienthoai.Focus();
-                return;
-            }
-            
-            if (txtEmail.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtEmail.Focus();
-                return;
-            }
-            if (cboMachucnang.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập chức năng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cboMachucnang.Focus();
-                return;
-            }
-            sql = "SELECT Mabao FROM tblbao WHERE Mabao=N'" + txtMabao.Text.Trim() + "'";
-            if (Class.Function.CheckKey(sql))
-            {
-                MessageBox.Show("Mã báo này đã có, bạn phải nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtMabao.Focus();
-                txtMabao.Text = "";
-                return;
-            }
-            sql = "insert into tblbao(Mabao, Tenbao, Machucnang, Diachi, Dienthoai, Email) values (N'" + txtMabao.Text.Trim() + "', N'" + txtTenbao.Text.Trim() + "', N'" + cboMachucnang.SelectedValue.ToString() + "',N'" + txtDiachi.Text.Trim() + "', '" + mskDienthoai.Text + "', N'" + txtEmail.Text.Trim() + "')";
-            Class.Function.RunSql(sql);
-            Load_data();
-            ResetValues();
-            btnXoa.Enabled = true;
-            btnThem.Enabled = true;
-            btnSua.Enabled = true;
-            btnBoqua.Enabled = false;
-            btnLuu.Enabled = false;
-            txtMabao.Enabled = false;
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnSua_Click_1(object sender, EventArgs e)
         {
             string sql;
             if (tblbao.Rows.Count == 0)
@@ -187,7 +149,7 @@ namespace Project.Forms
                 MessageBox.Show("Bạn phải nhập điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 mskDienthoai.Focus();
                 return;
-            } 
+            }
             if (txtEmail.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn phải nhập email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -201,29 +163,67 @@ namespace Project.Forms
             btnBoqua.Enabled = false;
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void btnLuu_Click_1(object sender, EventArgs e)
         {
             string sql;
-            if (tblbao.Rows.Count == 0)
+            if (txtMabao.Text.Trim().Length == 0)
             {
-                MessageBox.Show("Không còn dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn phải nhập mã báo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMabao.Focus();
                 return;
             }
-            if (txtMabao.Text == "")
+            if (txtTenbao.Text.Trim().Length == 0)
             {
-                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn phải nhập tên báo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTenbao.Focus();
                 return;
             }
-            if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            if (txtDiachi.Text.Trim().Length == 0)
             {
-                sql = "delete tblbao where Mabao = N'" + txtMabao.Text + "'";
-                Class.Function.RunSql(sql);
-                Load_data();
-                ResetValues();
+                MessageBox.Show("Bạn phải nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtDiachi.Focus();
+                return;
             }
+            if (mskDienthoai.Text == "(   )    -")
+            {
+                MessageBox.Show("Bạn phải nhập số điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                mskDienthoai.Focus();
+                return;
+            }
+
+            if (txtEmail.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtEmail.Focus();
+                return;
+            }
+            if (cboMachucnang.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập chức năng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cboMachucnang.Focus();
+                return;
+            }
+            sql = "SELECT Mabao FROM tblbao WHERE Mabao=N'" + txtMabao.Text.Trim() + "'";
+            if (Class.Function.CheckKey(sql))
+            {
+                MessageBox.Show("Mã báo này đã có, bạn phải nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtMabao.Focus();
+                txtMabao.Text = "";
+                return;
+            }
+            sql = "insert into tblbao(Mabao, Tenbao, Machucnang, Diachi, Dienthoai, Email) values (N'" + txtMabao.Text.Trim() + "', N'" + txtTenbao.Text.Trim() + "', N'" + cboMachucnang.SelectedValue.ToString() + "',N'" + txtDiachi.Text.Trim() + "', '" + mskDienthoai.Text + "', N'" + txtEmail.Text.Trim() + "')";
+            Class.Function.RunSql(sql);
+            Load_data();
+            ResetValues();
+            btnXoa.Enabled = true;
+            btnThem.Enabled = true;
+            btnSua.Enabled = true;
+            btnBoqua.Enabled = false;
+            btnLuu.Enabled = false;
+            txtMabao.Enabled = false;
         }
 
-        private void btnBoqua_Click(object sender, EventArgs e)
+        private void btnBoqua_Click_1(object sender, EventArgs e)
         {
             ResetValues();
             btnBoqua.Enabled = false;
@@ -234,7 +234,7 @@ namespace Project.Forms
             txtMabao.Enabled = false;
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
+        private void btnThoat_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

@@ -15,6 +15,7 @@ namespace Project.Forms
         public Chucvu()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
         }
 
         private void Chucvu_Load(object sender, EventArgs e)
@@ -60,8 +61,12 @@ namespace Project.Forms
             btnXoa.Enabled = true;
             btnBoqua.Enabled = true;
         }
-
-        private void btnThem_Click(object sender, EventArgs e)
+        private void ResetValues()
+        {
+            txtMachucvu.Text = "";
+            txtTenchucvu.Text = "";
+        }
+        private void btnThem_Click_1(object sender, EventArgs e)
         {
             btnThem.Enabled = false;
             btnSua.Enabled = false;
@@ -72,24 +77,56 @@ namespace Project.Forms
             txtMachucvu.Focus();
             ResetValues();
         }
-        private void ResetValues()
+
+        private void btnXoa_Click_1(object sender, EventArgs e)
         {
-            txtMachucvu.Text = "";
-            txtTenchucvu.Text = "";
+            string sql;
+            if (tblCV.Rows.Count == 0)
+            {
+                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtMachucvu.Text == "")
+            {
+                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                sql = "DELETE tblChucvu WHERE Machucvu=N'" + txtMachucvu.Text + "'";
+                Class.Function.RunSql(sql);
+                Load_DataGridView();
+                ResetValues();
+            }
         }
 
-        private void btnBoqua_Click(object sender, EventArgs e)
+        private void btnSua_Click_1(object sender, EventArgs e)
         {
+            string sql;
+            if (tblCV.Rows.Count == 0)
+            {
+                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtMachucvu.Text == "")
+            {
+                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtTenchucvu.Text == "")
+            {
+                MessageBox.Show("Bạn phải nhập tên chức vụ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenchucvu.Focus();
+                return;
+            }
+            sql = "UPDATE tblChucvu SET Tenchucvu=N'" + txtTenchucvu.Text.Trim() + "' WHERE Machucvu=N'" + txtMachucvu.Text + "'";
+            Class.Function.RunSql(sql);
+            Load_DataGridView();
             ResetValues();
-            btnThem.Enabled = true;
-            btnXoa.Enabled = true;
-            btnSua.Enabled = true;
             btnBoqua.Enabled = false;
-            btnLuu.Enabled = false;
-            txtMachucvu.Enabled = false;
         }
 
-        private void btnLuu_Click(object sender, EventArgs e)
+        private void btnLuu_Click_1(object sender, EventArgs e)
         {
             string sql;
             if (txtMachucvu.Text == "")
@@ -126,55 +163,18 @@ namespace Project.Forms
             txtMachucvu.Enabled = false;
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnBoqua_Click_1(object sender, EventArgs e)
         {
-            string sql;
-            if (tblCV.Rows.Count == 0)
-            {
-                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (txtMachucvu.Text == "")
-            {
-                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (txtTenchucvu.Text == "")
-            {
-                MessageBox.Show("Bạn phải nhập tên chức vụ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtTenchucvu.Focus();
-                return;
-            }
-            sql = "UPDATE tblChucvu SET Tenchucvu=N'" + txtTenchucvu.Text.Trim() + "' WHERE Machucvu=N'" + txtMachucvu.Text + "'";
-            Class.Function.RunSql(sql);
-            Load_DataGridView();
             ResetValues();
+            btnThem.Enabled = true;
+            btnXoa.Enabled = true;
+            btnSua.Enabled = true;
             btnBoqua.Enabled = false;
+            btnLuu.Enabled = false;
+            txtMachucvu.Enabled = false;
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            string sql;
-            if (tblCV.Rows.Count == 0)
-            {
-                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (txtMachucvu.Text == "")
-            {
-                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
-            {
-                sql = "DELETE tblChucvu WHERE Machucvu=N'" + txtMachucvu.Text + "'";
-                Class.Function.RunSql(sql);
-                Load_DataGridView();
-                ResetValues();
-            }
-        }
-
-        private void btnDong_Click(object sender, EventArgs e)
+        private void btnDong_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

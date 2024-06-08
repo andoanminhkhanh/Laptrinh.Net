@@ -15,6 +15,7 @@ namespace Project.Forms
         public BaocaoKhanh()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
         }
 
         private void BaocaoKhanh_Load(object sender, EventArgs e)

@@ -15,6 +15,7 @@ namespace Project.Forms
         public Trinhdo()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized; // Đặt form vào chế độ fullscreen
         }
 
         private void Trinhdo_Load(object sender, EventArgs e)
@@ -60,8 +61,17 @@ namespace Project.Forms
             btnXoa.Enabled = true;
             btnBoqua.Enabled = true;
         }
+        private void ResetValues()
+        {
+            txtMatrinhdo.Text = "";
+            txtTentrinhdo.Text = "";
+        }
+        private void txtMatrinhdo_TextChanged(object sender, EventArgs e)
+        {
 
-        private void btnThem_Click(object sender, EventArgs e)
+        }
+
+        private void btnThem_Click_1(object sender, EventArgs e)
         {
             btnThem.Enabled = false;
             btnSua.Enabled = false;
@@ -72,24 +82,56 @@ namespace Project.Forms
             txtMatrinhdo.Focus();
             ResetValues();
         }
-        private void ResetValues()
+
+        private void btnXoa_Click_1(object sender, EventArgs e)
         {
-            txtMatrinhdo.Text = "";
-            txtTentrinhdo.Text = "";
+            string sql;
+            if (tblTD.Rows.Count == 0)
+            {
+                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtMatrinhdo.Text == "")
+            {
+                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                sql = "DELETE tblTrinhdo WHERE MaTD=N'" + txtMatrinhdo.Text + "'";
+                Class.Function.RunSql(sql);
+                Load_DataGridView();
+                ResetValues();
+            }
         }
 
-        private void btnBoqua_Click(object sender, EventArgs e)
+        private void btnSua_Click_1(object sender, EventArgs e)
         {
+            string sql;
+            if (tblTD.Rows.Count == 0)
+            {
+                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtMatrinhdo.Text == "")
+            {
+                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtTentrinhdo.Text == "")
+            {
+                MessageBox.Show("Bạn phải nhập tên trình độ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTentrinhdo.Focus();
+                return;
+            }
+            sql = "UPDATE tblTrinhdo SET TenTD=N'" + txtTentrinhdo.Text.Trim() + "' WHERE MaTD=N'" + txtMatrinhdo.Text + "'";
+            Class.Function.RunSql(sql);
+            Load_DataGridView();
             ResetValues();
-            btnThem.Enabled = true;
-            btnXoa.Enabled = true;
-            btnSua.Enabled = true;
             btnBoqua.Enabled = false;
-            btnLuu.Enabled = false;
-            txtMatrinhdo.Enabled = false;
         }
 
-        private void btnLuu_Click(object sender, EventArgs e)
+        private void btnLuu_Click_1(object sender, EventArgs e)
         {
             string sql;
             if (txtMatrinhdo.Text == "")
@@ -126,63 +168,20 @@ namespace Project.Forms
             txtMatrinhdo.Enabled = false;
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnBoqua_Click_1(object sender, EventArgs e)
         {
-            string sql;
-            if (tblTD.Rows.Count == 0)
-            {
-                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (txtMatrinhdo.Text == "")
-            {
-                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (txtTentrinhdo.Text == "")
-            {
-                MessageBox.Show("Bạn phải nhập tên trình độ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtTentrinhdo.Focus();
-                return;
-            }
-            sql = "UPDATE tblTrinhdo SET TenTD=N'" + txtTentrinhdo.Text.Trim() + "' WHERE MaTD=N'" + txtMatrinhdo.Text + "'";
-            Class.Function.RunSql(sql);
-            Load_DataGridView();
             ResetValues();
+            btnThem.Enabled = true;
+            btnXoa.Enabled = true;
+            btnSua.Enabled = true;
             btnBoqua.Enabled = false;
+            btnLuu.Enabled = false;
+            txtMatrinhdo.Enabled = false;
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            string sql;
-            if (tblTD.Rows.Count == 0)
-            {
-                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (txtMatrinhdo.Text == "")
-            {
-                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
-            {
-                sql = "DELETE tblTrinhdo WHERE MaTD=N'" + txtMatrinhdo.Text + "'";
-                Class.Function.RunSql(sql);
-                Load_DataGridView();
-                ResetValues();
-            }
-
-        }
-
-        private void btnDong_Click(object sender, EventArgs e)
+        private void btnDong_Click_1(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void txtMatrinhdo_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
